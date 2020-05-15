@@ -1,0 +1,47 @@
+.screen {
+  width: 100%;
+  height: 100vh;
+  float: left;
+  background-color: lightblue;
+  overflow: hidden;
+}
+
+.search_container {
+  position: relative;
+  padding: 10px;
+  left:5%;
+}
+
+.search {
+  display: block;
+  padding-left: 1rem;
+  box-sizing: border-box;
+  pointer-events: auto;
+  
+}
+
+.post_container {
+  text-align: left;
+  background-color: #ffebf5;
+  padding:10px;
+  font-size: 15px;
+  border-width: 2px;
+  border-style: solid;
+  width: 50%;
+  vertical-align:middle;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  padding-bottom: 20px;
+}
+
+.name {
+  text-align:left;
+  font-size: 20px;
+}
+
+.div_center {
+  position: relative;
+  left: 25%;
+  padding: 5px;  
+}
