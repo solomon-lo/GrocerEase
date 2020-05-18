@@ -17,8 +17,64 @@ export default class DataSheet_chatmessages extends DataSheetBase {
     
     item = {};
     this.items.push(item);
+    item['document_key'] = "L1UX2GgMwSWhDRbeDpH7";
+    item['timestamp'] = "1589773111967";
+    item['message_body'] = "testing3";
+    item['sender_username'] = "solomonlo";
+    item.key = key++;
+    
+    item = {};
+    this.items.push(item);
+    item['document_key'] = "mYazLvomYbl5m6k7OxxH";
+    item['timestamp'] = "1589773135026";
+    item['message_body'] = "Testing\n";
+    item['sender_username'] = "solomonlo";
+    item.key = key++;
+    
+    item = {};
+    this.items.push(item);
+    item['document_key'] = "zNVYsmoZuJzJ4lhZLhGy";
+    item['timestamp'] = "1589773138957";
+    item['message_body'] = "HEllo";
+    item['sender_username'] = "solomonlo";
+    item.key = key++;
+    
+    item = {};
+    this.items.push(item);
+    item['document_key'] = "lzmvv9Lm1om9sjgrlCUt";
+    item['timestamp'] = "1589774313513";
+    item['message_body'] = "hi";
+    item['sender_username'] = "sam";
+    item.key = key++;
+    
+    item = {};
+    this.items.push(item);
+    item['document_key'] = "J4rEASZNeUbmFFAMojD1";
+    item['timestamp'] = "1589774329915";
+    item['message_body'] = "ok";
+    item['sender_username'] = "sam";
+    item.key = key++;
+    
+    item = {};
+    this.items.push(item);
+    item['document_key'] = "JrP7dEzHt1X0LClP0YwU";
+    item['timestamp'] = "1589774340722";
+    item['message_body'] = "asdf";
+    item['sender_username'] = "sam";
+    item.key = key++;
+    
+    item = {};
+    this.items.push(item);
+    item['document_key'] = "JxKHTsMkczr75Q0f3mv7";
+    item['timestamp'] = "1589774359065";
+    item['message_body'] = "grocerease";
+    item['sender_username'] = "sam";
+    item.key = key++;
+    
+    item = {};
+    this.items.push(item);
     item['document_key'] = "gL6lmFDCsp72GPwISPfB";
-    item['timestamp'] = "34234234";
+    item['timestamp'] = "1589720400123";
     item['message_body'] = "Hello everyone";
     item['sender_username'] = "Bob";
     item.key = key++;
