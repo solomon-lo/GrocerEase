@@ -26,8 +26,8 @@ export default class ChatroomItem extends Component {
   }
 
   onClick_elText = (ev) => {
-    // Go back in screen navigation history
-    this.props.appActions.goBack();
+    let newVal = this.props.document_key;
+    this.props.appActions.updateDataSlot('ds_SlotSelectedChatroomKey', newVal);
   
     // Go to screen 'Messages'
     this.props.appActions.goToScreen('messages', { transitionId: 'fadeIn' });

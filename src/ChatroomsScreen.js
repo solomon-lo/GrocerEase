@@ -42,7 +42,7 @@ export default class ChatroomsScreen extends Component {
 
   onClick_elIconButton = (ev) => {
     // Go to screen 'Add a chatroom'
-    this.props.appActions.goToScreen('addachatroom', { transitionId: 'fadeIn' });
+    this.props.appActions.goToScreen('addachatroom');
   
   }
   

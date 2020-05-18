@@ -1,6 +1,6 @@
 {
-  "name": "exported-from-react-studio",
-  "version": "0.0.1",
+  "name": "chat-app",
+  "version": "0.1.1",
   "private": true,
   "dependencies": {
     "react": "^16.8.6",

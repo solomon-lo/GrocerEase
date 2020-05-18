@@ -5,9 +5,9 @@ import MessagesScreen from './MessagesScreen.js';
 import AddAChatroomScreen from './AddAChatroomScreen.js';
 import ChatroomsScreen from './ChatroomsScreen.js';
 import StartScreen from './StartScreen.js';
-import DataSheet_localizationSheet from './DataSheet_localizationSheet.js';
 import DataSheet_chatroom from './DataSheet_chatroom.js';
 import DataSheet_chatmessages from './DataSheet_chatmessages.js';
+import DataSheet_localizationSheet from './DataSheet_localizationSheet.js';
 import firebase from 'firebase';
 import firestore from 'firebase/firestore';
 
@@ -17,9 +17,9 @@ export default class App extends Component {
     super(props);
 
     this.dataSheets = {};
-    this.dataSheets['localizationSheet'] = new DataSheet_localizationSheet('localizationSheet', this.dataSheetDidUpdate);
     this.dataSheets['chatroom'] = new DataSheet_chatroom('chatroom', this.dataSheetDidUpdate);
     this.dataSheets['chatmessages'] = new DataSheet_chatmessages('chatmessages', this.dataSheetDidUpdate);
+    this.dataSheets['localizationSheet'] = new DataSheet_localizationSheet('localizationSheet', this.dataSheetDidUpdate);
     this.dataSheetLoaded = {};
 
     this.dataSlots = {};
