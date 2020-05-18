@@ -392,6 +392,32 @@
   }
   
 
+.ChatItem .elIconButton button {
+  cursor: pointer;
+  border: 0.0px solid transparent;
+  border-radius: 2.3px;
+}
+
+.ChatItem .elIconButton button:focus {
+  box-shadow: 0 0 5px rgba(0, 149, 214, 0.5000);
+  outline: none;
+}
+
+
+
+  .ChatItem > .layoutFlow > .elIconButton {
+    position: relative;
+    margin-top: -28px;
+    width: 100%;
+  }
+  .ChatItem > .layoutFlow > .elIconButton > * { 
+  margin-left: auto;
+  width: 41px;
+  margin-right: 20px;
+  height: 36px;
+  }
+  
+
 
   .ChatItem > .layoutFlow > .elTextCopy2 {
     position: relative;
@@ -613,6 +639,63 @@
   
 }
 
+
+/* Narrowest size for this element's responsive layout */
+  .MessagesScreen > .layoutFlow > .elRectangle {
+    position: relative;
+    margin-top: 192px;
+    margin-left: 0px;
+    margin-right: 0px;
+    width: calc(100.0% - 0px);
+  }
+  .MessagesScreen > .layoutFlow > .elRectangle > * { 
+    width: 100%;
+  height: 166px;
+  }
+  
+@media (min-width: 568px) {
+  .MessagesScreen > .layoutFlow > .elRectangle {
+    position: relative;
+    margin-top: 192px;
+    margin-left: 0px;
+    margin-right: 0px;
+    width: calc(100.0% - 0px);
+  }
+  .MessagesScreen > .layoutFlow > .elRectangle > * { 
+    width: 100%;
+  height: 165px;
+  }
+  
+}
+@media (min-width: 768px) {
+  .MessagesScreen > .layoutFlow > .elRectangle {
+    position: relative;
+    margin-top: 191px;
+    margin-left: 0px;
+    margin-right: 0px;
+    width: calc(100.0% - 0px);
+  }
+  .MessagesScreen > .layoutFlow > .elRectangle > * { 
+    width: 100%;
+  height: 164px;
+  }
+  
+}
+@media (min-width: 1024px) {
+  .MessagesScreen > .layoutFlow > .elRectangle {
+    position: relative;
+    margin-top: 191px;
+    margin-left: 0px;
+    margin-right: 0px;
+    width: calc(100.0% - 0px);
+  }
+  .MessagesScreen > .layoutFlow > .elRectangle > * { 
+    width: 100%;
+  height: 164px;
+  }
+  
+}
+
 .MessagesScreen .elSendMessage {
   overflow: hidden;
   pointer-events: auto;
@@ -680,12 +763,8 @@
 
 /* This component has a fixed-size layout */
   .ChatroomItem {
-    min-height: 145px;  /* Minimum height to ensure layout flow is visible */
-    width: 100%; /* This component was designed using a width of 460px */
+    width: 100%; /* This component was designed using a width of 421px */
     height: 100%;
-  }
-  .ChatroomItem > .background > .containerMinHeight {
-    min-height: 145px;
   }
 
 
@@ -701,17 +780,43 @@
   }
   
 
+.ChatroomItem .elIconButton button {
+  cursor: pointer;
+  border: 0.0px solid transparent;
+  border-radius: 2.3px;
+}
+
+.ChatroomItem .elIconButton button:focus {
+  box-shadow: 0 0 5px rgba(0, 149, 214, 0.5000);
+  outline: none;
+}
+
+
+
+  .ChatroomItem > .layoutFlow > .elIconButton {
+    position: relative;
+    margin-top: -29px;
+    width: 100%;
+  }
+  .ChatroomItem > .layoutFlow > .elIconButton > * { 
+  margin-left: auto;
+  width: 41px;
+  margin-right: 20px;
+  height: 36px;
+  }
+  
+
 
   .ChatroomItem > .layoutFlow > .elRectangle {
     position: relative;
-    margin-top: 28px;
+    margin-top: 25px;
     margin-left: 10px;
     margin-right: 10px;
     width: calc(100.0% - 20px);
   }
   .ChatroomItem > .layoutFlow > .elRectangle > * { 
     width: 100%;
-  height: 6px;
+  height: 3px;
   }
   
 
