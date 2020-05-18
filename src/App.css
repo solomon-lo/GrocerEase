@@ -416,14 +416,14 @@
   }
 
 
-  .SendMessage > .layoutFlow > .elTextarea {
+  .SendMessage > .layoutFlow > .elTextareaMessage {
     position: relative;
     margin-top: 11px;
     margin-left: 10px;
     margin-right: 10px;
     width: calc(100.0% - 20px);
   }
-  .SendMessage > .layoutFlow > .elTextarea > * { 
+  .SendMessage > .layoutFlow > .elTextareaMessage > * { 
     width: 100%;
   height: 79px;
   }
@@ -445,7 +445,7 @@
   .SendMessage > .layoutFlow > .elButton {
     line-height: 35px;
     position: relative;
-    margin-top: 15px;
+    margin-top: 14px;
     margin-left: 10px;
     margin-right: 10px;
     width: calc(100.0% - 20px);
@@ -555,57 +555,10 @@
   }
 }
 
-.MessagesScreen .elList > div {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  row-gap: 5px;
-  grid-row-gap: 5px;  /* old name still required by some browsers */
-  column-gap: 5px;
-  grid-column-gap: 5px;  /* old name still required by some browsers */
+.MessagesScreen .elList li {
+  margin-bottom: 5px;
 }
 
-.MessagesScreen .elList > div > * {
-  display: inline-block;
-  position: relative;
-  min-width: 412px;
-}
-
-  @media (min-width: 1024px) {
-    .MessagesScreen .elList > div {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      row-gap: 5px;
-      grid-row-gap: 5px;  /* old name still required by some browsers */
-      column-gap: 5px;
-      grid-column-gap: 5px;  /* old name still required by some browsers */
-    }
-  
-  }
-  
-  @media (min-width: 768px) and (max-width: 1023px) {
-    .MessagesScreen .elList > div {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      row-gap: 5px;
-      grid-row-gap: 5px;  /* old name still required by some browsers */
-      column-gap: 5px;
-      grid-column-gap: 5px;  /* old name still required by some browsers */
-    }
-  
-  }
-  
-  @media (min-width: 568px) and (max-width: 767px) {
-    .MessagesScreen .elList > div {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      row-gap: 5px;
-      grid-row-gap: 5px;  /* old name still required by some browsers */
-      column-gap: 5px;
-      grid-column-gap: 5px;  /* old name still required by some browsers */
-    }
-  
-  }
-  
 
 
 /* Narrowest size for this element's responsive layout */
@@ -662,6 +615,7 @@
 
 .MessagesScreen .elSendMessage {
   overflow: hidden;
+  pointer-events: auto;
 }
 
 .MessagesScreen .elSendMessage.hasNestedComps > div {
@@ -757,7 +711,7 @@
   }
   .ChatroomItem > .layoutFlow > .elRectangle > * { 
     width: 100%;
-  height: 11px;
+  height: 6px;
   }
   
 
@@ -775,7 +729,7 @@
 /* Narrowest size for this element's responsive layout */
   .AddAChatroomScreen > .layoutFlow > .elAddChatroomComp {
     position: relative;
-    margin-top: 66px;
+    margin-top: 188px;
     margin-left: 0px;
     margin-right: 0px;
     width: calc(100.0% - 0px);
@@ -791,7 +745,7 @@
 @media (min-width: 568px) {
   .AddAChatroomScreen > .layoutFlow > .elAddChatroomComp {
     position: relative;
-    margin-top: 66px;
+    margin-top: 188px;
     margin-left: 0px;
     margin-right: 0px;
     width: calc(100.0% - 0px);
@@ -808,7 +762,7 @@
 @media (min-width: 768px) {
   .AddAChatroomScreen > .layoutFlow > .elAddChatroomComp {
     position: relative;
-    margin-top: 66px;
+    margin-top: 187px;
     margin-left: 0px;
     margin-right: 0px;
     width: calc(100.0% - 0px);
@@ -825,7 +779,7 @@
 @media (min-width: 1024px) {
   .AddAChatroomScreen > .layoutFlow > .elAddChatroomComp {
     position: relative;
-    margin-top: 66px;
+    margin-top: 187px;
     margin-left: 0px;
     margin-right: 0px;
     width: calc(100.0% - 0px);

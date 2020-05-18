@@ -81,17 +81,17 @@ export default class MessagesScreen extends Component {
         
         <div className="layoutFlow" style={layoutFlowStyle}>
           <div className="hasNestedComps elList">
-            <div style={style_elList}>
+            <ul style={style_elList}>
               {items_list.map((row, index) => {
                 let itemComp = (row._componentId)
                     ? listComps_list[row._componentId]
                     : <ChatItem appActions={this.props.appActions} deviceInfo={this.props.deviceInfo} locStrings={this.props.locStrings} dataSheetId={'chatmessages'} dataSheetRow={row} {...{ 'sender_username': row['sender_username'], 'message_body': row['message_body'], 'timestamp': row['timestamp'], }} />;
-                return (<div key={row.key}>
+                return (<li key={row.key}>
                     {itemComp}
-                  </div>);
+                  </li>);
               })}
               <div className="marker" ref={(el)=> this._elList_endMarker = el} />
-            </div>
+            </ul>
           </div>
         </div>
         <Appbar className="navBar">

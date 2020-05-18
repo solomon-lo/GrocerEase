@@ -12,7 +12,7 @@ export default class SendMessage extends Component {
     super(props);
     
     this.state = {
-      textarea: '',
+      textareaMessage: '',
     };
   }
 
@@ -28,25 +28,54 @@ export default class SendMessage extends Component {
   componentWillReceiveProps(nextProps) {
   }
 
-  textAreaChanged_textarea = (event) => {
-    this.setState({textarea: event.target.value});
+  textAreaChanged_textareaMessage = (event) => {
+    this.setState({textareaMessage: event.target.value});
   }
   
   onClick_elButton = (ev) => {
+    this.sendData_button_to_chatmessages();
+  
     // Clear internal state for data-providing elements in this component
     this.setState({
-      textarea: "",
+      textareaMessage: "",
     });
   
-    // Go back in screen navigation history
-    this.props.appActions.goBack();
+  }
   
+  
+  sendData_button_to_chatmessages = () => {
+    const dataSheet = this.props.appActions.getDataSheet('chatmessages');
+  
+    let row = this.props.dataSheetRow || {
+    };
+    row = { ...row, 
+      sender_username: (this.props.appActions.dataSlots ? this.props.appActions.dataSlots['ds_SlotUsername'] : ''),
+      message_body: this.state.textareaMessage,
+    };
+  
+    const transformData = (input) => {
+        // This function modifies the value saved to the data sheet.
+      // There is a variable named 'input' that provides the input values:
+      // it's a JavaScript object with properties that contain all the
+      // values collected from the UI.
+      
+      var currentDate = new Date();
+      input.timestamp=currentDate.getTime();
+      return input;
+    }
+    row = transformData(row);
+  
+    if (this.props.dataSheetId === dataSheet.id) {
+      this.props.appActions.updateInDataSheet('chatmessages', row);
+    } else {
+      this.props.appActions.addToDataSheet('chatmessages', row);
+    }
   }
   
   
   render() {
     
-    const style_elTextarea = {
+    const style_elTextareaMessage = {
       display: 'block',
       backgroundColor: 'white',
       borderColor: 'lightGray',
@@ -66,8 +95,8 @@ export default class SendMessage extends Component {
     return (
       <div className="SendMessage appBg">
         <div className="layoutFlow">
-          <div className="elTextarea">
-            <textarea className="baseFont" style={style_elTextarea}  placeholder={this.props.locStrings.sendmessage_textarea_37237} onChange={this.textAreaChanged_textarea} value={this.state.textarea}  />
+          <div className="elTextareaMessage">
+            <textarea className="baseFont" style={style_elTextareaMessage}  placeholder={this.props.locStrings.sendmessage_textarea_37237} onChange={this.textAreaChanged_textareaMessage} value={this.state.textareaMessage}  />
           </div>
           
           <div className="elButton">
