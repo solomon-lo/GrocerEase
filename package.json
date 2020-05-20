@@ -1,6 +1,6 @@
 {
-  "name": "transitional_grocerease_May16",
-  "version": "0.1.2",
+  "name": "grocerease-display",
+  "version": "0.1.4",
   "private": true,
   "dependencies": {
     "react": "^16.8.6",

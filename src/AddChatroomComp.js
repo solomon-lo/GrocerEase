@@ -12,9 +12,10 @@ export default class AddChatroomComp extends Component {
     super(props);
     
     this.state = {
-      name_field: '',
-      general_location_field: '',
-      store_field: '',
+      field_shopper_name: '',
+      field_shopper_time: '',
+      field_shopper_store: '',
+      field_shopper_city: '',
     };
   }
 
@@ -30,20 +31,14 @@ export default class AddChatroomComp extends Component {
   componentWillReceiveProps(nextProps) {
   }
 
-  textInputChanged_name_field = (event) => {
-    this.setState({name_field: event.target.value});
-  }
-  
-  textInputChanged_general_location_field = (event) => {
-    this.setState({general_location_field: event.target.value});
-  }
-  
-  textInputChanged_store_field = (event) => {
-    this.setState({store_field: event.target.value});
+  textInputChanged_field_shopper_name = (event) => {
+    this.setState({field_shopper_name: event.target.value});
   }
   
   onClick_elButton = (ev) => {
     this.sendData_button_to_shoppers();
+  
+    this.sendData_button_to_chatroom();
   
     // Go to screen 'Chatrooms'
     this.props.appActions.goToScreen('chatrooms', { transitionId: 'fadeIn' });
@@ -51,15 +46,28 @@ export default class AddChatroomComp extends Component {
   }
   
   
+  textInputChanged_field_shopper_time = (event) => {
+    this.setState({field_shopper_time: event.target.value});
+  }
+  
+  textInputChanged_field_shopper_store = (event) => {
+    this.setState({field_shopper_store: event.target.value});
+  }
+  
+  textInputChanged_field_shopper_city = (event) => {
+    this.setState({field_shopper_city: event.target.value});
+  }
+  
   sendData_button_to_shoppers = () => {
     const dataSheet = this.props.appActions.getDataSheet('shoppers');
   
     let row = this.props.dataSheetRow || {
     };
     row = { ...row, 
-      name: this.state.name_field,
-      store: this.state.store_field,
-      area: this.state.general_location_field,
+      store: this.state.field_shopper_store,
+      area: this.state.field_shopper_city,
+      name: this.state.field_shopper_name,
+      time: this.state.field_shopper_time,
     };
     if (this.props.dataSheetId === dataSheet.id) {
       this.props.appActions.updateInDataSheet('shoppers', row);
@@ -69,29 +77,30 @@ export default class AddChatroomComp extends Component {
   }
   
   
+  sendData_button_to_chatroom = () => {
+    const dataSheet = this.props.appActions.getDataSheet('chatroom');
+  
+    let row = this.props.dataSheetRow || {
+    };
+    row = { ...row, 
+      document_key: this.state.field_shopper_store,
+      chatroom_name: this.state.field_shopper_name,
+    };
+    if (this.props.dataSheetId === dataSheet.id) {
+      this.props.appActions.updateInDataSheet('chatroom', row);
+    } else {
+      this.props.appActions.addToDataSheet('chatroom', row);
+    }
+  }
+  
+  
   render() {
-    const style_elText = {
+    const style_elIntro = {
       color: 'rgba(0, 0, 0, 0.8500)',
       textAlign: 'left',
      };
     
-    const style_elName_field = {
-      display: 'block',
-      backgroundColor: 'white',
-      paddingLeft: '1rem',
-      boxSizing: 'border-box', // ensures padding won't expand element's outer size
-      pointerEvents: 'auto',
-     };
-    
-    const style_elGeneral_location_field = {
-      display: 'block',
-      backgroundColor: 'white',
-      paddingLeft: '1rem',
-      boxSizing: 'border-box', // ensures padding won't expand element's outer size
-      pointerEvents: 'auto',
-     };
-    
-    const style_elStore_field = {
+    const style_elField_shopper_name = {
       display: 'block',
       backgroundColor: 'white',
       paddingLeft: '1rem',
@@ -107,31 +116,59 @@ export default class AddChatroomComp extends Component {
       pointerEvents: 'auto',
      };
     
+    const style_elField_shopper_time = {
+      display: 'block',
+      backgroundColor: 'white',
+      paddingLeft: '1rem',
+      boxSizing: 'border-box', // ensures padding won't expand element's outer size
+      pointerEvents: 'auto',
+     };
+    
+    const style_elField_shopper_store = {
+      display: 'block',
+      backgroundColor: 'white',
+      paddingLeft: '1rem',
+      boxSizing: 'border-box', // ensures padding won't expand element's outer size
+      pointerEvents: 'auto',
+     };
+    
+    const style_elField_shopper_city = {
+      display: 'block',
+      backgroundColor: 'white',
+      paddingLeft: '1rem',
+      boxSizing: 'border-box', // ensures padding won't expand element's outer size
+      pointerEvents: 'auto',
+     };
+    
     return (
       <div className="AddChatroomComp appBg">
         <div className="layoutFlow">
-          <div className="elText">
-            <div className="baseFont" style={style_elText}>
+          <div className="elIntro">
+            <div className="baseFont" style={style_elIntro}>
               <div>{this.props.locStrings.addchatroomcomp_text_1046369}</div>
             </div>
           </div>
           
-          <div className="elName_field">
-            <input className="baseFont" style={style_elName_field} type="text" placeholder={this.props.locStrings.name_field} onChange={this.textInputChanged_name_field} value={this.state.name_field}  />
-          </div>
-          
-          <div className="elGeneral_location_field">
-            <input className="baseFont" style={style_elGeneral_location_field} type="text" placeholder={this.props.locStrings.general_location_field} onChange={this.textInputChanged_general_location_field} value={this.state.general_location_field}  />
-          </div>
-          
-          <div className="elStore_field">
-            <input className="baseFont" style={style_elStore_field} type="text" placeholder={this.props.locStrings.store_field} onChange={this.textInputChanged_store_field} value={this.state.store_field}  />
+          <div className="elField_shopper_name">
+            <input className="baseFont" style={style_elField_shopper_name} type="text" placeholder={this.props.locStrings.shopper_name_field} onChange={this.textInputChanged_field_shopper_name} value={this.state.field_shopper_name}  />
           </div>
           
           <div className="elButton">
             <Button className="actionFont" style={style_elButton}  color="accent" onClick={this.onClick_elButton} >
               {this.props.locStrings.addchatroomcomp_button_174973}
             </Button>
+          </div>
+          
+          <div className="elField_shopper_time">
+            <input className="baseFont" style={style_elField_shopper_time} type="text" placeholder={this.props.locStrings.shopper_time_field} onChange={this.textInputChanged_field_shopper_time} value={this.state.field_shopper_time}  />
+          </div>
+          
+          <div className="elField_shopper_store">
+            <input className="baseFont" style={style_elField_shopper_store} type="text" placeholder={this.props.locStrings.shopper_store_field} onChange={this.textInputChanged_field_shopper_store} value={this.state.field_shopper_store}  />
+          </div>
+          
+          <div className="elField_shopper_city">
+            <input className="baseFont" style={style_elField_shopper_city} type="text" placeholder={this.props.locStrings.shopper_city_field} onChange={this.textInputChanged_field_shopper_city} value={this.state.field_shopper_city}  />
           </div>
         </div>
         

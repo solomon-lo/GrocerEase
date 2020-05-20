@@ -64,7 +64,7 @@ export default class App extends Component {
     this.serviceOptions_shoppers = {
       dataSlots: this.dataSlots,
       servicePath: "shoppers",
-      query: "orderBy(\"area\",\"asc\")",
+      query: "orderBy(\"name\",\"asc\")",
     };
     this.dataSheets['shoppers'].appActions = this;
     this.dataSheets['shoppers'].firebase = firebase;

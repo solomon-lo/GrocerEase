@@ -17,6 +17,15 @@ export default class DataSheet_shoppers extends DataSheetBase {
     
     item = {};
     this.items.push(item);
+    item['document_key'] = "O9qG3Ssgb3g06FfVWjUC";
+    item['store'] = "Walmart";
+    item['area'] = "LA";
+    item['name'] = "Jim";
+    item['time'] = "2:00 PM";
+    item.key = key++;
+    
+    item = {};
+    this.items.push(item);
     item['rating'] = "-1";
     item['area'] = "unknown_area";
     item['time'] = "unknown_time";

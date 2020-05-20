@@ -392,6 +392,32 @@
   }
   
 
+.ChatItem .elIconButton button {
+  cursor: pointer;
+  border: 0.0px solid transparent;
+  border-radius: 2.3px;
+}
+
+.ChatItem .elIconButton button:focus {
+  box-shadow: 0 0 5px rgba(0, 149, 214, 0.5000);
+  outline: none;
+}
+
+
+
+  .ChatItem > .layoutFlow > .elIconButton {
+    position: relative;
+    margin-top: -28px;
+    width: 100%;
+  }
+  .ChatItem > .layoutFlow > .elIconButton > * { 
+  margin-left: auto;
+  width: 41px;
+  margin-right: 20px;
+  height: 36px;
+  }
+  
+
 
   .ChatItem > .layoutFlow > .elTextCopy2 {
     position: relative;
@@ -458,56 +484,34 @@
 
 /* This component has a fixed-size layout */
   .AddChatroomComp {
-    width: 100%; /* This component was designed using a width of 375px */
+    min-height: 431px;  /* Minimum height to ensure layout flow is visible */
+    width: 100%; /* This component was designed using a width of 376px */
     height: 100%;
+  }
+  .AddChatroomComp > .background > .containerMinHeight {
+    min-height: 431px;
   }
 
 
-  .AddChatroomComp > .layoutFlow > .elText {
+  .AddChatroomComp > .layoutFlow > .elIntro {
     position: relative;
     margin-top: 15px;
     width: 238px;
     margin-left: calc(49.9% - 119px);
   }
-  .AddChatroomComp > .layoutFlow > .elText > * { 
+  .AddChatroomComp > .layoutFlow > .elIntro > * { 
   width: 238px;
   }
   
 
 
-  .AddChatroomComp > .layoutFlow > .elName_field {
+  .AddChatroomComp > .layoutFlow > .elField_shopper_name {
     position: relative;
-    margin-top: 19px;
+    margin-top: 16px;
     width: 226px;
-    margin-left: 70px;
+    margin-left: calc(50.0% - 113px);
   }
-  .AddChatroomComp > .layoutFlow > .elName_field > * { 
-  width: 226px;
-  height: 34px;
-  }
-  
-
-
-  .AddChatroomComp > .layoutFlow > .elGeneral_location_field {
-    position: relative;
-    margin-top: 21px;
-    width: 226px;
-    margin-left: calc(49.6% - 113px);
-  }
-  .AddChatroomComp > .layoutFlow > .elGeneral_location_field > * { 
-  width: 226px;
-  height: 34px;
-  }
-  
-
-
-  .AddChatroomComp > .layoutFlow > .elStore_field {
-    position: relative;
-    margin-top: 30px;
-    width: 226px;
-    margin-left: 72px;
-  }
-  .AddChatroomComp > .layoutFlow > .elStore_field > * { 
+  .AddChatroomComp > .layoutFlow > .elField_shopper_name > * { 
   width: 226px;
   height: 34px;
   }
@@ -529,13 +533,53 @@
   .AddChatroomComp > .layoutFlow > .elButton {
     line-height: 35px;
     position: relative;
-    margin-top: 100px;
+    margin-top: 203px;
     width: 166px;
-    margin-left: calc(49.7% - 83px);
+    margin-left: calc(49.9% - 83px);
   }
   .AddChatroomComp > .layoutFlow > .elButton > * { 
   width: 166px;
   height: 35px;
+  }
+  
+
+
+  .AddChatroomComp > .layoutFlow > .elField_shopper_time {
+    position: relative;
+    margin-top: -95px;
+    margin-left: calc(50.0% - 140px);
+    margin-right: 48px;
+    width: calc(100.0% - 48px);
+  }
+  .AddChatroomComp > .layoutFlow > .elField_shopper_time > * { 
+    width: 100%;
+  height: 34px;
+  }
+  
+
+
+  .AddChatroomComp > .layoutFlow > .elField_shopper_store {
+    position: relative;
+    margin-top: -96px;
+    width: 226px;
+    margin-left: calc(49.9% - 113px);
+  }
+  .AddChatroomComp > .layoutFlow > .elField_shopper_store > * { 
+  width: 226px;
+  height: 34px;
+  }
+  
+
+
+  .AddChatroomComp > .layoutFlow > .elField_shopper_city {
+    position: relative;
+    margin-top: -97px;
+    width: 231px;
+    margin-left: calc(50.2% - 115px);
+  }
+  .AddChatroomComp > .layoutFlow > .elField_shopper_city > * { 
+  width: 231px;
+  height: 29px;
   }
   
 
@@ -635,6 +679,63 @@
   
 }
 
+
+/* Narrowest size for this element's responsive layout */
+  .MessagesScreen > .layoutFlow > .elRectangle {
+    position: relative;
+    margin-top: 192px;
+    margin-left: 0px;
+    margin-right: 0px;
+    width: calc(100.0% - 0px);
+  }
+  .MessagesScreen > .layoutFlow > .elRectangle > * { 
+    width: 100%;
+  height: 166px;
+  }
+  
+@media (min-width: 568px) {
+  .MessagesScreen > .layoutFlow > .elRectangle {
+    position: relative;
+    margin-top: 192px;
+    margin-left: 0px;
+    margin-right: 0px;
+    width: calc(100.0% - 0px);
+  }
+  .MessagesScreen > .layoutFlow > .elRectangle > * { 
+    width: 100%;
+  height: 165px;
+  }
+  
+}
+@media (min-width: 768px) {
+  .MessagesScreen > .layoutFlow > .elRectangle {
+    position: relative;
+    margin-top: 191px;
+    margin-left: 0px;
+    margin-right: 0px;
+    width: calc(100.0% - 0px);
+  }
+  .MessagesScreen > .layoutFlow > .elRectangle > * { 
+    width: 100%;
+  height: 164px;
+  }
+  
+}
+@media (min-width: 1024px) {
+  .MessagesScreen > .layoutFlow > .elRectangle {
+    position: relative;
+    margin-top: 191px;
+    margin-left: 0px;
+    margin-right: 0px;
+    width: calc(100.0% - 0px);
+  }
+  .MessagesScreen > .layoutFlow > .elRectangle > * { 
+    width: 100%;
+  height: 164px;
+  }
+  
+}
+
 .MessagesScreen .elSendMessage {
   overflow: hidden;
   pointer-events: auto;
@@ -702,12 +803,8 @@
 
 /* This component has a fixed-size layout */
   .ChatroomItem {
-    min-height: 145px;  /* Minimum height to ensure layout flow is visible */
-    width: 100%; /* This component was designed using a width of 460px */
+    width: 100%; /* This component was designed using a width of 421px */
     height: 100%;
-  }
-  .ChatroomItem > .background > .containerMinHeight {
-    min-height: 145px;
   }
 
 
@@ -723,17 +820,43 @@
   }
   
 
+.ChatroomItem .elIconButton button {
+  cursor: pointer;
+  border: 0.0px solid transparent;
+  border-radius: 2.3px;
+}
+
+.ChatroomItem .elIconButton button:focus {
+  box-shadow: 0 0 5px rgba(0, 149, 214, 0.5000);
+  outline: none;
+}
+
+
+
+  .ChatroomItem > .layoutFlow > .elIconButton {
+    position: relative;
+    margin-top: -29px;
+    width: 100%;
+  }
+  .ChatroomItem > .layoutFlow > .elIconButton > * { 
+  margin-left: auto;
+  width: 41px;
+  margin-right: 20px;
+  height: 36px;
+  }
+  
+
 
   .ChatroomItem > .layoutFlow > .elRectangle {
     position: relative;
-    margin-top: 28px;
+    margin-top: 25px;
     margin-left: 10px;
     margin-right: 10px;
     width: calc(100.0% - 20px);
   }
   .ChatroomItem > .layoutFlow > .elRectangle > * { 
     width: 100%;
-  height: 6px;
+  height: 3px;
   }
   
 
@@ -751,7 +874,7 @@
 /* Narrowest size for this element's responsive layout */
   .AddAChatroomScreen > .layoutFlow > .elAddChatroomComp {
     position: relative;
-    margin-top: 76px;
+    margin-top: 86px;
     margin-left: 0px;
     margin-right: 0px;
     width: calc(100.0% - 0px);
@@ -761,13 +884,13 @@
   }
   
   .AddAChatroomScreen > .layoutFlow > .elAddChatroomComp > .background > .containerMinHeight {
-    min-height: 342px;
+    min-height: 431px;
   }
 
 @media (min-width: 568px) {
   .AddAChatroomScreen > .layoutFlow > .elAddChatroomComp {
     position: relative;
-    margin-top: 76px;
+    margin-top: 86px;
     margin-left: 0px;
     margin-right: 0px;
     width: calc(100.0% - 0px);
@@ -777,14 +900,14 @@
   }
   
   .AddAChatroomScreen > .layoutFlow > .elAddChatroomComp > .background > .containerMinHeight {
-    min-height: 342px;
+    min-height: 431px;
   }
 
 }
 @media (min-width: 768px) {
   .AddAChatroomScreen > .layoutFlow > .elAddChatroomComp {
     position: relative;
-    margin-top: 75px;
+    margin-top: 86px;
     margin-left: 0px;
     margin-right: 0px;
     width: calc(100.0% - 0px);
@@ -794,14 +917,14 @@
   }
   
   .AddAChatroomScreen > .layoutFlow > .elAddChatroomComp > .background > .containerMinHeight {
-    min-height: 340px;
+    min-height: 428px;
   }
 
 }
 @media (min-width: 1024px) {
   .AddAChatroomScreen > .layoutFlow > .elAddChatroomComp {
     position: relative;
-    margin-top: 75px;
+    margin-top: 86px;
     margin-left: 0px;
     margin-right: 0px;
     width: calc(100.0% - 0px);
@@ -811,7 +934,7 @@
   }
   
   .AddAChatroomScreen > .layoutFlow > .elAddChatroomComp > .background > .containerMinHeight {
-    min-height: 340px;
+    min-height: 428px;
   }
 
 }

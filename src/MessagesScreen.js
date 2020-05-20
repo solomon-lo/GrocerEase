@@ -71,6 +71,10 @@ export default class MessagesScreen extends Component {
       height: 'auto',  // This element is in scroll flow
      };
     
+    const style_elRectangle = {
+      background: 'rgba(246, 247, 246, 1.000)',
+     };
+    
     return (
       <div className="AppScreen MessagesScreen" style={baseStyle}>
         <div className="background">
@@ -92,6 +96,10 @@ export default class MessagesScreen extends Component {
               })}
               <div className="marker" ref={(el)=> this._elList_endMarker = el} />
             </ul>
+          </div>
+          
+          <div className="elRectangle">
+            <div style={style_elRectangle} />
           </div>
         </div>
         <Appbar className="navBar">

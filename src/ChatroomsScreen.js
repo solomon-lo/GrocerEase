@@ -104,7 +104,7 @@ export default class ChatroomsScreen extends Component {
               {items_list.map((row, index) => {
                 let itemComp = (row._componentId)
                     ? listComps_list[row._componentId]
-                    : <ChatroomItem appActions={this.props.appActions} deviceInfo={this.props.deviceInfo} locStrings={this.props.locStrings} dataSheetId={'chatroom'} dataSheetRow={row} {...{ 'chatroom_name': row['chatroom_name'], 'document_key': row['document_key'], }} />;
+                    : <ChatroomItem appActions={this.props.appActions} deviceInfo={this.props.deviceInfo} locStrings={this.props.locStrings} dataSheetId={'chatroom'} dataSheetRow={row} {...{ 'document_key': row['document_key'], 'chatroom_name': row['chatroom_name'], }} />;
                 return (<li key={row.key}>
                     {itemComp}
                   </li>);
