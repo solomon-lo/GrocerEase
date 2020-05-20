@@ -19,7 +19,7 @@ var firebaseConfig = {
 };
 */
 
-class Screen1 extends Component {
+class SearchScreen extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -37,11 +37,16 @@ class Screen1 extends Component {
       rating: "5.0",
       price: "free",
     }
+    
     return (    
       <div className="screen">
-        <div className="search_container"> 
-          <SearchBar className="search" />
+     
+        <div id="navbar" class="topnav">
+          <div className="search_container"> 
+            <SearchBar className="search" />
+          </div>
         </div>
+
         <Post name={test.name} zip={test.zip} shop={test.shop} 
       time={test.time} rating={test.rating} price={test.price}/>
       <div className="div_center">
@@ -51,6 +56,9 @@ class Screen1 extends Component {
         <button onClick={() => alert('clicked Messages')} > Go to Messages </button> {/*add navigation */}
       </div>
       </div>
+      
+      /*<script src='scroll.js'></script>*/
+      
     )
   }
   
@@ -133,7 +141,7 @@ class Post extends Component {
         <p> Shopping At: {this.props.shop} </p>
         <p> Time: {this.props.time} </p>
         <p> Rating: {this.props.rating} </p>
-        <p> Price: {this.props.price} </p>
+        <p> Pricing: {this.props.price} </p>
         <button onClick={() => alert('clicked Message shopper')}> Message Shopper </button> {/*add clicking */}
       </div>
       </div>
@@ -141,5 +149,20 @@ class Post extends Component {
   }  
 }
 
+window.onscroll = function() {scr()};
 
-export default Screen1;
+
+
+function scr() {
+  
+  var navbar = document.getElementById("navbar");
+  var offset = navbar.offsetTop;
+  
+  if (window.pageYOffset >= offset) {	
+    navbar.classList.add("offset")
+  } else {
+    navbar.classList.remove("offset");
+  }
+}
+
+export default SearchScreen;

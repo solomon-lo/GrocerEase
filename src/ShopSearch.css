@@ -45,3 +45,42 @@
   left: 25%;
   padding: 5px;  
 }
+
+
+.topnav {
+  overflow: hidden;
+  background-color: #c2f0ee; 
+  display: flex;
+  width: 100%;
+  z-index: 10;
+}
+
+.topnav a {
+  float: left;
+  color: white;
+  text-align: center;
+  padding: 14px;
+  text-decoration: none;
+  font-size: 15px;
+  
+}
+
+.topnav a.hover {
+  background-color: #a0b9bb;
+  color: white;
+}
+
+.topnav a.active {
+  background-color: #6d8284;
+  color: white;
+}
+
+.offset {
+	position: fixed;
+	top:0;
+	width: 100%
+}
+
+.offset +.content {
+	padding-top: 63px;
+}
