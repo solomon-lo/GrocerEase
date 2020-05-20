@@ -21,8 +21,9 @@
 }
 
 .post_container {
+  opacity: 50%;
   text-align: left;
-  background-color: #ffebf5;
+  background-color: white;
   padding:10px;
   font-size: 15px;
   border-width: 2px;
@@ -33,6 +34,23 @@
   left: 50%;
   transform: translateX(-50%);
   padding-bottom: 20px;
+  margin: 10px;
+}
+
+.post_container_filter {
+  text-align: left;
+  background-color: #b298c2;
+  padding:10px;
+  font-size: 15px;
+  border-width: 2px;
+  border-style: solid;
+  width: 50%;
+  vertical-align:middle;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  padding-bottom: 20px;
+  margin: 10px;
 }
 
 .name {

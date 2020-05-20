@@ -3,6 +3,10 @@ import React, { Component } from 'react';
 import './App.css';
 import './ShopSearch.css';
 
+import btn_icon_723827 from './images/btn_icon_723827.png';
+import btn_icon_back_chatrooms from './images/btn_icon_back_chatrooms.png';
+import Appbar from 'muicss/lib/react/appbar';
+
 /*
 var firebaseConfig = {
   apiKey: "api-key",
@@ -19,79 +23,129 @@ var firebaseConfig = {
 };
 */
 
-class SearchScreen extends Component {
+export default class SearchScreen extends Component {
   constructor(props) {
     super(props);
     this.state = {
       search_field: '',
-      posts: 0,
     };
+
+    this.handleSearchChange = this.handleSearchChange.bind(this);
   }
   
-  render() {
-    const test = {
-      name: "First Last",
-      zip: "00000",
-      shop: "Tarjey",
-      time: "anytime",
-      rating: "5.0",
-      price: "free",
+  handleSearchChange(search_field) {
+    this.setState({
+      search_field: search_field,
+    })
+  }
+
+  componentDidMount() {
+    {
+      let dataSheet = this.props.appActions.dataSheets['shoppers'];
+      let serviceOptions = this.props.appActions.serviceOptions_shoppers;
+      if ( !this.props.appActions.dataSheetLoaded['shoppers']) {
+        serviceOptions.servicePath = dataSheet.expandSlotTemplateString("shoppers", this.props.appActions.dataSlots);
+        this.props.appActions.loadData_firebaseConnection(dataSheet, serviceOptions, true);
+        this.props.appActions.dataSheetLoaded['shoppers'] = true;
+      }
     }
-    
-    return (    
+  }
+
+  render() {
+    let layoutFlowStyle = {};
+    let baseStyle = {};
+    if (this.props.transitionId && this.props.transitionId.length > 0 && this.props.atTopOfScreenStack && this.props.transitionForward) {
+      baseStyle.animation = '0.25s ease-in-out '+this.props.transitionId;
+    }
+    if ( !this.props.atTopOfScreenStack) {
+      layoutFlowStyle.height = '100vh';
+      layoutFlowStyle.overflow = 'hidden';
+    }
+    return (
       <div className="screen">
-     
         <div id="navbar" class="topnav">
-          <div className="search_container"> 
-            <SearchBar className="search" />
+          <div className="search_container">
+            <SearchBar className="search" 
+             search_field={this.state.search_field}
+             onFilterChange={this.handleSearchChange}/>
           </div>
         </div>
-
-        <Post name={test.name} zip={test.zip} shop={test.shop} 
-      time={test.time} rating={test.rating} price={test.price}/>
-      <div className="div_center">
-        <button onClick={() => alert('clicked make post')}> Make a Post </button> {/*add nav */}
-      </div>
-      <div className="div_center">
-        <button onClick={() => alert('clicked Messages')} > Go to Messages </button> {/*add navigation */}
-      </div>
-      </div>
-      
-      /*<script src='scroll.js'></script>*/
-      
+        <Content 
+          items= {this.props.appActions.getDataSheet('shoppers').items} 
+          search_field =  {this.state.search_field}>
+        </Content>
+      </div>  
     )
   }
   
 }
 
-class SearchBar extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      search_field: '',
+class Content extends Component {
+  render() {
+    const search_field = this.props.search_field;
+    const style_elBackground = {
+      width: '100%',
+      height: '100%',
     };
-    
-    this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
-  }
-  
-  // will probably update this to be in the parent Screen1 class. 
-  handleChange(event) {
-    this.setState({value: event.target.value}); 
-  }
-  
-  handleSubmit(event) {
-    alert('searching for: ' + this.state.value);
-  }
-  
-  render () {
+    const style_elBackground_outer = {
+      backgroundColor: '#f6f6f6',
+    };
+
+    // Source items and any special components used for list/grid element 'list'.
+    let items_list = [];
+    let listComps_list = {};
+    items_list = items_list.concat(this.props.items);
+
+    const style_elList = {
+      height: 'auto',  // This element is in scroll flow
+    };
+
+    const style_elIconButton = {
+      display: 'block',
+      textTransform: 'uppercase',
+      backgroundImage: 'url(' + btn_icon_723827 + ')',
+      backgroundRepeat: 'no-repeat',
+      backgroundSize: '89.562%',
+      backgroundPosition: '50% 0%',
+      color: '(null)',
+      textAlign: 'left',
+      backgroundColor: 'transparent',
+      cursor: 'pointer',
+      pointerEvents: 'auto',
+    };
+    /*
+    items_list.name = items_list.prototype.name;
+    items_list.forEach((items_list) => { 
+      console.log({items_list.name.indexOf(search_field)});
+    });*/
+
     return (
-      <div>
-      <form onSubmit={this.handleSubmit}>
-        <label htmlFor = "search_in"> Search for a store </label>
-        <input type="text" value= {this.state.value} onChange={this.handleChange} />
-        <input type="submit" value="Search" />
-      </form>
+      <div className="screen">
+        <div className="hasNestedComps elList">
+          <ul style={style_elList}>
+            {items_list.map((row, index) => {
+              let itemComp = (row._componentId)
+                ? listComps_list[row._componentId]
+                : <Post appActions={this.props.appActions} deviceInfo={this.props.deviceInfo} locStrings={this.props.locStrings}
+                  search_field = {search_field}  
+                  dataSheetId={'shoppers'} dataSheetRow={row} {...{ 'name': row['name'], 'store': row['store'], 'document_key': row['document_key'], }} />;
+              
+              return (<li key={row.key}>
+                {itemComp}
+              </li>);
+            })}
+            <div className="marker" ref={(el) => this._elList_endMarker = el} />
+          </ul>
+        </div>
+        
+
+        
+        <div className="div_center">
+          <button onClick={() => alert('clicked make post')}> Make a Post </button> {/*add nav */}
+        </div>
+        <div className="div_center">
+          <button onClick={() => alert('clicked Messages')} > Go to Messages </button> {/*add navigation */}
+        </div>
       </div>
     )
   }
@@ -101,57 +155,94 @@ class Post extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      
-      name: '',
-      zip: '',
-      shop: '',
-      time: '',
-      rating: '',
-      price: '',
+      filterOn: false,
     };
   }
   
-  componentDidMount() {
-    //fetch
-    //.then(res => res.json())
-    //.then((result) => {this.setState({/*stuff, items: result.items*/}});
-    //
-    /*
-    this.setState({
-      name: '',
-      zip: '',
-      shop: '',
-      time: '',
-      rating: '',
-    }); */
-  }
-  
-  componentWillUnmount() {
-  }
-
-  componentDidUpdate() {
-  }
-  
   render (){
+    if (this.props.store.toLowerCase().includes(this.props.search_field.toLowerCase())) {
     return (
-      <div>
-      <div className="post_container">
+      <div className="post_container_filter">
         <div className="name"> <p> Name: {this.props.name} </p></div>
-        <p> Area: {this.props.zip} </p>
-        <p> Shopping At: {this.props.shop} </p>
-        <p> Time: {this.props.time} </p>
-        <p> Rating: {this.props.rating} </p>
-        <p> Pricing: {this.props.price} </p>
-        <button onClick={() => alert('clicked Message shopper')}> Message Shopper </button> {/*add clicking */}
-      </div>
+        <p> Shopping At: {this.props.store}</p>
+        <button onClick={() => alert('clicked Message ' + this.props.name)}> Message Shopper </button> {/*add clicking */}
       </div>
     )
+    }
+    else {
+      return (
+        <div className="post_container">
+          <div className="name"> <p> Name: {this.props.name} </p></div>
+          <p> Shopping At: {this.props.store}</p>
+          <button onClick={() => alert('clicked Message ' + this.props.name)}> Message Shopper </button> {/*add clicking */}
+        </div>
+      )
+    }
+
   }  
 }
 
+//helper functions for search
+/*
+const searchResults = (props) => {
+  return(<div>
+    <label htmlFor="search">Search for a store</label>
+    <input type="text" value = {props.inputValue} onChange={props.filterPostsOnChange}/>
+      <div>
+        <ul style={style_elList}>
+              {items_list.map((row, index) => {
+                let itemComp = (row._componentId)
+                    ? listComps_list[row._componentId]
+                    : <Post appActions={this.props.appActions} deviceInfo={this.props.deviceInfo} locStrings={this.props.locStrings} dataSheetId={'shoppers'} dataSheetRow={row} {...{ 'name': row['name'], 'document_key': row['document_key'], }} />;
+                return (<li key={row.key}>
+                    {itemComp}
+                  </li>);
+              })}
+              <div className="marker" ref={(el)=> this._elList_endMarker = el} />
+        </ul>
+      </div>
+  </div>)
+}
+*/
+
+/*
+filterPostsOnChange = (event) => {
+  console.log("filter on change", event.target.value)
+  this.setState({inputValue: event.target.value})
+}
+*/
+//search bar
+
+class SearchBar extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      search_field: '',
+    };
+    
+    this.handleChange = this.handleChange.bind(this);
+  }
+  
+  // will probably update this to be in the parent Screen1 class. 
+  handleChange(event) {
+    this.props.onFilterChange(event.target.value); 
+  }
+  
+  render () {
+    return (
+      <div>
+      <form>
+        <label htmlFor = "search_in"> Search for a store </label>
+        <input type="text" placeholder="type here" value= {this.props.search_field} onChange={this.handleChange} />
+        {/*<input type="submit" value="Search" />*/}
+      </form>
+      </div>
+    )
+  }
+}
+
+/*
 window.onscroll = function() {scr()};
-
-
 
 function scr() {
   
@@ -164,5 +255,6 @@ function scr() {
     navbar.classList.remove("offset");
   }
 }
+*/ //implement scrolling w/ react 
 
-export default SearchScreen;
+//export default SearchScreen;
