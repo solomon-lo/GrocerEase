@@ -40,8 +40,8 @@ export default class AddChatroomComp extends Component {
   
     this.sendData_button_to_chatroom();
   
-    // Go to screen 'Shopping Options'
-    this.props.appActions.goToScreen('shoppingoptions', { transitionId: 'fadeIn' });
+    // Go to screen 'Chatrooms'
+    this.props.appActions.goToScreen('chatrooms', { transitionId: 'fadeIn' });
   
   }
   

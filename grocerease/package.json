@@ -1,6 +1,6 @@
 {
-  "name": "GrocerEaseSearch",
-  "version": "0.1.1",
+  "name": "grocerease-display",
+  "version": "0.1.4",
   "private": true,
   "dependencies": {
     "react": "^16.8.6",

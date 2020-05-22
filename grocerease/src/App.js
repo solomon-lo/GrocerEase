@@ -3,7 +3,7 @@ import LocalizedStrings from 'react-localization';
 import './App.css';
 import MessagesScreen from './MessagesScreen.js';
 import AddAChatroomScreen from './AddAChatroomScreen.js';
-import ShoppingOptionsScreen from './ShoppingOptionsScreen.js';
+import ChatroomsScreen from './ChatroomsScreen.js';
 import StartScreen from './StartScreen.js';
 import DataSheet_chatroom from './DataSheet_chatroom.js';
 import DataSheet_chatmessages from './DataSheet_chatmessages.js';
@@ -365,8 +365,8 @@ export default class App extends Component {
           return (<MessagesScreen {...screenProps} />)
         case 'addachatroom':
           return (<AddAChatroomScreen {...screenProps} />)
-        case 'shoppingoptions':
-          return (<ShoppingOptionsScreen {...screenProps} />)
+        case 'chatrooms':
+          return (<ChatroomsScreen {...screenProps} />)
         case 'start':
           return (<StartScreen {...screenProps} />)
       }

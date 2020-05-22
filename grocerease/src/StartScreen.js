@@ -34,8 +34,8 @@ export default class StartScreen extends Component {
     let newVal = this.state.fieldUsername;
     this.props.appActions.updateDataSlot('ds_SlotUsername', newVal);
   
-    // Go to screen 'Shopping Options'
-    this.props.appActions.goToScreen('shoppingoptions', { transitionId: 'fadeIn' });
+    // Go to screen 'Chatrooms'
+    this.props.appActions.goToScreen('chatrooms', { transitionId: 'fadeIn' });
   
   }
   
