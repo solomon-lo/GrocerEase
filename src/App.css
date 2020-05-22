@@ -547,9 +547,9 @@
   .AddChatroomComp > .layoutFlow > .elField_shopper_time {
     position: relative;
     margin-top: -95px;
-    margin-left: calc(50.0% - 140px);
-    margin-right: 48px;
-    width: calc(100.0% - 48px);
+    margin-left: calc(50.0% - 108px);
+    margin-right: 80px;
+    width: calc(100.0% - 80px);
   }
   .AddChatroomComp > .layoutFlow > .elField_shopper_time > * { 
     width: 100%;
@@ -561,11 +561,11 @@
   .AddChatroomComp > .layoutFlow > .elField_shopper_store {
     position: relative;
     margin-top: -96px;
-    width: 226px;
-    margin-left: calc(49.9% - 113px);
+    width: 219px;
+    margin-left: calc(50.0% - 110px);
   }
   .AddChatroomComp > .layoutFlow > .elField_shopper_store > * { 
-  width: 226px;
+  width: 219px;
   height: 34px;
   }
   
@@ -574,11 +574,11 @@
   .AddChatroomComp > .layoutFlow > .elField_shopper_city {
     position: relative;
     margin-top: -97px;
-    width: 231px;
-    margin-left: calc(50.2% - 115px);
+    width: 223px;
+    margin-left: calc(50.0% - 111px);
   }
   .AddChatroomComp > .layoutFlow > .elField_shopper_city > * { 
-  width: 231px;
+  width: 223px;
   height: 29px;
   }
   
