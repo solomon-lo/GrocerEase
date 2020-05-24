@@ -16,6 +16,7 @@ export default class ShoppingOptionsScreen extends Component {
     super(props);
     
     this.state = {
+      field: '',
     };
   }
 
@@ -40,6 +41,10 @@ export default class ShoppingOptionsScreen extends Component {
   componentWillReceiveProps(nextProps) {
   }
 
+  textInputChanged_field = (event) => {
+    this.setState({field: event.target.value});
+  }
+  
   onClick_elIconButton = (ev) => {
     // Go to screen 'Add a chatroom'
     this.props.appActions.goToScreen('addachatroom');
@@ -74,6 +79,14 @@ export default class ShoppingOptionsScreen extends Component {
     
     const style_elList = {
       height: 'auto',  // This element is in scroll flow
+     };
+    
+    const style_elField = {
+      display: 'block',
+      backgroundColor: 'white',
+      paddingLeft: '1rem',
+      boxSizing: 'border-box', // ensures padding won't expand element's outer size
+      pointerEvents: 'auto',
      };
     
     const style_elIconButton = {
@@ -111,6 +124,10 @@ export default class ShoppingOptionsScreen extends Component {
               })}
               <div className="marker" ref={(el)=> this._elList_endMarker = el} />
             </ul>
+          </div>
+          
+          <div className="elField">
+            <input className="baseFont" style={style_elField} type="text" placeholder={this.props.locStrings.shoppingoptions_field_109207} onChange={this.textInputChanged_field} value={this.state.field}  />
           </div>
         </div>
         <Appbar className="navBar">

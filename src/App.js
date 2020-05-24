@@ -5,6 +5,7 @@ import MessagesScreen from './MessagesScreen.js';
 import AddAChatroomScreen from './AddAChatroomScreen.js';
 import ShoppingOptionsScreen from './ShoppingOptionsScreen.js';
 import StartScreen from './StartScreen.js';
+import ReviewsScreen from './ReviewsScreen.js';
 import DataSheet_chatroom from './DataSheet_chatroom.js';
 import DataSheet_chatmessages from './DataSheet_chatmessages.js';
 import DataSheet_localizationSheet from './DataSheet_localizationSheet.js';
@@ -28,6 +29,9 @@ export default class App extends Component {
     this.dataSlots['ds_activeLang'] = "en";
     this.dataSlots['ds_SlotUsername'] = "";
     this.dataSlots['ds_SlotSelectedChatroomKey'] = "Iqdg9DdVEnnLfMgQzvm2";
+    this.dataSlots['ds_LoginUserName'] = "";
+    this.dataSlots['ds_userEmailAddress'] = "";
+    this.dataSlots['ds_UniqueUserID'] = "";
 
     this.updateLocalizationFromDataSheet(this.dataSheets['localizationSheet']);
 
@@ -357,6 +361,10 @@ export default class App extends Component {
         'ds_activeLang': this.dataSlots['ds_activeLang'],
         'ds_SlotUsername': this.dataSlots['ds_SlotUsername'],
         'ds_SlotSelectedChatroomKey': this.dataSlots['ds_SlotSelectedChatroomKey'],
+        'ds_LoginUserName': this.dataSlots['ds_LoginUserName'],
+        'ds_userEmailAddress': this.dataSlots['ds_userEmailAddress'],
+        'ds_GmailUserPhoto': this.dataSlots['ds_GmailUserPhoto'],
+        'ds_UniqueUserID': this.dataSlots['ds_UniqueUserID'],
       };
       switch (screenId) {
         default:
@@ -369,6 +377,8 @@ export default class App extends Component {
           return (<ShoppingOptionsScreen {...screenProps} />)
         case 'start':
           return (<StartScreen {...screenProps} />)
+        case 'reviews':
+          return (<ReviewsScreen {...screenProps} />)
       }
     }
 

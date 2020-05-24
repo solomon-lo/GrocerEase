@@ -547,9 +547,9 @@
   .AddChatroomComp > .layoutFlow > .elField_shopper_time {
     position: relative;
     margin-top: -95px;
-    margin-left: calc(50.0% - 108px);
-    margin-right: 80px;
-    width: calc(100.0% - 80px);
+    margin-left: calc(50.0% - 140px);
+    margin-right: 48px;
+    width: calc(100.0% - 48px);
   }
   .AddChatroomComp > .layoutFlow > .elField_shopper_time > * { 
     width: 100%;
@@ -561,11 +561,11 @@
   .AddChatroomComp > .layoutFlow > .elField_shopper_store {
     position: relative;
     margin-top: -96px;
-    width: 219px;
-    margin-left: calc(50.0% - 110px);
+    width: 226px;
+    margin-left: calc(49.9% - 113px);
   }
   .AddChatroomComp > .layoutFlow > .elField_shopper_store > * { 
-  width: 219px;
+  width: 226px;
   height: 34px;
   }
   
@@ -574,11 +574,11 @@
   .AddChatroomComp > .layoutFlow > .elField_shopper_city {
     position: relative;
     margin-top: -97px;
-    width: 223px;
-    margin-left: calc(50.0% - 111px);
+    width: 231px;
+    margin-left: calc(50.2% - 115px);
   }
   .AddChatroomComp > .layoutFlow > .elField_shopper_city > * { 
-  width: 223px;
+  width: 231px;
   height: 29px;
   }
   
@@ -986,7 +986,7 @@
 /* Narrowest size for this element's responsive layout */
   .ShoppingOptionsScreen > .layoutFlow > .elList {
     position: relative;
-    margin-top: 68px;
+    margin-top: 84px;
     margin-left: 0px;
     margin-right: 0px;
     width: calc(100.0% - 0px);
@@ -998,7 +998,7 @@
 @media (min-width: 568px) {
   .ShoppingOptionsScreen > .layoutFlow > .elList {
     position: relative;
-    margin-top: 68px;
+    margin-top: 84px;
     margin-left: 0px;
     margin-right: 0px;
     width: calc(100.0% - 0px);
@@ -1011,7 +1011,7 @@
 @media (min-width: 768px) {
   .ShoppingOptionsScreen > .layoutFlow > .elList {
     position: relative;
-    margin-top: 68px;
+    margin-top: 84px;
     margin-left: 0px;
     margin-right: 0px;
     width: calc(100.0% - 0px);
@@ -1024,13 +1024,66 @@
 @media (min-width: 1024px) {
   .ShoppingOptionsScreen > .layoutFlow > .elList {
     position: relative;
-    margin-top: 68px;
+    margin-top: 84px;
     margin-left: 0px;
     margin-right: 0px;
     width: calc(100.0% - 0px);
   }
   .ShoppingOptionsScreen > .layoutFlow > .elList > * { 
     width: 100%;
+  }
+  
+}
+
+
+/* Narrowest size for this element's responsive layout */
+  .ShoppingOptionsScreen > .layoutFlow > .elField {
+    position: relative;
+    margin-top: -565px;
+    width: 182px;
+    margin-left: calc(49.9% - 91px);
+  }
+  .ShoppingOptionsScreen > .layoutFlow > .elField > * { 
+  width: 182px;
+  height: 27px;
+  }
+  
+@media (min-width: 568px) {
+  .ShoppingOptionsScreen > .layoutFlow > .elField {
+    position: relative;
+    margin-top: -565px;
+    width: 182px;
+    margin-left: calc(49.9% - 91px);
+  }
+  .ShoppingOptionsScreen > .layoutFlow > .elField > * { 
+  width: 182px;
+  height: 27px;
+  }
+  
+}
+@media (min-width: 768px) {
+  .ShoppingOptionsScreen > .layoutFlow > .elField {
+    position: relative;
+    margin-top: -562px;
+    width: 181px;
+    margin-left: calc(50.0% - 91px);
+  }
+  .ShoppingOptionsScreen > .layoutFlow > .elField > * { 
+  width: 181px;
+  height: 27px;
+  }
+  
+}
+@media (min-width: 1024px) {
+  .ShoppingOptionsScreen > .layoutFlow > .elField {
+    position: relative;
+    margin-top: -562px;
+    width: 181px;
+    margin-left: calc(50.0% - 91px);
+  }
+  .ShoppingOptionsScreen > .layoutFlow > .elField > * { 
+  width: 181px;
+  height: 27px;
   }
   
 }
@@ -1136,9 +1189,9 @@
   .StartScreen > .layoutFlow > .elButton {
     line-height: 35px;
     position: relative;
-    margin-top: 295px;
+    margin-top: 359px;
     width: 145px;
-    margin-left: calc(49.5% - 72px);
+    margin-left: calc(48.6% - 72px);
   }
   .StartScreen > .layoutFlow > .elButton > * { 
   width: 145px;
@@ -1149,9 +1202,9 @@
   .StartScreen > .layoutFlow > .elButton {
     line-height: 35px;
     position: relative;
-    margin-top: 295px;
+    margin-top: 359px;
     width: 145px;
-    margin-left: calc(49.5% - 72px);
+    margin-left: calc(49.0% - 72px);
   }
   .StartScreen > .layoutFlow > .elButton > * { 
   width: 145px;
@@ -1163,9 +1216,9 @@
   .StartScreen > .layoutFlow > .elButton {
     line-height: 35px;
     position: relative;
-    margin-top: 294px;
+    margin-top: 356px;
     width: 144px;
-    margin-left: calc(49.5% - 72px);
+    margin-left: calc(49.2% - 72px);
   }
   .StartScreen > .layoutFlow > .elButton > * { 
   width: 144px;
@@ -1177,9 +1230,9 @@
   .StartScreen > .layoutFlow > .elButton {
     line-height: 35px;
     position: relative;
-    margin-top: 294px;
+    margin-top: 356px;
     width: 144px;
-    margin-left: calc(49.5% - 72px);
+    margin-left: calc(49.2% - 72px);
   }
   .StartScreen > .layoutFlow > .elButton > * { 
   width: 144px;
@@ -1190,9 +1243,62 @@
 
 
 /* Narrowest size for this element's responsive layout */
-  .StartScreen > .layoutFlow > .elFieldUsername {
+  .StartScreen > .layoutFlow > .elFirebaseLogin {
     position: relative;
     margin-top: -134px;
+    width: 207px;
+    margin-left: 43px;
+  }
+  .StartScreen > .layoutFlow > .elFirebaseLogin > * { 
+  width: 207px;
+  height: 48px;
+  }
+  
+@media (min-width: 568px) {
+  .StartScreen > .layoutFlow > .elFirebaseLogin {
+    position: relative;
+    margin-top: -134px;
+    width: 207px;
+    margin-left: 43px;
+  }
+  .StartScreen > .layoutFlow > .elFirebaseLogin > * { 
+  width: 207px;
+  height: 48px;
+  }
+  
+}
+@media (min-width: 768px) {
+  .StartScreen > .layoutFlow > .elFirebaseLogin {
+    position: relative;
+    margin-top: -133px;
+    width: 206px;
+    margin-left: 42px;
+  }
+  .StartScreen > .layoutFlow > .elFirebaseLogin > * { 
+  width: 206px;
+  height: 47px;
+  }
+  
+}
+@media (min-width: 1024px) {
+  .StartScreen > .layoutFlow > .elFirebaseLogin {
+    position: relative;
+    margin-top: -133px;
+    width: 206px;
+    margin-left: 42px;
+  }
+  .StartScreen > .layoutFlow > .elFirebaseLogin > * { 
+  width: 206px;
+  height: 47px;
+  }
+  
+}
+
+
+/* Narrowest size for this element's responsive layout */
+  .StartScreen > .layoutFlow > .elFieldUsername {
+    position: relative;
+    margin-top: -130px;
     width: 226px;
     margin-left: calc(49.2% - 113px);
   }
@@ -1204,9 +1310,9 @@
 @media (min-width: 568px) {
   .StartScreen > .layoutFlow > .elFieldUsername {
     position: relative;
-    margin-top: -134px;
+    margin-top: -130px;
     width: 226px;
-    margin-left: calc(49.4% - 113px);
+    margin-left: calc(49.3% - 113px);
   }
   .StartScreen > .layoutFlow > .elFieldUsername > * { 
   width: 226px;
@@ -1217,7 +1323,7 @@
 @media (min-width: 768px) {
   .StartScreen > .layoutFlow > .elFieldUsername {
     position: relative;
-    margin-top: -134px;
+    margin-top: -130px;
     width: 225px;
     margin-left: calc(49.4% - 112px);
   }
@@ -1230,7 +1336,7 @@
 @media (min-width: 1024px) {
   .StartScreen > .layoutFlow > .elFieldUsername {
     position: relative;
-    margin-top: -134px;
+    margin-top: -130px;
     width: 225px;
     margin-left: calc(49.4% - 112px);
   }
@@ -1289,4 +1395,75 @@
   }
   
 }
+
+
+/* Narrowest size for this element's responsive layout */
+  .ReviewsScreen > .background > .elBackground {
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    width: 100.0%;
+    height: 100%;
+  }
+@media (min-width: 568px) {
+  .ReviewsScreen > .background > .elBackground {
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    width: 100.0%;
+    height: 100%;
+  }
+}
+@media (min-width: 768px) {
+  .ReviewsScreen > .background > .elBackground {
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    width: 100.0%;
+    height: 100%;
+  }
+}
+@media (min-width: 1024px) {
+  .ReviewsScreen > .background > .elBackground {
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    width: 100.0%;
+    height: 100%;
+  }
+}
+
+/* This component has a fixed-size layout */
+  .StarRatings {
+    min-height: 199px;  /* Minimum height to ensure layout flow is visible */
+    min-width: 338px; /* This component has a fixed size */
+  }
+  .StarRatings > .background > .containerMinHeight {
+    min-height: 199px;
+  }
+
+
+  .StarRatings > .layoutFlow > .elRating {
+    position: relative;
+    margin-top: 114px;
+    width: 103px;
+    margin-left: calc(50.0% - 51px);
+  }
+  .StarRatings > .layoutFlow > .elRating > * { 
+  width: 103px;
+  }
+  
+
+
+  .StarRatings > .layoutFlow > .elText {
+    position: relative;
+    margin-top: -94px;
+    width: 245px;
+    margin-left: calc(50.0% - 122px);
+  }
+  .StarRatings > .layoutFlow > .elText > * { 
+  width: 245px;
+  }
+  
 

@@ -20,21 +20,21 @@ export default class AddAChatroomScreen extends Component {
 
   componentDidMount() {
     {
-      let dataSheet = this.props.appActions.dataSheets['shoppers'];
-      let serviceOptions = this.props.appActions.serviceOptions_shoppers;
-      if ( !this.props.appActions.dataSheetLoaded['shoppers']) {
-        serviceOptions.servicePath = dataSheet.expandSlotTemplateString("shoppers", this.props.appActions.dataSlots);
-        this.props.appActions.loadData_firebaseConnection(dataSheet, serviceOptions, true);
-        this.props.appActions.dataSheetLoaded['shoppers'] = true;
-      }
-    }
-    {
       let dataSheet = this.props.appActions.dataSheets['chatroom'];
       let serviceOptions = this.props.appActions.serviceOptions_chatroom;
       if ( !this.props.appActions.dataSheetLoaded['chatroom']) {
         serviceOptions.servicePath = dataSheet.expandSlotTemplateString("messaging", this.props.appActions.dataSlots);
         this.props.appActions.loadData_firebaseConnection(dataSheet, serviceOptions, true);
         this.props.appActions.dataSheetLoaded['chatroom'] = true;
+      }
+    }
+    {
+      let dataSheet = this.props.appActions.dataSheets['shoppers'];
+      let serviceOptions = this.props.appActions.serviceOptions_shoppers;
+      if ( !this.props.appActions.dataSheetLoaded['shoppers']) {
+        serviceOptions.servicePath = dataSheet.expandSlotTemplateString("shoppers", this.props.appActions.dataSlots);
+        this.props.appActions.loadData_firebaseConnection(dataSheet, serviceOptions, true);
+        this.props.appActions.dataSheetLoaded['shoppers'] = true;
       }
     }
   }

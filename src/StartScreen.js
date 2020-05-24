@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
+import FirebaseLogin from './FirebaseLogin';
 
 // UI framework component imports
 import Button from 'muicss/lib/react/button';
@@ -70,6 +71,9 @@ export default class StartScreen extends Component {
       cursor: 'pointer',
       pointerEvents: 'auto',
      };
+    const style_elFirebaseLogin = {
+      pointerEvents: 'auto',
+     };
     
     const value_fieldUsername = this.state.fieldUsername;
     
@@ -98,6 +102,12 @@ export default class StartScreen extends Component {
             <Button className="actionFont" style={style_elButton}  color="accent" onClick={this.onClick_elButton} >
               {this.props.locStrings.start_button_55566}
             </Button>
+          </div>
+          
+          <div className="elFirebaseLogin">
+            <div style={style_elFirebaseLogin}>
+              <FirebaseLogin ref={(el)=> this._elFirebaseLogin = el} appActions={this.props.appActions} deviceInfo={this.props.deviceInfo} locStrings={this.props.locStrings} />
+            </div>
           </div>
           
           <div className="elFieldUsername">
