@@ -3,13 +3,16 @@
   "version": "0.1.1",
   "private": true,
   "dependencies": {
+    "-": "0.0.1",
+    "firebase": "^7.14.5",
+    "mapbox-gl": "^1.10.1",
+    "muicss": "^0.9.41",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
+    "react-firebaseui": "^4.0.0",
     "react-localization": "^1.0.13",
     "react-scripts": "2.1.8",
-    "muicss": "^0.9.41",
-    "react-firebaseui": "^4.0.0",
-    "firebase": "~7.5.0"
+    "save": "^2.4.0"
   },
   "scripts": {
     "start": "PORT=3000 react-scripts start",
@@ -23,5 +26,10 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "devDependencies": {
+    "json-loader": "^0.5.7",
+    "transform-loader": "^0.2.4",
+    "webworkify-webpack": "^1.0.6"
+  }
 }
