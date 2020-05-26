@@ -22,9 +22,6 @@ export default class MapScreen extends Component {
     render() {
         return (
             <div>
-              <SearchBar className="search" 
-                search_field={this.state.search_field}
-                onFilterChange={this.handleSearchChange}> </SearchBar>
               <Map></Map>
             </div>
         )
