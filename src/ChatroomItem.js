@@ -5,7 +5,7 @@ import btn_icon_456038 from './images/btn_icon_456038.png';
 export default class ChatroomItem extends Component {
 
   // Properties used by this component:
-  // chatroom_name, document_key
+  // store, time, document_key, chatroom_name
 
   constructor(props) {
     super(props);
@@ -26,12 +26,19 @@ export default class ChatroomItem extends Component {
   componentWillReceiveProps(nextProps) {
   }
 
-  onClick_elText = (ev) => {
+  onClick_elChatname = (ev) => {
     let newVal = this.props.document_key;
-    this.props.appActions.updateDataSlot('ds_SlotSelectedChatroomKey', newVal);
+    this.props.appActions.updateDataSlot('ds_SlotSelectedShopperKey', newVal);
   
     // Go to screen 'Messages'
     this.props.appActions.goToScreen('messages', { transitionId: 'fadeIn' });
+  
+  }
+  
+  
+  onClick_elChatstore = (ev) => {
+    // Go back in screen navigation history
+    this.props.appActions.goBack();
   
   }
   
@@ -44,9 +51,18 @@ export default class ChatroomItem extends Component {
   
   
   render() {
-    const value_text = this.props.chatroom_name;
+    const value_chatname = this.props.chatroom_name;
     
-    const style_elText = {
+    const style_elChatname = {
+      color: 'rgba(0, 0, 0, 0.8500)',
+      textAlign: 'left',
+      cursor: 'pointer',
+      pointerEvents: 'auto',
+     };
+    
+    const value_chatstore = this.props.store;
+    
+    const style_elChatstore = {
       color: 'rgba(0, 0, 0, 0.8500)',
       textAlign: 'left',
       cursor: 'pointer',
@@ -67,6 +83,13 @@ export default class ChatroomItem extends Component {
       pointerEvents: 'auto',
      };
     
+    const value_text3 = this.props.time;
+    
+    const style_elText3 = {
+      color: 'rgba(0, 0, 0, 0.8500)',
+      textAlign: 'left',
+     };
+    
     const style_elRectangle = {
       background: 'rgba(0, 0, 0, 0.475)',
      };
@@ -74,14 +97,26 @@ export default class ChatroomItem extends Component {
     return (
       <div className="ChatroomItem appBg">
         <div className="layoutFlow">
-          <div className="elText">
-            <div className="headlineFont" style={style_elText} onClick={this.onClick_elText} >
-              <div>{value_text !== undefined ? value_text : (<span className="propValueMissing">{this.props.locStrings.chatroomitem_text_699949}</span>)}</div>
+          <div className="elChatname">
+            <div className="headlineFont" style={style_elChatname} onClick={this.onClick_elChatname} >
+              <div>{value_chatname !== undefined ? value_chatname : (<span className="propValueMissing">{this.props.locStrings.chatroomitem_text_699949}</span>)}</div>
+            </div>
+          </div>
+          
+          <div className="elChatstore">
+            <div className="baseFont" style={style_elChatstore} onClick={this.onClick_elChatstore} >
+              <div>{value_chatstore !== undefined ? value_chatstore : (<span className="propValueMissing">{this.props.locStrings.chatroomitem_text2_809202}</span>)}</div>
             </div>
           </div>
           
           <div className="elIconButton">
             <button className="actionFont" style={style_elIconButton} onClick={this.onClick_elIconButton}  />
+          </div>
+          
+          <div className="elText3">
+            <div className="baseFont" style={style_elText3}>
+              <div>{value_text3 !== undefined ? value_text3 : (<span className="propValueMissing">{this.props.locStrings.chatroomitem_text3_643611}</span>)}</div>
+            </div>
           </div>
           
           <div className="elRectangle">

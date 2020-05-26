@@ -2,11 +2,14 @@ import React, { Component } from 'react';
 import LocalizedStrings from 'react-localization';
 import './App.css';
 import MessagesScreen from './MessagesScreen.js';
+import MapScreen from './MapScreen.js';
 import AddAChatroomScreen from './AddAChatroomScreen.js';
-import ChatroomsScreen from './ChatroomsScreen.js';
+import ShoppingOptionsScreen from './ShoppingOptionsScreen.js';
 import StartScreen from './StartScreen.js';
+import ReviewsScreen from './ReviewsScreen.js';
 import DataSheet_chatroom from './DataSheet_chatroom.js';
 import DataSheet_chatmessages from './DataSheet_chatmessages.js';
+import DataSheet_shoppers from './DataSheet_shoppers.js';
 import DataSheet_localizationSheet from './DataSheet_localizationSheet.js';
 import firebase from 'firebase';
 import firestore from 'firebase/firestore';
@@ -19,6 +22,7 @@ export default class App extends Component {
     this.dataSheets = {};
     this.dataSheets['chatroom'] = new DataSheet_chatroom('chatroom', this.dataSheetDidUpdate);
     this.dataSheets['chatmessages'] = new DataSheet_chatmessages('chatmessages', this.dataSheetDidUpdate);
+    this.dataSheets['shoppers'] = new DataSheet_shoppers('shoppers', this.dataSheetDidUpdate);
     this.dataSheets['localizationSheet'] = new DataSheet_localizationSheet('localizationSheet', this.dataSheetDidUpdate);
     this.dataSheetLoaded = {};
 
@@ -26,6 +30,10 @@ export default class App extends Component {
     this.dataSlots['ds_activeLang'] = "en";
     this.dataSlots['ds_SlotUsername'] = "";
     this.dataSlots['ds_SlotSelectedChatroomKey'] = "Iqdg9DdVEnnLfMgQzvm2";
+    this.dataSlots['ds_LoginUserName'] = "";
+    this.dataSlots['ds_userEmailAddress'] = "";
+    this.dataSlots['ds_UniqueUserID'] = "";
+    this.dataSlots['ds_SlotSelectedShopperKey'] = "default_template";
 
     this.updateLocalizationFromDataSheet(this.dataSheets['localizationSheet']);
 
@@ -58,6 +66,14 @@ export default class App extends Component {
     };
     this.dataSheets['chatmessages'].appActions = this;
     this.dataSheets['chatmessages'].firebase = firebase;
+    
+    this.serviceOptions_shoppers = {
+      dataSlots: this.dataSlots,
+      servicePath: "shoppers",
+      query: "orderBy(\"name\",\"asc\")",
+    };
+    this.dataSheets['shoppers'].appActions = this;
+    this.dataSheets['shoppers'].firebase = firebase;
     
 
     this.state = {
@@ -217,6 +233,24 @@ export default class App extends Component {
         this.loadData_firebaseConnection(this.dataSheets['chatmessages'], this.serviceOptions_chatmessages, true);
       }
     }
+    if (this.serviceOptions_shoppers.query.length > 0) {
+      let usedSlots = [];
+      this.dataSheets['shoppers'].expandSlotTemplateString(this.serviceOptions_shoppers.query, {}, usedSlots);
+      if (usedSlots.includes(slotId)) {
+        // if data sheet's content depends on this slot, reload it now
+        this.loadData_firebaseConnection(this.dataSheets['shoppers'], this.serviceOptions_shoppers, true);
+      }
+    }
+    
+    {
+      let usedSlots = [];
+      let servicePath = this.dataSheets['shoppers'].expandSlotTemplateString("shoppers", this.dataSlots, usedSlots);
+      if (usedSlots.includes(slotId)) {
+        // if data sheet's content depends on this slot, reload it now
+        this.serviceOptions_shoppers.servicePath = servicePath;
+        this.loadData_firebaseConnection(this.dataSheets['shoppers'], this.serviceOptions_shoppers, true);
+      }
+    }
     this.setState({});
   }
 
@@ -329,18 +363,27 @@ export default class App extends Component {
         'ds_activeLang': this.dataSlots['ds_activeLang'],
         'ds_SlotUsername': this.dataSlots['ds_SlotUsername'],
         'ds_SlotSelectedChatroomKey': this.dataSlots['ds_SlotSelectedChatroomKey'],
+        'ds_LoginUserName': this.dataSlots['ds_LoginUserName'],
+        'ds_userEmailAddress': this.dataSlots['ds_userEmailAddress'],
+        'ds_GmailUserPhoto': this.dataSlots['ds_GmailUserPhoto'],
+        'ds_UniqueUserID': this.dataSlots['ds_UniqueUserID'],
+        'ds_SlotSelectedShopperKey': this.dataSlots['ds_SlotSelectedShopperKey'],
       };
       switch (screenId) {
         default:
           return null;
         case 'messages':
           return (<MessagesScreen {...screenProps} />)
+        case 'map':
+          return (<MapScreen {...screenProps} />)
         case 'addachatroom':
           return (<AddAChatroomScreen {...screenProps} />)
-        case 'chatrooms':
-          return (<ChatroomsScreen {...screenProps} />)
+        case 'shoppingoptions':
+          return (<ShoppingOptionsScreen {...screenProps} />)
         case 'start':
           return (<StartScreen {...screenProps} />)
+        case 'reviews':
+          return (<ReviewsScreen {...screenProps} />)
       }
     }
 

@@ -28,6 +28,15 @@ export default class AddAChatroomScreen extends Component {
         this.props.appActions.dataSheetLoaded['chatroom'] = true;
       }
     }
+    {
+      let dataSheet = this.props.appActions.dataSheets['shoppers'];
+      let serviceOptions = this.props.appActions.serviceOptions_shoppers;
+      if ( !this.props.appActions.dataSheetLoaded['shoppers']) {
+        serviceOptions.servicePath = dataSheet.expandSlotTemplateString("shoppers", this.props.appActions.dataSlots);
+        this.props.appActions.loadData_firebaseConnection(dataSheet, serviceOptions, true);
+        this.props.appActions.dataSheetLoaded['shoppers'] = true;
+      }
+    }
   }
 
   componentWillUnmount() {

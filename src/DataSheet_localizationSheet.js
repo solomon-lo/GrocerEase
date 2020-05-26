@@ -26,7 +26,7 @@ export default class DataSheet_localizationSheet extends DataSheetBase {
     item = {};
     this.items.push(item);
     item['key'] = "start_field_378871";
-    item['en'] = "Username";
+    item['en'] = "Display Name";
     
     item = {};
     this.items.push(item);
@@ -46,7 +46,7 @@ export default class DataSheet_localizationSheet extends DataSheetBase {
     item = {};
     this.items.push(item);
     item['key'] = "addchatroomcomp_text_1046369";
-    item['en'] = "Create a new chatroom";
+    item['en'] = "Create a Shopper Post";
     
     item = {};
     this.items.push(item);
@@ -56,7 +56,7 @@ export default class DataSheet_localizationSheet extends DataSheetBase {
     item = {};
     this.items.push(item);
     item['key'] = "addchatroomcomp_button_174973";
-    item['en'] = "Create Chatroom";
+    item['en'] = "Create Post";
     
     item = {};
     this.items.push(item);
@@ -82,6 +82,96 @@ export default class DataSheet_localizationSheet extends DataSheetBase {
     this.items.push(item);
     item['key'] = "sendmessage_button_939786";
     item['en'] = "Send";
+    
+    item = {};
+    this.items.push(item);
+    item['key'] = "shopper_name_field";
+    item['en'] = "Shopper Name";
+    
+    item = {};
+    this.items.push(item);
+    item['key'] = "addchatroomcomp_field_151173";
+    item['en'] = "City";
+    
+    item = {};
+    this.items.push(item);
+    item['key'] = "shopper_city_field";
+    item['en'] = "City";
+    
+    item = {};
+    this.items.push(item);
+    item['key'] = "addchatroomcomp_field2_470536";
+    item['en'] = "Store";
+    
+    item = {};
+    this.items.push(item);
+    item['key'] = "shopper_store_field";
+    item['en'] = "Store";
+    
+    item = {};
+    this.items.push(item);
+    item['key'] = "addchatroomcomp_field3_27034";
+    item['en'] = "Time";
+    
+    item = {};
+    this.items.push(item);
+    item['key'] = "shopper_time_field";
+    item['en'] = "Time";
+    
+    item = {};
+    this.items.push(item);
+    item['key'] = "starratings_text_247528";
+    item['en'] = "Tell Us How Your Shopper Was";
+    
+    item = {};
+    this.items.push(item);
+    item['key'] = "shoppingoptions_field_109207";
+    item['en'] = "Search";
+    
+    item = {};
+    this.items.push(item);
+    item['key'] = "shoppingoptions_validator_173954";
+    item['en'] = " ";
+    
+    item = {};
+    this.items.push(item);
+    item['key'] = "chatroomitem_text2_809202";
+    item['en'] = "Store";
+    
+    item = {};
+    this.items.push(item);
+    item['key'] = "chatroomitem_text3_643611";
+    item['en'] = "New text. Double-click to edit";
+    
+    item = {};
+    this.items.push(item);
+    item['key'] = "start_text2_632914";
+    item['en'] = "New text. Double-click to edit";
+    
+    item = {};
+    this.items.push(item);
+    item['key'] = "shoppingoptions_button_782648";
+    item['en'] = "New button";
+    
+    item = {};
+    this.items.push(item);
+    item['key'] = "shoppingoptions_button_27598";
+    item['en'] = "New button";
+    
+    item = {};
+    this.items.push(item);
+    item['key'] = "shoppingoptions_button_305802";
+    item['en'] = "New button";
+    
+    item = {};
+    this.items.push(item);
+    item['key'] = "shoppingoptions_button_581207";
+    item['en'] = "Show Map";
+    
+    item = {};
+    this.items.push(item);
+    item['key'] = "chatroomitem_text4_132611";
+    item['en'] = "New text. Double-click to edit";
   }
 
   getStringsByLanguage = () => {
