@@ -42,6 +42,25 @@ export default class App extends Component {
         measurementId: "G-DR61T2LKZP"
     });
     firebase.firestore().settings({});
+
+    var provider = new firebase.auth.GoogleAuthProvider();
+
+    firebase.auth().signInWithPopup(provider).then(function(result) {
+      // This gives you a Google Access Token. You can use it to access the Google API.
+      var token = result.credential.accessToken;
+      // The signed-in user info.
+      var user = result.user;
+      // ...
+    }).catch(function(error) {
+      // Handle Errors here.
+      var errorCode = error.code;
+      var errorMessage = error.message;
+      // The email of the user's account used.
+      var email = error.email;
+      // The firebase.auth.AuthCredential type that was used.
+      var credential = error.credential;
+      // ...
+    });
     
     this.serviceOptions_chatroom = {
       dataSlots: this.dataSlots,
@@ -128,6 +147,8 @@ export default class App extends Component {
     this.setState({...prevScreenState, screenTransitionForward: false});
     window.scrollTo(0, 0);
   }
+
+  
 
   getDataSheet = (sheetId) => {
     // This method is the default implementation and could be customized by a state management plugin.
