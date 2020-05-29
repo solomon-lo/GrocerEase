@@ -8,6 +8,7 @@ import './map.css';
 
 mapboxgl.accessToken = 'pk.eyJ1IjoiZ3JvY2VyZWFzZSIsImEiOiJja2FrZTl4YWgwbzhjMnlwZHh0bG9tb2FxIn0.24dvEshJiFjdusaNZYAP5A';
 var MapboxGeocoder = require('@mapbox/mapbox-gl-geocoder');
+
 export default class Map extends React.Component {
     constructor(props) {
         super(props);
@@ -57,7 +58,44 @@ export default class Map extends React.Component {
             });
         });
 
- 
+        var geojson = {
+            type: 'FeatureCollection',
+            features: [{
+                type: 'Feature',
+                geometry: {
+                type: 'Point',
+                coordinates: [-77.032, 38.913]
+                },
+                properties: {
+                title: 'Mapbox',
+                description: 'Washington, D.C.'
+                }
+            },
+            {
+                type: 'Feature',
+                geometry: {
+                type: 'Point',
+                coordinates: [-122.414, 37.776]
+                },
+                properties: {
+                title: 'Mapbox',
+                description: 'San Francisco, California'
+                }
+            }]
+            };
+    
+            // add markers to map
+        geojson.features.forEach(function(marker) {
+
+            // create a HTML element for each feature
+            var el = document.createElement('div');
+            el.className = 'marker';
+        
+            // make a marker for each feature and add to the map
+            new mapboxgl.Marker(el)
+            .setLngLat(marker.geometry.coordinates)
+            .addTo(map);
+        });
     }
 
     render() {
