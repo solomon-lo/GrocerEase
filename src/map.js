@@ -58,7 +58,7 @@ export default class Map extends React.Component {
             });
         });
 
-        var geojson = {
+        var geolocations = {
             type: 'FeatureCollection',
             features: [{
                 type: 'Feature',
@@ -68,7 +68,7 @@ export default class Map extends React.Component {
                 },
                 properties: {
                 title: 'Mapbox',
-                description: 'Washington, D.C.'
+                description: 'The District of Columbia'
                 }
             },
             {
@@ -85,7 +85,7 @@ export default class Map extends React.Component {
             };
     
             // add markers to map
-        geojson.features.forEach(function(marker) {
+        geolocations.features.forEach(function(marker) {
 
             // create a HTML element for each feature
             var el = document.createElement('div');
@@ -95,7 +95,14 @@ export default class Map extends React.Component {
             new mapboxgl.Marker(el)
             .setLngLat(marker.geometry.coordinates)
             .addTo(map);
+            new mapboxgl.Marker(el)
+            .setLngLat(marker.geometry.coordinates)
+            .setPopup(new mapboxgl.Popup({ offset: 25 }) // add popups
+            .setHTML('<h3>' + marker.properties.title + '</h3><p>' + marker.properties.description + '</p>'))
+            .addTo(map);
         });
+
+        
     }
 
     render() {
