@@ -58,14 +58,12 @@ export default class Map extends React.Component {
             });
         });
 
-<<<<<<< HEAD
         geocoder.on('result', (result) => {
             this.props.setLocation(result.result["place_name_en-US"]);
             console.log(this.props.location);
          });
 
  
-=======
         var geolocations = {
             type: 'FeatureCollection',
             features: [{
@@ -111,7 +109,6 @@ export default class Map extends React.Component {
         });
 
         
->>>>>>> f85ba554bbc8ad06ed4d601234c1e3b053807599
     }
 
 

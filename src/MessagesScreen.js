@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import ChatItem from './ChatItem';
+import Comp1 from './Comp1';
 import SendMessage from './SendMessage';
 import btn_icon_back_messages from './images/btn_icon_back_messages.png';
 
@@ -10,7 +11,7 @@ import Appbar from 'muicss/lib/react/appbar';
 export default class MessagesScreen extends Component {
 
   // Properties used by this component:
-  // appActions, deviceInfo
+  // appActions, deviceInfo, numStars
 
   constructor(props) {
     super(props);
@@ -53,6 +54,7 @@ export default class MessagesScreen extends Component {
       layoutFlowStyle.overflow = 'hidden';
     }
     
+    const dataSheet_shoppers = this.props.dataSheets['shoppers'];
     const dataSheet_chatmessages = this.props.dataSheets['chatmessages'];
     const style_elBackground = {
       width: '100%',
@@ -74,6 +76,14 @@ export default class MessagesScreen extends Component {
     const style_elRectangle = {
       background: 'rgba(246, 247, 246, 1.000)',
      };
+    const elComp = ((val) => { return val === "true" || val == true || val == 1 })(this.props.numStars) ? (
+      <div className="hasNestedComps elComp">
+        <div>
+          <Comp1 {...dataSheet_shoppers.items[0]} ref={(el)=> this._elComp = el} appActions={this.props.appActions} deviceInfo={this.props.deviceInfo} locStrings={this.props.locStrings} />
+        </div>
+      </div>
+      
+     ) : null;
     
     return (
       <div className="AppScreen MessagesScreen" style={baseStyle}>
@@ -101,6 +111,8 @@ export default class MessagesScreen extends Component {
           <div className="elRectangle">
             <div style={style_elRectangle} />
           </div>
+          
+          { elComp }
         </div>
         <Appbar className="navBar">
           <div className="title">Messages</div>  <div className="backBtn" onClick={ (ev)=>{ this.props.appActions.goBack() } }><img src={btn_icon_back_messages} alt="" style={{width: '50%'}} /></div>

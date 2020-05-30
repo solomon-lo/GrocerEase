@@ -102,7 +102,7 @@ export default class AddChatroomComp extends Component {
   render() {
     const style_elIntro = {
       color: 'rgba(0, 0, 0, 0.8500)',
-      textAlign: 'left',
+      textAlign: 'center',
      };
     
     const style_elField_shopper_name = {
