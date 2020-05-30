@@ -1702,21 +1702,3 @@
   
 }
 
-/* This component has a fixed-size layout */
-  .Comp1 {
-    min-width: 150px; /* This component has a fixed size */
-  }
-
-
-  .Comp1 > .layoutFlow > .elRating {
-    position: relative;
-    margin-top: 0px;
-    width: 149px;
-    margin-left: 0px;
-  }
-  .Comp1 > .layoutFlow > .elRating > * { 
-  width: 149px;
-  height: 27px;
-  }
-  
-
