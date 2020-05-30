@@ -5,12 +5,13 @@ import SendMessage from './SendMessage';
 import btn_icon_back_messages from './images/btn_icon_back_messages.png';
 
 // UI framework component imports
+import Button from 'muicss/lib/react/button';
 import Appbar from 'muicss/lib/react/appbar';
 
 export default class MessagesScreen extends Component {
 
   // Properties used by this component:
-  // appActions, deviceInfo
+  // appActions, deviceInfo, numStars
 
   constructor(props) {
     super(props);
@@ -42,6 +43,13 @@ export default class MessagesScreen extends Component {
   componentWillReceiveProps(nextProps) {
   }
 
+  onClick_elButton = (ev) => {
+    // Go to screen 'Add_A_Review'
+    this.props.appActions.goToScreen('add_a_review', { transitionId: 'fadeIn' });
+  
+  }
+  
+  
   render() {
     let layoutFlowStyle = {};
     let baseStyle = {};
@@ -71,6 +79,14 @@ export default class MessagesScreen extends Component {
       height: 'auto',  // This element is in scroll flow
      };
     
+    const style_elButton = {
+      display: 'block',
+      color: 'white',
+      textAlign: 'center',
+      cursor: 'pointer',
+      pointerEvents: 'auto',
+     };
+    
     const style_elRectangle = {
       background: 'rgba(246, 247, 246, 1.000)',
      };
@@ -96,6 +112,12 @@ export default class MessagesScreen extends Component {
               })}
               <div className="marker" ref={(el)=> this._elList_endMarker = el} />
             </ul>
+          </div>
+          
+          <div className="elButton">
+            <Button className="actionFont" style={style_elButton}  color="accent" onClick={this.onClick_elButton} >
+              {this.props.locStrings.messages_button_316204}
+            </Button>
           </div>
           
           <div className="elRectangle">

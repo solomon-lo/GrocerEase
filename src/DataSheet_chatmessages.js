@@ -57,26 +57,10 @@ export default class DataSheet_chatmessages extends DataSheetBase {
     
     item = {};
     this.items.push(item);
-    item['document_key'] = "JrP7dEzHt1X0LClP0YwU";
-    item['timestamp'] = "1589774340722";
-    item['message_body'] = "asdf";
-    item['sender_username'] = "sam";
-    item.key = key++;
-    
-    item = {};
-    this.items.push(item);
     item['document_key'] = "JxKHTsMkczr75Q0f3mv7";
     item['timestamp'] = "1589774359065";
     item['message_body'] = "grocerease";
     item['sender_username'] = "sam";
-    item.key = key++;
-    
-    item = {};
-    this.items.push(item);
-    item['document_key'] = "gL6lmFDCsp72GPwISPfB";
-    item['timestamp'] = "1589720400123";
-    item['message_body'] = "Hello everyone";
-    item['sender_username'] = "Bob";
     item.key = key++;
   }
 

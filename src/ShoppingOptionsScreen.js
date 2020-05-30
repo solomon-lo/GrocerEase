@@ -5,6 +5,7 @@ import btn_icon_723827 from './images/btn_icon_723827.png';
 import btn_icon_back_shoppingoptions from './images/btn_icon_back_shoppingoptions.png';
 
 // UI framework component imports
+import Button from 'muicss/lib/react/button';
 import Appbar from 'muicss/lib/react/appbar';
 
 export default class ShoppingOptionsScreen extends Component {
@@ -16,6 +17,7 @@ export default class ShoppingOptionsScreen extends Component {
     super(props);
     
     this.state = {
+      field: '',
     };
   }
 
@@ -40,6 +42,17 @@ export default class ShoppingOptionsScreen extends Component {
   componentWillReceiveProps(nextProps) {
   }
 
+  onClick_elButton = (ev) => {
+    // Go to screen 'Map'
+    this.props.appActions.goToScreen('map', { transitionId: 'fadeIn' });
+  
+  }
+  
+  
+  textInputChanged_field = (event) => {
+    this.setState({field: event.target.value});
+  }
+  
   onClick_elIconButton = (ev) => {
     // Go to screen 'Add a chatroom'
     this.props.appActions.goToScreen('addachatroom');
@@ -65,6 +78,22 @@ export default class ShoppingOptionsScreen extends Component {
      };
     const style_elBackground_outer = {
       backgroundColor: '#f6f6f6',
+     };
+    
+    const style_elButton = {
+      display: 'block',
+      color: 'white',
+      textAlign: 'center',
+      cursor: 'pointer',
+      pointerEvents: 'auto',
+     };
+    
+    const style_elField = {
+      display: 'block',
+      backgroundColor: 'white',
+      paddingLeft: '1rem',
+      boxSizing: 'border-box', // ensures padding won't expand element's outer size
+      pointerEvents: 'auto',
      };
     
     // Source items and any special components used for list/grid element 'list'.
@@ -99,12 +128,22 @@ export default class ShoppingOptionsScreen extends Component {
         </div>
         
         <div className="layoutFlow" style={layoutFlowStyle}>
+          <div className="elButton">
+            <Button className="actionFont" style={style_elButton}  color="accent" onClick={this.onClick_elButton} >
+              {this.props.locStrings.shoppingoptions_button_581207}
+            </Button>
+          </div>
+          
+          <div className="elField">
+            <input className="baseFont" style={style_elField} type="text" placeholder={this.props.locStrings.shoppingoptions_field_109207} onChange={this.textInputChanged_field} value={this.state.field}  />
+          </div>
+          
           <div className="hasNestedComps elList">
             <ul style={style_elList}>
               {items_list.map((row, index) => {
                 let itemComp = (row._componentId)
                     ? listComps_list[row._componentId]
-                    : <ChatroomItem appActions={this.props.appActions} deviceInfo={this.props.deviceInfo} locStrings={this.props.locStrings} dataSheetId={'chatroom'} dataSheetRow={row} {...{ 'document_key': row['document_key'], 'chatroom_name': row['chatroom_name'], }} />;
+                    : <ChatroomItem appActions={this.props.appActions} deviceInfo={this.props.deviceInfo} locStrings={this.props.locStrings} dataSheetId={'chatroom'} dataSheetRow={row} {...{ 'store': row['store'], 'time': row['time'], 'document_key': row['document_key'], 'chatroom_name': row['chatroom_name'], }} />;
                 return (<li key={row.key}>
                     {itemComp}
                   </li>);

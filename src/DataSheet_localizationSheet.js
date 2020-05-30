@@ -26,7 +26,7 @@ export default class DataSheet_localizationSheet extends DataSheetBase {
     item = {};
     this.items.push(item);
     item['key'] = "start_field_378871";
-    item['en'] = "Username";
+    item['en'] = "Display Name";
     
     item = {};
     this.items.push(item);
@@ -117,6 +117,66 @@ export default class DataSheet_localizationSheet extends DataSheetBase {
     this.items.push(item);
     item['key'] = "shopper_time_field";
     item['en'] = "Time";
+    
+    item = {};
+    this.items.push(item);
+    item['key'] = "starratings_text_247528";
+    item['en'] = "Tell Us How Your Shopper Was";
+    
+    item = {};
+    this.items.push(item);
+    item['key'] = "shoppingoptions_field_109207";
+    item['en'] = "Search";
+    
+    item = {};
+    this.items.push(item);
+    item['key'] = "shoppingoptions_validator_173954";
+    item['en'] = " ";
+    
+    item = {};
+    this.items.push(item);
+    item['key'] = "chatroomitem_text2_809202";
+    item['en'] = "Store";
+    
+    item = {};
+    this.items.push(item);
+    item['key'] = "chatroomitem_text3_643611";
+    item['en'] = "New text. Double-click to edit";
+    
+    item = {};
+    this.items.push(item);
+    item['key'] = "start_text2_632914";
+    item['en'] = "New text. Double-click to edit";
+    
+    item = {};
+    this.items.push(item);
+    item['key'] = "shoppingoptions_button_782648";
+    item['en'] = "New button";
+    
+    item = {};
+    this.items.push(item);
+    item['key'] = "shoppingoptions_button_27598";
+    item['en'] = "New button";
+    
+    item = {};
+    this.items.push(item);
+    item['key'] = "shoppingoptions_button_305802";
+    item['en'] = "New button";
+    
+    item = {};
+    this.items.push(item);
+    item['key'] = "shoppingoptions_button_581207";
+    item['en'] = "Show Map";
+    
+    item = {};
+    this.items.push(item);
+    item['key'] = "chatroomitem_text4_132611";
+    item['en'] = "New text. Double-click to edit";
+    
+    item = {};
+    this.items.push(item);
+    item['key'] = "messages_button_316204";
+    item['en'] = "Add A Review";
   }
 
   getStringsByLanguage = () => {
