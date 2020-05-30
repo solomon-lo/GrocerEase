@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
 import './App.css';
-import './geocoderForm.css';
+//import './geocoderForm.css';
 import Map from './map';
 // UI framework component imports
 import Button from 'muicss/lib/react/button';
 
 import mapboxgl from 'mapbox-gl';
-import Geo from './geo.js'
 mapboxgl.accessToken = 'pk.eyJ1IjoiZ3JvY2VyZWFzZSIsImEiOiJja2FrZTl4YWgwbzhjMnlwZHh0bG9tb2FxIn0.24dvEshJiFjdusaNZYAP5A';
 var MapboxGeocoder = require('@mapbox/mapbox-gl-geocoder');
 
@@ -189,7 +188,6 @@ export default class AddChatroomComp extends Component {
           </div>
           
           <div className="mapstyle">
-            <Geo setLocation = {this.textInputChanged_field_shopper_city}></Geo>
             <Map setLocation = {this.textInputChanged_field_shopper_city}> </Map>
             {/*<input className="baseFont" style={style_elField_shopper_city} type="text" placeholder={this.props.locStrings.shopper_city_field} onChange={this.textInputChanged_field_shopper_city} value={this.state.field_shopper_city}  />*/}
           </div>
