@@ -12,10 +12,11 @@
     }
      
     .mapContainer {
-    left: 10%;
+    padding-top: 40px;
+    left: 5%;
     position: relative;
     height: 500px;
-    width: 75%;
+    width: 50%;
     }
     
     .geoContainer {

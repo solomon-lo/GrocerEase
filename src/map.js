@@ -15,6 +15,7 @@ export default class Map extends React.Component {
             lng: -118,
             lat: 34,
             zoom: 8,
+            location: '',
         };
     }
 
@@ -36,7 +37,6 @@ export default class Map extends React.Component {
                 speed: 0.5,
                 curve: 0.5,
             },
-
         });
 
         map.addControl(geocoder);
@@ -57,8 +57,15 @@ export default class Map extends React.Component {
             });
         });
 
+        geocoder.on('result', (result) => {
+            this.props.setLocation(result.result["place_name_en-US"]);
+            console.log(this.props.location);
+         });
+
  
     }
+
+
 
     render() {
 
