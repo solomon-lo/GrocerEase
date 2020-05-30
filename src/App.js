@@ -1,15 +1,16 @@
 import React, { Component } from 'react';
 import LocalizedStrings from 'react-localization';
 import './App.css';
+import Add_A_ReviewScreen from './Add_A_ReviewScreen.js';
 import MessagesScreen from './MessagesScreen.js';
+import MapScreen from './MapScreen.js';
 import AddAChatroomScreen from './AddAChatroomScreen.js';
 import ShoppingOptionsScreen from './ShoppingOptionsScreen.js';
 import StartScreen from './StartScreen.js';
-import ReviewsScreen from './ReviewsScreen.js';
 import DataSheet_chatroom from './DataSheet_chatroom.js';
 import DataSheet_chatmessages from './DataSheet_chatmessages.js';
-import DataSheet_localizationSheet from './DataSheet_localizationSheet.js';
 import DataSheet_shoppers from './DataSheet_shoppers.js';
+import DataSheet_localizationSheet from './DataSheet_localizationSheet.js';
 import firebase from 'firebase';
 import firestore from 'firebase/firestore';
 
@@ -21,8 +22,8 @@ export default class App extends Component {
     this.dataSheets = {};
     this.dataSheets['chatroom'] = new DataSheet_chatroom('chatroom', this.dataSheetDidUpdate);
     this.dataSheets['chatmessages'] = new DataSheet_chatmessages('chatmessages', this.dataSheetDidUpdate);
-    this.dataSheets['localizationSheet'] = new DataSheet_localizationSheet('localizationSheet', this.dataSheetDidUpdate);
     this.dataSheets['shoppers'] = new DataSheet_shoppers('shoppers', this.dataSheetDidUpdate);
+    this.dataSheets['localizationSheet'] = new DataSheet_localizationSheet('localizationSheet', this.dataSheetDidUpdate);
     this.dataSheetLoaded = {};
 
     this.dataSlots = {};
@@ -32,6 +33,7 @@ export default class App extends Component {
     this.dataSlots['ds_LoginUserName'] = "";
     this.dataSlots['ds_userEmailAddress'] = "";
     this.dataSlots['ds_UniqueUserID'] = "";
+    this.dataSlots['ds_SlotSelectedShopperKey'] = "default_template";
 
     this.updateLocalizationFromDataSheet(this.dataSheets['localizationSheet']);
 
@@ -365,20 +367,23 @@ export default class App extends Component {
         'ds_userEmailAddress': this.dataSlots['ds_userEmailAddress'],
         'ds_GmailUserPhoto': this.dataSlots['ds_GmailUserPhoto'],
         'ds_UniqueUserID': this.dataSlots['ds_UniqueUserID'],
+        'ds_SlotSelectedShopperKey': this.dataSlots['ds_SlotSelectedShopperKey'],
       };
       switch (screenId) {
         default:
           return null;
+        case 'add_a_review':
+          return (<Add_A_ReviewScreen {...screenProps} />)
         case 'messages':
           return (<MessagesScreen {...screenProps} />)
+        case 'map':
+          return (<MapScreen {...screenProps} />)
         case 'addachatroom':
           return (<AddAChatroomScreen {...screenProps} />)
         case 'shoppingoptions':
           return (<ShoppingOptionsScreen {...screenProps} />)
         case 'start':
           return (<StartScreen {...screenProps} />)
-        case 'reviews':
-          return (<ReviewsScreen {...screenProps} />)
       }
     }
 

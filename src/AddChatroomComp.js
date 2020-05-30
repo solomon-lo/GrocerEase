@@ -97,7 +97,7 @@ export default class AddChatroomComp extends Component {
   render() {
     const style_elIntro = {
       color: 'rgba(0, 0, 0, 0.8500)',
-      textAlign: 'left',
+      textAlign: 'center',
      };
     
     const style_elField_shopper_name = {
@@ -144,7 +144,7 @@ export default class AddChatroomComp extends Component {
       <div className="AddChatroomComp appBg">
         <div className="layoutFlow">
           <div className="elIntro">
-            <div className="baseFont" style={style_elIntro}>
+            <div className="headlineFont" style={style_elIntro}>
               <div>{this.props.locStrings.addchatroomcomp_text_1046369}</div>
             </div>
           </div>

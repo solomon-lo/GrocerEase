@@ -21,6 +21,7 @@ export default class DataSheet_shoppers extends DataSheetBase {
     item['area'] = "90024";
     item['time'] = "Any";
     item['document_key'] = "5DgI5s7slqzzoRtHEq6j";
+    item['gmailUniqueUserID'] = "";
     item['numStars'] = "";
     item['name'] = "Bob";
     item['store'] = "Costco";
@@ -32,6 +33,7 @@ export default class DataSheet_shoppers extends DataSheetBase {
     item['store'] = "Walmart";
     item['area'] = "SF";
     item['name'] = "Bob";
+    item['gmailUniqueUserID'] = "";
     item.key = key++;
     
     item = {};
@@ -133,11 +135,11 @@ export default class DataSheet_shoppers extends DataSheetBase {
     
     item = {};
     this.items.push(item);
-    item['comments'] = "unknown_comments";
+    item['rating'] = "-1";
     item['area'] = "unknown_area";
     item['time'] = "unknown_time";
     item['pricing'] = "unknown_pricing";
-    item['rating'] = "-1";
+    item['comments'] = "unknown_comments";
     item['document_key'] = "default_template";
     item['name'] = "unknown_name";
     item['store'] = "unknown_store";

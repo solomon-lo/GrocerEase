@@ -20,6 +20,15 @@ export default class StartScreen extends Component {
   }
 
   componentDidMount() {
+    {
+      let dataSheet = this.props.appActions.dataSheets['shoppers'];
+      let serviceOptions = this.props.appActions.serviceOptions_shoppers;
+      if ( !this.props.appActions.dataSheetLoaded['shoppers']) {
+        serviceOptions.servicePath = dataSheet.expandSlotTemplateString("shoppers", this.props.appActions.dataSlots);
+        this.props.appActions.loadData_firebaseConnection(dataSheet, serviceOptions, true);
+        this.props.appActions.dataSheetLoaded['shoppers'] = true;
+      }
+    }
   }
 
   componentWillUnmount() {
@@ -32,8 +41,7 @@ export default class StartScreen extends Component {
   }
 
   onClick_elButton = (ev) => {
-    let newVal = this.state.fieldUsername;
-    this.props.appActions.updateDataSlot('ds_SlotUsername', newVal);
+    this.sendData_button_to_shoppers();
   
     // Go to screen 'Shopping Options'
     this.props.appActions.goToScreen('shoppingoptions', { transitionId: 'fadeIn' });
@@ -44,6 +52,19 @@ export default class StartScreen extends Component {
   textInputChanged_fieldUsername = (event) => {
     this.setState({fieldUsername: event.target.value});
   }
+  
+  sendData_button_to_shoppers = () => {
+    const dataSheet = this.props.appActions.getDataSheet('shoppers');
+  
+    let row = this.props.dataSheetRow || {
+    };
+    row = { ...row, 
+      name: (this.props.appActions.dataSlots ? this.props.appActions.dataSlots['ds_LoginUserName'] : ''),
+      gmailUniqueUserID: (this.props.appActions.dataSlots ? this.props.appActions.dataSlots['ds_UniqueUserID'] : ''),
+    };
+    this.props.appActions.addToDataSheet('shoppers', row);
+  }
+  
   
   render() {
     let layoutFlowStyle = {};

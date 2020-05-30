@@ -5,6 +5,7 @@ import btn_icon_723827 from './images/btn_icon_723827.png';
 import btn_icon_back_shoppingoptions from './images/btn_icon_back_shoppingoptions.png';
 
 // UI framework component imports
+import Button from 'muicss/lib/react/button';
 import Appbar from 'muicss/lib/react/appbar';
 
 export default class ShoppingOptionsScreen extends Component {
@@ -41,6 +42,13 @@ export default class ShoppingOptionsScreen extends Component {
   componentWillReceiveProps(nextProps) {
   }
 
+  onClick_elButton = (ev) => {
+    // Go to screen 'Map'
+    this.props.appActions.goToScreen('map', { transitionId: 'fadeIn' });
+  
+  }
+  
+  
   textInputChanged_field = (event) => {
     this.setState({field: event.target.value});
   }
@@ -72,13 +80,12 @@ export default class ShoppingOptionsScreen extends Component {
       backgroundColor: '#f6f6f6',
      };
     
-    // Source items and any special components used for list/grid element 'list'.
-    let items_list = [];
-    let listComps_list = {};
-    items_list = items_list.concat(this.props.appActions.getDataSheet('chatroom').items);
-    
-    const style_elList = {
-      height: 'auto',  // This element is in scroll flow
+    const style_elButton = {
+      display: 'block',
+      color: 'white',
+      textAlign: 'center',
+      cursor: 'pointer',
+      pointerEvents: 'auto',
      };
     
     const style_elField = {
@@ -87,6 +94,15 @@ export default class ShoppingOptionsScreen extends Component {
       paddingLeft: '1rem',
       boxSizing: 'border-box', // ensures padding won't expand element's outer size
       pointerEvents: 'auto',
+     };
+    
+    // Source items and any special components used for list/grid element 'list'.
+    let items_list = [];
+    let listComps_list = {};
+    items_list = items_list.concat(this.props.appActions.getDataSheet('chatroom').items);
+    
+    const style_elList = {
+      height: 'auto',  // This element is in scroll flow
      };
     
     const style_elIconButton = {
@@ -112,22 +128,28 @@ export default class ShoppingOptionsScreen extends Component {
         </div>
         
         <div className="layoutFlow" style={layoutFlowStyle}>
+          <div className="elButton">
+            <Button className="actionFont" style={style_elButton}  color="accent" onClick={this.onClick_elButton} >
+              {this.props.locStrings.shoppingoptions_button_581207}
+            </Button>
+          </div>
+          
+          <div className="elField">
+            <input className="baseFont" style={style_elField} type="text" placeholder={this.props.locStrings.shoppingoptions_field_109207} onChange={this.textInputChanged_field} value={this.state.field}  />
+          </div>
+          
           <div className="hasNestedComps elList">
             <ul style={style_elList}>
               {items_list.map((row, index) => {
                 let itemComp = (row._componentId)
                     ? listComps_list[row._componentId]
-                    : <ChatroomItem appActions={this.props.appActions} deviceInfo={this.props.deviceInfo} locStrings={this.props.locStrings} dataSheetId={'chatroom'} dataSheetRow={row} {...{ 'document_key': row['document_key'], 'chatroom_name': row['chatroom_name'], }} />;
+                    : <ChatroomItem appActions={this.props.appActions} deviceInfo={this.props.deviceInfo} locStrings={this.props.locStrings} dataSheetId={'chatroom'} dataSheetRow={row} {...{ 'store': row['store'], 'time': row['time'], 'document_key': row['document_key'], 'chatroom_name': row['chatroom_name'], }} />;
                 return (<li key={row.key}>
                     {itemComp}
                   </li>);
               })}
               <div className="marker" ref={(el)=> this._elList_endMarker = el} />
             </ul>
-          </div>
-          
-          <div className="elField">
-            <input className="baseFont" style={style_elField} type="text" placeholder={this.props.locStrings.shoppingoptions_field_109207} onChange={this.textInputChanged_field} value={this.state.field}  />
           </div>
         </div>
         <Appbar className="navBar">

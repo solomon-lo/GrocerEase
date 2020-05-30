@@ -17,38 +17,14 @@ export default class DataSheet_chatroom extends DataSheetBase {
     
     item = {};
     this.items.push(item);
-    item['document_key'] = "cWIeIlzihe1KdH6ku1t0";
-    item['chatroom_name'] = "fifth room";
+    item['document_key'] = "San Diego";
+    item['chatroom_name'] = "Jim";
     item.key = key++;
     
     item = {};
     this.items.push(item);
-    item['document_key'] = "Iqdg9DdVEnnLfMgQzvm2";
-    item['chatroom_name'] = "first chatroom!";
-    item.key = key++;
-    
-    item = {};
-    this.items.push(item);
-    item['document_key'] = "tJ6cFML8uM109hS4LpOc";
-    item['chatroom_name'] = "fourth room";
-    item.key = key++;
-    
-    item = {};
-    this.items.push(item);
-    item['document_key'] = "TDaFLXkHj6IZiTKtpUEp";
-    item['chatroom_name'] = "second room";
-    item.key = key++;
-    
-    item = {};
-    this.items.push(item);
-    item['document_key'] = "IFoSTR3mruxi1vLynXYT";
-    item['chatroom_name'] = "sixth room";
-    item.key = key++;
-    
-    item = {};
-    this.items.push(item);
-    item['document_key'] = "a47bY5sGJ6UFs0s4ql2O";
-    item['chatroom_name'] = "third room";
+    item['document_key'] = "Target ";
+    item['chatroom_name'] = "Sam";
     item.key = key++;
   }
 

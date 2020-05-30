@@ -482,106 +482,108 @@
   }
   
 
-/* This component has a fixed-size layout */
-  .AddChatroomComp {
-    min-height: 431px;  /* Minimum height to ensure layout flow is visible */
-    width: 100%; /* This component was designed using a width of 376px */
+
+/* Narrowest size for this element's responsive layout */
+  .Add_A_ReviewScreen > .background > .elBackground {
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    width: 100.0%;
     height: 100%;
   }
-  .AddChatroomComp > .background > .containerMinHeight {
-    min-height: 431px;
+@media (min-width: 568px) {
+  .Add_A_ReviewScreen > .background > .elBackground {
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    width: 100.0%;
+    height: 100%;
   }
-
-
-  .AddChatroomComp > .layoutFlow > .elIntro {
-    position: relative;
-    margin-top: 15px;
-    width: 238px;
-    margin-left: calc(49.9% - 119px);
-  }
-  .AddChatroomComp > .layoutFlow > .elIntro > * { 
-  width: 238px;
-  }
-  
-
-
-  .AddChatroomComp > .layoutFlow > .elField_shopper_name {
-    position: relative;
-    margin-top: 16px;
-    width: 226px;
-    margin-left: calc(50.0% - 113px);
-  }
-  .AddChatroomComp > .layoutFlow > .elField_shopper_name > * { 
-  width: 226px;
-  height: 34px;
-  }
-  
-
-.AddChatroomComp .elButton button {
-  cursor: pointer;
-  border: 0.0px solid transparent;
-  border-radius: 3.4px;
 }
-
-.AddChatroomComp .elButton button:focus {
-  box-shadow: 0 0 5px rgba(0, 149, 214, 0.5000);
-  outline: none;
+@media (min-width: 768px) {
+  .Add_A_ReviewScreen > .background > .elBackground {
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    width: 100.0%;
+    height: 100%;
+  }
+}
+@media (min-width: 1024px) {
+  .Add_A_ReviewScreen > .background > .elBackground {
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    width: 100.0%;
+    height: 100%;
+  }
 }
 
 
-
-  .AddChatroomComp > .layoutFlow > .elButton {
-    line-height: 35px;
+/* Narrowest size for this element's responsive layout */
+  .Add_A_ReviewScreen > .layoutFlow > .elStarRatings {
     position: relative;
-    margin-top: 203px;
-    width: 166px;
-    margin-left: calc(49.9% - 83px);
+    margin-top: 32px;
+    width: 321px;
+    margin-left: -1px;
   }
-  .AddChatroomComp > .layoutFlow > .elButton > * { 
-  width: 166px;
-  height: 35px;
+  .Add_A_ReviewScreen > .layoutFlow > .elStarRatings > * { 
+  width: 321px;
   }
   
-
-
-  .AddChatroomComp > .layoutFlow > .elField_shopper_time {
-    position: relative;
-    margin-top: -95px;
-    margin-left: calc(50.0% - 140px);
-    margin-right: 48px;
-    width: calc(100.0% - 48px);
+  .Add_A_ReviewScreen > .layoutFlow > .elStarRatings > .background > .containerMinHeight {
+    min-height: 0px;
   }
-  .AddChatroomComp > .layoutFlow > .elField_shopper_time > * { 
-    width: 100%;
-  height: 34px;
+
+@media (min-width: 568px) {
+  .Add_A_ReviewScreen > .layoutFlow > .elStarRatings {
+    position: relative;
+    margin-top: 32px;
+    width: 321px;
+    margin-left: -1px;
+  }
+  .Add_A_ReviewScreen > .layoutFlow > .elStarRatings > * { 
+  width: 321px;
   }
   
-
-
-  .AddChatroomComp > .layoutFlow > .elField_shopper_store {
-    position: relative;
-    margin-top: -96px;
-    width: 226px;
-    margin-left: calc(49.9% - 113px);
+  .Add_A_ReviewScreen > .layoutFlow > .elStarRatings > .background > .containerMinHeight {
+    min-height: 0px;
   }
-  .AddChatroomComp > .layoutFlow > .elField_shopper_store > * { 
-  width: 226px;
-  height: 34px;
+
+}
+@media (min-width: 768px) {
+  .Add_A_ReviewScreen > .layoutFlow > .elStarRatings {
+    position: relative;
+    margin-top: 32px;
+    width: 319px;
+    margin-left: -1px;
+  }
+  .Add_A_ReviewScreen > .layoutFlow > .elStarRatings > * { 
+  width: 319px;
   }
   
-
-
-  .AddChatroomComp > .layoutFlow > .elField_shopper_city {
-    position: relative;
-    margin-top: -97px;
-    width: 231px;
-    margin-left: calc(50.2% - 115px);
+  .Add_A_ReviewScreen > .layoutFlow > .elStarRatings > .background > .containerMinHeight {
+    min-height: 0px;
   }
-  .AddChatroomComp > .layoutFlow > .elField_shopper_city > * { 
-  width: 231px;
-  height: 29px;
+
+}
+@media (min-width: 1024px) {
+  .Add_A_ReviewScreen > .layoutFlow > .elStarRatings {
+    position: relative;
+    margin-top: 32px;
+    width: 319px;
+    margin-left: -1px;
+  }
+  .Add_A_ReviewScreen > .layoutFlow > .elStarRatings > * { 
+  width: 319px;
   }
   
+  .Add_A_ReviewScreen > .layoutFlow > .elStarRatings > .background > .containerMinHeight {
+    min-height: 0px;
+  }
+
+}
 
 
 /* Narrowest size for this element's responsive layout */
@@ -675,6 +677,75 @@
   }
   .MessagesScreen > .layoutFlow > .elList > * { 
     width: 100%;
+  }
+  
+}
+
+.MessagesScreen .elButton button {
+  cursor: pointer;
+  border: 0.0px solid transparent;
+  border-radius: 3.4px;
+}
+
+.MessagesScreen .elButton button:focus {
+  box-shadow: 0 0 5px rgba(0, 149, 214, 0.5000);
+  outline: none;
+}
+
+
+
+/* Narrowest size for this element's responsive layout */
+  .MessagesScreen > .layoutFlow > .elButton {
+    line-height: 35px;
+    position: relative;
+    margin-top: -819px;
+    width: 145px;
+    margin-left: 175px;
+  }
+  .MessagesScreen > .layoutFlow > .elButton > * { 
+  width: 145px;
+  height: 35px;
+  }
+  
+@media (min-width: 568px) {
+  .MessagesScreen > .layoutFlow > .elButton {
+    line-height: 35px;
+    position: relative;
+    margin-top: -819px;
+    width: 145px;
+    margin-left: 175px;
+  }
+  .MessagesScreen > .layoutFlow > .elButton > * { 
+  width: 145px;
+  height: 35px;
+  }
+  
+}
+@media (min-width: 768px) {
+  .MessagesScreen > .layoutFlow > .elButton {
+    line-height: 35px;
+    position: relative;
+    margin-top: -814px;
+    width: 144px;
+    margin-left: 174px;
+  }
+  .MessagesScreen > .layoutFlow > .elButton > * { 
+  width: 144px;
+  height: 35px;
+  }
+  
+}
+@media (min-width: 1024px) {
+  .MessagesScreen > .layoutFlow > .elButton {
+    line-height: 35px;
+    position: relative;
+    margin-top: -814px;
+    width: 144px;
+    margin-left: 174px;
+  }
+  .MessagesScreen > .layoutFlow > .elButton > * { 
+  width: 144px;
+  height: 35px;
   }
   
 }
@@ -802,21 +873,137 @@
 }
 
 /* This component has a fixed-size layout */
+  .AddChatroomComp {
+    min-height: 358px;  /* Minimum height to ensure layout flow is visible */
+    width: 100%; /* This component was designed using a width of 373px */
+    height: 100%;
+  }
+  .AddChatroomComp > .background > .containerMinHeight {
+    min-height: 358px;
+  }
+
+
+  .AddChatroomComp > .layoutFlow > .elIntro {
+    position: relative;
+    margin-top: 15px;
+    width: 238px;
+    margin-left: calc(50.0% - 119px);
+  }
+  .AddChatroomComp > .layoutFlow > .elIntro > * { 
+  width: 238px;
+  }
+  
+
+
+  .AddChatroomComp > .layoutFlow > .elField_shopper_name {
+    position: relative;
+    margin-top: 16px;
+    margin-left: calc(50.0% - 93px);
+    margin-right: 25.0%;
+    width: calc(75.0% - 0px);
+  }
+  .AddChatroomComp > .layoutFlow > .elField_shopper_name > * { 
+    width: 100%;
+  height: 34px;
+  }
+  
+
+.AddChatroomComp .elButton button {
+  cursor: pointer;
+  border: 0.0px solid transparent;
+  border-radius: 3.4px;
+}
+
+.AddChatroomComp .elButton button:focus {
+  box-shadow: 0 0 5px rgba(0, 149, 214, 0.5000);
+  outline: none;
+}
+
+
+
+  .AddChatroomComp > .layoutFlow > .elButton {
+    line-height: 35px;
+    position: relative;
+    margin-top: 203px;
+    width: 166px;
+    margin-left: calc(49.9% - 83px);
+  }
+  .AddChatroomComp > .layoutFlow > .elButton > * { 
+  width: 166px;
+  height: 35px;
+  }
+  
+
+
+  .AddChatroomComp > .layoutFlow > .elField_shopper_time {
+    position: relative;
+    margin-top: -95px;
+    margin-left: calc(50.0% - 93px);
+    margin-right: 25.0%;
+    width: calc(75.0% - 0px);
+  }
+  .AddChatroomComp > .layoutFlow > .elField_shopper_time > * { 
+    width: 100%;
+  height: 34px;
+  }
+  
+
+
+  .AddChatroomComp > .layoutFlow > .elField_shopper_store {
+    position: relative;
+    margin-top: -96px;
+    margin-left: calc(50.0% - 93px);
+    margin-right: 25.0%;
+    width: calc(75.0% - 0px);
+  }
+  .AddChatroomComp > .layoutFlow > .elField_shopper_store > * { 
+    width: 100%;
+  height: 34px;
+  }
+  
+
+
+  .AddChatroomComp > .layoutFlow > .elField_shopper_city {
+    position: relative;
+    margin-top: -90px;
+    margin-left: calc(50.0% - 93px);
+    margin-right: 25.0%;
+    width: calc(75.0% - 0px);
+  }
+  .AddChatroomComp > .layoutFlow > .elField_shopper_city > * { 
+    width: 100%;
+  height: 29px;
+  }
+  
+
+/* This component has a fixed-size layout */
   .ChatroomItem {
     width: 100%; /* This component was designed using a width of 421px */
     height: 100%;
   }
 
 
-  .ChatroomItem > .layoutFlow > .elText {
+  .ChatroomItem > .layoutFlow > .elChatname {
     position: relative;
-    margin-top: 26px;
-    margin-left: 10px;
-    margin-right: 10px;
+    margin-top: 22px;
+    margin-left: 4px;
+    margin-right: 15px;
     width: calc(100.0% - 20px);
   }
-  .ChatroomItem > .layoutFlow > .elText > * { 
+  .ChatroomItem > .layoutFlow > .elChatname > * { 
     width: 100%;
+  }
+  
+
+
+  .ChatroomItem > .layoutFlow > .elChatstore {
+    position: relative;
+    margin-top: 10px;
+    width: 238px;
+    margin-left: 4px;
+  }
+  .ChatroomItem > .layoutFlow > .elChatstore > * { 
+  width: 238px;
   }
   
 
@@ -847,6 +1034,18 @@
   
 
 
+  .ChatroomItem > .layoutFlow > .elText3 {
+    position: relative;
+    margin-top: 1px;
+    width: 238px;
+    margin-left: 0px;
+  }
+  .ChatroomItem > .layoutFlow > .elText3 > * { 
+  width: 238px;
+  }
+  
+
+
   .ChatroomItem > .layoutFlow > .elRectangle {
     position: relative;
     margin-top: 25px;
@@ -859,6 +1058,44 @@
   height: 3px;
   }
   
+
+
+/* Narrowest size for this element's responsive layout */
+  .MapScreen > .background > .elBackground {
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    width: 100.0%;
+    height: 100%;
+  }
+@media (min-width: 568px) {
+  .MapScreen > .background > .elBackground {
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    width: 100.0%;
+    height: 100%;
+  }
+}
+@media (min-width: 768px) {
+  .MapScreen > .background > .elBackground {
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    width: 100.0%;
+    height: 100%;
+  }
+}
+@media (min-width: 1024px) {
+  .MapScreen > .background > .elBackground {
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    width: 100.0%;
+    height: 100%;
+  }
+}
 
 .AddAChatroomScreen .elAddChatroomComp {
   overflow: hidden;
@@ -884,7 +1121,7 @@
   }
   
   .AddAChatroomScreen > .layoutFlow > .elAddChatroomComp > .background > .containerMinHeight {
-    min-height: 431px;
+    min-height: 358px;
   }
 
 @media (min-width: 568px) {
@@ -900,7 +1137,7 @@
   }
   
   .AddAChatroomScreen > .layoutFlow > .elAddChatroomComp > .background > .containerMinHeight {
-    min-height: 431px;
+    min-height: 358px;
   }
 
 }
@@ -917,7 +1154,7 @@
   }
   
   .AddAChatroomScreen > .layoutFlow > .elAddChatroomComp > .background > .containerMinHeight {
-    min-height: 428px;
+    min-height: 356px;
   }
 
 }
@@ -934,7 +1171,7 @@
   }
   
   .AddAChatroomScreen > .layoutFlow > .elAddChatroomComp > .background > .containerMinHeight {
-    min-height: 428px;
+    min-height: 356px;
   }
 
 }
@@ -977,6 +1214,128 @@
   }
 }
 
+.ShoppingOptionsScreen .elButton button {
+  cursor: pointer;
+  border: 0.0px solid transparent;
+  border-radius: 3.4px;
+}
+
+.ShoppingOptionsScreen .elButton button:focus {
+  box-shadow: 0 0 5px rgba(0, 149, 214, 0.5000);
+  outline: none;
+}
+
+
+
+/* Narrowest size for this element's responsive layout */
+  .ShoppingOptionsScreen > .layoutFlow > .elButton {
+    line-height: 30px;
+    position: relative;
+    margin-top: 70px;
+    width: 135px;
+    margin-left: calc(75.0% - 68px);
+  }
+  .ShoppingOptionsScreen > .layoutFlow > .elButton > * { 
+  width: 135px;
+  height: 30px;
+  }
+  
+@media (min-width: 568px) {
+  .ShoppingOptionsScreen > .layoutFlow > .elButton {
+    line-height: 30px;
+    position: relative;
+    margin-top: 70px;
+    width: 135px;
+    margin-left: calc(75.0% - 68px);
+  }
+  .ShoppingOptionsScreen > .layoutFlow > .elButton > * { 
+  width: 135px;
+  height: 30px;
+  }
+  
+}
+@media (min-width: 768px) {
+  .ShoppingOptionsScreen > .layoutFlow > .elButton {
+    line-height: 30px;
+    position: relative;
+    margin-top: 70px;
+    width: 134px;
+    margin-left: calc(75.0% - 67px);
+  }
+  .ShoppingOptionsScreen > .layoutFlow > .elButton > * { 
+  width: 134px;
+  height: 30px;
+  }
+  
+}
+@media (min-width: 1024px) {
+  .ShoppingOptionsScreen > .layoutFlow > .elButton {
+    line-height: 30px;
+    position: relative;
+    margin-top: 70px;
+    width: 134px;
+    margin-left: calc(75.0% - 67px);
+  }
+  .ShoppingOptionsScreen > .layoutFlow > .elButton > * { 
+  width: 134px;
+  height: 30px;
+  }
+  
+}
+
+
+/* Narrowest size for this element's responsive layout */
+  .ShoppingOptionsScreen > .layoutFlow > .elField {
+    position: relative;
+    margin-top: -30px;
+    width: 128px;
+    margin-left: calc(24.8% - 64px);
+  }
+  .ShoppingOptionsScreen > .layoutFlow > .elField > * { 
+  width: 128px;
+  height: 27px;
+  }
+  
+@media (min-width: 568px) {
+  .ShoppingOptionsScreen > .layoutFlow > .elField {
+    position: relative;
+    margin-top: -30px;
+    width: 128px;
+    margin-left: calc(24.9% - 64px);
+  }
+  .ShoppingOptionsScreen > .layoutFlow > .elField > * { 
+  width: 128px;
+  height: 27px;
+  }
+  
+}
+@media (min-width: 768px) {
+  .ShoppingOptionsScreen > .layoutFlow > .elField {
+    position: relative;
+    margin-top: -29px;
+    width: 127px;
+    margin-left: calc(24.9% - 64px);
+  }
+  .ShoppingOptionsScreen > .layoutFlow > .elField > * { 
+  width: 127px;
+  height: 27px;
+  }
+  
+}
+@media (min-width: 1024px) {
+  .ShoppingOptionsScreen > .layoutFlow > .elField {
+    position: relative;
+    margin-top: -29px;
+    width: 127px;
+    margin-left: calc(24.9% - 64px);
+  }
+  .ShoppingOptionsScreen > .layoutFlow > .elField > * { 
+  width: 127px;
+  height: 27px;
+  }
+  
+}
+
 .ShoppingOptionsScreen .elList li {
   margin-bottom: 4px;
 }
@@ -986,7 +1345,7 @@
 /* Narrowest size for this element's responsive layout */
   .ShoppingOptionsScreen > .layoutFlow > .elList {
     position: relative;
-    margin-top: 84px;
+    margin-top: 11px;
     margin-left: 0px;
     margin-right: 0px;
     width: calc(100.0% - 0px);
@@ -998,7 +1357,7 @@
 @media (min-width: 568px) {
   .ShoppingOptionsScreen > .layoutFlow > .elList {
     position: relative;
-    margin-top: 84px;
+    margin-top: 10px;
     margin-left: 0px;
     margin-right: 0px;
     width: calc(100.0% - 0px);
@@ -1011,7 +1370,7 @@
 @media (min-width: 768px) {
   .ShoppingOptionsScreen > .layoutFlow > .elList {
     position: relative;
-    margin-top: 84px;
+    margin-top: 10px;
     margin-left: 0px;
     margin-right: 0px;
     width: calc(100.0% - 0px);
@@ -1024,66 +1383,13 @@
 @media (min-width: 1024px) {
   .ShoppingOptionsScreen > .layoutFlow > .elList {
     position: relative;
-    margin-top: 84px;
+    margin-top: 10px;
     margin-left: 0px;
     margin-right: 0px;
     width: calc(100.0% - 0px);
   }
   .ShoppingOptionsScreen > .layoutFlow > .elList > * { 
     width: 100%;
-  }
-  
-}
-
-
-/* Narrowest size for this element's responsive layout */
-  .ShoppingOptionsScreen > .layoutFlow > .elField {
-    position: relative;
-    margin-top: -565px;
-    width: 182px;
-    margin-left: calc(49.9% - 91px);
-  }
-  .ShoppingOptionsScreen > .layoutFlow > .elField > * { 
-  width: 182px;
-  height: 27px;
-  }
-  
-@media (min-width: 568px) {
-  .ShoppingOptionsScreen > .layoutFlow > .elField {
-    position: relative;
-    margin-top: -565px;
-    width: 182px;
-    margin-left: calc(49.9% - 91px);
-  }
-  .ShoppingOptionsScreen > .layoutFlow > .elField > * { 
-  width: 182px;
-  height: 27px;
-  }
-  
-}
-@media (min-width: 768px) {
-  .ShoppingOptionsScreen > .layoutFlow > .elField {
-    position: relative;
-    margin-top: -562px;
-    width: 181px;
-    margin-left: calc(50.0% - 91px);
-  }
-  .ShoppingOptionsScreen > .layoutFlow > .elField > * { 
-  width: 181px;
-  height: 27px;
-  }
-  
-}
-@media (min-width: 1024px) {
-  .ShoppingOptionsScreen > .layoutFlow > .elField {
-    position: relative;
-    margin-top: -562px;
-    width: 181px;
-    margin-left: calc(50.0% - 91px);
-  }
-  .ShoppingOptionsScreen > .layoutFlow > .elField > * { 
-  width: 181px;
-  height: 27px;
   }
   
 }
@@ -1245,9 +1551,9 @@
 /* Narrowest size for this element's responsive layout */
   .StartScreen > .layoutFlow > .elFirebaseLogin {
     position: relative;
-    margin-top: -134px;
+    margin-top: -135px;
     width: 207px;
-    margin-left: 43px;
+    margin-left: calc(49.5% - 104px);
   }
   .StartScreen > .layoutFlow > .elFirebaseLogin > * { 
   width: 207px;
@@ -1257,9 +1563,9 @@
 @media (min-width: 568px) {
   .StartScreen > .layoutFlow > .elFirebaseLogin {
     position: relative;
-    margin-top: -134px;
+    margin-top: -135px;
     width: 207px;
-    margin-left: 43px;
+    margin-left: calc(49.5% - 104px);
   }
   .StartScreen > .layoutFlow > .elFirebaseLogin > * { 
   width: 207px;
@@ -1270,9 +1576,9 @@
 @media (min-width: 768px) {
   .StartScreen > .layoutFlow > .elFirebaseLogin {
     position: relative;
-    margin-top: -133px;
+    margin-top: -134px;
     width: 206px;
-    margin-left: 42px;
+    margin-left: calc(49.5% - 103px);
   }
   .StartScreen > .layoutFlow > .elFirebaseLogin > * { 
   width: 206px;
@@ -1283,9 +1589,9 @@
 @media (min-width: 1024px) {
   .StartScreen > .layoutFlow > .elFirebaseLogin {
     position: relative;
-    margin-top: -133px;
+    margin-top: -134px;
     width: 206px;
-    margin-left: 42px;
+    margin-left: calc(49.5% - 103px);
   }
   .StartScreen > .layoutFlow > .elFirebaseLogin > * { 
   width: 206px;
@@ -1396,74 +1702,21 @@
   
 }
 
-
-/* Narrowest size for this element's responsive layout */
-  .ReviewsScreen > .background > .elBackground {
-    position: absolute;
-    left: 0px;
-    right: 0px;
-    top: 0px;
-    width: 100.0%;
-    height: 100%;
-  }
-@media (min-width: 568px) {
-  .ReviewsScreen > .background > .elBackground {
-    left: 0px;
-    right: 0px;
-    top: 0px;
-    width: 100.0%;
-    height: 100%;
-  }
-}
-@media (min-width: 768px) {
-  .ReviewsScreen > .background > .elBackground {
-    left: 0px;
-    right: 0px;
-    top: 0px;
-    width: 100.0%;
-    height: 100%;
-  }
-}
-@media (min-width: 1024px) {
-  .ReviewsScreen > .background > .elBackground {
-    left: 0px;
-    right: 0px;
-    top: 0px;
-    width: 100.0%;
-    height: 100%;
-  }
-}
-
 /* This component has a fixed-size layout */
-  .StarRatings {
-    min-height: 199px;  /* Minimum height to ensure layout flow is visible */
-    min-width: 338px; /* This component has a fixed size */
-  }
-  .StarRatings > .background > .containerMinHeight {
-    min-height: 199px;
+  .Comp1 {
+    min-width: 150px; /* This component has a fixed size */
   }
 
 
-  .StarRatings > .layoutFlow > .elRating {
+  .Comp1 > .layoutFlow > .elRating {
     position: relative;
-    margin-top: 114px;
-    width: 103px;
-    margin-left: calc(50.0% - 51px);
+    margin-top: 0px;
+    width: 149px;
+    margin-left: 0px;
   }
-  .StarRatings > .layoutFlow > .elRating > * { 
-  width: 103px;
-  }
-  
-
-
-  .StarRatings > .layoutFlow > .elText {
-    position: relative;
-    margin-top: -94px;
-    width: 245px;
-    margin-left: calc(50.0% - 122px);
-  }
-  .StarRatings > .layoutFlow > .elText > * { 
-  width: 245px;
+  .Comp1 > .layoutFlow > .elRating > * { 
+  width: 149px;
+  height: 27px;
   }
   
 
