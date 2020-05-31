@@ -13,6 +13,7 @@ import DataSheet_shoppers from './DataSheet_shoppers.js';
 import DataSheet_localizationSheet from './DataSheet_localizationSheet.js';
 import firebase from 'firebase';
 import firestore from 'firebase/firestore';
+//import RatingPage from './Add_A_ReviewScreen.js';
 
 
 export default class App extends Component {
@@ -402,3 +403,4 @@ export default class App extends Component {
     );
   }
 }
+

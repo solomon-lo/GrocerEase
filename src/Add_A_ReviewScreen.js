@@ -1,67 +1,87 @@
 import React, { Component } from 'react';
+import firebase from 'firebase';
 import './App.css';
 
-export default class Add_A_ReviewScreen extends Component {
 
-  // Properties used by this component:
-  // appActions, deviceInfo
+
+import { BrewstrRef } from './firebase';
+import StarRating from './components/rater/star-rating';
+import './rating-page.css';
+
+class RatingPage extends Component {
 
   constructor(props) {
     super(props);
-    
     this.state = {
+      name: '',
+      description: '',
+      rating: 0,
+      user: ''
     };
   }
 
-  componentDidMount() {
+  async componentDidMount(){
+    const user = await firebase.auth().currentUser;// this.props.auth.getUser();
+    this.setState({user:user.email});
   }
 
-  componentWillUnmount() {
-  }
 
-  componentDidUpdate() {
-  }
+  handleChange = ev => {
+    this.setState({
+      [ev.target.name]: ev.target.value
+    });
+  };
 
-  componentWillReceiveProps(nextProps) {
-  }
+  setRating = rating => {
+    this.setState({ rating: rating });
+  };
+
+  saveRating = () => {
+    BrewstrRef.push()
+      .set(this.state)
+      .then(() => {
+        this.props.history.push('/ratinglist');
+      });
+  };
 
   render() {
-    let layoutFlowStyle = {};
-    let baseStyle = {};
-    if (this.props.transitionId && this.props.transitionId.length > 0 && this.props.atTopOfScreenStack && this.props.transitionForward) {
-      baseStyle.animation = '0.25s ease-in-out '+this.props.transitionId;
-    }
-    if ( !this.props.atTopOfScreenStack) {
-      layoutFlowStyle.height = '100vh';
-      layoutFlowStyle.overflow = 'hidden';
-    }
-    
-    const style_elBackground = {
-      width: '100%',
-      height: '100%',
-     };
-    const style_elBackground_outer = {
-      backgroundColor: '#f6f6f6',
-     };
-    
     return (
-      <div className="AppScreen Add_A_ReviewScreen" style={baseStyle}>
-        <div className="background">
-          <div className="containerMinHeight elBackground" style={style_elBackground_outer}>
-            <div className="appBg" style={style_elBackground} />
-          </div>
+      <div className="rating-form">
+        <div className="heading">Rate A Beer</div>
+        <div className="form-input">
+          <label htmlFor="name">Beer:</label>
+          <input
+            type="text"
+            name="name"
+            id="name"
+            onChange={this.handleChange}
+          />
         </div>
-        
-        <div className="layoutFlow" style={layoutFlowStyle}>
-          <div className="hasNestedComps elStarRatings">
-            <div>
-              {/* WARNING: element 'StarRatings' in 'Add_A_Review' has no component set */}
-            </div>
-          </div>
+        <div className="form-input">
+          <label htmlFor="description">Description:</label>
+          <textarea
+            name="description"
+            id="description"
+            onChange={this.handleChange}
+          />
         </div>
-        
+        <div className="form-input rating">
+          <label htmlFor="rating">Rating:</label>
+          <StarRating
+            numberOfStars="5"
+            currentRating="0"
+            onClick={this.setRating}
+          />
+        </div>
+        <div className="actions">
+          <button type="submit" onClick={this.saveRating}>
+            Submit Rating
+          </button>
+        </div>
       </div>
-    )
+    );
   }
-  
 }
+
+
+export default RatingPage;
