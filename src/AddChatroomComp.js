@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-//import './geocoderForm.css';
-import Map from './map';
+import Map2 from './map_for_post';
 // UI framework component imports
 import Button from 'muicss/lib/react/button';
 
@@ -188,7 +187,7 @@ export default class AddChatroomComp extends Component {
           </div>
           
           <div className="mapstyle">
-            <Map setLocation = {this.textInputChanged_field_shopper_city}> </Map>
+            <Map2 setLocation = {this.textInputChanged_field_shopper_city}> </Map2>
             {/*<input className="baseFont" style={style_elField_shopper_city} type="text" placeholder={this.props.locStrings.shopper_city_field} onChange={this.textInputChanged_field_shopper_city} value={this.state.field_shopper_city}  />*/}
           </div>
         </div>

@@ -1,0 +1,32 @@
+.mapContainer2 {
+    padding-top: 0px;
+    left: 5%;
+    position: relative;
+    height: 500px;
+    width: 40%;
+}
+    
+.geoContainer {
+        z-index: 2;
+}
+    
+.map {
+        position: absolute;
+        height: 40%;
+}
+.marker {
+        background-image: url('images/mapbox-icon.png');
+        background-size: cover;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        cursor: pointer;
+}
+.mapboxgl-popup {
+    max-width: 200px;
+}
+    
+.mapboxgl-popup-content {
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+}

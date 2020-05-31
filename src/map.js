@@ -58,12 +58,6 @@ export default class Map extends React.Component {
             });
         });
 
-        geocoder.on('result', (result) => {
-            this.props.setLocation(result.result["place_name_en-US"]);
-            console.log(this.props.location);
-         });
-
- 
         var geolocations = {
             type: 'FeatureCollection',
             features: [{
@@ -106,12 +100,15 @@ export default class Map extends React.Component {
             .setPopup(new mapboxgl.Popup({ offset: 25 }) // add popups
             .setHTML('<h3>' + marker.properties.title + '</h3><p>' + marker.properties.description + '</p>'))
             .addTo(map);
-        });
-
-        
+        });        
     }
 
-
+    componentWillUnmount() {
+        var map = this.mapContainer;
+        //var geocoder = this.geoContainer;
+        //map.removeControl(geocoder);
+        map.remove(); 
+      }
 
     render() {
 

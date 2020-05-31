@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
+import Map from './map.js'
 import btn_icon_back_map from './images/btn_icon_back_map.png';
 
 // UI framework component imports
@@ -58,6 +59,7 @@ export default class MapScreen extends Component {
         <Appbar className="navBar">
           <div className="title">Map</div>  <div className="backBtn" onClick={ (ev)=>{ this.props.appActions.goBack() } }><img src={btn_icon_back_map} alt="" style={{width: '50%'}} /></div>
         </Appbar>
+        <Map></Map>
         
       </div>
     )
