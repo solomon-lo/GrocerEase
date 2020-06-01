@@ -43,14 +43,6 @@ export default class Map extends React.Component {
         });
 
         map.addControl(geocoder);
-/*
-        map.addControl( () => {
-            new MapboxGeocoder({
-                container: this.mapContainer,
-                accessToken: mapboxgl.accessToken,
-                mapboxgl: mapboxgl,
-            })}
-        ); */
         
         map.on('move', () => {
             this.setState({
@@ -60,8 +52,7 @@ export default class Map extends React.Component {
             });
         });
 
-        //map.on("load", () => {
-
+        map.on("load", () => {
             map.loadImage(icon,
                 function(error, image) {
                     if (error) throw error;
@@ -86,15 +77,15 @@ export default class Map extends React.Component {
                         }
                     })
                 });
-            
+                map.on('moveend', async() => {
+                    const places = await fetchData({longitude: this.state.lng, latitude: this.state.lat}); //?
+                    map.getSource("points").setData(places);
+                });
+        });
+        if (map.isStyleLoaded()) {
+            console.log("loaded");
 
-        //});
-        if (map.loaded) {
-            map.on('moveend', async() => {
-                const places = await fetchData({longitude: this.state.lng, latitude: this.state.lat}); //?
-                map.getSource("points").setData(places);
-            });
-        }
+        };
 
     
     }
