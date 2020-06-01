@@ -1,9 +1,11 @@
 //map.js
 import React from 'react';
-import mapboxgl from 'mapbox-gl';
+import mapboxgl, {Marker} from 'mapbox-gl';
 //import Geocoder from 'react-map-gl-geocoder';
 //import MapboxGeocoder from 'mapbox-gl';
 import './map.css';
+import fetchData from "./fetchData.js"
+import icon from './images/mapbox-icon.png'
 
 
 mapboxgl.accessToken = 'pk.eyJ1IjoiZ3JvY2VyZWFzZSIsImEiOiJja2FrZTl4YWgwbzhjMnlwZHh0bG9tb2FxIn0.24dvEshJiFjdusaNZYAP5A';
@@ -58,55 +60,45 @@ export default class Map extends React.Component {
             });
         });
 
-        var geolocations = {
-            type: 'FeatureCollection',
-            features: [{
-                type: 'Feature',
-                geometry: {
-                type: 'Point',
-                coordinates: [-77.032, 38.913]
-                },
-                properties: {
-                title: 'Mapbox',
-                description: 'The District of Columbia'
-                }
-            },
-            {
-                type: 'Feature',
-                geometry: {
-                type: 'Point',
-                coordinates: [-122.414, 37.776]
-                },
-                properties: {
-                title: 'Mapbox',
-                description: 'San Francisco, California'
-                }
-            }]
-            };
-    
-            // add markers to map
-        geolocations.features.forEach(function(marker) {
+        //map.on("load", () => {
 
-            // create a HTML element for each feature
-            var el = document.createElement('div');
-            el.className = 'marker';
-        
-            // make a marker for each feature and add to the map
-            new mapboxgl.Marker(el)
-            .setLngLat(marker.geometry.coordinates)
-            .addTo(map);
-            new mapboxgl.Marker(el)
-            .setLngLat(marker.geometry.coordinates)
-            .setPopup(new mapboxgl.Popup({ offset: 25 }) // add popups
-            .setHTML('<h3>' + marker.properties.title + '</h3><p>' + marker.properties.description + '</p>'))
-            .addTo(map);
-        });        
+            map.loadImage(icon,
+                function(error, image) {
+                    if (error) throw error;
+                    map.addImage('pt', image);
+
+                    map.addSource("points", {
+                        type: "geojson",
+                        data: {
+                            type:"FeatureCollection",
+                            features: []
+                        }
+                    });
+
+                    map.addLayer({
+                        type: "symbol",
+                        id: "pointsLayer",
+                        source: "points",
+                        layout: {
+                            "icon-allow-overlap": true,
+                            "icon-image": 'pt',
+                            "icon-size": 0.2,
+                        }
+                    })
+                });
+            
+
+        //});
+
+        map.on('moveend', async() => {
+            const places = await fetchData({longitude: this.state.lng, latitude: this.state.lat});
+            map.getSource("points").setData(places);
+        });
+    
     }
 
     componentWillUnmount() {
         var map = this.mapContainer;
-        //var geocoder = this.geoContainer;
-        //map.removeControl(geocoder);
         map.remove(); 
       }
 
