@@ -89,11 +89,13 @@ export default class Map extends React.Component {
             
 
         //});
+        if (map.loaded) {
+            map.on('moveend', async() => {
+                const places = await fetchData({longitude: this.state.lng, latitude: this.state.lat}); //?
+                map.getSource("points").setData(places);
+            });
+        }
 
-        map.on('moveend', async() => {
-            const places = await fetchData({longitude: this.state.lng, latitude: this.state.lat});
-            map.getSource("points").setData(places);
-        });
     
     }
 
@@ -103,6 +105,8 @@ export default class Map extends React.Component {
       }
 
     render() {
+
+
 
         return (
             <div>
