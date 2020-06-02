@@ -11,7 +11,7 @@ export default class FirebaseLogin extends Component {
       isSignedIn: false
     };
 
-    this.autosignInEnabled = false;
+    this.autosignInEnabled = true;
     
     this.firebaseUIConfig = {
       signInFlow: 'popup',

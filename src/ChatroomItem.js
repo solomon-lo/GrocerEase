@@ -74,7 +74,7 @@ export default class ChatroomItem extends Component {
       textTransform: 'uppercase',
       backgroundImage: 'url('+btn_icon_456038+')',
       backgroundRepeat: 'no-repeat',
-      backgroundSize: '82.200%',
+      backgroundSize: '82.714%',
       backgroundPosition: '50% 0%',
       color: '(null)',
       textAlign: 'left',

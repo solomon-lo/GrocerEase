@@ -45,8 +45,8 @@ export default class ShoppingOptionsScreen extends Component {
   }
 
   onClick_elButton = (ev) => {
-    // Go to screen 'SweepStakes_Entry'
-    this.props.appActions.goToScreen('sweepstakes_entry', { transitionId: 'fadeIn' });
+    // Go to screen 'Deals_Compilation'
+    this.props.appActions.goToScreen('deals_compilation', { transitionId: 'fadeIn' });
   
   }
   
@@ -141,7 +141,7 @@ export default class ShoppingOptionsScreen extends Component {
       textTransform: 'uppercase',
       backgroundImage: 'url('+btn_icon_608940+')',
       backgroundRepeat: 'no-repeat',
-      backgroundSize: '89.562%',
+      backgroundSize: '90.122%',
       backgroundPosition: '50% 0%',
       color: '(null)',
       textAlign: 'left',
@@ -155,7 +155,7 @@ export default class ShoppingOptionsScreen extends Component {
       textTransform: 'uppercase',
       backgroundImage: 'url('+btn_icon_13220+')',
       backgroundRepeat: 'no-repeat',
-      backgroundSize: '89.562%',
+      backgroundSize: '88.887%',
       backgroundPosition: '50% 0%',
       color: '(null)',
       textAlign: 'left',
@@ -169,7 +169,7 @@ export default class ShoppingOptionsScreen extends Component {
       textTransform: 'uppercase',
       backgroundImage: 'url('+btn_icon_723827+')',
       backgroundRepeat: 'no-repeat',
-      backgroundSize: '89.562%',
+      backgroundSize: '90.122%',
       backgroundPosition: '50% 0%',
       color: '(null)',
       textAlign: 'left',

@@ -64,37 +64,37 @@ export default class FAQsScreen extends Component {
       backgroundColor: '#f6f6f6',
      };
     const style_elText = {
-      fontSize: 20.0,
+      fontSize: 19.8,
       color: 'rgba(0, 0, 0, 0.8500)',
       textAlign: 'left',
      };
     const style_elText2 = {
-      fontSize: 20.0,
+      fontSize: 19.9,
       color: 'rgba(0, 0, 0, 0.8500)',
       textAlign: 'left',
      };
     const style_elTextCopy = {
-      fontSize: 20.0,
+      fontSize: 19.8,
       color: 'rgba(0, 0, 0, 0.8500)',
       textAlign: 'left',
      };
     const style_elText3 = {
-      fontSize: 20.0,
+      fontSize: 19.9,
       color: 'rgba(0, 0, 0, 0.8500)',
       textAlign: 'left',
      };
     const style_elTextCopy2 = {
-      fontSize: 20.0,
+      fontSize: 19.8,
       color: 'rgba(0, 0, 0, 0.8500)',
       textAlign: 'left',
      };
     const style_elTextCopy3 = {
-      fontSize: 20.0,
+      fontSize: 19.9,
       color: 'rgba(0, 0, 0, 0.8500)',
       textAlign: 'left',
      };
     const style_elTextCopy4 = {
-      fontSize: 20.0,
+      fontSize: 19.8,
       color: 'rgba(0, 0, 0, 0.8500)',
       textAlign: 'left',
      };

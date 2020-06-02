@@ -69,7 +69,7 @@ export default class SweepStakes_EntryScreen extends Component {
       backgroundColor: '#f6f6f6',
      };
     const style_elText = {
-      fontSize: 15.3,
+      fontSize: 15.2,
       color: 'rgba(0, 0, 0, 0.8500)',
       textAlign: 'center',
      };

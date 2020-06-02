@@ -316,7 +316,7 @@ export default class DataSheet_localizationSheet extends DataSheetBase {
     item = {};
     this.items.push(item);
     item['key'] = "deals_text_586811";
-    item['en'] = "Enter the best deal you find online for a chance to win a $5 Amazon gift card! Our team of professionals will select the best entry every week, and email the winner an electronic Amazon gift card.";
+    item['en'] = "Enter the best deal you find online, which will post it on the Online Deals Page and enter you for a chance to win a $5 Amazon gift card! Our team of professionals will select the best entry every week, and email the winner an electronic Amazon gift card.";
     
     item = {};
     this.items.push(item);

@@ -358,18 +358,18 @@
 
 /* This component has a fixed-size layout */
   .ChatItem {
-    min-height: 131px;  /* Minimum height to ensure layout flow is visible */
-    width: 100%; /* This component was designed using a width of 412px */
+    min-height: 130px;  /* Minimum height to ensure layout flow is visible */
+    width: 100%; /* This component was designed using a width of 409px */
     height: 100%;
   }
   .ChatItem > .background > .containerMinHeight {
-    min-height: 131px;
+    min-height: 130px;
   }
 
 
   .ChatItem > .layoutFlow > .elText {
     position: relative;
-    margin-top: 16px;
+    margin-top: 15px;
     margin-left: 10px;
     margin-right: 10px;
     width: calc(100.0% - 20px);
@@ -382,7 +382,7 @@
 
   .ChatItem > .layoutFlow > .elTextCopy {
     position: relative;
-    margin-top: 16px;
+    margin-top: 15px;
     margin-left: 10px;
     margin-right: 10px;
     width: calc(100.0% - 20px);
@@ -421,7 +421,7 @@
 
   .ChatItem > .layoutFlow > .elTextCopy2 {
     position: relative;
-    margin-top: 16px;
+    margin-top: 15px;
     margin-left: 10px;
     margin-right: 10px;
     width: calc(100.0% - 20px);
@@ -433,12 +433,12 @@
 
 /* This component has a fixed-size layout */
   .SendMessage {
-    min-height: 154px;  /* Minimum height to ensure layout flow is visible */
-    width: 100%; /* This component was designed using a width of 395px */
+    min-height: 153px;  /* Minimum height to ensure layout flow is visible */
+    width: 100%; /* This component was designed using a width of 392px */
     height: 100%;
   }
   .SendMessage > .background > .containerMinHeight {
-    min-height: 154px;
+    min-height: 153px;
   }
 
 
@@ -484,7 +484,7 @@
 
 /* This component has a fixed-size layout */
   .Comp1 {
-    width: 100%; /* This component was designed using a width of 150px */
+    width: 100%; /* This component was designed using a width of 149px */
     height: 100%;
   }
 
@@ -492,11 +492,11 @@
   .Comp1 > .layoutFlow > .elRating {
     position: relative;
     margin-top: 0px;
-    width: 149px;
+    width: 148px;
     margin-left: 0px;
   }
   .Comp1 > .layoutFlow > .elRating > * { 
-  width: 149px;
+  width: 148px;
   height: 27px;
   }
   
@@ -751,7 +751,7 @@
     height: 154px;
   }
   .MessagesScreen > .screenFgContainer > .foreground > .elSendMessage > .background > .containerMinHeight {
-    min-height: 154px;
+    min-height: 153px;
   }
 
 @media (min-width: 568px) {
@@ -763,7 +763,7 @@
     height: 154px;
   }
   .MessagesScreen > .screenFgContainer > .foreground > .elSendMessage > .background > .containerMinHeight {
-    min-height: 154px;
+    min-height: 153px;
   }
 
 }
@@ -796,7 +796,7 @@
 
 /* This component has a fixed-size layout */
   .ChatroomItem {
-    width: 100%; /* This component was designed using a width of 421px */
+    width: 100%; /* This component was designed using a width of 418px */
     height: 100%;
   }
 
@@ -817,11 +817,11 @@
   .ChatroomItem > .layoutFlow > .elChatstore {
     position: relative;
     margin-top: 14px;
-    width: 238px;
+    width: 236px;
     margin-left: 3.2%;
   }
   .ChatroomItem > .layoutFlow > .elChatstore > * { 
-  width: 238px;
+  width: 236px;
   }
   
 
@@ -840,7 +840,7 @@
 
   .ChatroomItem > .layoutFlow > .elIconButton {
     position: relative;
-    margin-top: -29px;
+    margin-top: -28px;
     width: 100%;
   }
   .ChatroomItem > .layoutFlow > .elIconButton > * { 
@@ -855,11 +855,11 @@
   .ChatroomItem > .layoutFlow > .elText3 {
     position: relative;
     margin-top: 1px;
-    width: 238px;
+    width: 236px;
     margin-left: 3.2%;
   }
   .ChatroomItem > .layoutFlow > .elText3 > * { 
-  width: 238px;
+  width: 236px;
   }
   
 
@@ -2229,6 +2229,97 @@
 
 
 /* Narrowest size for this element's responsive layout */
+  .Deals_CompilationScreen > .background > .elBackground {
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    width: 100.0%;
+    height: 100%;
+  }
+@media (min-width: 568px) {
+  .Deals_CompilationScreen > .background > .elBackground {
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    width: 100.0%;
+    height: 100%;
+  }
+}
+@media (min-width: 768px) {
+  .Deals_CompilationScreen > .background > .elBackground {
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    width: 100.0%;
+    height: 100%;
+  }
+}
+@media (min-width: 1024px) {
+  .Deals_CompilationScreen > .background > .elBackground {
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    width: 100.0%;
+    height: 100%;
+  }
+}
+
+
+/* Narrowest size for this element's responsive layout */
+  .Deals_CompilationScreen > .layoutFlow > .elSpacer {
+    position: relative;
+    margin-top: 0px;
+    width: 10px;
+    margin-left: 0px;
+  }
+  .Deals_CompilationScreen > .layoutFlow > .elSpacer > * { 
+  width: 10px;
+  height: 50px;
+  }
+  
+@media (min-width: 568px) {
+  .Deals_CompilationScreen > .layoutFlow > .elSpacer {
+    position: relative;
+    margin-top: 0px;
+    width: 10px;
+    margin-left: 0px;
+  }
+  .Deals_CompilationScreen > .layoutFlow > .elSpacer > * { 
+  width: 10px;
+  height: 50px;
+  }
+  
+}
+@media (min-width: 768px) {
+  .Deals_CompilationScreen > .layoutFlow > .elSpacer {
+    position: relative;
+    margin-top: 0px;
+    width: 10px;
+    margin-left: 0px;
+  }
+  .Deals_CompilationScreen > .layoutFlow > .elSpacer > * { 
+  width: 10px;
+  height: 50px;
+  }
+  
+}
+@media (min-width: 1024px) {
+  .Deals_CompilationScreen > .layoutFlow > .elSpacer {
+    position: relative;
+    margin-top: 0px;
+    width: 10px;
+    margin-left: 0px;
+  }
+  .Deals_CompilationScreen > .layoutFlow > .elSpacer > * { 
+  width: 10px;
+  height: 50px;
+  }
+  
+}
+
+
+/* Narrowest size for this element's responsive layout */
   .ShoppingOptionsScreen > .background > .elBackground {
     position: absolute;
     left: 0px;
@@ -2692,7 +2783,7 @@
 
 
 /* Narrowest size for this element's responsive layout */
-  .StartScreen > .background > .elBackground {
+  .StartScreen > .background > .state0_elBackground {
     position: absolute;
     left: 0px;
     right: 0px;
@@ -2701,7 +2792,7 @@
     height: 100%;
   }
 @media (min-width: 568px) {
-  .StartScreen > .background > .elBackground {
+  .StartScreen > .background > .state0_elBackground {
     left: 0px;
     right: 0px;
     top: 0px;
@@ -2710,7 +2801,7 @@
   }
 }
 @media (min-width: 768px) {
-  .StartScreen > .background > .elBackground {
+  .StartScreen > .background > .state0_elBackground {
     left: 0px;
     right: 0px;
     top: 0px;
@@ -2719,7 +2810,7 @@
   }
 }
 @media (min-width: 1024px) {
-  .StartScreen > .background > .elBackground {
+  .StartScreen > .background > .state0_elBackground {
     left: 0px;
     right: 0px;
     top: 0px;
@@ -2728,13 +2819,13 @@
   }
 }
 
-.StartScreen .elButton button {
+.StartScreen .state0_elButton button {
   cursor: pointer;
   border: 0.0px solid transparent;
   border-radius: 3.4px;
 }
 
-.StartScreen .elButton button:focus {
+.StartScreen .state0_elButton button:focus {
   box-shadow: 0 0 5px rgba(0, 149, 214, 0.5000);
   outline: none;
 }
@@ -2742,55 +2833,55 @@
 
 
 /* Narrowest size for this element's responsive layout */
-  .StartScreen > .layoutFlow > .elButton {
+  .StartScreen > .layoutFlow > .state0_elButton {
     line-height: 35px;
     position: relative;
     margin-top: 359px;
     width: 145px;
     margin-left: calc(49.5% - 72px);
   }
-  .StartScreen > .layoutFlow > .elButton > * { 
+  .StartScreen > .layoutFlow > .state0_elButton > * { 
   width: 145px;
   height: 35px;
   }
   
 @media (min-width: 568px) {
-  .StartScreen > .layoutFlow > .elButton {
+  .StartScreen > .layoutFlow > .state0_elButton {
     line-height: 35px;
     position: relative;
     margin-top: 359px;
     width: 145px;
     margin-left: calc(49.5% - 72px);
   }
-  .StartScreen > .layoutFlow > .elButton > * { 
+  .StartScreen > .layoutFlow > .state0_elButton > * { 
   width: 145px;
   height: 35px;
   }
   
 }
 @media (min-width: 768px) {
-  .StartScreen > .layoutFlow > .elButton {
+  .StartScreen > .layoutFlow > .state0_elButton {
     line-height: 35px;
     position: relative;
     margin-top: 356px;
     width: 144px;
     margin-left: calc(49.5% - 72px);
   }
-  .StartScreen > .layoutFlow > .elButton > * { 
+  .StartScreen > .layoutFlow > .state0_elButton > * { 
   width: 144px;
   height: 35px;
   }
   
 }
 @media (min-width: 1024px) {
-  .StartScreen > .layoutFlow > .elButton {
+  .StartScreen > .layoutFlow > .state0_elButton {
     line-height: 35px;
     position: relative;
     margin-top: 356px;
     width: 144px;
     margin-left: calc(49.5% - 72px);
   }
-  .StartScreen > .layoutFlow > .elButton > * { 
+  .StartScreen > .layoutFlow > .state0_elButton > * { 
   width: 144px;
   height: 35px;
   }
@@ -2799,51 +2890,51 @@
 
 
 /* Narrowest size for this element's responsive layout */
-  .StartScreen > .layoutFlow > .elFirebaseLogin {
+  .StartScreen > .layoutFlow > .state0_elFirebaseLogin618129 {
     position: relative;
     margin-top: -135px;
     width: 207px;
     margin-left: calc(49.5% - 104px);
   }
-  .StartScreen > .layoutFlow > .elFirebaseLogin > * { 
+  .StartScreen > .layoutFlow > .state0_elFirebaseLogin618129 > * { 
   width: 207px;
   height: 48px;
   }
   
 @media (min-width: 568px) {
-  .StartScreen > .layoutFlow > .elFirebaseLogin {
+  .StartScreen > .layoutFlow > .state0_elFirebaseLogin618129 {
     position: relative;
     margin-top: -135px;
     width: 207px;
     margin-left: calc(49.5% - 104px);
   }
-  .StartScreen > .layoutFlow > .elFirebaseLogin > * { 
+  .StartScreen > .layoutFlow > .state0_elFirebaseLogin618129 > * { 
   width: 207px;
   height: 48px;
   }
   
 }
 @media (min-width: 768px) {
-  .StartScreen > .layoutFlow > .elFirebaseLogin {
+  .StartScreen > .layoutFlow > .state0_elFirebaseLogin618129 {
     position: relative;
     margin-top: -134px;
     width: 206px;
     margin-left: calc(49.5% - 103px);
   }
-  .StartScreen > .layoutFlow > .elFirebaseLogin > * { 
+  .StartScreen > .layoutFlow > .state0_elFirebaseLogin618129 > * { 
   width: 206px;
   height: 47px;
   }
   
 }
 @media (min-width: 1024px) {
-  .StartScreen > .layoutFlow > .elFirebaseLogin {
+  .StartScreen > .layoutFlow > .state0_elFirebaseLogin618129 {
     position: relative;
     margin-top: -134px;
     width: 206px;
     margin-left: calc(49.5% - 103px);
   }
-  .StartScreen > .layoutFlow > .elFirebaseLogin > * { 
+  .StartScreen > .layoutFlow > .state0_elFirebaseLogin618129 > * { 
   width: 206px;
   height: 47px;
   }
@@ -2852,51 +2943,51 @@
 
 
 /* Narrowest size for this element's responsive layout */
-  .StartScreen > .layoutFlow > .elFieldUsername {
+  .StartScreen > .layoutFlow > .state0_elFieldUsername {
     position: relative;
     margin-top: -130px;
     width: 226px;
     margin-left: calc(49.5% - 113px);
   }
-  .StartScreen > .layoutFlow > .elFieldUsername > * { 
+  .StartScreen > .layoutFlow > .state0_elFieldUsername > * { 
   width: 226px;
   height: 52px;
   }
   
 @media (min-width: 568px) {
-  .StartScreen > .layoutFlow > .elFieldUsername {
+  .StartScreen > .layoutFlow > .state0_elFieldUsername {
     position: relative;
     margin-top: -130px;
     width: 226px;
     margin-left: calc(49.5% - 113px);
   }
-  .StartScreen > .layoutFlow > .elFieldUsername > * { 
+  .StartScreen > .layoutFlow > .state0_elFieldUsername > * { 
   width: 226px;
   height: 52px;
   }
   
 }
 @media (min-width: 768px) {
-  .StartScreen > .layoutFlow > .elFieldUsername {
+  .StartScreen > .layoutFlow > .state0_elFieldUsername {
     position: relative;
     margin-top: -130px;
     width: 225px;
     margin-left: calc(49.5% - 112px);
   }
-  .StartScreen > .layoutFlow > .elFieldUsername > * { 
+  .StartScreen > .layoutFlow > .state0_elFieldUsername > * { 
   width: 225px;
   height: 51px;
   }
   
 }
 @media (min-width: 1024px) {
-  .StartScreen > .layoutFlow > .elFieldUsername {
+  .StartScreen > .layoutFlow > .state0_elFieldUsername {
     position: relative;
     margin-top: -130px;
     width: 225px;
     margin-left: calc(49.5% - 112px);
   }
-  .StartScreen > .layoutFlow > .elFieldUsername > * { 
+  .StartScreen > .layoutFlow > .state0_elFieldUsername > * { 
   width: 225px;
   height: 51px;
   }
@@ -2905,69 +2996,122 @@
 
 
 /* Narrowest size for this element's responsive layout */
-  .StartScreen > .layoutFlow > .elText {
+  .StartScreen > .layoutFlow > .state0_elText {
     position: relative;
     margin-top: -132px;
     width: 238px;
     margin-left: calc(49.8% - 119px);
   }
-  .StartScreen > .layoutFlow > .elText > * { 
+  .StartScreen > .layoutFlow > .state0_elText > * { 
   width: 238px;
   }
   
 @media (min-width: 568px) {
-  .StartScreen > .layoutFlow > .elText {
+  .StartScreen > .layoutFlow > .state0_elText {
     position: relative;
     margin-top: -132px;
     width: 238px;
     margin-left: calc(49.7% - 119px);
   }
-  .StartScreen > .layoutFlow > .elText > * { 
+  .StartScreen > .layoutFlow > .state0_elText > * { 
   width: 238px;
   }
   
 }
 @media (min-width: 768px) {
-  .StartScreen > .layoutFlow > .elText {
+  .StartScreen > .layoutFlow > .state0_elText {
     position: relative;
     margin-top: -132px;
     width: 236px;
     margin-left: calc(49.7% - 118px);
   }
-  .StartScreen > .layoutFlow > .elText > * { 
+  .StartScreen > .layoutFlow > .state0_elText > * { 
   width: 236px;
   }
   
 }
 @media (min-width: 1024px) {
-  .StartScreen > .layoutFlow > .elText {
+  .StartScreen > .layoutFlow > .state0_elText {
     position: relative;
     margin-top: -132px;
     width: 236px;
     margin-left: calc(49.6% - 118px);
   }
-  .StartScreen > .layoutFlow > .elText > * { 
+  .StartScreen > .layoutFlow > .state0_elText > * { 
   width: 236px;
+  }
+  
+}
+
+
+/* Narrowest size for this element's responsive layout */
+  .StartScreen > .layoutFlow > .state1_elFirebaseLogin618129 {
+    position: relative;
+    margin-top: -135px;
+    width: 207px;
+    margin-left: calc(49.5% - 104px);
+  }
+  .StartScreen > .layoutFlow > .state1_elFirebaseLogin618129 > * { 
+  width: 207px;
+  height: 48px;
+  }
+  
+@media (min-width: 568px) {
+  .StartScreen > .layoutFlow > .state1_elFirebaseLogin618129 {
+    position: relative;
+    margin-top: -135px;
+    width: 207px;
+    margin-left: calc(49.5% - 104px);
+  }
+  .StartScreen > .layoutFlow > .state1_elFirebaseLogin618129 > * { 
+  width: 207px;
+  height: 48px;
+  }
+  
+}
+@media (min-width: 768px) {
+  .StartScreen > .layoutFlow > .state1_elFirebaseLogin618129 {
+    position: relative;
+    margin-top: -134px;
+    width: 206px;
+    margin-left: calc(49.5% - 103px);
+  }
+  .StartScreen > .layoutFlow > .state1_elFirebaseLogin618129 > * { 
+  width: 206px;
+  height: 47px;
+  }
+  
+}
+@media (min-width: 1024px) {
+  .StartScreen > .layoutFlow > .state1_elFirebaseLogin618129 {
+    position: relative;
+    margin-top: -134px;
+    width: 206px;
+    margin-left: calc(49.5% - 103px);
+  }
+  .StartScreen > .layoutFlow > .state1_elFirebaseLogin618129 > * { 
+  width: 206px;
+  height: 47px;
   }
   
 }
 
 /* This component has a fixed-size layout */
   .StarRatings {
-    min-height: 199px;  /* Minimum height to ensure layout flow is visible */
-    width: 100%; /* This component was designed using a width of 338px */
+    min-height: 197px;  /* Minimum height to ensure layout flow is visible */
+    width: 100%; /* This component was designed using a width of 336px */
     height: 100%;
   }
   .StarRatings > .background > .containerMinHeight {
-    min-height: 199px;
+    min-height: 197px;
   }
 
 
   .StarRatings > .layoutFlow > .elRating {
     position: relative;
-    margin-top: 105px;
+    margin-top: 104px;
     width: 99px;
-    margin-left: calc(50.0% - 50px);
+    margin-left: calc(50.0% - 49px);
   }
   .StarRatings > .layoutFlow > .elRating > * { 
   width: 99px;
@@ -2978,11 +3122,11 @@
   .StarRatings > .layoutFlow > .elText {
     position: relative;
     margin-top: -94px;
-    width: 245px;
+    width: 243px;
     margin-left: calc(50.0% - 122px);
   }
   .StarRatings > .layoutFlow > .elText > * { 
-  width: 245px;
+  width: 243px;
   }
   
 
@@ -3047,7 +3191,7 @@
   }
   
   .ReviewsScreen > .layoutFlow > .elStarRatings > .background > .containerMinHeight {
-    min-height: 199px;
+    min-height: 197px;
   }
 
 @media (min-width: 568px) {
@@ -3062,7 +3206,7 @@
   }
   
   .ReviewsScreen > .layoutFlow > .elStarRatings > .background > .containerMinHeight {
-    min-height: 199px;
+    min-height: 197px;
   }
 
 }

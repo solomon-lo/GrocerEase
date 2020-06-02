@@ -53,7 +53,7 @@ export default class ChatItem extends Component {
       textTransform: 'uppercase',
       backgroundImage: 'url('+btn_icon_894338+')',
       backgroundRepeat: 'no-repeat',
-      backgroundSize: '82.200%',
+      backgroundSize: '82.714%',
       backgroundPosition: '50% 0%',
       color: '(null)',
       textAlign: 'left',

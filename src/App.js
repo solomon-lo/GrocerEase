@@ -6,6 +6,7 @@ import SweepStakes_EntryScreen from './SweepStakes_EntryScreen.js';
 import FAQsScreen from './FAQsScreen.js';
 import MapScreen from './MapScreen.js';
 import ScratchAddAPostScreen from './ScratchAddAPostScreen.js';
+import Deals_CompilationScreen from './Deals_CompilationScreen.js';
 import ShoppingOptionsScreen from './ShoppingOptionsScreen.js';
 import StartScreen from './StartScreen.js';
 import ReviewsScreen from './ReviewsScreen.js';
@@ -403,6 +404,8 @@ export default class App extends Component {
           return (<MapScreen {...screenProps} />)
         case 'scratchaddapost':
           return (<ScratchAddAPostScreen {...screenProps} />)
+        case 'deals_compilation':
+          return (<Deals_CompilationScreen {...screenProps} />)
         case 'shoppingoptions':
           return (<ShoppingOptionsScreen {...screenProps} />)
         case 'start':
