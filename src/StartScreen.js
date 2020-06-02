@@ -21,12 +21,12 @@ export default class StartScreen extends Component {
 
   componentDidMount() {
     {
-      let dataSheet = this.props.appActions.dataSheets['shoppers'];
+      let dataSheet = this.props.appActions.dataSheets['authentication'];
       let serviceOptions = this.props.appActions.serviceOptions_shoppers;
-      if ( !this.props.appActions.dataSheetLoaded['shoppers']) {
-        serviceOptions.servicePath = dataSheet.expandSlotTemplateString("shoppers", this.props.appActions.dataSlots);
+      if ( !this.props.appActions.dataSheetLoaded['authentication']) {
+        serviceOptions.servicePath = dataSheet.expandSlotTemplateString("authentication", this.props.appActions.dataSlots);
         this.props.appActions.loadData_firebaseConnection(dataSheet, serviceOptions, true);
-        this.props.appActions.dataSheetLoaded['shoppers'] = true;
+        this.props.appActions.dataSheetLoaded['authentication'] = true;
       }
     }
   }
@@ -54,7 +54,7 @@ export default class StartScreen extends Component {
   }
   
   sendData_button_to_shoppers = () => {
-    const dataSheet = this.props.appActions.getDataSheet('shoppers');
+    const dataSheet = this.props.appActions.getDataSheet('authentication');
   
     let row = this.props.dataSheetRow || {
     };
@@ -62,7 +62,7 @@ export default class StartScreen extends Component {
       name: (this.props.appActions.dataSlots ? this.props.appActions.dataSlots['ds_LoginUserName'] : ''),
       gmailUniqueUserID: (this.props.appActions.dataSlots ? this.props.appActions.dataSlots['ds_UniqueUserID'] : ''),
     };
-    this.props.appActions.addToDataSheet('shoppers', row);
+    this.props.appActions.addToDataSheet('authentication', row);
   }
   
   

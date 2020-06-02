@@ -8,7 +8,7 @@ const fetchData = coord => {
             coordinates: [-77.032, 38.913]
             },
             properties: {
-            title: 'Mapbox',
+            title: 'D.C.',
             description: 'The District of Columbia'
             }
         },
@@ -19,7 +19,7 @@ const fetchData = coord => {
             coordinates: [-122.414, 37.776]
             },
             properties: {
-            title: 'Mapbox',
+            title: 'S.F.',
             description: 'San Francisco, California'
             }
         }]

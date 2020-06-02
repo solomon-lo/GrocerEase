@@ -9,6 +9,7 @@ import DataSheet_chatroom from './DataSheet_chatroom.js';
 import DataSheet_chatmessages from './DataSheet_chatmessages.js';
 import DataSheet_localizationSheet from './DataSheet_localizationSheet.js';
 import DataSheet_shoppers from './DataSheet_shoppers.js';
+import DataSheet_authentication from './DataSheet_authentication.js';
 import MapScreen from './MapScreen.js';
 import ReviewsScreen from './ReviewsScreen.js';
 import firebase from 'firebase';
@@ -23,6 +24,7 @@ export default class App extends Component {
     this.dataSheets['chatroom'] = new DataSheet_chatroom('chatroom', this.dataSheetDidUpdate);
     this.dataSheets['chatmessages'] = new DataSheet_chatmessages('chatmessages', this.dataSheetDidUpdate);
     this.dataSheets['shoppers'] = new DataSheet_shoppers('shoppers', this.dataSheetDidUpdate);
+    this.dataSheets['authentication'] = new DataSheet_authentication('authentication', this.dataSheetDidUpdate);
     this.dataSheets['localizationSheet'] = new DataSheet_localizationSheet('localizationSheet', this.dataSheetDidUpdate);
     this.dataSheetLoaded = {};
 
@@ -74,6 +76,14 @@ export default class App extends Component {
     };
     this.dataSheets['shoppers'].appActions = this;
     this.dataSheets['shoppers'].firebase = firebase;
+
+    this.serviceOptions_authentication = {
+      dataSlots: this.dataSlots,
+      servicePath: "authentication",
+      query: "orderBy(\"name\",\"asc\")",
+    };
+    this.dataSheets['authentication'].appActions = this;
+    this.dataSheets['authentication'].firebase = firebase;
     
 
     this.state = {
@@ -251,6 +261,25 @@ export default class App extends Component {
         this.loadData_firebaseConnection(this.dataSheets['shoppers'], this.serviceOptions_shoppers, true);
       }
     }
+    if (this.serviceOptions_authentication.query.length > 0) {
+      let usedSlots = [];
+      this.dataSheets['authentication'].expandSlotTemplateString(this.serviceOptions_authentication.query, {}, usedSlots);
+      if (usedSlots.includes(slotId)) {
+        // if data sheet's content depends on this slot, reload it now
+        this.loadData_firebaseConnection(this.dataSheets['authentication'], this.serviceOptions_authentication, true);
+      }
+    }
+    
+    {
+      let usedSlots = [];
+      let servicePath = this.dataSheets['authentication'].expandSlotTemplateString("authentication", this.dataSlots, usedSlots);
+      if (usedSlots.includes(slotId)) {
+        // if data sheet's content depends on this slot, reload it now
+        this.serviceOptions_authentication.servicePath = servicePath;
+        this.loadData_firebaseConnection(this.dataSheets['authentication'], this.serviceOptions_authentication, true);
+      }
+    }
+
     this.setState({});
   }
 

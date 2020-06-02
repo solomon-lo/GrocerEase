@@ -60,7 +60,7 @@ export default class Map2 extends React.Component {
         });
 
         geocoder.on('result', (result) => {
-            this.props.setLocation(result.result["place_name_en-US"]);
+            this.props.setLocation(result.result); //push JSON object onto database
             console.log(this.props.location);
          });
 

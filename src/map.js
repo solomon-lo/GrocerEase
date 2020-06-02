@@ -1,11 +1,12 @@
 //map.js
 import React from 'react';
-import mapboxgl, {Marker} from 'mapbox-gl';
+import ReactDOM from 'react-dom';
+import mapboxgl from 'mapbox-gl';
 //import Geocoder from 'react-map-gl-geocoder';
 //import MapboxGeocoder from 'mapbox-gl';
 import './map.css';
 import fetchData from "./fetchData.js"
-import icon from './images/mapbox-icon.png'
+import icon from './images/apple.png'
 
 
 mapboxgl.accessToken = 'pk.eyJ1IjoiZ3JvY2VyZWFzZSIsImEiOiJja2FrZTl4YWgwbzhjMnlwZHh0bG9tb2FxIn0.24dvEshJiFjdusaNZYAP5A';
@@ -20,10 +21,12 @@ export default class Map extends React.Component {
             zoom: 8,
             location: '',
         };
+        this.mounted = false;
     }
 
     
     componentDidMount() {
+        this.mounted = true;
         var map = new mapboxgl.Map({
             container: this.mapContainer,
             style: 'mapbox://styles/mapbox/streets-v11',
@@ -77,20 +80,56 @@ export default class Map extends React.Component {
                         }
                     })
                 });
+                if (this.mounted) {
                 map.on('moveend', async() => {
                     const places = await fetchData({longitude: this.state.lng, latitude: this.state.lat}); //?
-                    map.getSource("points").setData(places);
+                    var temp = map.getSource("points");
+                    if (temp) {
+                        map.getSource("points").setData(places);
+                    }
+                    
                 });
+                };
         });
-        if (map.isStyleLoaded()) {
-            console.log("loaded");
 
-        };
+        map.on("mouseenter", "pointsLayer", () => {
+            /*
+            if (val.features.length) {
+                console.log(val.features[0]);
+                var popUp = document.createElement("div");
+                ReactDOM.render(<Popup feature={val.features[0]} />, popUp);
 
-    
+                var pop = new mapboxgl.Popup();
+                pop.setLngLat(val.features[0].geometry.coordinates)
+                pop.setDOMContent(popUp)
+                pop.addTo(map); 
+            } 
+            */
+           map.getCanvas().style.cursor = "crosshair";  
+        });
+
+        map.on("mouseleave", "pointsLayer", () => {
+            map.getCanvas().style.cursor = "";
+        })
+
+
+        map.on("click", "pointsLayer", val => {
+            if (val.features.length) {
+                console.log(val.features[0]);
+                var popUp = document.createElement("div");
+                ReactDOM.render(<Popup feature={val.features[0]} />, popUp);
+
+                var pop = new mapboxgl.Popup({});
+                pop.setLngLat(val.features[0].geometry.coordinates)
+                pop.setDOMContent(popUp)
+                pop.addTo(map); 
+            }           
+        });
+
     }
 
     componentWillUnmount() {
+        this.mounted=false;
         var map = this.mapContainer;
         map.remove(); 
       }
@@ -111,5 +150,16 @@ export default class Map extends React.Component {
     }
 }
 
+
+const Popup = ({feature}) => {
+    const name = feature.properties.title;
+    const des = feature.properties.description;
+    return (
+        <div>
+            <h3>{name}</h3>
+            {des}
+        </div>
+    )
+}
 
 
