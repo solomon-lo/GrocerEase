@@ -5,7 +5,7 @@ import btn_icon_894338 from './images/btn_icon_894338.png';
 export default class ChatItem extends Component {
 
   // Properties used by this component:
-  // sender_username, message_body, timestamp
+  // message_body, timestamp, sender_username
 
   constructor(props) {
     super(props);

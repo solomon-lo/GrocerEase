@@ -1,5 +1,5 @@
 {
-  "name": "AddReviews",
+  "name": "impScratchAddPost",
   "version": "0.1.1",
   "private": true,
   "dependencies": {
@@ -9,6 +9,7 @@
     "react-scripts": "2.1.8",
     "muicss": "^0.9.41",
     "react-firebaseui": "^4.0.0",
+    "react-rating": "^1.1.0",
     "firebase": "~7.5.0"
   },
   "scripts": {

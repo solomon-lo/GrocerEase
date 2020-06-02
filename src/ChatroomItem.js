@@ -5,7 +5,7 @@ import btn_icon_456038 from './images/btn_icon_456038.png';
 export default class ChatroomItem extends Component {
 
   // Properties used by this component:
-  // store, time, document_key, chatroom_name
+  // document_key, chatroom_name, chatroom_time
 
   constructor(props) {
     super(props);
@@ -28,7 +28,7 @@ export default class ChatroomItem extends Component {
 
   onClick_elChatname = (ev) => {
     let newVal = this.props.document_key;
-    this.props.appActions.updateDataSlot('ds_SlotSelectedShopperKey', newVal);
+    this.props.appActions.updateDataSlot('ds_SlotSelectedChatroomKey', newVal);
   
     // Go to screen 'Messages'
     this.props.appActions.goToScreen('messages', { transitionId: 'fadeIn' });
@@ -60,7 +60,7 @@ export default class ChatroomItem extends Component {
       pointerEvents: 'auto',
      };
     
-    const value_chatstore = this.props.store;
+    const value_chatstore = this.props.document_key;
     
     const style_elChatstore = {
       color: 'rgba(0, 0, 0, 0.8500)',
@@ -83,7 +83,7 @@ export default class ChatroomItem extends Component {
       pointerEvents: 'auto',
      };
     
-    const value_text3 = this.props.time;
+    const value_text3 = this.props.chatroom_time;
     
     const style_elText3 = {
       color: 'rgba(0, 0, 0, 0.8500)',
