@@ -16,16 +16,18 @@ export default class Map extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            lng: -118,
-            lat: 34,
+            lng: -122.4,
+            lat: 37.7,
             zoom: 8,
             location: '',
+            data: {},
         };
         this.mounted = false;
     }
 
     
     componentDidMount() {
+        console.log(this.props)
         this.mounted = true;
         var map = new mapboxgl.Map({
             container: this.mapContainer,
@@ -66,7 +68,8 @@ export default class Map extends React.Component {
                         data: {
                             type:"FeatureCollection",
                             features: []
-                        }
+                        },
+                        cluster: true,
                     });
 
                     map.addLayer({
@@ -79,18 +82,46 @@ export default class Map extends React.Component {
                             "icon-size": 0.2,
                         }
                     })
-                });
-                if (this.mounted) {
-                map.on('moveend', async() => {
-                    const places = await fetchData({longitude: this.state.lng, latitude: this.state.lat}); //?
-                    var temp = map.getSource("points");
-                    if (temp) {
-                        map.getSource("points").setData(places);
-                    }
-                    
-                });
-                };
+                
+                }
+            );
         });
+
+        map.on('render', async() => {
+            //const places1 = await fetchData({longitude: this.state.lng, latitude: this.state.lat}); //?
+            var feats = [];
+            var places = {type: 'FeatureCollection', features: feats}
+            var i;
+            for (i = 0; i < this.props.items.length; i++) {
+                feats.push(this.props.items[i].area);
+                feats[i].properties.description = this.props.items[i].name;
+                feats[i].properties.title = this.props.items[i].area.text;
+                feats[i].metadata = this.props.items[i].document_key;
+            }
+            var temp = map.getSource("points");
+            if (temp) {
+                map.getSource("points").setData(places);
+            }
+        });
+
+        if (this.mounted) {
+            map.on('moveend', async() => {
+                //const places1 = await fetchData({longitude: this.state.lng, latitude: this.state.lat}); //?
+                var feats = [];
+                var places = {type: 'FeatureCollection', features: feats}
+                var i;
+                for (i = 0; i < this.props.items.length; i++) {
+                    feats.push(this.props.items[i].area);
+                    feats[i].properties.description = this.props.items[i].name;
+                    feats[i].properties.title = this.props.items[i].area.text;
+                    feats[i].metadata = this.props.items[i].document_key;
+                }
+                var temp = map.getSource("points");
+                if (temp) {
+                    map.getSource("points").setData(places);
+                }
+            });
+        };
 
         map.on("mouseenter", "pointsLayer", () => {
             /*
@@ -115,7 +146,6 @@ export default class Map extends React.Component {
 
         map.on("click", "pointsLayer", val => {
             if (val.features.length) {
-                console.log(val.features[0]);
                 var popUp = document.createElement("div");
                 ReactDOM.render(<Popup feature={val.features[0]} />, popUp);
 
@@ -136,8 +166,6 @@ export default class Map extends React.Component {
 
     render() {
 
-
-
         return (
             <div>
                 <div className='sidebarStyle'>
@@ -152,12 +180,14 @@ export default class Map extends React.Component {
 
 
 const Popup = ({feature}) => {
-    const name = feature.properties.title;
+    //const name = feature.properties.description;
     const des = feature.properties.description;
+    const store = feature.properties.title;
     return (
         <div>
-            <h3>{name}</h3>
-            {des}
+            <h3>{store}</h3>
+            <p>{des}</p>
+            <button>Message</button> {/* doesn't do anything yet */}
         </div>
     )
 }

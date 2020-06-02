@@ -15,10 +15,22 @@ export default class MapScreen extends Component {
     super(props);
     
     this.state = {
+      data: '',
+      loaded: false,
     };
+
+
   }
 
   componentDidMount() {
+    let dataSheet = this.props.appActions.dataSheets['shoppers'];
+    let serviceOptions = this.props.appActions.serviceOptions_shoppers;
+    if ( !this.props.appActions.dataSheetLoaded['shoppers']) {
+      serviceOptions.servicePath = dataSheet.expandSlotTemplateString("shoppers", this.props.appActions.dataSlots);
+      this.props.appActions.loadData_firebaseConnection(dataSheet, serviceOptions, true);
+        this.props.appActions.dataSheetLoaded['shoppers'] = true;
+        this.setState({loaded: true});
+    }
   }
 
   componentWillUnmount() {
@@ -31,6 +43,9 @@ export default class MapScreen extends Component {
   }
 
   render() {
+    const dataSheet_shoppers = this.props.dataSheets['shoppers'];
+    let items_list = []
+    items_list = items_list.concat(this.props.appActions.getDataSheet('shoppers').items);
     let layoutFlowStyle = {};
     let baseStyle = {};
     if (this.props.transitionId && this.props.transitionId.length > 0 && this.props.atTopOfScreenStack && this.props.transitionForward) {
@@ -48,7 +63,7 @@ export default class MapScreen extends Component {
     const style_elBackground_outer = {
       backgroundColor: '#f6f6f6',
      };
-    
+     console.log(items_list);
     return (
       <div className="AppScreen MapScreen" style={baseStyle}>
         <div className="background">
@@ -59,10 +74,10 @@ export default class MapScreen extends Component {
         <Appbar className="navBar">
           <div className="title">Map</div>  <div className="backBtn" onClick={ (ev)=>{ this.props.appActions.goBack() } }><img src={btn_icon_back_map} alt="" style={{width: '50%'}} /></div>
         </Appbar>
-        <Map></Map>
+        <Map items = {items_list}></Map>
         
       </div>
     )
+    
   }
-  
 }

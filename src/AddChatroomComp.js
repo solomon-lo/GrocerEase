@@ -19,7 +19,7 @@ export default class AddChatroomComp extends Component {
       field_shopper_name: '',
       field_shopper_time: '',
       field_shopper_store: '',
-      field_shopper_city: '',
+      field_shopper_city: {},
     };
   }
 
