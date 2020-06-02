@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
 import ChatroomItem from './ChatroomItem';
+import btn_icon_608940 from './images/btn_icon_608940.png';
+import btn_icon_13220 from './images/btn_icon_13220.png';
 import btn_icon_723827 from './images/btn_icon_723827.png';
 import btn_icon_back_shoppingoptions from './images/btn_icon_back_shoppingoptions.png';
 
@@ -43,8 +45,8 @@ export default class ShoppingOptionsScreen extends Component {
   }
 
   onClick_elButton = (ev) => {
-    // Go to screen 'Map'
-    this.props.appActions.goToScreen('map', { transitionId: 'fadeIn' });
+    // Go to screen 'Deals'
+    this.props.appActions.goToScreen('deals', { transitionId: 'fadeIn' });
   
   }
   
@@ -52,6 +54,20 @@ export default class ShoppingOptionsScreen extends Component {
   textInputChanged_field = (event) => {
     this.setState({field: event.target.value});
   }
+  
+  onClick_elIconButton2 = (ev) => {
+    // Go to screen 'FAQs'
+    this.props.appActions.goToScreen('faqs', { transitionId: 'fadeIn' });
+  
+  }
+  
+  
+  onClick_elIconButton3 = (ev) => {
+    // Go to screen 'Map'
+    this.props.appActions.goToScreen('map', { transitionId: 'fadeIn' });
+  
+  }
+  
   
   onClick_elIconButton = (ev) => {
     // Go to screen 'Add a chatroom'
@@ -105,6 +121,34 @@ export default class ShoppingOptionsScreen extends Component {
       height: 'auto',  // This element is in scroll flow
      };
     
+    const style_elIconButton2 = {
+      display: 'block',
+      textTransform: 'uppercase',
+      backgroundImage: 'url('+btn_icon_608940+')',
+      backgroundRepeat: 'no-repeat',
+      backgroundSize: '89.562%',
+      backgroundPosition: '50% 0%',
+      color: '(null)',
+      textAlign: 'left',
+      backgroundColor: 'transparent',
+      cursor: 'pointer',
+      pointerEvents: 'auto',
+     };
+    
+    const style_elIconButton3 = {
+      display: 'block',
+      textTransform: 'uppercase',
+      backgroundImage: 'url('+btn_icon_13220+')',
+      backgroundRepeat: 'no-repeat',
+      backgroundSize: '89.562%',
+      backgroundPosition: '50% 0%',
+      color: '(null)',
+      textAlign: 'left',
+      backgroundColor: 'transparent',
+      cursor: 'pointer',
+      pointerEvents: 'auto',
+     };
+    
     const style_elIconButton = {
       display: 'block',
       textTransform: 'uppercase',
@@ -150,6 +194,14 @@ export default class ShoppingOptionsScreen extends Component {
               })}
               <div className="marker" ref={(el)=> this._elList_endMarker = el} />
             </ul>
+          </div>
+          
+          <div className="elIconButton2">
+            <button className="actionFont" style={style_elIconButton2} onClick={this.onClick_elIconButton2}  />
+          </div>
+          
+          <div className="elIconButton3">
+            <button className="actionFont" style={style_elIconButton3} onClick={this.onClick_elIconButton3}  />
           </div>
         </div>
         <Appbar className="navBar">

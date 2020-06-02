@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import './App.css';
 import ChatItem from './ChatItem';
+import Comp1 from './Comp1';
 import SendMessage from './SendMessage';
 import btn_icon_back_messages from './images/btn_icon_back_messages.png';
 
 // UI framework component imports
-import Button from 'muicss/lib/react/button';
 import Appbar from 'muicss/lib/react/appbar';
 
 export default class MessagesScreen extends Component {
@@ -43,13 +43,6 @@ export default class MessagesScreen extends Component {
   componentWillReceiveProps(nextProps) {
   }
 
-  onClick_elButton = (ev) => {
-    // Go to screen 'Add_A_Review'
-    this.props.appActions.goToScreen('add_a_review', { transitionId: 'fadeIn' });
-  
-  }
-  
-  
   render() {
     let layoutFlowStyle = {};
     let baseStyle = {};
@@ -61,6 +54,7 @@ export default class MessagesScreen extends Component {
       layoutFlowStyle.overflow = 'hidden';
     }
     
+    const dataSheet_shoppers = this.props.dataSheets['shoppers'];
     const dataSheet_chatmessages = this.props.dataSheets['chatmessages'];
     const style_elBackground = {
       width: '100%',
@@ -79,17 +73,17 @@ export default class MessagesScreen extends Component {
       height: 'auto',  // This element is in scroll flow
      };
     
-    const style_elButton = {
-      display: 'block',
-      color: 'white',
-      textAlign: 'center',
-      cursor: 'pointer',
-      pointerEvents: 'auto',
-     };
-    
     const style_elRectangle = {
       background: 'rgba(246, 247, 246, 1.000)',
      };
+    const elComp = ((val) => { return val === "true" || val == true || val == 1 })(this.props.numStars) ? (
+      <div className="hasNestedComps elComp">
+        <div>
+          <Comp1 {...dataSheet_shoppers.items[0]} ref={(el)=> this._elComp = el} appActions={this.props.appActions} deviceInfo={this.props.deviceInfo} locStrings={this.props.locStrings} />
+        </div>
+      </div>
+      
+     ) : null;
     
     return (
       <div className="AppScreen MessagesScreen" style={baseStyle}>
@@ -105,7 +99,7 @@ export default class MessagesScreen extends Component {
               {items_list.map((row, index) => {
                 let itemComp = (row._componentId)
                     ? listComps_list[row._componentId]
-                    : <ChatItem appActions={this.props.appActions} deviceInfo={this.props.deviceInfo} locStrings={this.props.locStrings} dataSheetId={'chatmessages'} dataSheetRow={row} {...{ 'sender_username': row['sender_username'], 'message_body': row['message_body'], 'timestamp': row['timestamp'], }} />;
+                    : <ChatItem appActions={this.props.appActions} deviceInfo={this.props.deviceInfo} locStrings={this.props.locStrings} dataSheetId={'chatmessages'} dataSheetRow={row} {...{ 'message_body': row['message_body'], 'timestamp': row['timestamp'], 'sender_username': row['sender_username'], }} />;
                 return (<li key={row.key}>
                     {itemComp}
                   </li>);
@@ -114,15 +108,11 @@ export default class MessagesScreen extends Component {
             </ul>
           </div>
           
-          <div className="elButton">
-            <Button className="actionFont" style={style_elButton}  color="accent" onClick={this.onClick_elButton} >
-              {this.props.locStrings.messages_button_316204}
-            </Button>
-          </div>
-          
           <div className="elRectangle">
             <div style={style_elRectangle} />
           </div>
+          
+          { elComp }
         </div>
         <Appbar className="navBar">
           <div className="title">Messages</div>  <div className="backBtn" onClick={ (ev)=>{ this.props.appActions.goBack() } }><img src={btn_icon_back_messages} alt="" style={{width: '50%'}} /></div>

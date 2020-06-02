@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
 import LocalizedStrings from 'react-localization';
 import './App.css';
-import Add_A_ReviewScreen from './Add_A_ReviewScreen.js';
 import MessagesScreen from './MessagesScreen.js';
-import MapScreen from './MapScreen.js';
+import DealsScreen from './DealsScreen.js';
 import AddAChatroomScreen from './AddAChatroomScreen.js';
+import FAQsScreen from './FAQsScreen.js';
+import MapScreen from './MapScreen.js';
 import ShoppingOptionsScreen from './ShoppingOptionsScreen.js';
 import StartScreen from './StartScreen.js';
+import ReviewsScreen from './ReviewsScreen.js';
 import DataSheet_chatroom from './DataSheet_chatroom.js';
 import DataSheet_chatmessages from './DataSheet_chatmessages.js';
 import DataSheet_shoppers from './DataSheet_shoppers.js';
@@ -372,18 +374,22 @@ export default class App extends Component {
       switch (screenId) {
         default:
           return null;
-        case 'add_a_review':
-          return (<Add_A_ReviewScreen {...screenProps} />)
         case 'messages':
           return (<MessagesScreen {...screenProps} />)
-        case 'map':
-          return (<MapScreen {...screenProps} />)
+        case 'deals':
+          return (<DealsScreen {...screenProps} />)
         case 'addachatroom':
           return (<AddAChatroomScreen {...screenProps} />)
+        case 'faqs':
+          return (<FAQsScreen {...screenProps} />)
+        case 'map':
+          return (<MapScreen {...screenProps} />)
         case 'shoppingoptions':
           return (<ShoppingOptionsScreen {...screenProps} />)
         case 'start':
           return (<StartScreen {...screenProps} />)
+        case 'reviews':
+          return (<ReviewsScreen {...screenProps} />)
       }
     }
 

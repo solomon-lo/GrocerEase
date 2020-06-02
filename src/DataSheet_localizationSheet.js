@@ -166,7 +166,7 @@ export default class DataSheet_localizationSheet extends DataSheetBase {
     item = {};
     this.items.push(item);
     item['key'] = "shoppingoptions_button_581207";
-    item['en'] = "Show Map";
+    item['en'] = "Show Deals";
     
     item = {};
     this.items.push(item);
@@ -175,8 +175,73 @@ export default class DataSheet_localizationSheet extends DataSheetBase {
     
     item = {};
     this.items.push(item);
-    item['key'] = "messages_button_316204";
-    item['en'] = "Add A Review";
+    item['key'] = "faqs_text_357370";
+    item['en'] = "What is GrocerEase?";
+    
+    item = {};
+    this.items.push(item);
+    item['key'] = "faqs_text2_421950";
+    item['en'] = "GrocerEase is a new, innovative platform that addresses one of the main difficulties and inconveniences created by COVID-19. Our app helps connect you to ";
+    
+    item = {};
+    this.items.push(item);
+    item['key'] = "faqs_text2_857454";
+    item['en'] = "GrocerEase is a new, innovative platform that addresses one of the main difficulties and inconveniences created by COVID-19. Our app helps connect you to your neighbors and fellow citizens in your area to meet your grocery needs. Also, there’s a weekly competition for finding the best coronavirus-related goods online, where the person who submits the best deal will win a $5 Amazon gift card.";
+    
+    item = {};
+    this.items.push(item);
+    item['key'] = "faqs_textcopy_939571";
+    item['en'] = "How can you enter in the best deals sweepstakes?";
+    
+    item = {};
+    this.items.push(item);
+    item['key'] = "faqs_text3_551350";
+    item['en'] = "You can go to the sweepstakes form page, where you type in your name, email, and URL of the deal. Then, by clicking submit, you will be entered into the sweepstakes.";
+    
+    item = {};
+    this.items.push(item);
+    item['key'] = "faqs_text4_203916";
+    item['en'] = "New text. Double-click to edit";
+    
+    item = {};
+    this.items.push(item);
+    item['key'] = "faqs_textcopy2_1009273";
+    item['en'] = "How do I contact a shopper?";
+    
+    item = {};
+    this.items.push(item);
+    item['key'] = "faqs_textcopy3_790990";
+    item['en'] = "You can click on a shopper post in the shopper options screen, which will redirect you to a chatroom that lets you directly communicate with the shopper.";
+    
+    item = {};
+    this.items.push(item);
+    item['key'] = "faqs_textcopy4_56526";
+    item['en'] = "More Questions? Contact us below.";
+    
+    item = {};
+    this.items.push(item);
+    item['key'] = "faqs_field_223194";
+    item['en'] = "Name";
+    
+    item = {};
+    this.items.push(item);
+    item['key'] = "faqs_text4_54982";
+    item['en'] = "Name";
+    
+    item = {};
+    this.items.push(item);
+    item['key'] = "faqs_fieldcopy_505483";
+    item['en'] = "Email";
+    
+    item = {};
+    this.items.push(item);
+    item['key'] = "faqs_textarea_804992";
+    item['en'] = "Enter your question here";
+    
+    item = {};
+    this.items.push(item);
+    item['key'] = "faqs_button_1031721";
+    item['en'] = "Submit";
   }
 
   getStringsByLanguage = () => {
