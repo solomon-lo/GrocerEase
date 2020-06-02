@@ -2,17 +2,21 @@ import React, { Component } from 'react';
 import LocalizedStrings from 'react-localization';
 import './App.css';
 import MessagesScreen from './MessagesScreen.js';
-import DealsScreen from './DealsScreen.js';
-import AddAChatroomScreen from './AddAChatroomScreen.js';
-import FAQsScreen from './FAQsScreen.js';
+import ThankYouScreen from './ThankYouScreen.js';
+import ThanksScreen from './ThanksScreen.js';
+import SweepStakes_EntryScreen from './SweepStakes_EntryScreen.js';
 import MapScreen from './MapScreen.js';
+import ScratchAddAPostScreen from './ScratchAddAPostScreen.js';
+import FAQsScreen from './FAQsScreen.js';
 import ShoppingOptionsScreen from './ShoppingOptionsScreen.js';
 import StartScreen from './StartScreen.js';
 import ReviewsScreen from './ReviewsScreen.js';
+import FAQs2Screen from './FAQs2Screen.js';
 import DataSheet_chatroom from './DataSheet_chatroom.js';
 import DataSheet_chatmessages from './DataSheet_chatmessages.js';
 import DataSheet_shoppers from './DataSheet_shoppers.js';
 import DataSheet_localizationSheet from './DataSheet_localizationSheet.js';
+import DataSheet_sheet4 from './DataSheet_sheet4.js';
 import firebase from 'firebase';
 import firestore from 'firebase/firestore';
 
@@ -26,6 +30,7 @@ export default class App extends Component {
     this.dataSheets['chatmessages'] = new DataSheet_chatmessages('chatmessages', this.dataSheetDidUpdate);
     this.dataSheets['shoppers'] = new DataSheet_shoppers('shoppers', this.dataSheetDidUpdate);
     this.dataSheets['localizationSheet'] = new DataSheet_localizationSheet('localizationSheet', this.dataSheetDidUpdate);
+    this.dataSheets['sheet4'] = new DataSheet_sheet4('sheet4', this.dataSheetDidUpdate);
     this.dataSheetLoaded = {};
 
     this.dataSlots = {};
@@ -76,6 +81,14 @@ export default class App extends Component {
     };
     this.dataSheets['shoppers'].appActions = this;
     this.dataSheets['shoppers'].firebase = firebase;
+    
+    this.serviceOptions_sheet4 = {
+      dataSlots: this.dataSlots,
+      servicePath: "shoppingDeals",
+      query: "",
+    };
+    this.dataSheets['sheet4'].appActions = this;
+    this.dataSheets['sheet4'].firebase = firebase;
     
 
     this.state = {
@@ -253,6 +266,15 @@ export default class App extends Component {
         this.loadData_firebaseConnection(this.dataSheets['shoppers'], this.serviceOptions_shoppers, true);
       }
     }
+    {
+      let usedSlots = [];
+      let servicePath = this.dataSheets['sheet4'].expandSlotTemplateString("shoppingDeals", this.dataSlots, usedSlots);
+      if (usedSlots.includes(slotId)) {
+        // if data sheet's content depends on this slot, reload it now
+        this.serviceOptions_sheet4.servicePath = servicePath;
+        this.loadData_firebaseConnection(this.dataSheets['sheet4'], this.serviceOptions_sheet4, true);
+      }
+    }
     this.setState({});
   }
 
@@ -376,20 +398,26 @@ export default class App extends Component {
           return null;
         case 'messages':
           return (<MessagesScreen {...screenProps} />)
-        case 'deals':
-          return (<DealsScreen {...screenProps} />)
-        case 'addachatroom':
-          return (<AddAChatroomScreen {...screenProps} />)
-        case 'faqs':
-          return (<FAQsScreen {...screenProps} />)
+        case 'thankyou':
+          return (<ThankYouScreen {...screenProps} />)
+        case 'thanks':
+          return (<ThanksScreen {...screenProps} />)
+        case 'sweepstakes_entry':
+          return (<SweepStakes_EntryScreen {...screenProps} />)
         case 'map':
           return (<MapScreen {...screenProps} />)
+        case 'scratchaddapost':
+          return (<ScratchAddAPostScreen {...screenProps} />)
+        case 'faqs':
+          return (<FAQsScreen {...screenProps} />)
         case 'shoppingoptions':
           return (<ShoppingOptionsScreen {...screenProps} />)
         case 'start':
           return (<StartScreen {...screenProps} />)
         case 'reviews':
           return (<ReviewsScreen {...screenProps} />)
+        case 'faqs2':
+          return (<FAQs2Screen {...screenProps} />)
       }
     }
 
