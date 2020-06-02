@@ -45,8 +45,15 @@ export default class ShoppingOptionsScreen extends Component {
   }
 
   onClick_elButton = (ev) => {
-    // Go to screen 'Deals'
-    this.props.appActions.goToScreen('deals', { transitionId: 'fadeIn' });
+    // Go to screen 'SweepStakes_Entry'
+    this.props.appActions.goToScreen('sweepstakes_entry', { transitionId: 'fadeIn' });
+  
+  }
+  
+  
+  onClick_elButton2 = (ev) => {
+    // Go to screen 'SweepStakes_Entry'
+    this.props.appActions.goToScreen('sweepstakes_entry', { transitionId: 'fadeIn' });
   
   }
   
@@ -97,6 +104,14 @@ export default class ShoppingOptionsScreen extends Component {
      };
     
     const style_elButton = {
+      display: 'block',
+      color: 'white',
+      textAlign: 'center',
+      cursor: 'pointer',
+      pointerEvents: 'auto',
+     };
+    
+    const style_elButton2 = {
       display: 'block',
       color: 'white',
       textAlign: 'center',
@@ -175,6 +190,12 @@ export default class ShoppingOptionsScreen extends Component {
           <div className="elButton">
             <Button className="actionFont" style={style_elButton}  color="accent" onClick={this.onClick_elButton} >
               {this.props.locStrings.shoppingoptions_button_581207}
+            </Button>
+          </div>
+          
+          <div className="elButton2">
+            <Button className="actionFont" style={style_elButton2}  color="accent" onClick={this.onClick_elButton2} >
+              {this.props.locStrings.shoppingoptions_button2_615100}
             </Button>
           </div>
           

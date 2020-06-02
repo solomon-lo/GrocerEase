@@ -879,7 +879,7 @@
 
 
 /* Narrowest size for this element's responsive layout */
-  .DealsScreen > .background > .elBackground {
+  .SweepStakes_EntryScreen > .background > .elBackground {
     position: absolute;
     left: 0px;
     right: 0px;
@@ -888,7 +888,7 @@
     height: 100%;
   }
 @media (min-width: 568px) {
-  .DealsScreen > .background > .elBackground {
+  .SweepStakes_EntryScreen > .background > .elBackground {
     left: 0px;
     right: 0px;
     top: 0px;
@@ -897,7 +897,7 @@
   }
 }
 @media (min-width: 768px) {
-  .DealsScreen > .background > .elBackground {
+  .SweepStakes_EntryScreen > .background > .elBackground {
     left: 0px;
     right: 0px;
     top: 0px;
@@ -906,7 +906,7 @@
   }
 }
 @media (min-width: 1024px) {
-  .DealsScreen > .background > .elBackground {
+  .SweepStakes_EntryScreen > .background > .elBackground {
     left: 0px;
     right: 0px;
     top: 0px;
@@ -917,53 +917,330 @@
 
 
 /* Narrowest size for this element's responsive layout */
-  .DealsScreen > .layoutFlow > .elField {
+  .SweepStakes_EntryScreen > .layoutFlow > .elText {
     position: relative;
-    margin-top: 114px;
-    width: 226px;
-    margin-left: 38px;
+    margin-top: 0px;
+    width: 238px;
+    margin-left: calc(50.0% - 119px);
   }
-  .DealsScreen > .layoutFlow > .elField > * { 
-  width: 226px;
-  height: 34px;
+  .SweepStakes_EntryScreen > .layoutFlow > .elText > * { 
+  width: 238px;
   }
   
 @media (min-width: 568px) {
-  .DealsScreen > .layoutFlow > .elField {
+  .SweepStakes_EntryScreen > .layoutFlow > .elText {
     position: relative;
-    margin-top: 114px;
-    width: 226px;
-    margin-left: 38px;
+    margin-top: 0px;
+    width: 238px;
+    margin-left: calc(50.0% - 119px);
   }
-  .DealsScreen > .layoutFlow > .elField > * { 
-  width: 226px;
-  height: 34px;
+  .SweepStakes_EntryScreen > .layoutFlow > .elText > * { 
+  width: 238px;
   }
   
 }
 @media (min-width: 768px) {
-  .DealsScreen > .layoutFlow > .elField {
+  .SweepStakes_EntryScreen > .layoutFlow > .elText {
     position: relative;
-    margin-top: 112px;
-    width: 225px;
-    margin-left: 37px;
+    margin-top: 0px;
+    width: 236px;
+    margin-left: calc(50.0% - 118px);
   }
-  .DealsScreen > .layoutFlow > .elField > * { 
-  width: 225px;
-  height: 34px;
+  .SweepStakes_EntryScreen > .layoutFlow > .elText > * { 
+  width: 236px;
   }
   
 }
 @media (min-width: 1024px) {
-  .DealsScreen > .layoutFlow > .elField {
+  .SweepStakes_EntryScreen > .layoutFlow > .elText {
+    position: relative;
+    margin-top: 74px;
+    width: 442px;
+    margin-left: calc(50.0% - 221px);
+  }
+  .SweepStakes_EntryScreen > .layoutFlow > .elText > * { 
+  width: 442px;
+  }
+  
+}
+
+
+/* Narrowest size for this element's responsive layout */
+  .SweepStakes_EntryScreen > .layoutFlow > .elField {
+    position: relative;
+    margin-top: 114px;
+    width: 302px;
+    margin-left: calc(50.0% - 151px);
+  }
+  .SweepStakes_EntryScreen > .layoutFlow > .elField > * { 
+  width: 302px;
+  height: 30px;
+  }
+  
+@media (min-width: 568px) {
+  .SweepStakes_EntryScreen > .layoutFlow > .elField {
+    position: relative;
+    margin-top: 114px;
+    width: 302px;
+    margin-left: calc(50.0% - 151px);
+  }
+  .SweepStakes_EntryScreen > .layoutFlow > .elField > * { 
+  width: 302px;
+  height: 30px;
+  }
+  
+}
+@media (min-width: 768px) {
+  .SweepStakes_EntryScreen > .layoutFlow > .elField {
     position: relative;
     margin-top: 112px;
-    width: 225px;
-    margin-left: 37px;
+    width: 300px;
+    margin-left: calc(50.0% - 150px);
   }
-  .DealsScreen > .layoutFlow > .elField > * { 
+  .SweepStakes_EntryScreen > .layoutFlow > .elField > * { 
+  width: 300px;
+  height: 30px;
+  }
+  
+}
+@media (min-width: 1024px) {
+  .SweepStakes_EntryScreen > .layoutFlow > .elField {
+    position: relative;
+    margin-top: 35px;
+    width: 300px;
+    margin-left: calc(50.0% - 150px);
+  }
+  .SweepStakes_EntryScreen > .layoutFlow > .elField > * { 
+  width: 300px;
+  height: 30px;
+  }
+  
+}
+
+
+/* Narrowest size for this element's responsive layout */
+  .SweepStakes_EntryScreen > .layoutFlow > .elField2 {
+    position: relative;
+    margin-top: 29px;
+    width: 302px;
+    margin-left: calc(50.0% - 151px);
+  }
+  .SweepStakes_EntryScreen > .layoutFlow > .elField2 > * { 
+  width: 302px;
+  height: 30px;
+  }
+  
+@media (min-width: 568px) {
+  .SweepStakes_EntryScreen > .layoutFlow > .elField2 {
+    position: relative;
+    margin-top: 29px;
+    width: 302px;
+    margin-left: calc(50.0% - 151px);
+  }
+  .SweepStakes_EntryScreen > .layoutFlow > .elField2 > * { 
+  width: 302px;
+  height: 30px;
+  }
+  
+}
+@media (min-width: 768px) {
+  .SweepStakes_EntryScreen > .layoutFlow > .elField2 {
+    position: relative;
+    margin-top: 28px;
+    width: 300px;
+    margin-left: calc(50.0% - 150px);
+  }
+  .SweepStakes_EntryScreen > .layoutFlow > .elField2 > * { 
+  width: 300px;
+  height: 30px;
+  }
+  
+}
+@media (min-width: 1024px) {
+  .SweepStakes_EntryScreen > .layoutFlow > .elField2 {
+    position: relative;
+    margin-top: 28px;
+    width: 300px;
+    margin-left: calc(50.0% - 150px);
+  }
+  .SweepStakes_EntryScreen > .layoutFlow > .elField2 > * { 
+  width: 300px;
+  height: 30px;
+  }
+  
+}
+
+
+/* Narrowest size for this element's responsive layout */
+  .SweepStakes_EntryScreen > .layoutFlow > .elField3 {
+    position: relative;
+    margin-top: 36px;
+    width: 302px;
+    margin-left: calc(50.0% - 151px);
+  }
+  .SweepStakes_EntryScreen > .layoutFlow > .elField3 > * { 
+  width: 302px;
+  height: 30px;
+  }
+  
+@media (min-width: 568px) {
+  .SweepStakes_EntryScreen > .layoutFlow > .elField3 {
+    position: relative;
+    margin-top: 36px;
+    width: 302px;
+    margin-left: calc(50.0% - 151px);
+  }
+  .SweepStakes_EntryScreen > .layoutFlow > .elField3 > * { 
+  width: 302px;
+  height: 30px;
+  }
+  
+}
+@media (min-width: 768px) {
+  .SweepStakes_EntryScreen > .layoutFlow > .elField3 {
+    position: relative;
+    margin-top: 36px;
+    width: 300px;
+    margin-left: calc(50.0% - 150px);
+  }
+  .SweepStakes_EntryScreen > .layoutFlow > .elField3 > * { 
+  width: 300px;
+  height: 30px;
+  }
+  
+}
+@media (min-width: 1024px) {
+  .SweepStakes_EntryScreen > .layoutFlow > .elField3 {
+    position: relative;
+    margin-top: 36px;
+    width: 300px;
+    margin-left: calc(50.0% - 150px);
+  }
+  .SweepStakes_EntryScreen > .layoutFlow > .elField3 > * { 
+  width: 300px;
+  height: 30px;
+  }
+  
+}
+
+
+/* Narrowest size for this element's responsive layout */
+  .SweepStakes_EntryScreen > .layoutFlow > .elTextarea {
+    position: relative;
+    margin-top: 0px;
+    width: 226px;
+    margin-left: calc(50.0% - 113px);
+  }
+  .SweepStakes_EntryScreen > .layoutFlow > .elTextarea > * { 
+  width: 226px;
+  height: 181px;
+  }
+  
+@media (min-width: 568px) {
+  .SweepStakes_EntryScreen > .layoutFlow > .elTextarea {
+    position: relative;
+    margin-top: 0px;
+    width: 226px;
+    margin-left: calc(50.0% - 113px);
+  }
+  .SweepStakes_EntryScreen > .layoutFlow > .elTextarea > * { 
+  width: 226px;
+  height: 181px;
+  }
+  
+}
+@media (min-width: 768px) {
+  .SweepStakes_EntryScreen > .layoutFlow > .elTextarea {
+    position: relative;
+    margin-top: 0px;
+    width: 225px;
+    margin-left: calc(50.0% - 112px);
+  }
+  .SweepStakes_EntryScreen > .layoutFlow > .elTextarea > * { 
   width: 225px;
-  height: 34px;
+  height: 180px;
+  }
+  
+}
+@media (min-width: 1024px) {
+  .SweepStakes_EntryScreen > .layoutFlow > .elTextarea {
+    position: relative;
+    margin-top: 40px;
+    width: 305px;
+    margin-left: calc(50.0% - 152px);
+  }
+  .SweepStakes_EntryScreen > .layoutFlow > .elTextarea > * { 
+  width: 305px;
+  height: 209px;
+  }
+  
+}
+
+.SweepStakes_EntryScreen .elButton button {
+  cursor: pointer;
+  border: 0.0px solid transparent;
+  border-radius: 3.4px;
+}
+
+.SweepStakes_EntryScreen .elButton button:focus {
+  box-shadow: 0 0 5px rgba(0, 149, 214, 0.5000);
+  outline: none;
+}
+
+
+
+/* Narrowest size for this element's responsive layout */
+  .SweepStakes_EntryScreen > .layoutFlow > .elButton {
+    line-height: 35px;
+    position: relative;
+    margin-top: 0px;
+    width: 145px;
+    margin-left: calc(50.0% - 72px);
+  }
+  .SweepStakes_EntryScreen > .layoutFlow > .elButton > * { 
+  width: 145px;
+  height: 35px;
+  }
+  
+@media (min-width: 568px) {
+  .SweepStakes_EntryScreen > .layoutFlow > .elButton {
+    line-height: 35px;
+    position: relative;
+    margin-top: 0px;
+    width: 145px;
+    margin-left: calc(50.0% - 72px);
+  }
+  .SweepStakes_EntryScreen > .layoutFlow > .elButton > * { 
+  width: 145px;
+  height: 35px;
+  }
+  
+}
+@media (min-width: 768px) {
+  .SweepStakes_EntryScreen > .layoutFlow > .elButton {
+    line-height: 35px;
+    position: relative;
+    margin-top: 0px;
+    width: 144px;
+    margin-left: calc(50.0% - 72px);
+  }
+  .SweepStakes_EntryScreen > .layoutFlow > .elButton > * { 
+  width: 144px;
+  height: 35px;
+  }
+  
+}
+@media (min-width: 1024px) {
+  .SweepStakes_EntryScreen > .layoutFlow > .elButton {
+    line-height: 35px;
+    position: relative;
+    margin-top: 32px;
+    width: 144px;
+    margin-left: calc(50.0% - 72px);
+  }
+  .SweepStakes_EntryScreen > .layoutFlow > .elButton > * { 
+  width: 144px;
+  height: 35px;
   }
   
 }
@@ -2006,11 +2283,11 @@
     line-height: 30px;
     position: relative;
     margin-top: 70px;
-    width: 135px;
-    margin-left: calc(75.0% - 68px);
+    width: 131px;
+    margin-left: calc(75.0% - 65px);
   }
   .ShoppingOptionsScreen > .layoutFlow > .elButton > * { 
-  width: 135px;
+  width: 131px;
   height: 30px;
   }
   
@@ -2019,11 +2296,11 @@
     line-height: 30px;
     position: relative;
     margin-top: 70px;
-    width: 135px;
-    margin-left: calc(75.0% - 68px);
+    width: 131px;
+    margin-left: calc(75.0% - 65px);
   }
   .ShoppingOptionsScreen > .layoutFlow > .elButton > * { 
-  width: 135px;
+  width: 131px;
   height: 30px;
   }
   
@@ -2033,11 +2310,11 @@
     line-height: 30px;
     position: relative;
     margin-top: 70px;
-    width: 134px;
-    margin-left: calc(75.0% - 67px);
+    width: 130px;
+    margin-left: calc(75.0% - 65px);
   }
   .ShoppingOptionsScreen > .layoutFlow > .elButton > * { 
-  width: 134px;
+  width: 130px;
   height: 30px;
   }
   
@@ -2047,11 +2324,80 @@
     line-height: 30px;
     position: relative;
     margin-top: 68px;
-    width: 134px;
-    margin-left: calc(83.2% - 67px);
+    width: 130px;
+    margin-left: calc(83.2% - 65px);
   }
   .ShoppingOptionsScreen > .layoutFlow > .elButton > * { 
-  width: 134px;
+  width: 130px;
+  height: 30px;
+  }
+  
+}
+
+.ShoppingOptionsScreen .elButton2 button {
+  cursor: pointer;
+  border: 0.0px solid transparent;
+  border-radius: 3.4px;
+}
+
+.ShoppingOptionsScreen .elButton2 button:focus {
+  box-shadow: 0 0 5px rgba(0, 149, 214, 0.5000);
+  outline: none;
+}
+
+
+
+/* Narrowest size for this element's responsive layout */
+  .ShoppingOptionsScreen > .layoutFlow > .elButton2 {
+    line-height: 35px;
+    position: relative;
+    margin-top: 0px;
+    width: 145px;
+    margin-left: 672px;
+  }
+  .ShoppingOptionsScreen > .layoutFlow > .elButton2 > * { 
+  width: 145px;
+  height: 35px;
+  }
+  
+@media (min-width: 568px) {
+  .ShoppingOptionsScreen > .layoutFlow > .elButton2 {
+    line-height: 35px;
+    position: relative;
+    margin-top: 0px;
+    width: 145px;
+    margin-left: 672px;
+  }
+  .ShoppingOptionsScreen > .layoutFlow > .elButton2 > * { 
+  width: 145px;
+  height: 35px;
+  }
+  
+}
+@media (min-width: 768px) {
+  .ShoppingOptionsScreen > .layoutFlow > .elButton2 {
+    line-height: 35px;
+    position: relative;
+    margin-top: 0px;
+    width: 144px;
+    margin-left: 668px;
+  }
+  .ShoppingOptionsScreen > .layoutFlow > .elButton2 > * { 
+  width: 144px;
+  height: 35px;
+  }
+  
+}
+@media (min-width: 1024px) {
+  .ShoppingOptionsScreen > .layoutFlow > .elButton2 {
+    line-height: 30px;
+    position: relative;
+    margin-top: -30px;
+    width: 130px;
+    margin-left: 716px;
+  }
+  .ShoppingOptionsScreen > .layoutFlow > .elButton2 > * { 
+  width: 130px;
   height: 30px;
   }
   
@@ -2119,7 +2465,7 @@
 /* Narrowest size for this element's responsive layout */
   .ShoppingOptionsScreen > .layoutFlow > .elList {
     position: relative;
-    margin-top: 11px;
+    margin-top: 10px;
     margin-left: 0px;
     margin-right: 0px;
     width: calc(100.0% - 0px);
@@ -2752,14 +3098,4 @@
   }
 
 }
-
-/* This component has a fixed-size layout */
-  .New_Shopper_Post {
-    min-height: 114px;  /* This component has a fixed size */
-    overflow: hidden;
-    min-width: 182px; /* This component has a fixed size */
-  }
-  .New_Shopper_Post > .background > .containerMinHeight {
-    min-height: 114px;
-  }
 

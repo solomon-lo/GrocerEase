@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import LocalizedStrings from 'react-localization';
 import './App.css';
 import MessagesScreen from './MessagesScreen.js';
-import DealsScreen from './DealsScreen.js';
+import SweepStakes_EntryScreen from './SweepStakes_EntryScreen.js';
 import FAQsScreen from './FAQsScreen.js';
 import MapScreen from './MapScreen.js';
 import ScratchAddAPostScreen from './ScratchAddAPostScreen.js';
@@ -395,8 +395,8 @@ export default class App extends Component {
           return null;
         case 'messages':
           return (<MessagesScreen {...screenProps} />)
-        case 'deals':
-          return (<DealsScreen {...screenProps} />)
+        case 'sweepstakes_entry':
+          return (<SweepStakes_EntryScreen {...screenProps} />)
         case 'faqs':
           return (<FAQsScreen {...screenProps} />)
         case 'map':

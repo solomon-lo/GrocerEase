@@ -287,6 +287,41 @@ export default class DataSheet_localizationSheet extends DataSheetBase {
     this.items.push(item);
     item['key'] = "scratchaddapost_button_719406";
     item['en'] = "Submit Post";
+    
+    item = {};
+    this.items.push(item);
+    item['key'] = "deals_field_956962";
+    item['en'] = "Name";
+    
+    item = {};
+    this.items.push(item);
+    item['key'] = "deals_field2_817958";
+    item['en'] = "Email";
+    
+    item = {};
+    this.items.push(item);
+    item['key'] = "deals_field3_209602";
+    item['en'] = "Link To Shopping Deal";
+    
+    item = {};
+    this.items.push(item);
+    item['key'] = "deals_textarea_898877";
+    item['en'] = "        Description Of Shopping Deal";
+    
+    item = {};
+    this.items.push(item);
+    item['key'] = "deals_button_382649";
+    item['en'] = "Submit Deal";
+    
+    item = {};
+    this.items.push(item);
+    item['key'] = "deals_text_586811";
+    item['en'] = "Enter the best deal you find online for a chance to win a $5 Amazon gift card! Our team of professionals will select the best entry every week, and email the winner an electronic Amazon gift card.";
+    
+    item = {};
+    this.items.push(item);
+    item['key'] = "shoppingoptions_button2_615100";
+    item['en'] = "Sweepstakes";
   }
 
   getStringsByLanguage = () => {
