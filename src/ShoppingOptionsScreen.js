@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
 import ChatroomItem from './ChatroomItem';
-import btn_icon_608940 from './images/btn_icon_608940.png';
 import btn_icon_13220 from './images/btn_icon_13220.png';
+import btn_icon_15522 from './images/btn_icon_15522.png';
 import btn_icon_723827 from './images/btn_icon_723827.png';
 import btn_icon_back_shoppingoptions from './images/btn_icon_back_shoppingoptions.png';
 
@@ -45,15 +45,15 @@ export default class ShoppingOptionsScreen extends Component {
   }
 
   onClick_elButton = (ev) => {
-    // Go to screen 'Deals_Compilation'
-    this.props.appActions.goToScreen('deals_compilation', { transitionId: 'fadeIn' });
+    // Go to screen 'SweepStakes_Entry'
+    this.props.appActions.goToScreen('sweepstakes_entry', { transitionId: 'fadeIn' });
   
   }
   
   
   onClick_elButton2 = (ev) => {
-    // Go to screen 'SweepStakes_Entry'
-    this.props.appActions.goToScreen('sweepstakes_entry', { transitionId: 'fadeIn' });
+    // Go to screen 'Online Deals'
+    this.props.appActions.goToScreen('onlinedeals', { transitionId: 'fadeIn' });
   
   }
   
@@ -62,16 +62,16 @@ export default class ShoppingOptionsScreen extends Component {
     this.setState({field: event.target.value});
   }
   
-  onClick_elIconButton2 = (ev) => {
-    // Go to screen 'FAQs'
-    this.props.appActions.goToScreen('faqs', { transitionId: 'fadeIn' });
+  onClick_elIconButton3 = (ev) => {
+    // Go to screen 'Map'
+    this.props.appActions.goToScreen('map', { transitionId: 'fadeIn' });
   
   }
   
   
-  onClick_elIconButton3 = (ev) => {
-    // Go to screen 'Map'
-    this.props.appActions.goToScreen('map', { transitionId: 'fadeIn' });
+  onClick_elIconButton2 = (ev) => {
+    // Go to screen 'FAQs'
+    this.props.appActions.goToScreen('faqs', { transitionId: 'fadeIn' });
   
   }
   
@@ -136,12 +136,12 @@ export default class ShoppingOptionsScreen extends Component {
       height: 'auto',  // This element is in scroll flow
      };
     
-    const style_elIconButton2 = {
+    const style_elIconButton3 = {
       display: 'block',
       textTransform: 'uppercase',
-      backgroundImage: 'url('+btn_icon_608940+')',
+      backgroundImage: 'url('+btn_icon_13220+')',
       backgroundRepeat: 'no-repeat',
-      backgroundSize: '90.122%',
+      backgroundSize: '89.562%',
       backgroundPosition: '50% 0%',
       color: '(null)',
       textAlign: 'left',
@@ -150,12 +150,12 @@ export default class ShoppingOptionsScreen extends Component {
       pointerEvents: 'auto',
      };
     
-    const style_elIconButton3 = {
+    const style_elIconButton2 = {
       display: 'block',
       textTransform: 'uppercase',
-      backgroundImage: 'url('+btn_icon_13220+')',
+      backgroundImage: 'url('+btn_icon_15522+')',
       backgroundRepeat: 'no-repeat',
-      backgroundSize: '88.887%',
+      backgroundSize: '89.562%',
       backgroundPosition: '50% 0%',
       color: '(null)',
       textAlign: 'left',
@@ -169,7 +169,7 @@ export default class ShoppingOptionsScreen extends Component {
       textTransform: 'uppercase',
       backgroundImage: 'url('+btn_icon_723827+')',
       backgroundRepeat: 'no-repeat',
-      backgroundSize: '90.122%',
+      backgroundSize: '89.562%',
       backgroundPosition: '50% 0%',
       color: '(null)',
       textAlign: 'left',
@@ -195,7 +195,7 @@ export default class ShoppingOptionsScreen extends Component {
           
           <div className="elButton2">
             <Button className="actionFont" style={style_elButton2}  color="accent" onClick={this.onClick_elButton2} >
-              {this.props.locStrings.shoppingoptions_button2_615100}
+              {this.props.locStrings.shoppingoptions_button2_268304}
             </Button>
           </div>
           
@@ -217,12 +217,12 @@ export default class ShoppingOptionsScreen extends Component {
             </ul>
           </div>
           
-          <div className="elIconButton2">
-            <button className="actionFont" style={style_elIconButton2} onClick={this.onClick_elIconButton2}  />
-          </div>
-          
           <div className="elIconButton3">
             <button className="actionFont" style={style_elIconButton3} onClick={this.onClick_elIconButton3}  />
+          </div>
+          
+          <div className="elIconButton2">
+            <button className="actionFont" style={style_elIconButton2} onClick={this.onClick_elIconButton2}  />
           </div>
         </div>
         <Appbar className="navBar">

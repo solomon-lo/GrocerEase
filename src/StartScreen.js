@@ -31,11 +31,9 @@ export default class StartScreen extends Component {
   componentWillReceiveProps(nextProps) {
   }
 
-  // --- Functions for component state index 0 (1 of 2) --- 
-  
-  onClick_state0_elButton = (ev) => {
-    let newVal = "button";
-    this.props.appActions.updateDataSlot('(null)', newVal);
+  onClick_elButton = (ev) => {
+    let newVal = this.state.fieldUsername;
+    this.props.appActions.updateDataSlot('ds_SlotUsername', newVal);
   
     // Go to screen 'Shopping Options'
     this.props.appActions.goToScreen('shoppingoptions', { transitionId: 'fadeIn' });
@@ -45,10 +43,9 @@ export default class StartScreen extends Component {
   
   textInputChanged_fieldUsername = (event) => {
     this.setState({fieldUsername: event.target.value});
-    this.props.appActions.updateDataSlot("ds_SlotUsername", event.target.value);
   }
   
-  renderState0() {
+  render() {
     let layoutFlowStyle = {};
     let baseStyle = {};
     if (this.props.transitionId && this.props.transitionId.length > 0 && this.props.atTopOfScreenStack && this.props.transitionForward) {
@@ -59,35 +56,35 @@ export default class StartScreen extends Component {
       layoutFlowStyle.overflow = 'hidden';
     }
     
-    const style_state0_elBackground = {
+    const style_elBackground = {
       width: '100%',
       height: '100%',
      };
-    const style_state0_elBackground_outer = {
+    const style_elBackground_outer = {
       backgroundColor: '#f6f6f6',
      };
     
-    const style_state0_elButton = {
+    const style_elButton = {
       display: 'block',
       color: 'white',
       textAlign: 'center',
       cursor: 'pointer',
       pointerEvents: 'auto',
      };
-    const style_state0_elFirebaseLogin618129 = {
+    const style_elFirebaseLogin = {
       pointerEvents: 'auto',
      };
     
     const value_fieldUsername = this.state.fieldUsername;
     
-    const style_state0_elFieldUsername = {
+    const style_elFieldUsername = {
       display: 'block',
       backgroundColor: 'white',
       paddingLeft: '1rem',
       boxSizing: 'border-box', // ensures padding won't expand element's outer size
       pointerEvents: 'auto',
      };
-    const style_state0_elText = {
+    const style_elText = {
       color: 'rgba(0, 0, 0, 0.8500)',
       textAlign: 'center',
      };
@@ -95,30 +92,30 @@ export default class StartScreen extends Component {
     return (
       <div className="AppScreen StartScreen" style={baseStyle}>
         <div className="background">
-          <div className="containerMinHeight state0_elBackground" style={style_state0_elBackground_outer}>
-            <div className="appBg" style={style_state0_elBackground} />
+          <div className="containerMinHeight elBackground" style={style_elBackground_outer}>
+            <div className="appBg" style={style_elBackground} />
           </div>
         </div>
         
         <div className="layoutFlow" style={layoutFlowStyle}>
-          <div className="state0_elButton">
-            <Button className="actionFont" style={style_state0_elButton}  color="accent" onClick={this.onClick_state0_elButton} >
+          <div className="elButton">
+            <Button className="actionFont" style={style_elButton}  color="accent" onClick={this.onClick_elButton} >
               {this.props.locStrings.start_button_55566}
             </Button>
           </div>
           
-          <div className="state0_elFirebaseLogin618129">
-            <div style={style_state0_elFirebaseLogin618129}>
-              <FirebaseLogin ref={(el)=> this._state0_elFirebaseLogin618129 = el} appActions={this.props.appActions} deviceInfo={this.props.deviceInfo} locStrings={this.props.locStrings} />
+          <div className="elFirebaseLogin">
+            <div style={style_elFirebaseLogin}>
+              <FirebaseLogin ref={(el)=> this._elFirebaseLogin = el} appActions={this.props.appActions} deviceInfo={this.props.deviceInfo} locStrings={this.props.locStrings} />
             </div>
           </div>
           
-          <div className="state0_elFieldUsername">
-            <input className="baseFont" style={style_state0_elFieldUsername} type="text" placeholder={this.props.locStrings.start_field_378871} onChange={this.textInputChanged_fieldUsername} value={value_fieldUsername !== undefined ? value_fieldUsername : ''}  />
+          <div className="elFieldUsername">
+            <input className="baseFont" style={style_elFieldUsername} type="text" placeholder={this.props.locStrings.start_field_378871} onChange={this.textInputChanged_fieldUsername} value={value_fieldUsername !== undefined ? value_fieldUsername : ''}  />
           </div>
           
-          <div className="state0_elText">
-            <div className="headlineFont" style={style_state0_elText}>
+          <div className="elText">
+            <div className="headlineFont" style={style_elText}>
               <div>{this.props.locStrings.start_text_885201}</div>
             </div>
           </div>
@@ -129,51 +126,6 @@ export default class StartScreen extends Component {
         
       </div>
     )
-  }
-  
-  // --- Functions for component state index 1 (2 of 2) --- 
-  
-  renderState1() {
-    let layoutFlowStyle = {};
-    let baseStyle = {};
-    if (this.props.transitionId && this.props.transitionId.length > 0 && this.props.atTopOfScreenStack && this.props.transitionForward) {
-      baseStyle.animation = '0.25s ease-in-out '+this.props.transitionId;
-    }
-    if ( !this.props.atTopOfScreenStack) {
-      layoutFlowStyle.height = '100vh';
-      layoutFlowStyle.overflow = 'hidden';
-    }
-    
-    const style_state1_elFirebaseLogin618129 = {
-      pointerEvents: 'auto',
-     };
-    
-    return (
-      <div className="AppScreen StartScreen" style={baseStyle}>
-        <div className="layoutFlow" style={layoutFlowStyle}>
-          <div className="state1_elFirebaseLogin618129">
-            <div style={style_state1_elFirebaseLogin618129}>
-              <FirebaseLogin ref={(el)=> this._state1_elFirebaseLogin618129 = el} appActions={this.props.appActions} deviceInfo={this.props.deviceInfo} locStrings={this.props.locStrings} />
-            </div>
-          </div>
-        </div>
-        <Appbar className="navBar">
-          <div className="title">Start</div>  <div className="backBtn" onClick={ (ev)=>{ this.props.appActions.goBack() } }></div>
-        </Appbar>
-        
-      </div>
-    )
-  }
-  
-  
-  render() {
-    switch (0) {
-      default:
-      case 0:
-        return this.renderState0();
-      case 1:
-        return this.renderState1();
-    }
   }
   
 }

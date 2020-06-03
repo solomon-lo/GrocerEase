@@ -166,7 +166,7 @@ export default class DataSheet_localizationSheet extends DataSheetBase {
     item = {};
     this.items.push(item);
     item['key'] = "shoppingoptions_button_581207";
-    item['en'] = "Show Deals";
+    item['en'] = "Sweepstakes";
     
     item = {};
     this.items.push(item);
@@ -316,12 +316,127 @@ export default class DataSheet_localizationSheet extends DataSheetBase {
     item = {};
     this.items.push(item);
     item['key'] = "deals_text_586811";
-    item['en'] = "Enter the best deal you find online, which will post it on the Online Deals Page and enter you for a chance to win a $5 Amazon gift card! Our team of professionals will select the best entry every week, and email the winner an electronic Amazon gift card.";
+    item['en'] = "Enter the best deal you find online for a chance to win a $5 Amazon gift card! Your deal will be posted on the Online Deals page, and our team of professionals will select the best entry every week, and email the winner an electronic Amazon gift card.";
     
     item = {};
     this.items.push(item);
     item['key'] = "shoppingoptions_button2_615100";
     item['en'] = "Sweepstakes";
+    
+    item = {};
+    this.items.push(item);
+    item['key'] = "faqs2_text_810573";
+    item['en'] = "What is GrocerEase?";
+    
+    item = {};
+    this.items.push(item);
+    item['key'] = "faqs2_text2_505139";
+    item['en'] = "GrocerEase is a new, innovative platform that addresses one of the main difficulties and inconveniences created by COVID-19. Our app helps connect you to your neighbors and fellow citizens in your area to meet your grocery needs. Also, there’s a weekly competition for finding the best coronavirus-related goods online, where the person who submits the best deal will win a $5 Amazon gift card.";
+    
+    item = {};
+    this.items.push(item);
+    item['key'] = "faqs2_textcopy_271142";
+    item['en'] = "How can you enter in the best deals sweepstakes?";
+    
+    item = {};
+    this.items.push(item);
+    item['key'] = "faqs2_text3_482212";
+    item['en'] = "You can go to the sweepstakes form page, where you type in your name, email, and URL of the deal. Then, by clicking submit, you will be entered into the sweepstakes.";
+    
+    item = {};
+    this.items.push(item);
+    item['key'] = "faqs2_textcopy2_771705";
+    item['en'] = "How do I contact a shopper?";
+    
+    item = {};
+    this.items.push(item);
+    item['key'] = "faqs2_textcopy3_632013";
+    item['en'] = "You can click on a shopper post in the shopper options screen, which will redirect you to a chatroom that lets you directly communicate with the shopper.";
+    
+    item = {};
+    this.items.push(item);
+    item['key'] = "faqs2_textcopy4_238296";
+    item['en'] = "More Questions? Contact us below.";
+    
+    item = {};
+    this.items.push(item);
+    item['key'] = "faqs2_field_839389";
+    item['en'] = "Name";
+    
+    item = {};
+    this.items.push(item);
+    item['key'] = "faqs2_fieldcopy_996336";
+    item['en'] = "Email";
+    
+    item = {};
+    this.items.push(item);
+    item['key'] = "faqs2_textarea_47076";
+    item['en'] = "Enter your question here";
+    
+    item = {};
+    this.items.push(item);
+    item['key'] = "faqs2_button_644240";
+    item['en'] = "Submit";
+    
+    item = {};
+    this.items.push(item);
+    item['key'] = "thankyou_text_723801";
+    item['en'] = "Thanks for entering into our sweepstakes contest! Winners will be announced via email weekly!";
+    
+    item = {};
+    this.items.push(item);
+    item['key'] = "thankyou_button_157917";
+    item['en'] = "Shopping Options";
+    
+    item = {};
+    this.items.push(item);
+    item['key'] = "thankyou_text2_691094";
+    item['en'] = "Click below to return to the shopping options screen";
+    
+    item = {};
+    this.items.push(item);
+    item['key'] = "thanks_text_631159";
+    item['en'] = "Thanks for contacting us! Our team will get back to you via email as soon as possible!\n\n\nClick the back arrow to return to the FAQs page.";
+    
+    item = {};
+    this.items.push(item);
+    item['key'] = "shoppingoptions_button2_268304";
+    item['en'] = "Online Deals";
+    
+    item = {};
+    this.items.push(item);
+    item['key'] = "dealitem_text_119400";
+    item['en'] = "Deal Description";
+    
+    item = {};
+    this.items.push(item);
+    item['key'] = "dealitem_text_769512";
+    item['en'] = "New text. Double-click to edit";
+    
+    item = {};
+    this.items.push(item);
+    item['key'] = "dealitem_text_294907";
+    item['en'] = "New text. Double-click to edit";
+    
+    item = {};
+    this.items.push(item);
+    item['key'] = "dealitem_text_197304";
+    item['en'] = "Deal Description";
+    
+    item = {};
+    this.items.push(item);
+    item['key'] = "dealitem_text_1035144";
+    item['en'] = "Deal Link";
+    
+    item = {};
+    this.items.push(item);
+    item['key'] = "dealitem_button_457437";
+    item['en'] = "Deal Link";
+    
+    item = {};
+    this.items.push(item);
+    item['key'] = "dealitem_text_537553";
+    item['en'] = "Click the link below for more information.";
   }
 
   getStringsByLanguage = () => {
