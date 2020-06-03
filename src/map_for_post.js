@@ -23,6 +23,7 @@ export default class Map2 extends React.Component {
 
     
     componentDidMount() {
+        this.setState({mounted: true});
         var map2 = new mapboxgl.Map({
             container: this.mapContainer2,
             style: 'mapbox://styles/mapbox/streets-v11',
@@ -51,7 +52,7 @@ export default class Map2 extends React.Component {
                 mapboxgl: mapboxgl,
             })}
         ); */
-        
+        if (this.mounted) {
         map2.on('move', () => {
             this.setState({
                 lng: map2.getCenter().lng.toFixed(4),
@@ -59,13 +60,12 @@ export default class Map2 extends React.Component {
                 zoom: map2.getZoom().toFixed(2)
             });
         });
-        if (this.state.mounted) {
+        }   
         geocoder.on('result', (result) => {
             this.props.setLocation(result.result); //push JSON object onto database
             console.log(this.props.location);
          });
-         this.setState({mounted: true});
-        }
+         
     }     
 
     componentWillUnmount() {
