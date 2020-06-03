@@ -17,6 +17,7 @@ export default class Map2 extends React.Component {
             lat: 34,
             zoom: 8,
             location: '',
+            mounted: false,
         };
     }
 
@@ -58,16 +59,18 @@ export default class Map2 extends React.Component {
                 zoom: map2.getZoom().toFixed(2)
             });
         });
-
+        if (this.state.mounted) {
         geocoder.on('result', (result) => {
             this.props.setLocation(result.result); //push JSON object onto database
             console.log(this.props.location);
          });
-
+         this.setState({mounted: true});
+        }
     }     
 
     componentWillUnmount() {
         var map2 = this.mapContainer2;
+        this.setState({mounted: false});
         map2.remove();
     }
 
