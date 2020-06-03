@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
 import ChatroomItem from './ChatroomItem';
+import btn_icon_13220 from './images/btn_icon_13220.png';
+import btn_icon_15522 from './images/btn_icon_15522.png';
 import btn_icon_723827 from './images/btn_icon_723827.png';
 import btn_icon_back_shoppingoptions from './images/btn_icon_back_shoppingoptions.png';
 
@@ -43,8 +45,15 @@ export default class ShoppingOptionsScreen extends Component {
   }
 
   onClick_elButton = (ev) => {
-    // Go to screen 'Map'
-    this.props.appActions.goToScreen('map', { transitionId: 'fadeIn' });
+    // Go to screen 'SweepStakes_Entry'
+    this.props.appActions.goToScreen('sweepstakes_entry', { transitionId: 'fadeIn' });
+  
+  }
+  
+  
+  onClick_elButton2 = (ev) => {
+    // Go to screen 'Online Deals'
+    this.props.appActions.goToScreen('onlinedeals', { transitionId: 'fadeIn' });
   
   }
   
@@ -53,9 +62,23 @@ export default class ShoppingOptionsScreen extends Component {
     this.setState({field: event.target.value});
   }
   
+  onClick_elIconButton3 = (ev) => {
+    // Go to screen 'Map'
+    this.props.appActions.goToScreen('map', { transitionId: 'fadeIn' });
+  
+  }
+  
+  
+  onClick_elIconButton2 = (ev) => {
+    // Go to screen 'FAQs'
+    this.props.appActions.goToScreen('faqs', { transitionId: 'fadeIn' });
+  
+  }
+  
+  
   onClick_elIconButton = (ev) => {
-    // Go to screen 'Add a chatroom'
-    this.props.appActions.goToScreen('addachatroom');
+    // Go to screen 'Scratch Add A Post'
+    this.props.appActions.goToScreen('scratchaddapost');
   
   }
   
@@ -88,6 +111,14 @@ export default class ShoppingOptionsScreen extends Component {
       pointerEvents: 'auto',
      };
     
+    const style_elButton2 = {
+      display: 'block',
+      color: 'white',
+      textAlign: 'center',
+      cursor: 'pointer',
+      pointerEvents: 'auto',
+     };
+    
     const style_elField = {
       display: 'block',
       backgroundColor: 'white',
@@ -103,6 +134,34 @@ export default class ShoppingOptionsScreen extends Component {
     
     const style_elList = {
       height: 'auto',  // This element is in scroll flow
+     };
+    
+    const style_elIconButton3 = {
+      display: 'block',
+      textTransform: 'uppercase',
+      backgroundImage: 'url('+btn_icon_13220+')',
+      backgroundRepeat: 'no-repeat',
+      backgroundSize: '89.562%',
+      backgroundPosition: '50% 0%',
+      color: '(null)',
+      textAlign: 'left',
+      backgroundColor: 'transparent',
+      cursor: 'pointer',
+      pointerEvents: 'auto',
+     };
+    
+    const style_elIconButton2 = {
+      display: 'block',
+      textTransform: 'uppercase',
+      backgroundImage: 'url('+btn_icon_15522+')',
+      backgroundRepeat: 'no-repeat',
+      backgroundSize: '89.562%',
+      backgroundPosition: '50% 0%',
+      color: '(null)',
+      textAlign: 'left',
+      backgroundColor: 'transparent',
+      cursor: 'pointer',
+      pointerEvents: 'auto',
      };
     
     const style_elIconButton = {
@@ -134,6 +193,12 @@ export default class ShoppingOptionsScreen extends Component {
             </Button>
           </div>
           
+          <div className="elButton2">
+            <Button className="actionFont" style={style_elButton2}  color="accent" onClick={this.onClick_elButton2} >
+              {this.props.locStrings.shoppingoptions_button2_268304}
+            </Button>
+          </div>
+          
           <div className="elField">
             <input className="baseFont" style={style_elField} type="text" placeholder={this.props.locStrings.shoppingoptions_field_109207} onChange={this.textInputChanged_field} value={this.state.field}  />
           </div>
@@ -143,13 +208,21 @@ export default class ShoppingOptionsScreen extends Component {
               {items_list.map((row, index) => {
                 let itemComp = (row._componentId)
                     ? listComps_list[row._componentId]
-                    : <ChatroomItem appActions={this.props.appActions} deviceInfo={this.props.deviceInfo} locStrings={this.props.locStrings} dataSheetId={'chatroom'} dataSheetRow={row} {...{ 'store': row['store'], 'time': row['time'], 'document_key': row['document_key'], 'chatroom_name': row['chatroom_name'], }} />;
+                    : <ChatroomItem appActions={this.props.appActions} deviceInfo={this.props.deviceInfo} locStrings={this.props.locStrings} dataSheetId={'chatroom'} dataSheetRow={row} {...{ 'document_key': row['document_key'], 'chatroom_name': row['chatroom_name'], 'chatroom_time': row['chatroom_time'], }} />;
                 return (<li key={row.key}>
                     {itemComp}
                   </li>);
               })}
               <div className="marker" ref={(el)=> this._elList_endMarker = el} />
             </ul>
+          </div>
+          
+          <div className="elIconButton3">
+            <button className="actionFont" style={style_elIconButton3} onClick={this.onClick_elIconButton3}  />
+          </div>
+          
+          <div className="elIconButton2">
+            <button className="actionFont" style={style_elIconButton2} onClick={this.onClick_elIconButton2}  />
           </div>
         </div>
         <Appbar className="navBar">

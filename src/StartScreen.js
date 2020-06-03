@@ -9,26 +9,17 @@ import Appbar from 'muicss/lib/react/appbar';
 export default class StartScreen extends Component {
 
   // Properties used by this component:
-  // appActions, deviceInfo
+  // appActions, deviceInfo, sender_username
 
   constructor(props) {
     super(props);
     
     this.state = {
-      fieldUsername: (this.props.appActions.dataSlots ? this.props.appActions.dataSlots['ds_SlotUsername'] : '') || '',
+      fieldUsername: this.props.sender_username || '',
     };
   }
 
   componentDidMount() {
-    {
-      let dataSheet = this.props.appActions.dataSheets['authentication'];
-      let serviceOptions = this.props.appActions.serviceOptions_shoppers;
-      if ( !this.props.appActions.dataSheetLoaded['authentication']) {
-        serviceOptions.servicePath = dataSheet.expandSlotTemplateString("authentication", this.props.appActions.dataSlots);
-        this.props.appActions.loadData_firebaseConnection(dataSheet, serviceOptions, true);
-        this.props.appActions.dataSheetLoaded['authentication'] = true;
-      }
-    }
   }
 
   componentWillUnmount() {
@@ -41,7 +32,8 @@ export default class StartScreen extends Component {
   }
 
   onClick_elButton = (ev) => {
-    this.sendData_button_to_shoppers();
+    let newVal = this.state.fieldUsername;
+    this.props.appActions.updateDataSlot('ds_SlotUsername', newVal);
   
     // Go to screen 'Shopping Options'
     this.props.appActions.goToScreen('shoppingoptions', { transitionId: 'fadeIn' });
@@ -52,19 +44,6 @@ export default class StartScreen extends Component {
   textInputChanged_fieldUsername = (event) => {
     this.setState({fieldUsername: event.target.value});
   }
-  
-  sendData_button_to_shoppers = () => {
-    const dataSheet = this.props.appActions.getDataSheet('authentication');
-  
-    let row = this.props.dataSheetRow || {
-    };
-    row = { ...row, 
-      name: (this.props.appActions.dataSlots ? this.props.appActions.dataSlots['ds_LoginUserName'] : ''),
-      gmailUniqueUserID: (this.props.appActions.dataSlots ? this.props.appActions.dataSlots['ds_UniqueUserID'] : ''),
-    };
-    this.props.appActions.addToDataSheet('authentication', row);
-  }
-  
   
   render() {
     let layoutFlowStyle = {};

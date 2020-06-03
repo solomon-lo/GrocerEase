@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
+<<<<<<< HEAD
 import Map2 from './map_for_post';
 // UI framework component imports
 import Button from 'muicss/lib/react/button';
@@ -8,6 +9,12 @@ import mapboxgl from 'mapbox-gl';
 mapboxgl.accessToken = 'pk.eyJ1IjoiZ3JvY2VyZWFzZSIsImEiOiJja2FrZTl4YWgwbzhjMnlwZHh0bG9tb2FxIn0.24dvEshJiFjdusaNZYAP5A';
 var MapboxGeocoder = require('@mapbox/mapbox-gl-geocoder');
 
+=======
+
+// UI framework component imports
+import Button from 'muicss/lib/react/button';
+
+>>>>>>> d5e7977f9674265b0a9a2d79dec8c2adfcf41c40
 export default class AddChatroomComp extends Component {
 
   // This component doesn't use any properties
@@ -19,7 +26,11 @@ export default class AddChatroomComp extends Component {
       field_shopper_name: '',
       field_shopper_time: '',
       field_shopper_store: '',
+<<<<<<< HEAD
       field_shopper_city: {},
+=======
+      field_shopper_city: '',
+>>>>>>> d5e7977f9674265b0a9a2d79dec8c2adfcf41c40
     };
   }
 
@@ -58,8 +69,13 @@ export default class AddChatroomComp extends Component {
     this.setState({field_shopper_store: event.target.value});
   }
   
+<<<<<<< HEAD
   textInputChanged_field_shopper_city = (value) => {
     this.setState({field_shopper_city: value});
+=======
+  textInputChanged_field_shopper_city = (event) => {
+    this.setState({field_shopper_city: event.target.value});
+>>>>>>> d5e7977f9674265b0a9a2d79dec8c2adfcf41c40
   }
   
   sendData_button_to_shoppers = () => {
@@ -120,7 +136,10 @@ export default class AddChatroomComp extends Component {
       pointerEvents: 'auto',
      };
     
+<<<<<<< HEAD
      
+=======
+>>>>>>> d5e7977f9674265b0a9a2d79dec8c2adfcf41c40
     const style_elField_shopper_time = {
       display: 'block',
       backgroundColor: 'white',
@@ -137,13 +156,17 @@ export default class AddChatroomComp extends Component {
       pointerEvents: 'auto',
      };
     
+<<<<<<< HEAD
     /*
+=======
+>>>>>>> d5e7977f9674265b0a9a2d79dec8c2adfcf41c40
     const style_elField_shopper_city = {
       display: 'block',
       backgroundColor: 'white',
       paddingLeft: '1rem',
       boxSizing: 'border-box', // ensures padding won't expand element's outer size
       pointerEvents: 'auto',
+<<<<<<< HEAD
      }; */
 
      const style_elField_shopper_city = {
@@ -158,12 +181,19 @@ export default class AddChatroomComp extends Component {
        height: '10%',
        top: '500px',
      }
+=======
+     };
+>>>>>>> d5e7977f9674265b0a9a2d79dec8c2adfcf41c40
     
     return (
       <div className="AddChatroomComp appBg">
         <div className="layoutFlow">
           <div className="elIntro">
+<<<<<<< HEAD
             <div className="baseFont" style={style_elIntro}>
+=======
+            <div className="headlineFont" style={style_elIntro}>
+>>>>>>> d5e7977f9674265b0a9a2d79dec8c2adfcf41c40
               <div>{this.props.locStrings.addchatroomcomp_text_1046369}</div>
             </div>
           </div>
@@ -186,6 +216,7 @@ export default class AddChatroomComp extends Component {
             <input className="baseFont" style={style_elField_shopper_store} type="text" placeholder={this.props.locStrings.shopper_store_field} onChange={this.textInputChanged_field_shopper_store} value={this.state.field_shopper_store}  />
           </div>
           
+<<<<<<< HEAD
           <div className="mapstyle">
             <Map2 setLocation = {this.textInputChanged_field_shopper_city}> </Map2>
             {/*<input className="baseFont" style={style_elField_shopper_city} type="text" placeholder={this.props.locStrings.shopper_city_field} onChange={this.textInputChanged_field_shopper_city} value={this.state.field_shopper_city}  />*/}
@@ -193,6 +224,14 @@ export default class AddChatroomComp extends Component {
         </div>
         
       </div> 
+=======
+          <div className="elField_shopper_city">
+            <input className="baseFont" style={style_elField_shopper_city} type="text" placeholder={this.props.locStrings.shopper_city_field} onChange={this.textInputChanged_field_shopper_city} value={this.state.field_shopper_city}  />
+          </div>
+        </div>
+        
+      </div>
+>>>>>>> d5e7977f9674265b0a9a2d79dec8c2adfcf41c40
     )
   }
   
