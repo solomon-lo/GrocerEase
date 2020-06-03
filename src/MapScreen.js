@@ -23,13 +23,13 @@ export default class MapScreen extends Component {
   }
 
   componentDidMount() {
-    let dataSheet = this.props.appActions.dataSheets['shoppers'];
-    let serviceOptions = this.props.appActions.serviceOptions_shoppers;
-    if ( !this.props.appActions.dataSheetLoaded['shoppers']) {
-      serviceOptions.servicePath = dataSheet.expandSlotTemplateString("shoppers", this.props.appActions.dataSlots);
+    let dataSheet = this.props.appActions.dataSheets['chatroom'];
+    let serviceOptions = this.props.appActions.serviceOptions_chatroom;
+    if ( !this.props.appActions.dataSheetLoaded['chatroom']) {
+      serviceOptions.servicePath = dataSheet.expandSlotTemplateString("messaging", this.props.appActions.dataSlots);
       this.props.appActions.loadData_firebaseConnection(dataSheet, serviceOptions, true);
-        this.props.appActions.dataSheetLoaded['shoppers'] = true;
-        this.setState({loaded: true});
+      this.props.appActions.dataSheetLoaded['chatroom'] = true;
+      this.setState({loaded: true});
     }
   }
 
@@ -43,9 +43,9 @@ export default class MapScreen extends Component {
   }
 
   render() {
-    const dataSheet_shoppers = this.props.dataSheets['shoppers'];
+    const dataSheet_shoppers = this.props.dataSheets['chatroom'];
     let items_list = []
-    items_list = items_list.concat(this.props.appActions.getDataSheet('shoppers').items);
+    items_list = items_list.concat(this.props.appActions.getDataSheet('chatroom').items);
     let layoutFlowStyle = {};
     let baseStyle = {};
     if (this.props.transitionId && this.props.transitionId.length > 0 && this.props.atTopOfScreenStack && this.props.transitionForward) {
