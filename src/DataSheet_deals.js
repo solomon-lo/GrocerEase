@@ -1,6 +1,6 @@
 import DataSheetBase from './DataSheetBase.js';
 
-export default class DataSheet_chatroom extends DataSheetBase {
+export default class DataSheet_deals extends DataSheetBase {
 
   constructor(id, updateCb) {
     super(id, updateCb);
@@ -17,35 +17,29 @@ export default class DataSheet_chatroom extends DataSheetBase {
     
     item = {};
     this.items.push(item);
-    item['document_key'] = "target";
-    item['chatroom_name'] = "Bob 10";
+    item['document_key'] = "VDqNejY6G5QZPkRG16U9";
+    item['Name'] = "bob";
+    item['Email'] = "bob@gmail.com";
+    item['DescriptionOfDeal'] = "Free chicken nuggets!";
+    item['URL'] = "google.com";
     item.key = key++;
     
     item = {};
     this.items.push(item);
-    item['document_key'] = "Sam's Club";
-    item['chatroom_time'] = "12:00am Sunday";
-    item['chatroom_name'] = "Charlie";
+    item['document_key'] = "towpsPZ3bCDUYnZcIfz2";
+    item['Name'] = "Solomon Lo";
+    item['Email'] = "lo.solomon@outlook.com";
+    item['DescriptionOfDeal'] = "This is a great deal for masks!";
+    item['URL'] = "amazon.com/deal/link";
     item.key = key++;
     
     item = {};
     this.items.push(item);
-    item['document_key'] = "Costco";
-    item['chatroom_time'] = "5:00 Wednesday";
-    item['chatroom_name'] = "Jimmy";
-    item.key = key++;
-    
-    item = {};
-    this.items.push(item);
-    item['document_key'] = "Walmart";
-    item['chatroom_time'] = "4:44 PM";
-    item['chatroom_name'] = "Mmmm";
-    item.key = key++;
-    
-    item = {};
-    this.items.push(item);
-    item['document_key'] = "Walgreens";
-    item['chatroom_name'] = "Shopper John";
+    item['document_key'] = "wyOF5bYC6sw85faC0I67";
+    item['Name'] = "sam";
+    item['Email'] = "sam";
+    item['DescriptionOfDeal'] = "sam";
+    item['URL'] = "sam";
     item.key = key++;
   }
 

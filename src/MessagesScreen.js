@@ -99,7 +99,7 @@ export default class MessagesScreen extends Component {
               {items_list.map((row, index) => {
                 let itemComp = (row._componentId)
                     ? listComps_list[row._componentId]
-                    : <ChatItem appActions={this.props.appActions} deviceInfo={this.props.deviceInfo} locStrings={this.props.locStrings} dataSheetId={'chatmessages'} dataSheetRow={row} {...{ 'sender_username': row['sender_username'], 'message_body': row['message_body'], 'timestamp': row['timestamp'], }} />;
+                    : <ChatItem appActions={this.props.appActions} deviceInfo={this.props.deviceInfo} locStrings={this.props.locStrings} dataSheetId={'chatmessages'} dataSheetRow={row} {...{ 'message_body': row['message_body'], 'timestamp': row['timestamp'], 'sender_username': row['sender_username'], }} />;
                 return (<li key={row.key}>
                     {itemComp}
                   </li>);

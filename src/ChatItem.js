@@ -5,7 +5,7 @@ import btn_icon_894338 from './images/btn_icon_894338.png';
 export default class ChatItem extends Component {
 
   // Properties used by this component:
-  // sender_username, message_body, timestamp
+  // message_body, timestamp, sender_username
 
   constructor(props) {
     super(props);
@@ -61,8 +61,29 @@ export default class ChatItem extends Component {
       cursor: 'pointer',
       pointerEvents: 'auto',
      };
+    let transformPropValue_textCopy2 = (input) => {
+      // This function modifies the value for property 'text'.
+      // There is a variable named 'input' that provides the property value.
+      //
+      
+      var date = new Date(input);
+      var months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+      // Year part from the timestamp
+      var year = date.getFullYear();
+      // Month part from the timestamp
+      var month = months[date.getMonth()];
+      // Date part from the timestamp
+      var day = date.getDate();
+      // Hours part from the timestamp
+      var hours = date.getHours();
+      // Minutes part from the timestamp
+      var minutes = "0" + date.getMinutes();
+      
+      var formattedTime = month + ' ' + day + ' ' + year + ', ' + hours + ':' + minutes.substr(-2);
+      return formattedTime;
+    }
     
-    const value_textCopy2 = this.props.timestamp;
+    const value_textCopy2 = transformPropValue_textCopy2(this.props.timestamp);
     
     const style_elTextCopy2 = {
       color: 'rgba(0, 0, 0, 0.8500)',
