@@ -15,23 +15,13 @@ export default class FAQsScreen extends Component {
     super(props);
     
     this.state = {
-      field_faq_name: '',
-      field_faq_email: '',
-      field_faq_question: '',
-
+      field: '',
+      fieldCopy: '',
+      textarea: '',
     };
   }
 
   componentDidMount() {
-    {
-      let dataSheet = this.props.appActions.dataSheets['faqDataSheet'];
-      let serviceOptions = this.props.appActions.serviceOptions_faqDataSheet;
-      if ( !this.props.appActions.dataSheetLoaded['faqDataSheet']) {
-        serviceOptions.servicePath = dataSheet.expandSlotTemplateString("faqUserDatabase", this.props.appActions.dataSlots);
-        this.props.appActions.loadData_firebaseConnection(dataSheet, serviceOptions, true);
-        this.props.appActions.dataSheetLoaded['faqDataSheet'] = true;
-      }
-    }
   }
 
   componentWillUnmount() {
@@ -43,37 +33,24 @@ export default class FAQsScreen extends Component {
   componentWillReceiveProps(nextProps) {
   }
 
-  textInputChanged_field_faq_name = (event) => {
-    this.setState({field_faq_name: event.target.value});
+  textInputChanged_field = (event) => {
+    this.setState({field: event.target.value});
   }
   
-  textInputChanged_field_faq_email = (event) => {
-    this.setState({field_faq_email: event.target.value});
+  textInputChanged_fieldCopy = (event) => {
+    this.setState({fieldCopy: event.target.value});
   }
   
-  textAreaChanged_field_faq_question = (event) => {
-    this.setState({field_faq_question: event.target.value});
+  textAreaChanged_textarea = (event) => {
+    this.setState({textarea: event.target.value});
   }
   
   onClick_elButton = (ev) => {
-    this.sendData_button_to_faqDataSheet();
     // Go to screen 'Thanks!'
     this.props.appActions.goToScreen('thanks', { transitionId: 'fadeIn' });
   
   }
   
-  sendData_button_to_faqDataSheet = () => {
-    const dataSheet = this.props.appActions.getDataSheet('faqDataSheet');
-
-    let row = this.props.dataSheetRow || {
-    };
-    row = { ...row, 
-      email: this.state.field_faq_email,
-      name: this.state.field_faq_name,
-      question: this.state.field_faq_question,
-    };
-    this.props.appActions.addToDataSheet('faqDataSheet', row);
-  }
   
   render() {
     let layoutFlowStyle = {};
@@ -129,7 +106,7 @@ export default class FAQsScreen extends Component {
       textAlign: 'left',
      };
     
-     const style_elField_faq_name = {
+    const style_elField = {
       display: 'block',
       backgroundColor: 'white',
       paddingLeft: '1rem',
@@ -137,7 +114,7 @@ export default class FAQsScreen extends Component {
       pointerEvents: 'auto',
      };
     
-     const style_elField_faq_email = {
+    const style_elFieldCopy = {
       display: 'block',
       backgroundColor: 'white',
       paddingLeft: '1rem',
@@ -145,7 +122,7 @@ export default class FAQsScreen extends Component {
       pointerEvents: 'auto',
      };
     
-     const style_elField_faq_question = {
+    const style_elTextarea = {
       display: 'block',
       backgroundColor: 'white',
       borderColor: 'lightGray',
@@ -213,16 +190,16 @@ export default class FAQsScreen extends Component {
             </div>
           </div>
           
-          <div className="elField_faq_name">
-            <input className="baseFont" style={style_elField_faq_name} type="text" placeholder={this.props.locStrings.faqs2_field_839389} onChange={this.textInputChanged_field_faq_name} value={this.state.field_faq_name}  />
+          <div className="elField">
+            <input className="baseFont" style={style_elField} type="text" placeholder={this.props.locStrings.faqs2_field_839389} onChange={this.textInputChanged_field} value={this.state.field}  />
           </div>
           
-          <div className="elField_faq_email">
-            <input className="baseFont" style={style_elField_faq_email} type="text" placeholder={this.props.locStrings.faqs2_fieldcopy_996336} onChange={this.textInputChanged_field_faq_email} value={this.state.field_faq_email}  />
+          <div className="elFieldCopy">
+            <input className="baseFont" style={style_elFieldCopy} type="text" placeholder={this.props.locStrings.faqs2_fieldcopy_996336} onChange={this.textInputChanged_fieldCopy} value={this.state.fieldCopy}  />
           </div>
           
-          <div className="elField_faq_question">
-            <textarea className="baseFont" style={style_elField_faq_question}  placeholder={this.props.locStrings.faqs2_textarea_47076} onChange={this.textAreaChanged_field_faq_question} value={this.state.field_faq_question}  />
+          <div className="elTextarea">
+            <textarea className="baseFont" style={style_elTextarea}  placeholder={this.props.locStrings.faqs2_textarea_47076} onChange={this.textAreaChanged_textarea} value={this.state.textarea}  />
           </div>
           
           <div className="elButton">
