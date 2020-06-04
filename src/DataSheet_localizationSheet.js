@@ -126,7 +126,7 @@ export default class DataSheet_localizationSheet extends DataSheetBase {
     item = {};
     this.items.push(item);
     item['key'] = "shoppingoptions_field_109207";
-    item['en'] = "Search";
+    item['en'] = "Search for a store";
     
     item = {};
     this.items.push(item);
