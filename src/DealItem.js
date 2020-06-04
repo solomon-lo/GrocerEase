@@ -25,7 +25,13 @@ export default class DealItem extends Component {
   componentWillReceiveProps(nextProps) {
   }
 
+  onClick_elDeal_link = (ev) => {
+    window.open("http://www." + this.props.URL, '_blank');
+
+  }
+
   render() {
+
     const style_elBackground = {
       width: '100%',
       height: '100%',
@@ -59,12 +65,15 @@ export default class DealItem extends Component {
       textAlign: 'left',
      };
     
-    const value_deal_link = this.props.URL;
+    const value_deal_link = "http://" + this.props.URL;
+    console.log(value_deal_link)
     
     const style_elDeal_link = {
       fontSize: 15.2,
       color: 'rgba(0, 0, 0, 0.8500)',
       textAlign: 'left',
+      cursor: 'pointer',
+      pointerEvents: 'auto',
      };
     
     return (
@@ -101,7 +110,7 @@ export default class DealItem extends Component {
           </div>
           
           <div className="elDeal_link">
-            <div className="systemFontBold" style={style_elDeal_link}>
+            <div className="systemFontBold" style={style_elDeal_link}  onClick={this.onClick_elDeal_link} >
               <div>{value_deal_link !== undefined ? value_deal_link : (<span className="propValueMissing">{this.props.locStrings.dealitem_text_1035144}</span>)}</div>
             </div>
           </div>
