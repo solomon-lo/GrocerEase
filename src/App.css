@@ -1,0 +1,4264 @@
+.App { /* Base font style */
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", sans-serif;
+  font-size: 15.2px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: rgba(0, 0, 0, 0.8500);
+  background-color: #f6f6f6;
+}
+
+.App .baseFont * { /* Base font style override for UI framework components */
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", sans-serif;
+  font-size: 15.2px;
+}
+
+.App .appBg {
+  background-color: #f6f6f6;
+}
+
+.App .cardBg {
+  background-color: white;
+}
+
+.App .baseTextBg { /* Base text color as background */
+  background-color: rgba(0, 0, 0, 0.8500);
+}
+
+.App .secondaryTextColor {
+  color: rgba(0, 0, 0, 0.5000);
+}
+
+.App .secondaryTextBg {
+  background-color: rgba(0, 0, 0, 0.5000);
+}
+
+.App .primaryTextColor {
+  color: #bee9ee;
+}
+
+.App .primaryBg {
+  background-color: #bee9ee;
+}
+
+.App .highlightTextColor {
+  color: #0093d5;
+}
+
+.App .highlightBg {
+  background-color: #0093d5;
+}
+
+@media (display-mode: standalone) {
+  .App {
+    user-select: none;
+  }
+}
+
+/* Styles to customize the UI framework plugin (MUI, https://muicss.com) */
+.mui-btn {
+    padding-left: 0;
+    padding-right: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+.mui-btn--primary {
+    background-color: #bee9ee;
+}
+.mui-btn--primary:active, .mui-btn--primary:focus, .mui-btn--primary:hover {
+    background-color: #c3ebf0;
+}
+.mui-btn--accent {
+    background-color: #0093d5;
+}
+.mui-btn--accent:active, .mui-btn--accent:focus, .mui-btn--accent:hover {
+    background-color: #069fda;
+}
+.mui-textfield {  /* Reset UI framework styling that affects layout */
+    padding-top: 0;
+    margin-bottom: 0;
+}
+.mui-checkbox, .mui-radio {  /* Reset UI framework styling that affects layout */
+    margin-top: 0;
+    margin-bottom: 0;
+}
+.mui-select {  /* Reset UI framework styling that affects layout */
+    padding-top: 0;
+    margin-bottom: 0;
+}
+.mui-btn+.mui-btn {  /* Reset UI framework styling that affects layout */
+    margin-left: 0;
+}
+.mui-btn--fab {  /* Reset UI framework styling that breaks compositing */
+    z-index: auto;
+}
+
+@keyframes fadeIn {
+    0%   { opacity: 0.0; }
+    100% { opacity: 1.0; }
+}
+@keyframes slideIn_right {
+    0%   { transform: translateX(100%); }
+    100% { transform: translateX(0); }
+}
+@keyframes slideIn_bottom {
+    0%   { transform: translateY(100%); }
+    100% { transform: translateY(0); }
+}
+
+/* System font classes */
+
+.App .systemFontRegular {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", sans-serif;
+}
+.App .systemFontBold {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", sans-serif;
+  font-weight: 600;
+}
+.App .systemFontItalic {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", sans-serif;
+  font-style: italic;
+}
+.App .systemFontBoldItalic {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", sans-serif;
+  font-weight: 600;
+  font-style: italic;
+}
+
+/* App-wide text styles specified in React Studio */
+
+.App .actionFont {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", sans-serif;
+  font-size: 14.2px;
+  font-weight: 400;
+}
+.App .actionFont * {
+  font-size: 14.2px;
+}
+.App .headlineFont {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", sans-serif;
+  font-size: 19.0px;
+  font-weight: 600;
+}
+.App .headlineFont * {
+  font-size: 19.0px;
+}
+.App .navBar {
+  background-color: #bee9ee;
+  color: black;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 50px;
+  min-height: 50px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", sans-serif;
+  font-size: 18px;
+}
+
+.App .navBar a {
+  color: black;
+}
+
+.App .navBar .title {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  padding: 4px;
+}
+
+.App .navBar .backBtn {
+  position: absolute;
+  padding: 4px;
+  margin-left: 14px;
+  cursor: pointer;
+}
+
+.App .navBar > div {
+  margin-top: 7px;
+}
+
+@media (min-width: 568px) {
+  .App .navBar {
+    height: 50px;
+    min-height: 50px;
+  }
+  .App .navBar > div {
+    margin-top: 7px;
+  }
+}
+@media (min-width: 768px) {
+  .App .navBar {
+    height: 50px;
+    min-height: 50px;
+  }
+  .App .navBar > div {
+    margin-top: 7px;
+  }
+}
+@media (min-width: 1024px) {
+  .App .navBar {
+    height: 50px;
+    min-height: 50px;
+  }
+  .App .navBar > div {
+    margin-top: 7px;
+  }
+}
+@media (min-width: 320px) {
+  .mui-container {
+    max-width: 320px;
+  }
+}
+@media (min-width: 568px) {
+  .mui-container {
+    max-width: 568px;
+  }
+}
+@media (min-width: 768px) {
+  .mui-container {
+    max-width: 768px;
+  }
+}
+@media (min-width: 1024px) {
+  .mui-container {
+    max-width: 1024px;
+  }
+}
+
+.AppScreen {
+  padding-left: 0;
+  padding-right: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  pointer-events: auto;
+}
+
+.App .background {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.App .layoutFlow {
+  position: relative;
+  width: 100%;
+  pointer-events: none;
+}
+.App .layoutFlow:before {  /* Prevent margin collapse */
+  content: "";
+  display: table;
+  clear: both;
+}
+.App .layoutFlow .flowRow {
+  position: relative;
+  width: 100%;
+}
+
+.App .screenFgContainer {
+  /* Items in the foreground group within a screen are placed with fixed positioning */
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+.App .foreground {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.App ul {
+  margin: 0;
+  padding: 0;
+}
+.App li {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  position: relative;
+}
+.App .hasNestedComps {
+  position: relative;
+}
+.App .hasNestedComps:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.App .hasNestedComps .background {
+  position: absolute;
+}
+.App .hasNestedComps .layoutFlow {
+  position: relative;
+}
+.App .bottomAlignedContent {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+.App .blockInputOverlay {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: auto;
+  z-index: 99999999;
+}
+
+.App .marker {
+  width: 0px;
+  height: 0px;
+}
+
+.App .drawer {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+}
+
+.App .drawerOpen {
+  transform: translateX(0%);
+  transition: 0.3s;
+}
+
+.App .drawerClosedLeft {
+  transform: translateX(-100%);
+  transition: 0.3s;
+}
+
+.App .drawerClosedRight {
+  transform: translateX(100%);
+  transition: 0.3s;
+}
+
+.App .drawerContent {
+  position: fixed;
+  height: 100%;
+  overflow: hidden;
+}
+
+.App .drawerContent > * {
+  height: 100%;
+}
+
+/* This component has a fixed-size layout */
+  .ChatItem {
+    min-height: 131px;  /* Minimum height to ensure layout flow is visible */
+    width: 100%; /* This component was designed using a width of 412px */
+    height: 100%;
+  }
+  .ChatItem > .background > .containerMinHeight {
+    min-height: 131px;
+  }
+
+
+  .ChatItem > .layoutFlow > .elText {
+    position: relative;
+    margin-top: 16px;
+    margin-left: 10px;
+    margin-right: 10px;
+    width: calc(100.0% - 20px);
+  }
+  .ChatItem > .layoutFlow > .elText > * { 
+    width: 100%;
+  }
+  
+
+
+  .ChatItem > .layoutFlow > .elTextCopy {
+    position: relative;
+    margin-top: 16px;
+    margin-left: 10px;
+    margin-right: 10px;
+    width: calc(100.0% - 20px);
+  }
+  .ChatItem > .layoutFlow > .elTextCopy > * { 
+    width: 100%;
+  }
+  
+
+.ChatItem .elIconButton button {
+  cursor: pointer;
+  border: 0.0px solid transparent;
+  border-radius: 2.3px;
+}
+
+.ChatItem .elIconButton button:focus {
+  box-shadow: 0 0 5px rgba(0, 149, 214, 0.5000);
+  outline: none;
+}
+
+
+
+  .ChatItem > .layoutFlow > .elIconButton {
+    position: relative;
+    margin-top: -28px;
+    width: 100%;
+  }
+  .ChatItem > .layoutFlow > .elIconButton > * { 
+  margin-left: auto;
+  width: 41px;
+  margin-right: 20px;
+  height: 36px;
+  }
+  
+
+
+  .ChatItem > .layoutFlow > .elTextCopy2 {
+    position: relative;
+    margin-top: 16px;
+    margin-left: 10px;
+    margin-right: 10px;
+    width: calc(100.0% - 20px);
+  }
+  .ChatItem > .layoutFlow > .elTextCopy2 > * { 
+    width: 100%;
+  }
+  
+
+/* This component has a fixed-size layout */
+  .SendMessage {
+    min-height: 154px;  /* Minimum height to ensure layout flow is visible */
+    width: 100%; /* This component was designed using a width of 395px */
+    height: 100%;
+  }
+  .SendMessage > .background > .containerMinHeight {
+    min-height: 154px;
+  }
+
+
+  .SendMessage > .layoutFlow > .elTextareaMessage {
+    position: relative;
+    margin-top: 11px;
+    margin-left: 10px;
+    margin-right: 10px;
+    width: calc(100.0% - 20px);
+  }
+  .SendMessage > .layoutFlow > .elTextareaMessage > * { 
+    width: 100%;
+  height: 79px;
+  }
+  
+
+.SendMessage .elButton button {
+  cursor: pointer;
+  border: 0.0px solid transparent;
+  border-radius: 3.4px;
+}
+
+.SendMessage .elButton button:focus {
+  box-shadow: 0 0 5px rgba(0, 149, 214, 0.5000);
+  outline: none;
+}
+
+
+
+  .SendMessage > .layoutFlow > .elButton {
+    line-height: 35px;
+    position: relative;
+    margin-top: 14px;
+    margin-left: 10px;
+    margin-right: 10px;
+    width: calc(100.0% - 20px);
+  }
+  .SendMessage > .layoutFlow > .elButton > * { 
+    width: 100%;
+  height: 35px;
+  }
+  
+
+/* This component has a fixed-size layout */
+  .Comp1 {
+    width: 100%; /* This component was designed using a width of 150px */
+    height: 100%;
+  }
+
+
+  .Comp1 > .layoutFlow > .elRating {
+    position: relative;
+    margin-top: 0px;
+    width: 149px;
+    margin-left: 0px;
+  }
+  .Comp1 > .layoutFlow > .elRating > * { 
+  width: 149px;
+  height: 27px;
+  }
+  
+
+
+/* Narrowest size for this element's responsive layout */
+  .MessagesScreen > .background > .elBackground {
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    width: 100.0%;
+    height: 100%;
+  }
+@media (min-width: 568px) {
+  .MessagesScreen > .background > .elBackground {
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    width: 100.0%;
+    height: 100%;
+  }
+}
+@media (min-width: 768px) {
+  .MessagesScreen > .background > .elBackground {
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    width: 100.0%;
+    height: 100%;
+  }
+}
+@media (min-width: 1024px) {
+  .MessagesScreen > .background > .elBackground {
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    width: 100.0%;
+    height: 100%;
+  }
+}
+
+.MessagesScreen .elList li {
+  margin-bottom: 5px;
+}
+
+
+
+/* Narrowest size for this element's responsive layout */
+  .MessagesScreen > .layoutFlow > .elList {
+    position: relative;
+    margin-top: 62px;
+    margin-left: 0px;
+    margin-right: 0px;
+    width: calc(100.0% - 0px);
+  }
+  .MessagesScreen > .layoutFlow > .elList > * { 
+    width: 100%;
+  }
+  
+@media (min-width: 568px) {
+  .MessagesScreen > .layoutFlow > .elList {
+    position: relative;
+    margin-top: 62px;
+    margin-left: 0px;
+    margin-right: 0px;
+    width: calc(100.0% - 0px);
+  }
+  .MessagesScreen > .layoutFlow > .elList > * { 
+    width: 100%;
+  }
+  
+}
+@media (min-width: 768px) {
+  .MessagesScreen > .layoutFlow > .elList {
+    position: relative;
+    margin-top: 62px;
+    margin-left: 0px;
+    margin-right: 0px;
+    width: calc(100.0% - 0px);
+  }
+  .MessagesScreen > .layoutFlow > .elList > * { 
+    width: 100%;
+  }
+  
+}
+@media (min-width: 1024px) {
+  .MessagesScreen > .layoutFlow > .elList {
+    position: relative;
+    margin-top: 62px;
+    margin-left: 0px;
+    margin-right: 0px;
+    width: calc(100.0% - 0px);
+  }
+  .MessagesScreen > .layoutFlow > .elList > * { 
+    width: 100%;
+  }
+  
+}
+
+
+/* Narrowest size for this element's responsive layout */
+  .MessagesScreen > .layoutFlow > .elRectangle {
+    position: relative;
+    margin-top: 192px;
+    margin-left: 0px;
+    margin-right: 0px;
+    width: calc(100.0% - 0px);
+  }
+  .MessagesScreen > .layoutFlow > .elRectangle > * { 
+    width: 100%;
+  height: 166px;
+  }
+  
+@media (min-width: 568px) {
+  .MessagesScreen > .layoutFlow > .elRectangle {
+    position: relative;
+    margin-top: 192px;
+    margin-left: 0px;
+    margin-right: 0px;
+    width: calc(100.0% - 0px);
+  }
+  .MessagesScreen > .layoutFlow > .elRectangle > * { 
+    width: 100%;
+  height: 165px;
+  }
+  
+}
+@media (min-width: 768px) {
+  .MessagesScreen > .layoutFlow > .elRectangle {
+    position: relative;
+    margin-top: 191px;
+    margin-left: 0px;
+    margin-right: 0px;
+    width: calc(100.0% - 0px);
+  }
+  .MessagesScreen > .layoutFlow > .elRectangle > * { 
+    width: 100%;
+  height: 164px;
+  }
+  
+}
+@media (min-width: 1024px) {
+  .MessagesScreen > .layoutFlow > .elRectangle {
+    position: relative;
+    margin-top: 191px;
+    margin-left: 0px;
+    margin-right: 0px;
+    width: calc(100.0% - 0px);
+  }
+  .MessagesScreen > .layoutFlow > .elRectangle > * { 
+    width: 100%;
+  height: 164px;
+  }
+  
+}
+
+.MessagesScreen .elComp {
+  overflow: hidden;
+}
+
+.MessagesScreen .elComp.hasNestedComps > div {
+  overflow: hidden;
+  position: relative;
+}
+
+
+
+/* Narrowest size for this element's responsive layout */
+  .MessagesScreen > .layoutFlow > .elComp {
+    position: relative;
+    margin-top: -1180px;
+    width: 150px;
+    margin-left: 166px;
+  }
+  .MessagesScreen > .layoutFlow > .elComp > * { 
+  width: 150px;
+  }
+  
+  .MessagesScreen > .layoutFlow > .elComp > .background > .containerMinHeight {
+    min-height: 30px;
+  }
+
+@media (min-width: 568px) {
+  .MessagesScreen > .layoutFlow > .elComp {
+    position: relative;
+    margin-top: -1180px;
+    width: 150px;
+    margin-left: 166px;
+  }
+  .MessagesScreen > .layoutFlow > .elComp > * { 
+  width: 150px;
+  }
+  
+  .MessagesScreen > .layoutFlow > .elComp > .background > .containerMinHeight {
+    min-height: 30px;
+  }
+
+}
+@media (min-width: 768px) {
+  .MessagesScreen > .layoutFlow > .elComp {
+    position: relative;
+    margin-top: -1172px;
+    width: 149px;
+    margin-left: 164px;
+  }
+  .MessagesScreen > .layoutFlow > .elComp > * { 
+  width: 149px;
+  }
+  
+  .MessagesScreen > .layoutFlow > .elComp > .background > .containerMinHeight {
+    min-height: 30px;
+  }
+
+}
+@media (min-width: 1024px) {
+  .MessagesScreen > .layoutFlow > .elComp {
+    position: relative;
+    margin-top: -1172px;
+    width: 149px;
+    margin-left: 164px;
+  }
+  .MessagesScreen > .layoutFlow > .elComp > * { 
+  width: 149px;
+  }
+  
+  .MessagesScreen > .layoutFlow > .elComp > .background > .containerMinHeight {
+    min-height: 30px;
+  }
+
+}
+
+.MessagesScreen .elSendMessage {
+  overflow: hidden;
+  pointer-events: auto;
+}
+
+.MessagesScreen .elSendMessage.hasNestedComps > div {
+  overflow: hidden;
+  position: relative;
+}
+
+
+
+/* Narrowest size for this element's responsive layout */
+  .MessagesScreen > .screenFgContainer > .foreground > .elSendMessage {
+    position: fixed;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    width: 100.0%;
+    height: 154px;
+  }
+  .MessagesScreen > .screenFgContainer > .foreground > .elSendMessage > .background > .containerMinHeight {
+    min-height: 154px;
+  }
+
+@media (min-width: 568px) {
+  .MessagesScreen > .screenFgContainer > .foreground > .elSendMessage {
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    width: 100.0%;
+    height: 154px;
+  }
+  .MessagesScreen > .screenFgContainer > .foreground > .elSendMessage > .background > .containerMinHeight {
+    min-height: 154px;
+  }
+
+}
+@media (min-width: 768px) {
+  .MessagesScreen > .screenFgContainer > .foreground > .elSendMessage {
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    width: 100.0%;
+    height: 153px;
+  }
+  .MessagesScreen > .screenFgContainer > .foreground > .elSendMessage > .background > .containerMinHeight {
+    min-height: 153px;
+  }
+
+}
+@media (min-width: 1024px) {
+  .MessagesScreen > .screenFgContainer > .foreground > .elSendMessage {
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    width: 100.0%;
+    height: 153px;
+  }
+  .MessagesScreen > .screenFgContainer > .foreground > .elSendMessage > .background > .containerMinHeight {
+    min-height: 153px;
+  }
+
+}
+
+
+/* Narrowest size for this element's responsive layout */
+  .ThankYouScreen > .background > .elBackground {
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    width: 100.0%;
+    height: 100%;
+  }
+@media (min-width: 568px) {
+  .ThankYouScreen > .background > .elBackground {
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    width: 100.0%;
+    height: 100%;
+  }
+}
+@media (min-width: 768px) {
+  .ThankYouScreen > .background > .elBackground {
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    width: 100.0%;
+    height: 100%;
+  }
+}
+@media (min-width: 1024px) {
+  .ThankYouScreen > .background > .elBackground {
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    width: 100.0%;
+    height: 100%;
+  }
+}
+
+
+/* Narrowest size for this element's responsive layout */
+  .ThankYouScreen > .layoutFlow > .elText {
+    position: relative;
+    margin-top: 115px;
+    width: 238px;
+    margin-left: calc(50.0% - 119px);
+  }
+  .ThankYouScreen > .layoutFlow > .elText > * { 
+  width: 238px;
+  }
+  
+@media (min-width: 568px) {
+  .ThankYouScreen > .layoutFlow > .elText {
+    position: relative;
+    margin-top: 72px;
+    width: 392px;
+    margin-left: calc(50.0% - 196px);
+  }
+  .ThankYouScreen > .layoutFlow > .elText > * { 
+  width: 392px;
+  }
+  
+}
+@media (min-width: 768px) {
+  .ThankYouScreen > .layoutFlow > .elText {
+    position: relative;
+    margin-top: 73px;
+    width: 723px;
+    margin-left: calc(50.0% - 362px);
+  }
+  .ThankYouScreen > .layoutFlow > .elText > * { 
+  width: 723px;
+  }
+  
+}
+@media (min-width: 1024px) {
+  .ThankYouScreen > .layoutFlow > .elText {
+    position: relative;
+    margin-top: 90px;
+    width: 821px;
+    margin-left: calc(50.0% - 410px);
+  }
+  .ThankYouScreen > .layoutFlow > .elText > * { 
+  width: 821px;
+  }
+  
+}
+
+.ThankYouScreen .elButton button {
+  cursor: pointer;
+  border: 0.0px solid transparent;
+  border-radius: 3.4px;
+}
+
+.ThankYouScreen .elButton button:focus {
+  box-shadow: 0 0 5px rgba(0, 149, 214, 0.5000);
+  outline: none;
+}
+
+
+
+/* Narrowest size for this element's responsive layout */
+  .ThankYouScreen > .layoutFlow > .elButton {
+    line-height: 32px;
+    position: relative;
+    margin-top: 246px;
+    width: 174px;
+    margin-left: calc(50.0% - 87px);
+  }
+  .ThankYouScreen > .layoutFlow > .elButton > * { 
+  width: 174px;
+  height: 32px;
+  }
+  
+@media (min-width: 568px) {
+  .ThankYouScreen > .layoutFlow > .elButton {
+    line-height: 29px;
+    position: relative;
+    margin-top: 78px;
+    width: 174px;
+    margin-left: calc(50.0% - 87px);
+  }
+  .ThankYouScreen > .layoutFlow > .elButton > * { 
+  width: 174px;
+  height: 29px;
+  }
+  
+}
+@media (min-width: 768px) {
+  .ThankYouScreen > .layoutFlow > .elButton {
+    line-height: 32px;
+    position: relative;
+    margin-top: 28px;
+    width: 173px;
+    margin-left: calc(50.0% - 86px);
+  }
+  .ThankYouScreen > .layoutFlow > .elButton > * { 
+  width: 173px;
+  height: 32px;
+  }
+  
+}
+@media (min-width: 1024px) {
+  .ThankYouScreen > .layoutFlow > .elButton {
+    line-height: 41px;
+    position: relative;
+    margin-top: 88px;
+    width: 173px;
+    margin-left: calc(50.0% - 86px);
+  }
+  .ThankYouScreen > .layoutFlow > .elButton > * { 
+  width: 173px;
+  height: 41px;
+  }
+  
+}
+
+
+/* Narrowest size for this element's responsive layout */
+  .ThankYouScreen > .layoutFlow > .elText2 {
+    position: relative;
+    margin-top: -80px;
+    width: 238px;
+    margin-left: calc(50.0% - 119px);
+  }
+  .ThankYouScreen > .layoutFlow > .elText2 > * { 
+  width: 238px;
+  }
+  
+@media (min-width: 568px) {
+  .ThankYouScreen > .layoutFlow > .elText2 {
+    position: relative;
+    margin-top: -91px;
+    width: 238px;
+    margin-left: calc(50.0% - 119px);
+  }
+  .ThankYouScreen > .layoutFlow > .elText2 > * { 
+  width: 238px;
+  }
+  
+}
+@media (min-width: 768px) {
+  .ThankYouScreen > .layoutFlow > .elText2 {
+    position: relative;
+    margin-top: -80px;
+    width: 236px;
+    margin-left: calc(50.0% - 118px);
+  }
+  .ThankYouScreen > .layoutFlow > .elText2 > * { 
+  width: 236px;
+  }
+  
+}
+@media (min-width: 1024px) {
+  .ThankYouScreen > .layoutFlow > .elText2 {
+    position: relative;
+    margin-top: -68px;
+    width: 632px;
+    margin-left: calc(50.0% - 316px);
+  }
+  .ThankYouScreen > .layoutFlow > .elText2 > * { 
+  width: 632px;
+  }
+  
+}
+
+
+/* Narrowest size for this element's responsive layout */
+  .ThanksScreen > .background > .elBackground {
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    width: 100.0%;
+    height: 100%;
+  }
+@media (min-width: 568px) {
+  .ThanksScreen > .background > .elBackground {
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    width: 100.0%;
+    height: 100%;
+  }
+}
+@media (min-width: 768px) {
+  .ThanksScreen > .background > .elBackground {
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    width: 100.0%;
+    height: 100%;
+  }
+}
+@media (min-width: 1024px) {
+  .ThanksScreen > .background > .elBackground {
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    width: 100.0%;
+    height: 100%;
+  }
+}
+
+
+/* Narrowest size for this element's responsive layout */
+  .ThanksScreen > .layoutFlow > .elText {
+    position: relative;
+    margin-top: 92px;
+    width: 238px;
+    margin-left: calc(50.0% - 119px);
+  }
+  .ThanksScreen > .layoutFlow > .elText > * { 
+  width: 238px;
+  }
+  
+@media (min-width: 568px) {
+  .ThanksScreen > .layoutFlow > .elText {
+    position: relative;
+    margin-top: 92px;
+    width: 238px;
+    margin-left: calc(50.0% - 119px);
+  }
+  .ThanksScreen > .layoutFlow > .elText > * { 
+  width: 238px;
+  }
+  
+}
+@media (min-width: 768px) {
+  .ThanksScreen > .layoutFlow > .elText {
+    position: relative;
+    margin-top: 92px;
+    width: 236px;
+    margin-left: calc(50.0% - 118px);
+  }
+  .ThanksScreen > .layoutFlow > .elText > * { 
+  width: 236px;
+  }
+  
+}
+@media (min-width: 1024px) {
+  .ThanksScreen > .layoutFlow > .elText {
+    position: relative;
+    margin-top: 92px;
+    width: 737px;
+    margin-left: calc(50.0% - 368px);
+  }
+  .ThanksScreen > .layoutFlow > .elText > * { 
+  width: 737px;
+  }
+  
+}
+
+/* This component has a fixed-size layout */
+  .DealItem {
+    min-height: 232px;  /* Minimum height to ensure layout flow is visible */
+    width: 100%; /* This component was designed using a width of 400px */
+    height: 100%;
+  }
+  .DealItem > .background > .containerMinHeight {
+    min-height: 232px;
+  }
+
+
+  .DealItem > .background > .elBackground {
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    width: 100.0%;
+    height: 100%;
+  }
+
+
+  .DealItem > .layoutFlow > .elDeal_description {
+    overflow: hidden;
+    position: relative;
+    margin-top: 44px;
+    width: 253px;
+    margin-left: calc(11.2% + 1px);
+  }
+  .DealItem > .layoutFlow > .elDeal_description > * { 
+  width: 253px;
+  }
+  
+
+
+  .DealItem > .layoutFlow > .elPoster_name {
+    overflow: hidden;
+    position: relative;
+    margin-top: 8px;
+    width: 133px;
+    margin-left: calc(42.8% - 67px);
+  }
+  .DealItem > .layoutFlow > .elPoster_name > * { 
+  width: 133px;
+  }
+  
+
+
+  .DealItem > .layoutFlow > .elText2 {
+    overflow: hidden;
+    position: relative;
+    margin-top: -22px;
+    width: 96px;
+    margin-left: 48px;
+  }
+  .DealItem > .layoutFlow > .elText2 > * { 
+  width: 96px;
+  }
+  
+
+
+  .DealItem > .layoutFlow > .elText {
+    overflow: hidden;
+    position: relative;
+    margin-top: 36px;
+    width: 319px;
+    margin-left: calc(11.2% + -1px);
+  }
+  .DealItem > .layoutFlow > .elText > * { 
+  width: 319px;
+  }
+  
+
+
+  .DealItem > .layoutFlow > .elDeal_link {
+    overflow: hidden;
+    position: relative;
+    margin-top: -5px;
+    width: 238px;
+    margin-left: 62px;
+  }
+  .DealItem > .layoutFlow > .elDeal_link > * { 
+  width: 238px;
+  }
+  
+
+/* This component has a fixed-size layout */
+  .ChatroomItem {
+    width: 100%; /* This component was designed using a width of 421px */
+    height: 100%;
+  }
+
+
+  .ChatroomItem > .layoutFlow > .elChatname {
+    position: relative;
+    margin-top: 22px;
+    margin-left: 3.2%;
+    margin-right: 15px;
+    width: calc(96.8% - 15px);
+  }
+  .ChatroomItem > .layoutFlow > .elChatname > * { 
+    width: 100%;
+  }
+  
+
+
+  .ChatroomItem > .layoutFlow > .elChatstore {
+    position: relative;
+    margin-top: 14px;
+    width: 238px;
+    margin-left: 3.2%;
+  }
+  .ChatroomItem > .layoutFlow > .elChatstore > * { 
+  width: 238px;
+  }
+  
+
+.ChatroomItem .elIconButton button {
+  cursor: pointer;
+  border: 0.0px solid transparent;
+  border-radius: 2.3px;
+}
+
+.ChatroomItem .elIconButton button:focus {
+  box-shadow: 0 0 5px rgba(0, 149, 214, 0.5000);
+  outline: none;
+}
+
+
+
+  .ChatroomItem > .layoutFlow > .elIconButton {
+    position: relative;
+    margin-top: -29px;
+    width: 100%;
+  }
+  .ChatroomItem > .layoutFlow > .elIconButton > * { 
+  margin-left: auto;
+  width: 41px;
+  margin-right: 20px;
+  height: 36px;
+  }
+  
+
+
+  .ChatroomItem > .layoutFlow > .elText3 {
+    position: relative;
+    margin-top: 1px;
+    width: 238px;
+    margin-left: 3.2%;
+  }
+  .ChatroomItem > .layoutFlow > .elText3 > * { 
+  width: 238px;
+  }
+  
+
+
+  .ChatroomItem > .layoutFlow > .elRectangle {
+    position: relative;
+    margin-top: 25px;
+    margin-left: 10px;
+    margin-right: 10px;
+    width: calc(100.0% - 20px);
+  }
+  .ChatroomItem > .layoutFlow > .elRectangle > * { 
+    width: 100%;
+  height: 3px;
+  }
+  
+
+
+/* Narrowest size for this element's responsive layout */
+  .SweepStakes_EntryScreen > .background > .elBackground {
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    width: 100.0%;
+    height: 100%;
+  }
+@media (min-width: 568px) {
+  .SweepStakes_EntryScreen > .background > .elBackground {
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    width: 100.0%;
+    height: 100%;
+  }
+}
+@media (min-width: 768px) {
+  .SweepStakes_EntryScreen > .background > .elBackground {
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    width: 100.0%;
+    height: 100%;
+  }
+}
+@media (min-width: 1024px) {
+  .SweepStakes_EntryScreen > .background > .elBackground {
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    width: 100.0%;
+    height: 100%;
+  }
+}
+
+
+/* Narrowest size for this element's responsive layout */
+  .SweepStakes_EntryScreen > .layoutFlow > .elDeal_instructions_text_area {
+    position: relative;
+    margin-top: 0px;
+    width: 238px;
+    margin-left: calc(50.0% - 119px);
+  }
+  .SweepStakes_EntryScreen > .layoutFlow > .elDeal_instructions_text_area > * { 
+  width: 238px;
+  }
+  
+@media (min-width: 568px) {
+  .SweepStakes_EntryScreen > .layoutFlow > .elDeal_instructions_text_area {
+    position: relative;
+    margin-top: 0px;
+    width: 238px;
+    margin-left: calc(50.0% - 119px);
+  }
+  .SweepStakes_EntryScreen > .layoutFlow > .elDeal_instructions_text_area > * { 
+  width: 238px;
+  }
+  
+}
+@media (min-width: 768px) {
+  .SweepStakes_EntryScreen > .layoutFlow > .elDeal_instructions_text_area {
+    position: relative;
+    margin-top: 0px;
+    width: 236px;
+    margin-left: calc(50.0% - 118px);
+  }
+  .SweepStakes_EntryScreen > .layoutFlow > .elDeal_instructions_text_area > * { 
+  width: 236px;
+  }
+  
+}
+@media (min-width: 1024px) {
+  .SweepStakes_EntryScreen > .layoutFlow > .elDeal_instructions_text_area {
+    position: relative;
+    margin-top: 74px;
+    width: 442px;
+    margin-left: calc(50.0% - 221px);
+  }
+  .SweepStakes_EntryScreen > .layoutFlow > .elDeal_instructions_text_area > * { 
+  width: 442px;
+  }
+  
+}
+
+
+/* Narrowest size for this element's responsive layout */
+  .SweepStakes_EntryScreen > .layoutFlow > .elDeal_name_field {
+    position: relative;
+    margin-top: 114px;
+    width: 302px;
+    margin-left: calc(50.0% - 151px);
+  }
+  .SweepStakes_EntryScreen > .layoutFlow > .elDeal_name_field > * { 
+  width: 302px;
+  height: 30px;
+  }
+  
+@media (min-width: 568px) {
+  .SweepStakes_EntryScreen > .layoutFlow > .elDeal_name_field {
+    position: relative;
+    margin-top: 114px;
+    width: 302px;
+    margin-left: calc(50.0% - 151px);
+  }
+  .SweepStakes_EntryScreen > .layoutFlow > .elDeal_name_field > * { 
+  width: 302px;
+  height: 30px;
+  }
+  
+}
+@media (min-width: 768px) {
+  .SweepStakes_EntryScreen > .layoutFlow > .elDeal_name_field {
+    position: relative;
+    margin-top: 112px;
+    width: 300px;
+    margin-left: calc(50.0% - 150px);
+  }
+  .SweepStakes_EntryScreen > .layoutFlow > .elDeal_name_field > * { 
+  width: 300px;
+  height: 30px;
+  }
+  
+}
+@media (min-width: 1024px) {
+  .SweepStakes_EntryScreen > .layoutFlow > .elDeal_name_field {
+    position: relative;
+    margin-top: 35px;
+    width: 300px;
+    margin-left: calc(50.0% - 150px);
+  }
+  .SweepStakes_EntryScreen > .layoutFlow > .elDeal_name_field > * { 
+  width: 300px;
+  height: 30px;
+  }
+  
+}
+
+
+/* Narrowest size for this element's responsive layout */
+  .SweepStakes_EntryScreen > .layoutFlow > .elDeal_email_field {
+    position: relative;
+    margin-top: 29px;
+    width: 302px;
+    margin-left: calc(50.0% - 151px);
+  }
+  .SweepStakes_EntryScreen > .layoutFlow > .elDeal_email_field > * { 
+  width: 302px;
+  height: 30px;
+  }
+  
+@media (min-width: 568px) {
+  .SweepStakes_EntryScreen > .layoutFlow > .elDeal_email_field {
+    position: relative;
+    margin-top: 29px;
+    width: 302px;
+    margin-left: calc(50.0% - 151px);
+  }
+  .SweepStakes_EntryScreen > .layoutFlow > .elDeal_email_field > * { 
+  width: 302px;
+  height: 30px;
+  }
+  
+}
+@media (min-width: 768px) {
+  .SweepStakes_EntryScreen > .layoutFlow > .elDeal_email_field {
+    position: relative;
+    margin-top: 28px;
+    width: 300px;
+    margin-left: calc(50.0% - 150px);
+  }
+  .SweepStakes_EntryScreen > .layoutFlow > .elDeal_email_field > * { 
+  width: 300px;
+  height: 30px;
+  }
+  
+}
+@media (min-width: 1024px) {
+  .SweepStakes_EntryScreen > .layoutFlow > .elDeal_email_field {
+    position: relative;
+    margin-top: 28px;
+    width: 300px;
+    margin-left: calc(50.0% - 150px);
+  }
+  .SweepStakes_EntryScreen > .layoutFlow > .elDeal_email_field > * { 
+  width: 300px;
+  height: 30px;
+  }
+  
+}
+
+
+/* Narrowest size for this element's responsive layout */
+  .SweepStakes_EntryScreen > .layoutFlow > .elDeal_URL_field {
+    position: relative;
+    margin-top: 36px;
+    width: 302px;
+    margin-left: calc(50.0% - 151px);
+  }
+  .SweepStakes_EntryScreen > .layoutFlow > .elDeal_URL_field > * { 
+  width: 302px;
+  height: 30px;
+  }
+  
+@media (min-width: 568px) {
+  .SweepStakes_EntryScreen > .layoutFlow > .elDeal_URL_field {
+    position: relative;
+    margin-top: 36px;
+    width: 302px;
+    margin-left: calc(50.0% - 151px);
+  }
+  .SweepStakes_EntryScreen > .layoutFlow > .elDeal_URL_field > * { 
+  width: 302px;
+  height: 30px;
+  }
+  
+}
+@media (min-width: 768px) {
+  .SweepStakes_EntryScreen > .layoutFlow > .elDeal_URL_field {
+    position: relative;
+    margin-top: 36px;
+    width: 300px;
+    margin-left: calc(50.0% - 150px);
+  }
+  .SweepStakes_EntryScreen > .layoutFlow > .elDeal_URL_field > * { 
+  width: 300px;
+  height: 30px;
+  }
+  
+}
+@media (min-width: 1024px) {
+  .SweepStakes_EntryScreen > .layoutFlow > .elDeal_URL_field {
+    position: relative;
+    margin-top: 36px;
+    width: 300px;
+    margin-left: calc(50.0% - 150px);
+  }
+  .SweepStakes_EntryScreen > .layoutFlow > .elDeal_URL_field > * { 
+  width: 300px;
+  height: 30px;
+  }
+  
+}
+
+
+/* Narrowest size for this element's responsive layout */
+  .SweepStakes_EntryScreen > .layoutFlow > .elDeal_description_field {
+    position: relative;
+    margin-top: 0px;
+    width: 226px;
+    margin-left: calc(50.0% - 113px);
+  }
+  .SweepStakes_EntryScreen > .layoutFlow > .elDeal_description_field > * { 
+  width: 226px;
+  height: 181px;
+  }
+  
+@media (min-width: 568px) {
+  .SweepStakes_EntryScreen > .layoutFlow > .elDeal_description_field {
+    position: relative;
+    margin-top: 0px;
+    width: 226px;
+    margin-left: calc(50.0% - 113px);
+  }
+  .SweepStakes_EntryScreen > .layoutFlow > .elDeal_description_field > * { 
+  width: 226px;
+  height: 181px;
+  }
+  
+}
+@media (min-width: 768px) {
+  .SweepStakes_EntryScreen > .layoutFlow > .elDeal_description_field {
+    position: relative;
+    margin-top: 0px;
+    width: 225px;
+    margin-left: calc(50.0% - 112px);
+  }
+  .SweepStakes_EntryScreen > .layoutFlow > .elDeal_description_field > * { 
+  width: 225px;
+  height: 180px;
+  }
+  
+}
+@media (min-width: 1024px) {
+  .SweepStakes_EntryScreen > .layoutFlow > .elDeal_description_field {
+    position: relative;
+    margin-top: 40px;
+    width: 305px;
+    margin-left: calc(50.0% - 152px);
+  }
+  .SweepStakes_EntryScreen > .layoutFlow > .elDeal_description_field > * { 
+  width: 305px;
+  height: 209px;
+  }
+  
+}
+
+.SweepStakes_EntryScreen .elButton button {
+  cursor: pointer;
+  border: 0.0px solid transparent;
+  border-radius: 3.4px;
+}
+
+.SweepStakes_EntryScreen .elButton button:focus {
+  box-shadow: 0 0 5px rgba(0, 149, 214, 0.5000);
+  outline: none;
+}
+
+
+
+/* Narrowest size for this element's responsive layout */
+  .SweepStakes_EntryScreen > .layoutFlow > .elButton {
+    line-height: 35px;
+    position: relative;
+    margin-top: 0px;
+    width: 145px;
+    margin-left: calc(50.0% - 72px);
+  }
+  .SweepStakes_EntryScreen > .layoutFlow > .elButton > * { 
+  width: 145px;
+  height: 35px;
+  }
+  
+@media (min-width: 568px) {
+  .SweepStakes_EntryScreen > .layoutFlow > .elButton {
+    line-height: 35px;
+    position: relative;
+    margin-top: 0px;
+    width: 145px;
+    margin-left: calc(50.0% - 72px);
+  }
+  .SweepStakes_EntryScreen > .layoutFlow > .elButton > * { 
+  width: 145px;
+  height: 35px;
+  }
+  
+}
+@media (min-width: 768px) {
+  .SweepStakes_EntryScreen > .layoutFlow > .elButton {
+    line-height: 35px;
+    position: relative;
+    margin-top: 0px;
+    width: 144px;
+    margin-left: calc(50.0% - 72px);
+  }
+  .SweepStakes_EntryScreen > .layoutFlow > .elButton > * { 
+  width: 144px;
+  height: 35px;
+  }
+  
+}
+@media (min-width: 1024px) {
+  .SweepStakes_EntryScreen > .layoutFlow > .elButton {
+    line-height: 35px;
+    position: relative;
+    margin-top: 32px;
+    width: 144px;
+    margin-left: calc(50.0% - 72px);
+  }
+  .SweepStakes_EntryScreen > .layoutFlow > .elButton > * { 
+  width: 144px;
+  height: 35px;
+  }
+  
+}
+
+
+/* Narrowest size for this element's responsive layout */
+  .MapScreen > .background > .elBackground {
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    width: 100.0%;
+    height: 100%;
+  }
+@media (min-width: 568px) {
+  .MapScreen > .background > .elBackground {
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    width: 100.0%;
+    height: 100%;
+  }
+}
+@media (min-width: 768px) {
+  .MapScreen > .background > .elBackground {
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    width: 100.0%;
+    height: 100%;
+  }
+}
+@media (min-width: 1024px) {
+  .MapScreen > .background > .elBackground {
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    width: 100.0%;
+    height: 100%;
+  }
+}
+
+
+/* Narrowest size for this element's responsive layout */
+  .ScratchAddAPostScreen > .background > .elBackground {
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    width: 100.0%;
+    height: 100%;
+  }
+@media (min-width: 568px) {
+  .ScratchAddAPostScreen > .background > .elBackground {
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    width: 100.0%;
+    height: 100%;
+  }
+}
+@media (min-width: 768px) {
+  .ScratchAddAPostScreen > .background > .elBackground {
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    width: 100.0%;
+    height: 100%;
+  }
+}
+@media (min-width: 1024px) {
+  .ScratchAddAPostScreen > .background > .elBackground {
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    width: 100.0%;
+    height: 100%;
+  }
+}
+
+
+/* Narrowest size for this element's responsive layout */
+  .ScratchAddAPostScreen > .layoutFlow > .elInput_name_post_screen {
+    position: relative;
+    margin-top: 110px;
+    width: 220px;
+    margin-left: calc(50.0% - 110px);
+  }
+  .ScratchAddAPostScreen > .layoutFlow > .elInput_name_post_screen > * { 
+  width: 220px;
+  height: 30px;
+  }
+  
+@media (min-width: 568px) {
+  .ScratchAddAPostScreen > .layoutFlow > .elInput_name_post_screen {
+    position: relative;
+    margin-top: 110px;
+    width: 220px;
+    margin-left: calc(50.0% - 110px);
+  }
+  .ScratchAddAPostScreen > .layoutFlow > .elInput_name_post_screen > * { 
+  width: 220px;
+  height: 30px;
+  }
+  
+}
+@media (min-width: 768px) {
+  .ScratchAddAPostScreen > .layoutFlow > .elInput_name_post_screen {
+    position: relative;
+    margin-top: 109px;
+    width: 219px;
+    margin-left: calc(50.0% - 109px);
+  }
+  .ScratchAddAPostScreen > .layoutFlow > .elInput_name_post_screen > * { 
+  width: 219px;
+  height: 30px;
+  }
+  
+}
+@media (min-width: 1024px) {
+  .ScratchAddAPostScreen > .layoutFlow > .elInput_name_post_screen {
+    position: relative;
+    margin-top: 109px;
+    width: 450px;
+    margin-left: calc(50.0% - 225px);
+  }
+  .ScratchAddAPostScreen > .layoutFlow > .elInput_name_post_screen > * { 
+  width: 450px;
+  height: 30px;
+  }
+  
+}
+
+
+/* Narrowest size for this element's responsive layout */
+  .ScratchAddAPostScreen > .layoutFlow > .elSpacer {
+    position: relative;
+    margin-top: 0px;
+    width: 10px;
+    margin-left: 0px;
+  }
+  .ScratchAddAPostScreen > .layoutFlow > .elSpacer > * { 
+  width: 10px;
+  height: 50px;
+  }
+  
+@media (min-width: 568px) {
+  .ScratchAddAPostScreen > .layoutFlow > .elSpacer {
+    position: relative;
+    margin-top: 0px;
+    width: 10px;
+    margin-left: 0px;
+  }
+  .ScratchAddAPostScreen > .layoutFlow > .elSpacer > * { 
+  width: 10px;
+  height: 50px;
+  }
+  
+}
+@media (min-width: 768px) {
+  .ScratchAddAPostScreen > .layoutFlow > .elSpacer {
+    position: relative;
+    margin-top: 0px;
+    width: 10px;
+    margin-left: 0px;
+  }
+  .ScratchAddAPostScreen > .layoutFlow > .elSpacer > * { 
+  width: 10px;
+  height: 50px;
+  }
+  
+}
+@media (min-width: 1024px) {
+  .ScratchAddAPostScreen > .layoutFlow > .elSpacer {
+    position: relative;
+    margin-top: 0px;
+    width: 10px;
+    margin-left: 0px;
+  }
+  .ScratchAddAPostScreen > .layoutFlow > .elSpacer > * { 
+  width: 10px;
+  height: 50px;
+  }
+  
+}
+
+
+/* Narrowest size for this element's responsive layout */
+  .ScratchAddAPostScreen > .layoutFlow > .elInput_store_post_screen {
+    position: relative;
+    margin-top: -16px;
+    width: 453px;
+    margin-left: calc(50.0% - 226px);
+  }
+  .ScratchAddAPostScreen > .layoutFlow > .elInput_store_post_screen > * { 
+  width: 453px;
+  height: 30px;
+  }
+  
+@media (min-width: 568px) {
+  .ScratchAddAPostScreen > .layoutFlow > .elInput_store_post_screen {
+    position: relative;
+    margin-top: -16px;
+    width: 453px;
+    margin-left: calc(50.0% - 226px);
+  }
+  .ScratchAddAPostScreen > .layoutFlow > .elInput_store_post_screen > * { 
+  width: 453px;
+  height: 30px;
+  }
+  
+}
+@media (min-width: 768px) {
+  .ScratchAddAPostScreen > .layoutFlow > .elInput_store_post_screen {
+    position: relative;
+    margin-top: -16px;
+    width: 450px;
+    margin-left: calc(50.0% - 225px);
+  }
+  .ScratchAddAPostScreen > .layoutFlow > .elInput_store_post_screen > * { 
+  width: 450px;
+  height: 30px;
+  }
+  
+}
+@media (min-width: 1024px) {
+  .ScratchAddAPostScreen > .layoutFlow > .elInput_store_post_screen {
+    position: relative;
+    margin-top: -16px;
+    width: 450px;
+    margin-left: calc(50.0% - 225px);
+  }
+  .ScratchAddAPostScreen > .layoutFlow > .elInput_store_post_screen > * { 
+  width: 450px;
+  height: 30px;
+  }
+  
+}
+
+
+/* Narrowest size for this element's responsive layout */
+  .ScratchAddAPostScreen > .layoutFlow > .elInput_time_post_screen {
+    position: relative;
+    margin-top: 30px;
+    width: 453px;
+    margin-left: calc(50.0% - 226px);
+  }
+  .ScratchAddAPostScreen > .layoutFlow > .elInput_time_post_screen > * { 
+  width: 453px;
+  height: 30px;
+  }
+  
+@media (min-width: 568px) {
+  .ScratchAddAPostScreen > .layoutFlow > .elInput_time_post_screen {
+    position: relative;
+    margin-top: 30px;
+    width: 453px;
+    margin-left: calc(50.0% - 226px);
+  }
+  .ScratchAddAPostScreen > .layoutFlow > .elInput_time_post_screen > * { 
+  width: 453px;
+  height: 30px;
+  }
+  
+}
+@media (min-width: 768px) {
+  .ScratchAddAPostScreen > .layoutFlow > .elInput_time_post_screen {
+    position: relative;
+    margin-top: 30px;
+    width: 450px;
+    margin-left: calc(50.0% - 225px);
+  }
+  .ScratchAddAPostScreen > .layoutFlow > .elInput_time_post_screen > * { 
+  width: 450px;
+  height: 30px;
+  }
+  
+}
+@media (min-width: 1024px) {
+  .ScratchAddAPostScreen > .layoutFlow > .elInput_time_post_screen {
+    position: relative;
+    margin-top: 30px;
+    width: 450px;
+    margin-left: calc(50.0% - 225px);
+  }
+  .ScratchAddAPostScreen > .layoutFlow > .elInput_time_post_screen > * { 
+  width: 450px;
+  height: 30px;
+  }
+  
+}
+
+.ScratchAddAPostScreen .elSubmit_post_button button {
+  cursor: pointer;
+  border: 0.0px solid transparent;
+  border-radius: 3.4px;
+}
+
+.ScratchAddAPostScreen .elSubmit_post_button button:focus {
+  box-shadow: 0 0 5px rgba(0, 149, 214, 0.5000);
+  outline: none;
+}
+
+
+
+/* Narrowest size for this element's responsive layout */
+  .ScratchAddAPostScreen > .layoutFlow > .elSubmit_post_button {
+    line-height: 35px;
+    position: relative;
+    margin-top: 46px;
+    width: 145px;
+    margin-left: calc(50.0% - 72px);
+  }
+  .ScratchAddAPostScreen > .layoutFlow > .elSubmit_post_button > * { 
+  width: 145px;
+  height: 35px;
+  }
+  
+@media (min-width: 568px) {
+  .ScratchAddAPostScreen > .layoutFlow > .elSubmit_post_button {
+    line-height: 35px;
+    position: relative;
+    margin-top: 46px;
+    width: 145px;
+    margin-left: calc(50.0% - 72px);
+  }
+  .ScratchAddAPostScreen > .layoutFlow > .elSubmit_post_button > * { 
+  width: 145px;
+  height: 35px;
+  }
+  
+}
+@media (min-width: 768px) {
+  .ScratchAddAPostScreen > .layoutFlow > .elSubmit_post_button {
+    line-height: 35px;
+    position: relative;
+    margin-top: 46px;
+    width: 144px;
+    margin-left: calc(50.0% - 72px);
+  }
+  .ScratchAddAPostScreen > .layoutFlow > .elSubmit_post_button > * { 
+  width: 144px;
+  height: 35px;
+  }
+  
+}
+@media (min-width: 1024px) {
+  .ScratchAddAPostScreen > .layoutFlow > .elSubmit_post_button {
+    line-height: 35px;
+    position: relative;
+    margin-top: 48px;
+    width: 144px;
+    margin-left: calc(50.0% - 72px);
+  }
+  .ScratchAddAPostScreen > .layoutFlow > .elSubmit_post_button > * { 
+  width: 144px;
+  height: 35px;
+  }
+  
+}
+
+
+/* Narrowest size for this element's responsive layout */
+  .FAQsScreen > .background > .elBackground {
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    width: 100.0%;
+    height: 100%;
+  }
+@media (min-width: 568px) {
+  .FAQsScreen > .background > .elBackground {
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    width: 100.0%;
+    height: 100%;
+  }
+}
+@media (min-width: 768px) {
+  .FAQsScreen > .background > .elBackground {
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    width: 100.0%;
+    height: 100%;
+  }
+}
+@media (min-width: 1024px) {
+  .FAQsScreen > .background > .elBackground {
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    width: 100.0%;
+    height: 100%;
+  }
+}
+
+
+/* Narrowest size for this element's responsive layout */
+  .FAQsScreen > .layoutFlow > .elText {
+    overflow: hidden;
+    position: relative;
+    margin-top: 66px;
+    width: 238px;
+    margin-left: 3.1%;
+  }
+  .FAQsScreen > .layoutFlow > .elText > * { 
+  width: 238px;
+  }
+  
+@media (min-width: 568px) {
+  .FAQsScreen > .layoutFlow > .elText {
+    overflow: hidden;
+    position: relative;
+    margin-top: 66px;
+    width: 238px;
+    margin-left: 2.7%;
+  }
+  .FAQsScreen > .layoutFlow > .elText > * { 
+  width: 238px;
+  }
+  
+}
+@media (min-width: 768px) {
+  .FAQsScreen > .layoutFlow > .elText {
+    overflow: hidden;
+    position: relative;
+    margin-top: 66px;
+    width: 236px;
+    margin-left: 2.0%;
+  }
+  .FAQsScreen > .layoutFlow > .elText > * { 
+  width: 236px;
+  }
+  
+}
+@media (min-width: 1024px) {
+  .FAQsScreen > .layoutFlow > .elText {
+    overflow: hidden;
+    position: relative;
+    margin-top: 62px;
+    width: 355px;
+    margin-left: 1.7%;
+  }
+  .FAQsScreen > .layoutFlow > .elText > * { 
+  width: 355px;
+  }
+  
+}
+
+
+/* Narrowest size for this element's responsive layout */
+  .FAQsScreen > .layoutFlow > .elText2 {
+    position: relative;
+    margin-top: -2px;
+    width: 293px;
+    margin-left: 3.1%;
+  }
+  .FAQsScreen > .layoutFlow > .elText2 > * { 
+  width: 293px;
+  }
+  
+@media (min-width: 568px) {
+  .FAQsScreen > .layoutFlow > .elText2 {
+    position: relative;
+    margin-top: -0px;
+    width: 538px;
+    margin-left: 2.7%;
+  }
+  .FAQsScreen > .layoutFlow > .elText2 > * { 
+  width: 538px;
+  }
+  
+}
+@media (min-width: 768px) {
+  .FAQsScreen > .layoutFlow > .elText2 {
+    position: relative;
+    margin-top: 0px;
+    width: 737px;
+    margin-left: 2.0%;
+  }
+  .FAQsScreen > .layoutFlow > .elText2 > * { 
+  width: 737px;
+  }
+  
+}
+@media (min-width: 1024px) {
+  .FAQsScreen > .layoutFlow > .elText2 {
+    position: relative;
+    margin-top: 2px;
+    width: 984px;
+    margin-left: 1.7%;
+  }
+  .FAQsScreen > .layoutFlow > .elText2 > * { 
+  width: 984px;
+  }
+  
+}
+
+
+/* Narrowest size for this element's responsive layout */
+  .FAQsScreen > .layoutFlow > .elTextCopy {
+    overflow: hidden;
+    position: relative;
+    margin-top: 16px;
+    width: 291px;
+    margin-left: 3.1%;
+  }
+  .FAQsScreen > .layoutFlow > .elTextCopy > * { 
+  width: 291px;
+  }
+  
+@media (min-width: 568px) {
+  .FAQsScreen > .layoutFlow > .elTextCopy {
+    overflow: hidden;
+    position: relative;
+    margin-top: -143px;
+    width: 559px;
+    margin-left: 2.7%;
+  }
+  .FAQsScreen > .layoutFlow > .elTextCopy > * { 
+  width: 559px;
+  }
+  
+}
+@media (min-width: 768px) {
+  .FAQsScreen > .layoutFlow > .elTextCopy {
+    overflow: hidden;
+    position: relative;
+    margin-top: -50px;
+    width: 650px;
+    margin-left: 2.0%;
+  }
+  .FAQsScreen > .layoutFlow > .elTextCopy > * { 
+  width: 650px;
+  }
+  
+}
+@media (min-width: 1024px) {
+  .FAQsScreen > .layoutFlow > .elTextCopy {
+    overflow: hidden;
+    position: relative;
+    margin-top: 29px;
+    width: 594px;
+    margin-left: 1.7%;
+  }
+  .FAQsScreen > .layoutFlow > .elTextCopy > * { 
+  width: 594px;
+  }
+  
+}
+
+
+/* Narrowest size for this element's responsive layout */
+  .FAQsScreen > .layoutFlow > .elText3 {
+    position: relative;
+    margin-top: 0px;
+    width: 295px;
+    margin-left: 3.1%;
+  }
+  .FAQsScreen > .layoutFlow > .elText3 > * { 
+  width: 295px;
+  }
+  
+@media (min-width: 568px) {
+  .FAQsScreen > .layoutFlow > .elText3 {
+    position: relative;
+    margin-top: 0px;
+    width: 538px;
+    margin-left: 2.7%;
+  }
+  .FAQsScreen > .layoutFlow > .elText3 > * { 
+  width: 538px;
+  }
+  
+}
+@media (min-width: 768px) {
+  .FAQsScreen > .layoutFlow > .elText3 {
+    position: relative;
+    margin-top: 2px;
+    width: 724px;
+    margin-left: 2.0%;
+  }
+  .FAQsScreen > .layoutFlow > .elText3 > * { 
+  width: 724px;
+  }
+  
+}
+@media (min-width: 1024px) {
+  .FAQsScreen > .layoutFlow > .elText3 {
+    position: relative;
+    margin-top: 2px;
+    width: 960px;
+    margin-left: 1.7%;
+  }
+  .FAQsScreen > .layoutFlow > .elText3 > * { 
+  width: 960px;
+  }
+  
+}
+
+
+/* Narrowest size for this element's responsive layout */
+  .FAQsScreen > .layoutFlow > .elTextCopy2 {
+    overflow: hidden;
+    position: relative;
+    margin-top: 16px;
+    width: 291px;
+    margin-left: 3.1%;
+  }
+  .FAQsScreen > .layoutFlow > .elTextCopy2 > * { 
+  width: 291px;
+  }
+  
+@media (min-width: 568px) {
+  .FAQsScreen > .layoutFlow > .elTextCopy2 {
+    overflow: hidden;
+    position: relative;
+    margin-top: -87px;
+    width: 559px;
+    margin-left: 2.7%;
+  }
+  .FAQsScreen > .layoutFlow > .elTextCopy2 > * { 
+  width: 559px;
+  }
+  
+}
+@media (min-width: 768px) {
+  .FAQsScreen > .layoutFlow > .elTextCopy2 {
+    overflow: hidden;
+    position: relative;
+    margin-top: -84px;
+    width: 650px;
+    margin-left: 2.0%;
+  }
+  .FAQsScreen > .layoutFlow > .elTextCopy2 > * { 
+  width: 650px;
+  }
+  
+}
+@media (min-width: 1024px) {
+  .FAQsScreen > .layoutFlow > .elTextCopy2 {
+    overflow: hidden;
+    position: relative;
+    margin-top: 27px;
+    width: 594px;
+    margin-left: calc(1.7% + 1px);
+  }
+  .FAQsScreen > .layoutFlow > .elTextCopy2 > * { 
+  width: 594px;
+  }
+  
+}
+
+
+/* Narrowest size for this element's responsive layout */
+  .FAQsScreen > .layoutFlow > .elTextCopy3 {
+    position: relative;
+    margin-top: -2px;
+    width: 296px;
+    margin-left: 3.1%;
+  }
+  .FAQsScreen > .layoutFlow > .elTextCopy3 > * { 
+  width: 296px;
+  }
+  
+@media (min-width: 568px) {
+  .FAQsScreen > .layoutFlow > .elTextCopy3 {
+    position: relative;
+    margin-top: -0px;
+    width: 538px;
+    margin-left: 2.7%;
+  }
+  .FAQsScreen > .layoutFlow > .elTextCopy3 > * { 
+  width: 538px;
+  }
+  
+}
+@media (min-width: 768px) {
+  .FAQsScreen > .layoutFlow > .elTextCopy3 {
+    position: relative;
+    margin-top: 0px;
+    width: 737px;
+    margin-left: 2.0%;
+  }
+  .FAQsScreen > .layoutFlow > .elTextCopy3 > * { 
+  width: 737px;
+  }
+  
+}
+@media (min-width: 1024px) {
+  .FAQsScreen > .layoutFlow > .elTextCopy3 {
+    position: relative;
+    margin-top: 2px;
+    width: 984px;
+    margin-left: 1.7%;
+  }
+  .FAQsScreen > .layoutFlow > .elTextCopy3 > * { 
+  width: 984px;
+  }
+  
+}
+
+
+/* Narrowest size for this element's responsive layout */
+  .FAQsScreen > .layoutFlow > .elTextCopy4 {
+    overflow: hidden;
+    position: relative;
+    margin-top: 16px;
+    width: 291px;
+    margin-left: 3.1%;
+  }
+  .FAQsScreen > .layoutFlow > .elTextCopy4 > * { 
+  width: 291px;
+  }
+  
+@media (min-width: 568px) {
+  .FAQsScreen > .layoutFlow > .elTextCopy4 {
+    overflow: hidden;
+    position: relative;
+    margin-top: -272px;
+    width: 559px;
+    margin-left: 2.7%;
+  }
+  .FAQsScreen > .layoutFlow > .elTextCopy4 > * { 
+  width: 559px;
+  }
+  
+}
+@media (min-width: 768px) {
+  .FAQsScreen > .layoutFlow > .elTextCopy4 {
+    overflow: hidden;
+    position: relative;
+    margin-top: -110px;
+    width: 650px;
+    margin-left: 2.0%;
+  }
+  .FAQsScreen > .layoutFlow > .elTextCopy4 > * { 
+  width: 650px;
+  }
+  
+}
+@media (min-width: 1024px) {
+  .FAQsScreen > .layoutFlow > .elTextCopy4 {
+    overflow: hidden;
+    position: relative;
+    margin-top: 25px;
+    width: 594px;
+    margin-left: 1.7%;
+  }
+  .FAQsScreen > .layoutFlow > .elTextCopy4 > * { 
+  width: 594px;
+  }
+  
+}
+
+
+/* Narrowest size for this element's responsive layout */
+  .FAQsScreen > .layoutFlow > .elField {
+    position: relative;
+    margin-top: 0px;
+    width: 226px;
+    margin-left: 3.1%;
+  }
+  .FAQsScreen > .layoutFlow > .elField > * { 
+  width: 226px;
+  height: 34px;
+  }
+  
+@media (min-width: 568px) {
+  .FAQsScreen > .layoutFlow > .elField {
+    position: relative;
+    margin-top: 8px;
+    width: 328px;
+    margin-left: 2.7%;
+  }
+  .FAQsScreen > .layoutFlow > .elField > * { 
+  width: 328px;
+  height: 34px;
+  }
+  
+}
+@media (min-width: 768px) {
+  .FAQsScreen > .layoutFlow > .elField {
+    position: relative;
+    margin-top: 0px;
+    width: 403px;
+    margin-left: 2.0%;
+  }
+  .FAQsScreen > .layoutFlow > .elField > * { 
+  width: 403px;
+  height: 34px;
+  }
+  
+}
+@media (min-width: 1024px) {
+  .FAQsScreen > .layoutFlow > .elField {
+    position: relative;
+    margin-top: 10px;
+    width: 512px;
+    margin-left: 1.7%;
+  }
+  .FAQsScreen > .layoutFlow > .elField > * { 
+  width: 512px;
+  height: 34px;
+  }
+  
+}
+
+
+/* Narrowest size for this element's responsive layout */
+  .FAQsScreen > .layoutFlow > .elFieldCopy {
+    position: relative;
+    margin-top: 10px;
+    width: 226px;
+    margin-left: 3.1%;
+  }
+  .FAQsScreen > .layoutFlow > .elFieldCopy > * { 
+  width: 226px;
+  height: 34px;
+  }
+  
+@media (min-width: 568px) {
+  .FAQsScreen > .layoutFlow > .elFieldCopy {
+    position: relative;
+    margin-top: 12px;
+    width: 328px;
+    margin-left: 2.7%;
+  }
+  .FAQsScreen > .layoutFlow > .elFieldCopy > * { 
+  width: 328px;
+  height: 31px;
+  }
+  
+}
+@media (min-width: 768px) {
+  .FAQsScreen > .layoutFlow > .elFieldCopy {
+    position: relative;
+    margin-top: 14px;
+    width: 402px;
+    margin-left: 2.0%;
+  }
+  .FAQsScreen > .layoutFlow > .elFieldCopy > * { 
+  width: 402px;
+  height: 34px;
+  }
+  
+}
+@media (min-width: 1024px) {
+  .FAQsScreen > .layoutFlow > .elFieldCopy {
+    position: relative;
+    margin-top: 12px;
+    width: 512px;
+    margin-left: 1.7%;
+  }
+  .FAQsScreen > .layoutFlow > .elFieldCopy > * { 
+  width: 512px;
+  height: 34px;
+  }
+  
+}
+
+
+/* Narrowest size for this element's responsive layout */
+  .FAQsScreen > .layoutFlow > .elTextarea {
+    position: relative;
+    margin-top: 12px;
+    width: 226px;
+    margin-left: 3.1%;
+  }
+  .FAQsScreen > .layoutFlow > .elTextarea > * { 
+  width: 226px;
+  height: 181px;
+  }
+  
+@media (min-width: 568px) {
+  .FAQsScreen > .layoutFlow > .elTextarea {
+    position: relative;
+    margin-top: 13px;
+    width: 328px;
+    margin-left: 2.7%;
+  }
+  .FAQsScreen > .layoutFlow > .elTextarea > * { 
+  width: 328px;
+  height: 181px;
+  }
+  
+}
+@media (min-width: 768px) {
+  .FAQsScreen > .layoutFlow > .elTextarea {
+    position: relative;
+    margin-top: 17px;
+    width: 402px;
+    margin-left: 2.0%;
+  }
+  .FAQsScreen > .layoutFlow > .elTextarea > * { 
+  width: 402px;
+  height: 180px;
+  }
+  
+}
+@media (min-width: 1024px) {
+  .FAQsScreen > .layoutFlow > .elTextarea {
+    position: relative;
+    margin-top: 14px;
+    width: 960px;
+    margin-left: 1.7%;
+  }
+  .FAQsScreen > .layoutFlow > .elTextarea > * { 
+  width: 960px;
+  height: 71px;
+  }
+  
+}
+
+.FAQsScreen .elButton button {
+  cursor: pointer;
+  border: 0.0px solid transparent;
+  border-radius: 3.4px;
+}
+
+.FAQsScreen .elButton button:focus {
+  box-shadow: 0 0 5px rgba(0, 149, 214, 0.5000);
+  outline: none;
+}
+
+
+
+/* Narrowest size for this element's responsive layout */
+  .FAQsScreen > .layoutFlow > .elButton {
+    line-height: 35px;
+    position: relative;
+    margin-top: 8px;
+    width: 145px;
+    margin-left: 3.1%;
+  }
+  .FAQsScreen > .layoutFlow > .elButton > * { 
+  width: 145px;
+  height: 35px;
+  }
+  
+@media (min-width: 568px) {
+  .FAQsScreen > .layoutFlow > .elButton {
+    line-height: 35px;
+    position: relative;
+    margin-top: 22px;
+    width: 145px;
+    margin-left: 2.7%;
+  }
+  .FAQsScreen > .layoutFlow > .elButton > * { 
+  width: 145px;
+  height: 35px;
+  }
+  
+}
+@media (min-width: 768px) {
+  .FAQsScreen > .layoutFlow > .elButton {
+    line-height: 35px;
+    position: relative;
+    margin-top: 27px;
+    width: 144px;
+    margin-left: 2.0%;
+  }
+  .FAQsScreen > .layoutFlow > .elButton > * { 
+  width: 144px;
+  height: 35px;
+  }
+  
+}
+@media (min-width: 1024px) {
+  .FAQsScreen > .layoutFlow > .elButton {
+    line-height: 35px;
+    position: relative;
+    margin-top: 20px;
+    width: 144px;
+    margin-left: 1.7%;
+  }
+  .FAQsScreen > .layoutFlow > .elButton > * { 
+  width: 144px;
+  height: 35px;
+  }
+  
+}
+
+
+/* Narrowest size for this element's responsive layout */
+  .OnlineDealsScreen > .background > .elBackground {
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    width: 100.0%;
+    height: 100%;
+  }
+@media (min-width: 568px) {
+  .OnlineDealsScreen > .background > .elBackground {
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    width: 100.0%;
+    height: 100%;
+  }
+}
+@media (min-width: 768px) {
+  .OnlineDealsScreen > .background > .elBackground {
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    width: 100.0%;
+    height: 100%;
+  }
+}
+@media (min-width: 1024px) {
+  .OnlineDealsScreen > .background > .elBackground {
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    width: 100.0%;
+    height: 100%;
+  }
+}
+
+.OnlineDealsScreen .elList li {
+  margin-bottom: 5px;
+}
+
+
+
+/* Narrowest size for this element's responsive layout */
+  .OnlineDealsScreen > .layoutFlow > .elList {
+    position: relative;
+    margin-top: 72px;
+    width: 250px;
+    margin-left: calc(50.2% - 125px);
+  }
+  .OnlineDealsScreen > .layoutFlow > .elList > * { 
+  width: 250px;
+  }
+  
+@media (min-width: 568px) {
+  .OnlineDealsScreen > .layoutFlow > .elList {
+    position: relative;
+    margin-top: 72px;
+    width: 250px;
+    margin-left: calc(50.1% - 125px);
+  }
+  .OnlineDealsScreen > .layoutFlow > .elList > * { 
+  width: 250px;
+  }
+  
+}
+@media (min-width: 768px) {
+  .OnlineDealsScreen > .layoutFlow > .elList {
+    position: relative;
+    margin-top: 71px;
+    width: 376px;
+    margin-left: calc(50.1% - 188px);
+  }
+  .OnlineDealsScreen > .layoutFlow > .elList > * { 
+  width: 376px;
+  }
+  
+}
+@media (min-width: 1024px) {
+  .OnlineDealsScreen > .layoutFlow > .elList {
+    position: relative;
+    margin-top: 71px;
+    width: 472px;
+    margin-left: calc(50.1% - 236px);
+  }
+  .OnlineDealsScreen > .layoutFlow > .elList > * { 
+  width: 472px;
+  }
+  
+}
+
+
+/* Narrowest size for this element's responsive layout */
+  .ShoppingOptionsScreen > .background > .elBackground {
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    width: 100.0%;
+    height: 100%;
+  }
+@media (min-width: 568px) {
+  .ShoppingOptionsScreen > .background > .elBackground {
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    width: 100.0%;
+    height: 100%;
+  }
+}
+@media (min-width: 768px) {
+  .ShoppingOptionsScreen > .background > .elBackground {
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    width: 100.0%;
+    height: 100%;
+  }
+}
+@media (min-width: 1024px) {
+  .ShoppingOptionsScreen > .background > .elBackground {
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    width: 100.0%;
+    height: 100%;
+  }
+}
+
+.ShoppingOptionsScreen .elButton button {
+  cursor: pointer;
+  border: 0.0px solid transparent;
+  border-radius: 3.4px;
+}
+
+.ShoppingOptionsScreen .elButton button:focus {
+  box-shadow: 0 0 5px rgba(0, 149, 214, 0.5000);
+  outline: none;
+}
+
+
+
+/* Narrowest size for this element's responsive layout */
+  .ShoppingOptionsScreen > .layoutFlow > .elButton {
+    line-height: 30px;
+    position: relative;
+    margin-top: 70px;
+    width: 131px;
+    margin-left: calc(77.5% - 65px);
+  }
+  .ShoppingOptionsScreen > .layoutFlow > .elButton > * { 
+  width: 131px;
+  height: 30px;
+  }
+  
+@media (min-width: 568px) {
+  .ShoppingOptionsScreen > .layoutFlow > .elButton {
+    line-height: 30px;
+    position: relative;
+    margin-top: 72px;
+    width: 131px;
+    margin-left: calc(86.3% - 65px);
+  }
+  .ShoppingOptionsScreen > .layoutFlow > .elButton > * { 
+  width: 131px;
+  height: 30px;
+  }
+  
+}
+@media (min-width: 768px) {
+  .ShoppingOptionsScreen > .layoutFlow > .elButton {
+    line-height: 30px;
+    position: relative;
+    margin-top: 70px;
+    width: 130px;
+    margin-left: calc(89.6% - 65px);
+  }
+  .ShoppingOptionsScreen > .layoutFlow > .elButton > * { 
+  width: 130px;
+  height: 30px;
+  }
+  
+}
+@media (min-width: 1024px) {
+  .ShoppingOptionsScreen > .layoutFlow > .elButton {
+    line-height: 37px;
+    position: relative;
+    margin-top: 70px;
+    width: 130px;
+    margin-left: calc(93.3% - 65px);
+  }
+  .ShoppingOptionsScreen > .layoutFlow > .elButton > * { 
+  width: 130px;
+  height: 37px;
+  }
+  
+}
+
+.ShoppingOptionsScreen .elButton2 button {
+  cursor: pointer;
+  border: 0.0px solid transparent;
+  border-radius: 3.4px;
+}
+
+.ShoppingOptionsScreen .elButton2 button:focus {
+  box-shadow: 0 0 5px rgba(0, 149, 214, 0.5000);
+  outline: none;
+}
+
+
+
+/* Narrowest size for this element's responsive layout */
+  .ShoppingOptionsScreen > .layoutFlow > .elButton2 {
+    line-height: 37px;
+    position: relative;
+    margin-top: 0px;
+    width: 131px;
+    margin-left: 721px;
+  }
+  .ShoppingOptionsScreen > .layoutFlow > .elButton2 > * { 
+  width: 131px;
+  height: 37px;
+  }
+  
+@media (min-width: 568px) {
+  .ShoppingOptionsScreen > .layoutFlow > .elButton2 {
+    line-height: 37px;
+    position: relative;
+    margin-top: 0px;
+    width: 131px;
+    margin-left: 721px;
+  }
+  .ShoppingOptionsScreen > .layoutFlow > .elButton2 > * { 
+  width: 131px;
+  height: 37px;
+  }
+  
+}
+@media (min-width: 768px) {
+  .ShoppingOptionsScreen > .layoutFlow > .elButton2 {
+    line-height: 37px;
+    position: relative;
+    margin-top: 0px;
+    width: 130px;
+    margin-left: 716px;
+  }
+  .ShoppingOptionsScreen > .layoutFlow > .elButton2 > * { 
+  width: 130px;
+  height: 37px;
+  }
+  
+}
+@media (min-width: 1024px) {
+  .ShoppingOptionsScreen > .layoutFlow > .elButton2 {
+    line-height: 37px;
+    position: relative;
+    margin-top: -36px;
+    width: 130px;
+    margin-left: 722px;
+  }
+  .ShoppingOptionsScreen > .layoutFlow > .elButton2 > * { 
+  width: 130px;
+  height: 37px;
+  }
+  
+}
+
+
+/* Narrowest size for this element's responsive layout */
+  .ShoppingOptionsScreen > .layoutFlow > .elField {
+    position: relative;
+    margin-top: -30px;
+    width: 128px;
+    margin-left: 2.3%;
+  }
+  .ShoppingOptionsScreen > .layoutFlow > .elField > * { 
+  width: 128px;
+  height: 27px;
+  }
+  
+@media (min-width: 568px) {
+  .ShoppingOptionsScreen > .layoutFlow > .elField {
+    position: relative;
+    margin-top: -30px;
+    width: 128px;
+    margin-left: 2.5%;
+  }
+  .ShoppingOptionsScreen > .layoutFlow > .elField > * { 
+  width: 128px;
+  height: 27px;
+  }
+  
+}
+@media (min-width: 768px) {
+  .ShoppingOptionsScreen > .layoutFlow > .elField {
+    position: relative;
+    margin-top: -27px;
+    width: 127px;
+    margin-left: 2.4%;
+  }
+  .ShoppingOptionsScreen > .layoutFlow > .elField > * { 
+  width: 127px;
+  height: 27px;
+  }
+  
+}
+@media (min-width: 1024px) {
+  .ShoppingOptionsScreen > .layoutFlow > .elField {
+    position: relative;
+    margin-top: -32px;
+    width: 331px;
+    margin-left: 1.1%;
+  }
+  .ShoppingOptionsScreen > .layoutFlow > .elField > * { 
+  width: 331px;
+  height: 27px;
+  }
+  
+}
+
+.ShoppingOptionsScreen .elList li {
+  margin-bottom: 4px;
+}
+
+
+
+/* Narrowest size for this element's responsive layout */
+  .ShoppingOptionsScreen > .layoutFlow > .elList {
+    position: relative;
+    margin-top: 10px;
+    margin-left: 0px;
+    margin-right: 0px;
+    width: calc(100.0% - 0px);
+  }
+  .ShoppingOptionsScreen > .layoutFlow > .elList > * { 
+    width: 100%;
+  }
+  
+@media (min-width: 568px) {
+  .ShoppingOptionsScreen > .layoutFlow > .elList {
+    position: relative;
+    margin-top: 10px;
+    margin-left: 0px;
+    margin-right: 0px;
+    width: calc(100.0% - 0px);
+  }
+  .ShoppingOptionsScreen > .layoutFlow > .elList > * { 
+    width: 100%;
+  }
+  
+}
+@media (min-width: 768px) {
+  .ShoppingOptionsScreen > .layoutFlow > .elList {
+    position: relative;
+    margin-top: 10px;
+    margin-left: 0px;
+    margin-right: 0px;
+    width: calc(100.0% - 0px);
+  }
+  .ShoppingOptionsScreen > .layoutFlow > .elList > * { 
+    width: 100%;
+  }
+  
+}
+@media (min-width: 1024px) {
+  .ShoppingOptionsScreen > .layoutFlow > .elList {
+    position: relative;
+    margin-top: 10px;
+    margin-left: 0px;
+    margin-right: 0px;
+    width: calc(100.0% - 0px);
+  }
+  .ShoppingOptionsScreen > .layoutFlow > .elList > * { 
+    width: 100%;
+  }
+  
+}
+
+.ShoppingOptionsScreen .elIconButton3 button {
+  cursor: pointer;
+  border: 0.0px solid transparent;
+  border-radius: 2.3px;
+}
+
+.ShoppingOptionsScreen .elIconButton3 button:focus {
+  box-shadow: 0 0 5px rgba(0, 149, 214, 0.5000);
+  outline: none;
+}
+
+
+
+/* Narrowest size for this element's responsive layout */
+  .ShoppingOptionsScreen > .layoutFlow > .elIconButton3 {
+    position: relative;
+    margin-top: -38px;
+    width: 41px;
+    margin-left: 12px;
+  }
+  .ShoppingOptionsScreen > .layoutFlow > .elIconButton3 > * { 
+  width: 41px;
+  height: 36px;
+  }
+  
+@media (min-width: 568px) {
+  .ShoppingOptionsScreen > .layoutFlow > .elIconButton3 {
+    position: relative;
+    margin-top: -38px;
+    width: 41px;
+    margin-left: 12px;
+  }
+  .ShoppingOptionsScreen > .layoutFlow > .elIconButton3 > * { 
+  width: 41px;
+  height: 36px;
+  }
+  
+}
+@media (min-width: 768px) {
+  .ShoppingOptionsScreen > .layoutFlow > .elIconButton3 {
+    position: relative;
+    margin-top: 402px;
+    width: 41px;
+    margin-left: 12px;
+  }
+  .ShoppingOptionsScreen > .layoutFlow > .elIconButton3 > * { 
+  width: 41px;
+  height: 35px;
+  }
+  
+}
+@media (min-width: 1024px) {
+  .ShoppingOptionsScreen > .layoutFlow > .elIconButton3 {
+    position: relative;
+    margin-top: 188px;
+    width: 41px;
+    margin-left: 14px;
+  }
+  .ShoppingOptionsScreen > .layoutFlow > .elIconButton3 > * { 
+  width: 41px;
+  height: 36px;
+  }
+  
+}
+
+.ShoppingOptionsScreen .elIconButton2 button {
+  cursor: pointer;
+  border: 0.0px solid transparent;
+  border-radius: 2.3px;
+}
+
+.ShoppingOptionsScreen .elIconButton2 button:focus {
+  box-shadow: 0 0 5px rgba(0, 149, 214, 0.5000);
+  outline: none;
+}
+
+
+
+/* Narrowest size for this element's responsive layout */
+  .ShoppingOptionsScreen > .layoutFlow > .elIconButton2 {
+    position: relative;
+    margin-top: -36px;
+    width: 41px;
+    margin-left: calc(0.0% + 273px);
+  }
+  .ShoppingOptionsScreen > .layoutFlow > .elIconButton2 > * { 
+  width: 41px;
+  height: 36px;
+  }
+  
+@media (min-width: 568px) {
+  .ShoppingOptionsScreen > .layoutFlow > .elIconButton2 {
+    position: relative;
+    margin-top: -38px;
+    width: 41px;
+    margin-left: calc(0.0% + 514px);
+  }
+  .ShoppingOptionsScreen > .layoutFlow > .elIconButton2 > * { 
+  width: 41px;
+  height: 36px;
+  }
+  
+}
+@media (min-width: 768px) {
+  .ShoppingOptionsScreen > .layoutFlow > .elIconButton2 {
+    position: relative;
+    margin-top: -33px;
+    width: 41px;
+    margin-left: calc(0.0% + 713px);
+  }
+  .ShoppingOptionsScreen > .layoutFlow > .elIconButton2 > * { 
+  width: 41px;
+  height: 36px;
+  }
+  
+}
+@media (min-width: 1024px) {
+  .ShoppingOptionsScreen > .layoutFlow > .elIconButton2 {
+    position: relative;
+    margin-top: -33px;
+    width: 41px;
+    margin-left: calc(96.1% + 2px);
+  }
+  .ShoppingOptionsScreen > .layoutFlow > .elIconButton2 > * { 
+  width: 41px;
+  height: 36px;
+  }
+  
+}
+
+.ShoppingOptionsScreen .elIconButton {
+  cursor: pointer;
+  border: 0.0px solid transparent;
+  border-radius: 2.3px;
+}
+
+.ShoppingOptionsScreen .elIconButton:focus {
+  box-shadow: 0 0 5px rgba(0, 149, 214, 0.5000);
+  outline: none;
+}
+
+
+
+/* Narrowest size for this element's responsive layout */
+  .ShoppingOptionsScreen > .screenFgContainer > .foreground > .elIconButton {
+    position: fixed;
+    right: 13px;
+    top: 0px;
+    width: 41px;
+    height: 36px;
+  }
+@media (min-width: 568px) {
+  .ShoppingOptionsScreen > .screenFgContainer > .foreground > .elIconButton {
+    right: 13px;
+    top: 0px;
+    width: 41px;
+    height: 36px;
+  }
+}
+@media (min-width: 768px) {
+  .ShoppingOptionsScreen > .screenFgContainer > .foreground > .elIconButton {
+    right: 13px;
+    top: 0px;
+    width: 41px;
+    height: 36px;
+  }
+}
+@media (min-width: 1024px) {
+  .ShoppingOptionsScreen > .screenFgContainer > .foreground > .elIconButton {
+    right: 13px;
+    top: 4px;
+    width: 41px;
+    height: 36px;
+  }
+}
+
+
+/* Narrowest size for this element's responsive layout */
+  .StartScreen > .background > .elBackground {
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    width: 100.0%;
+    height: 100%;
+  }
+@media (min-width: 568px) {
+  .StartScreen > .background > .elBackground {
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    width: 100.0%;
+    height: 100%;
+  }
+}
+@media (min-width: 768px) {
+  .StartScreen > .background > .elBackground {
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    width: 100.0%;
+    height: 100%;
+  }
+}
+@media (min-width: 1024px) {
+  .StartScreen > .background > .elBackground {
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    width: 100.0%;
+    height: 100%;
+  }
+}
+
+.StartScreen .elButton button {
+  cursor: pointer;
+  border: 0.0px solid transparent;
+  border-radius: 3.4px;
+}
+
+.StartScreen .elButton button:focus {
+  box-shadow: 0 0 5px rgba(0, 149, 214, 0.5000);
+  outline: none;
+}
+
+
+
+/* Narrowest size for this element's responsive layout */
+  .StartScreen > .layoutFlow > .elButton {
+    line-height: 35px;
+    position: relative;
+    margin-top: 359px;
+    width: 145px;
+    margin-left: calc(50.0% - 72px);
+  }
+  .StartScreen > .layoutFlow > .elButton > * { 
+  width: 145px;
+  height: 35px;
+  }
+  
+@media (min-width: 568px) {
+  .StartScreen > .layoutFlow > .elButton {
+    line-height: 35px;
+    position: relative;
+    margin-top: 359px;
+    width: 145px;
+    margin-left: calc(50.0% - 72px);
+  }
+  .StartScreen > .layoutFlow > .elButton > * { 
+  width: 145px;
+  height: 35px;
+  }
+  
+}
+@media (min-width: 768px) {
+  .StartScreen > .layoutFlow > .elButton {
+    line-height: 35px;
+    position: relative;
+    margin-top: 356px;
+    width: 144px;
+    margin-left: calc(50.0% - 72px);
+  }
+  .StartScreen > .layoutFlow > .elButton > * { 
+  width: 144px;
+  height: 35px;
+  }
+  
+}
+@media (min-width: 1024px) {
+  .StartScreen > .layoutFlow > .elButton {
+    line-height: 35px;
+    position: relative;
+    margin-top: 356px;
+    width: 144px;
+    margin-left: calc(50.5% - 72px);
+  }
+  .StartScreen > .layoutFlow > .elButton > * { 
+  width: 144px;
+  height: 35px;
+  }
+  
+}
+
+
+/* Narrowest size for this element's responsive layout */
+  .StartScreen > .layoutFlow > .elFirebaseLogin {
+    position: relative;
+    margin-top: -135px;
+    width: 207px;
+    margin-left: calc(50.0% - 104px);
+  }
+  .StartScreen > .layoutFlow > .elFirebaseLogin > * { 
+  width: 207px;
+  height: 48px;
+  }
+  
+@media (min-width: 568px) {
+  .StartScreen > .layoutFlow > .elFirebaseLogin {
+    position: relative;
+    margin-top: -135px;
+    width: 207px;
+    margin-left: calc(50.0% - 104px);
+  }
+  .StartScreen > .layoutFlow > .elFirebaseLogin > * { 
+  width: 207px;
+  height: 48px;
+  }
+  
+}
+@media (min-width: 768px) {
+  .StartScreen > .layoutFlow > .elFirebaseLogin {
+    position: relative;
+    margin-top: -134px;
+    width: 206px;
+    margin-left: calc(50.0% - 103px);
+  }
+  .StartScreen > .layoutFlow > .elFirebaseLogin > * { 
+  width: 206px;
+  height: 47px;
+  }
+  
+}
+@media (min-width: 1024px) {
+  .StartScreen > .layoutFlow > .elFirebaseLogin {
+    position: relative;
+    margin-top: -134px;
+    width: 206px;
+    margin-left: calc(50.5% - 103px);
+  }
+  .StartScreen > .layoutFlow > .elFirebaseLogin > * { 
+  width: 206px;
+  height: 47px;
+  }
+  
+}
+
+
+/* Narrowest size for this element's responsive layout */
+  .StartScreen > .layoutFlow > .elFieldUsername {
+    position: relative;
+    margin-top: -130px;
+    width: 226px;
+    margin-left: calc(50.0% - 113px);
+  }
+  .StartScreen > .layoutFlow > .elFieldUsername > * { 
+  width: 226px;
+  height: 52px;
+  }
+  
+@media (min-width: 568px) {
+  .StartScreen > .layoutFlow > .elFieldUsername {
+    position: relative;
+    margin-top: -130px;
+    width: 226px;
+    margin-left: calc(50.0% - 113px);
+  }
+  .StartScreen > .layoutFlow > .elFieldUsername > * { 
+  width: 226px;
+  height: 52px;
+  }
+  
+}
+@media (min-width: 768px) {
+  .StartScreen > .layoutFlow > .elFieldUsername {
+    position: relative;
+    margin-top: -130px;
+    width: 225px;
+    margin-left: calc(50.0% - 112px);
+  }
+  .StartScreen > .layoutFlow > .elFieldUsername > * { 
+  width: 225px;
+  height: 51px;
+  }
+  
+}
+@media (min-width: 1024px) {
+  .StartScreen > .layoutFlow > .elFieldUsername {
+    position: relative;
+    margin-top: -130px;
+    width: 225px;
+    margin-left: calc(50.5% - 112px);
+  }
+  .StartScreen > .layoutFlow > .elFieldUsername > * { 
+  width: 225px;
+  height: 51px;
+  }
+  
+}
+
+
+/* Narrowest size for this element's responsive layout */
+  .StartScreen > .layoutFlow > .elText {
+    position: relative;
+    margin-top: -132px;
+    width: 238px;
+    margin-left: calc(50.3% - 119px);
+  }
+  .StartScreen > .layoutFlow > .elText > * { 
+  width: 238px;
+  }
+  
+@media (min-width: 568px) {
+  .StartScreen > .layoutFlow > .elText {
+    position: relative;
+    margin-top: -132px;
+    width: 238px;
+    margin-left: calc(50.2% - 119px);
+  }
+  .StartScreen > .layoutFlow > .elText > * { 
+  width: 238px;
+  }
+  
+}
+@media (min-width: 768px) {
+  .StartScreen > .layoutFlow > .elText {
+    position: relative;
+    margin-top: -132px;
+    width: 236px;
+    margin-left: calc(50.1% - 118px);
+  }
+  .StartScreen > .layoutFlow > .elText > * { 
+  width: 236px;
+  }
+  
+}
+@media (min-width: 1024px) {
+  .StartScreen > .layoutFlow > .elText {
+    position: relative;
+    margin-top: -132px;
+    width: 236px;
+    margin-left: calc(50.6% - 118px);
+  }
+  .StartScreen > .layoutFlow > .elText > * { 
+  width: 236px;
+  }
+  
+}
+
+/* This component has a fixed-size layout */
+  .StarRatings {
+    min-height: 199px;  /* Minimum height to ensure layout flow is visible */
+    width: 100%; /* This component was designed using a width of 338px */
+    height: 100%;
+  }
+  .StarRatings > .background > .containerMinHeight {
+    min-height: 199px;
+  }
+
+
+  .StarRatings > .layoutFlow > .elRating {
+    position: relative;
+    margin-top: 105px;
+    width: 99px;
+    margin-left: calc(50.0% - 50px);
+  }
+  .StarRatings > .layoutFlow > .elRating > * { 
+  width: 99px;
+  }
+  
+
+
+  .StarRatings > .layoutFlow > .elText {
+    position: relative;
+    margin-top: -94px;
+    width: 245px;
+    margin-left: calc(50.0% - 122px);
+  }
+  .StarRatings > .layoutFlow > .elText > * { 
+  width: 245px;
+  }
+  
+
+
+/* Narrowest size for this element's responsive layout */
+  .ReviewsScreen > .background > .elBackground {
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    width: 100.0%;
+    height: 100%;
+  }
+@media (min-width: 568px) {
+  .ReviewsScreen > .background > .elBackground {
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    width: 100.0%;
+    height: 100%;
+  }
+}
+@media (min-width: 768px) {
+  .ReviewsScreen > .background > .elBackground {
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    width: 100.0%;
+    height: 100%;
+  }
+}
+@media (min-width: 1024px) {
+  .ReviewsScreen > .background > .elBackground {
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    width: 100.0%;
+    height: 100%;
+  }
+}
+
+.ReviewsScreen .elStarRatings {
+  overflow: hidden;
+}
+
+.ReviewsScreen .elStarRatings.hasNestedComps > div {
+  overflow: hidden;
+  position: relative;
+}
+
+
+
+/* Narrowest size for this element's responsive layout */
+  .ReviewsScreen > .layoutFlow > .elStarRatings {
+    position: relative;
+    margin-top: 32px;
+    width: 321px;
+    margin-left: -1px;
+  }
+  .ReviewsScreen > .layoutFlow > .elStarRatings > * { 
+  width: 321px;
+  }
+  
+  .ReviewsScreen > .layoutFlow > .elStarRatings > .background > .containerMinHeight {
+    min-height: 199px;
+  }
+
+@media (min-width: 568px) {
+  .ReviewsScreen > .layoutFlow > .elStarRatings {
+    position: relative;
+    margin-top: 32px;
+    width: 321px;
+    margin-left: -1px;
+  }
+  .ReviewsScreen > .layoutFlow > .elStarRatings > * { 
+  width: 321px;
+  }
+  
+  .ReviewsScreen > .layoutFlow > .elStarRatings > .background > .containerMinHeight {
+    min-height: 199px;
+  }
+
+}
+@media (min-width: 768px) {
+  .ReviewsScreen > .layoutFlow > .elStarRatings {
+    position: relative;
+    margin-top: 32px;
+    width: 319px;
+    margin-left: -1px;
+  }
+  .ReviewsScreen > .layoutFlow > .elStarRatings > * { 
+  width: 319px;
+  }
+  
+  .ReviewsScreen > .layoutFlow > .elStarRatings > .background > .containerMinHeight {
+    min-height: 197px;
+  }
+
+}
+@media (min-width: 1024px) {
+  .ReviewsScreen > .layoutFlow > .elStarRatings {
+    position: relative;
+    margin-top: 32px;
+    width: 319px;
+    margin-left: -1px;
+  }
+  .ReviewsScreen > .layoutFlow > .elStarRatings > * { 
+  width: 319px;
+  }
+  
+  .ReviewsScreen > .layoutFlow > .elStarRatings > .background > .containerMinHeight {
+    min-height: 197px;
+  }
+
+}
+
+
+/* Narrowest size for this element's responsive layout */
+  .FAQs2Screen > .background > .elBackground {
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    width: 100.0%;
+    height: 100%;
+  }
+@media (min-width: 568px) {
+  .FAQs2Screen > .background > .elBackground {
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    width: 100.0%;
+    height: 100%;
+  }
+}
+@media (min-width: 768px) {
+  .FAQs2Screen > .background > .elBackground {
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    width: 100.0%;
+    height: 100%;
+  }
+}
+@media (min-width: 1024px) {
+  .FAQs2Screen > .background > .elBackground {
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    width: 100.0%;
+    height: 100%;
+  }
+}
+
+
+/* Narrowest size for this element's responsive layout */
+  .FAQs2Screen > .layoutFlow > .elText {
+    overflow: hidden;
+    position: relative;
+    margin-top: 66px;
+    width: 238px;
+    margin-left: 3.4%;
+  }
+  .FAQs2Screen > .layoutFlow > .elText > * { 
+  width: 238px;
+  }
+  
+@media (min-width: 568px) {
+  .FAQs2Screen > .layoutFlow > .elText {
+    overflow: hidden;
+    position: relative;
+    margin-top: 66px;
+    width: 238px;
+    margin-left: 3.4%;
+  }
+  .FAQs2Screen > .layoutFlow > .elText > * { 
+  width: 238px;
+  }
+  
+}
+@media (min-width: 768px) {
+  .FAQs2Screen > .layoutFlow > .elText {
+    overflow: hidden;
+    position: relative;
+    margin-top: 66px;
+    width: 236px;
+    margin-left: 3.4%;
+  }
+  .FAQs2Screen > .layoutFlow > .elText > * { 
+  width: 236px;
+  }
+  
+}
+@media (min-width: 1024px) {
+  .FAQs2Screen > .layoutFlow > .elText {
+    overflow: hidden;
+    position: relative;
+    margin-top: 66px;
+    width: 355px;
+    margin-left: 3.4%;
+  }
+  .FAQs2Screen > .layoutFlow > .elText > * { 
+  width: 355px;
+  }
+  
+}
+
+
+/* Narrowest size for this element's responsive layout */
+  .FAQs2Screen > .layoutFlow > .elText2 {
+    position: relative;
+    margin-top: -2px;
+    width: 293px;
+    margin-left: 3.4%;
+  }
+  .FAQs2Screen > .layoutFlow > .elText2 > * { 
+  width: 293px;
+  }
+  
+@media (min-width: 568px) {
+  .FAQs2Screen > .layoutFlow > .elText2 {
+    position: relative;
+    margin-top: -0px;
+    width: 538px;
+    margin-left: calc(3.4% + 7px);
+  }
+  .FAQs2Screen > .layoutFlow > .elText2 > * { 
+  width: 538px;
+  }
+  
+}
+@media (min-width: 768px) {
+  .FAQs2Screen > .layoutFlow > .elText2 {
+    position: relative;
+    margin-top: 0px;
+    width: 737px;
+    margin-left: calc(3.4% + 0px);
+  }
+  .FAQs2Screen > .layoutFlow > .elText2 > * { 
+  width: 737px;
+  }
+  
+}
+@media (min-width: 1024px) {
+  .FAQs2Screen > .layoutFlow > .elText2 {
+    position: relative;
+    margin-top: 6px;
+    width: 984px;
+    margin-left: 3.4%;
+  }
+  .FAQs2Screen > .layoutFlow > .elText2 > * { 
+  width: 984px;
+  }
+  
+}
+
+
+/* Narrowest size for this element's responsive layout */
+  .FAQs2Screen > .layoutFlow > .elTextCopy {
+    overflow: hidden;
+    position: relative;
+    margin-top: 16px;
+    width: 291px;
+    margin-left: 3.4%;
+  }
+  .FAQs2Screen > .layoutFlow > .elTextCopy > * { 
+  width: 291px;
+  }
+  
+@media (min-width: 568px) {
+  .FAQs2Screen > .layoutFlow > .elTextCopy {
+    overflow: hidden;
+    position: relative;
+    margin-top: -143px;
+    width: 559px;
+    margin-left: calc(3.4% + 3px);
+  }
+  .FAQs2Screen > .layoutFlow > .elTextCopy > * { 
+  width: 559px;
+  }
+  
+}
+@media (min-width: 768px) {
+  .FAQs2Screen > .layoutFlow > .elTextCopy {
+    overflow: hidden;
+    position: relative;
+    margin-top: -54px;
+    width: 650px;
+    margin-left: 3.4%;
+  }
+  .FAQs2Screen > .layoutFlow > .elTextCopy > * { 
+  width: 650px;
+  }
+  
+}
+@media (min-width: 1024px) {
+  .FAQs2Screen > .layoutFlow > .elTextCopy {
+    overflow: hidden;
+    position: relative;
+    margin-top: 34px;
+    width: 594px;
+    margin-left: 3.4%;
+  }
+  .FAQs2Screen > .layoutFlow > .elTextCopy > * { 
+  width: 594px;
+  }
+  
+}
+
+
+/* Narrowest size for this element's responsive layout */
+  .FAQs2Screen > .layoutFlow > .elText3 {
+    position: relative;
+    margin-top: 0px;
+    width: 295px;
+    margin-left: 3.4%;
+  }
+  .FAQs2Screen > .layoutFlow > .elText3 > * { 
+  width: 295px;
+  }
+  
+@media (min-width: 568px) {
+  .FAQs2Screen > .layoutFlow > .elText3 {
+    position: relative;
+    margin-top: 0px;
+    width: 538px;
+    margin-left: 3.4%;
+  }
+  .FAQs2Screen > .layoutFlow > .elText3 > * { 
+  width: 538px;
+  }
+  
+}
+@media (min-width: 768px) {
+  .FAQs2Screen > .layoutFlow > .elText3 {
+    position: relative;
+    margin-top: 2px;
+    width: 724px;
+    margin-left: 3.4%;
+  }
+  .FAQs2Screen > .layoutFlow > .elText3 > * { 
+  width: 724px;
+  }
+  
+}
+@media (min-width: 1024px) {
+  .FAQs2Screen > .layoutFlow > .elText3 {
+    position: relative;
+    margin-top: 6px;
+    width: 960px;
+    margin-left: 3.4%;
+  }
+  .FAQs2Screen > .layoutFlow > .elText3 > * { 
+  width: 960px;
+  }
+  
+}
+
+
+/* Narrowest size for this element's responsive layout */
+  .FAQs2Screen > .layoutFlow > .elTextCopy2 {
+    overflow: hidden;
+    position: relative;
+    margin-top: 16px;
+    width: 291px;
+    margin-left: 3.4%;
+  }
+  .FAQs2Screen > .layoutFlow > .elTextCopy2 > * { 
+  width: 291px;
+  }
+  
+@media (min-width: 568px) {
+  .FAQs2Screen > .layoutFlow > .elTextCopy2 {
+    overflow: hidden;
+    position: relative;
+    margin-top: -87px;
+    width: 559px;
+    margin-left: 3.4%;
+  }
+  .FAQs2Screen > .layoutFlow > .elTextCopy2 > * { 
+  width: 559px;
+  }
+  
+}
+@media (min-width: 768px) {
+  .FAQs2Screen > .layoutFlow > .elTextCopy2 {
+    overflow: hidden;
+    position: relative;
+    margin-top: -110px;
+    width: 650px;
+    margin-left: 3.4%;
+  }
+  .FAQs2Screen > .layoutFlow > .elTextCopy2 > * { 
+  width: 650px;
+  }
+  
+}
+@media (min-width: 1024px) {
+  .FAQs2Screen > .layoutFlow > .elTextCopy2 {
+    overflow: hidden;
+    position: relative;
+    margin-top: -32px;
+    width: 594px;
+    margin-left: 3.4%;
+  }
+  .FAQs2Screen > .layoutFlow > .elTextCopy2 > * { 
+  width: 594px;
+  }
+  
+}
+
+
+/* Narrowest size for this element's responsive layout */
+  .FAQs2Screen > .layoutFlow > .elTextCopy3 {
+    position: relative;
+    margin-top: -2px;
+    width: 296px;
+    margin-left: 3.4%;
+  }
+  .FAQs2Screen > .layoutFlow > .elTextCopy3 > * { 
+  width: 296px;
+  }
+  
+@media (min-width: 568px) {
+  .FAQs2Screen > .layoutFlow > .elTextCopy3 {
+    position: relative;
+    margin-top: -0px;
+    width: 538px;
+    margin-left: 3.4%;
+  }
+  .FAQs2Screen > .layoutFlow > .elTextCopy3 > * { 
+  width: 538px;
+  }
+  
+}
+@media (min-width: 768px) {
+  .FAQs2Screen > .layoutFlow > .elTextCopy3 {
+    position: relative;
+    margin-top: 0px;
+    width: 737px;
+    margin-left: 3.4%;
+  }
+  .FAQs2Screen > .layoutFlow > .elTextCopy3 > * { 
+  width: 737px;
+  }
+  
+}
+@media (min-width: 1024px) {
+  .FAQs2Screen > .layoutFlow > .elTextCopy3 {
+    position: relative;
+    margin-top: 6px;
+    width: 984px;
+    margin-left: 3.4%;
+  }
+  .FAQs2Screen > .layoutFlow > .elTextCopy3 > * { 
+  width: 984px;
+  }
+  
+}
+
+
+/* Narrowest size for this element's responsive layout */
+  .FAQs2Screen > .layoutFlow > .elTextCopy4 {
+    overflow: hidden;
+    position: relative;
+    margin-top: 16px;
+    width: 291px;
+    margin-left: 3.4%;
+  }
+  .FAQs2Screen > .layoutFlow > .elTextCopy4 > * { 
+  width: 291px;
+  }
+  
+@media (min-width: 568px) {
+  .FAQs2Screen > .layoutFlow > .elTextCopy4 {
+    overflow: hidden;
+    position: relative;
+    margin-top: -272px;
+    width: 559px;
+    margin-left: 3.4%;
+  }
+  .FAQs2Screen > .layoutFlow > .elTextCopy4 > * { 
+  width: 559px;
+  }
+  
+}
+@media (min-width: 768px) {
+  .FAQs2Screen > .layoutFlow > .elTextCopy4 {
+    overflow: hidden;
+    position: relative;
+    margin-top: -110px;
+    width: 650px;
+    margin-left: 3.4%;
+  }
+  .FAQs2Screen > .layoutFlow > .elTextCopy4 > * { 
+  width: 650px;
+  }
+  
+}
+@media (min-width: 1024px) {
+  .FAQs2Screen > .layoutFlow > .elTextCopy4 {
+    overflow: hidden;
+    position: relative;
+    margin-top: 30px;
+    width: 594px;
+    margin-left: 3.4%;
+  }
+  .FAQs2Screen > .layoutFlow > .elTextCopy4 > * { 
+  width: 594px;
+  }
+  
+}
+
+
+/* Narrowest size for this element's responsive layout */
+  .FAQs2Screen > .layoutFlow > .elField {
+    position: relative;
+    margin-top: 0px;
+    width: 226px;
+    margin-left: 3.4%;
+  }
+  .FAQs2Screen > .layoutFlow > .elField > * { 
+  width: 226px;
+  height: 34px;
+  }
+  
+@media (min-width: 568px) {
+  .FAQs2Screen > .layoutFlow > .elField {
+    position: relative;
+    margin-top: 8px;
+    width: 328px;
+    margin-left: calc(3.4% + 0px);
+  }
+  .FAQs2Screen > .layoutFlow > .elField > * { 
+  width: 328px;
+  height: 34px;
+  }
+  
+}
+@media (min-width: 768px) {
+  .FAQs2Screen > .layoutFlow > .elField {
+    position: relative;
+    margin-top: 0px;
+    width: 403px;
+    margin-left: 3.4%;
+  }
+  .FAQs2Screen > .layoutFlow > .elField > * { 
+  width: 403px;
+  height: 34px;
+  }
+  
+}
+@media (min-width: 1024px) {
+  .FAQs2Screen > .layoutFlow > .elField {
+    position: relative;
+    margin-top: 0px;
+    width: 512px;
+    margin-left: 3.4%;
+  }
+  .FAQs2Screen > .layoutFlow > .elField > * { 
+  width: 512px;
+  height: 34px;
+  }
+  
+}
+
+
+/* Narrowest size for this element's responsive layout */
+  .FAQs2Screen > .layoutFlow > .elFieldCopy {
+    position: relative;
+    margin-top: 10px;
+    width: 226px;
+    margin-left: 3.4%;
+  }
+  .FAQs2Screen > .layoutFlow > .elFieldCopy > * { 
+  width: 226px;
+  height: 34px;
+  }
+  
+@media (min-width: 568px) {
+  .FAQs2Screen > .layoutFlow > .elFieldCopy {
+    position: relative;
+    margin-top: 12px;
+    width: 328px;
+    margin-left: 3.4%;
+  }
+  .FAQs2Screen > .layoutFlow > .elFieldCopy > * { 
+  width: 328px;
+  height: 31px;
+  }
+  
+}
+@media (min-width: 768px) {
+  .FAQs2Screen > .layoutFlow > .elFieldCopy {
+    position: relative;
+    margin-top: 14px;
+    width: 402px;
+    margin-left: 3.4%;
+  }
+  .FAQs2Screen > .layoutFlow > .elFieldCopy > * { 
+  width: 402px;
+  height: 34px;
+  }
+  
+}
+@media (min-width: 1024px) {
+  .FAQs2Screen > .layoutFlow > .elFieldCopy {
+    position: relative;
+    margin-top: 16px;
+    width: 512px;
+    margin-left: 3.4%;
+  }
+  .FAQs2Screen > .layoutFlow > .elFieldCopy > * { 
+  width: 512px;
+  height: 34px;
+  }
+  
+}
+
+
+/* Narrowest size for this element's responsive layout */
+  .FAQs2Screen > .layoutFlow > .elTextarea {
+    position: relative;
+    margin-top: 12px;
+    width: 226px;
+    margin-left: 3.4%;
+  }
+  .FAQs2Screen > .layoutFlow > .elTextarea > * { 
+  width: 226px;
+  height: 181px;
+  }
+  
+@media (min-width: 568px) {
+  .FAQs2Screen > .layoutFlow > .elTextarea {
+    position: relative;
+    margin-top: 13px;
+    width: 328px;
+    margin-left: 3.4%;
+  }
+  .FAQs2Screen > .layoutFlow > .elTextarea > * { 
+  width: 328px;
+  height: 181px;
+  }
+  
+}
+@media (min-width: 768px) {
+  .FAQs2Screen > .layoutFlow > .elTextarea {
+    position: relative;
+    margin-top: 17px;
+    width: 402px;
+    margin-left: 3.4%;
+  }
+  .FAQs2Screen > .layoutFlow > .elTextarea > * { 
+  width: 402px;
+  height: 180px;
+  }
+  
+}
+@media (min-width: 1024px) {
+  .FAQs2Screen > .layoutFlow > .elTextarea {
+    position: relative;
+    margin-top: 18px;
+    width: 960px;
+    margin-left: 3.4%;
+  }
+  .FAQs2Screen > .layoutFlow > .elTextarea > * { 
+  width: 960px;
+  height: 71px;
+  }
+  
+}
+
+.FAQs2Screen .elButton button {
+  cursor: pointer;
+  border: 0.0px solid transparent;
+  border-radius: 3.4px;
+}
+
+.FAQs2Screen .elButton button:focus {
+  box-shadow: 0 0 5px rgba(0, 149, 214, 0.5000);
+  outline: none;
+}
+
+
+
+/* Narrowest size for this element's responsive layout */
+  .FAQs2Screen > .layoutFlow > .elButton {
+    line-height: 35px;
+    position: relative;
+    margin-top: 8px;
+    width: 145px;
+    margin-left: 3.4%;
+  }
+  .FAQs2Screen > .layoutFlow > .elButton > * { 
+  width: 145px;
+  height: 35px;
+  }
+  
+@media (min-width: 568px) {
+  .FAQs2Screen > .layoutFlow > .elButton {
+    line-height: 35px;
+    position: relative;
+    margin-top: 22px;
+    width: 145px;
+    margin-left: 3.4%;
+  }
+  .FAQs2Screen > .layoutFlow > .elButton > * { 
+  width: 145px;
+  height: 35px;
+  }
+  
+}
+@media (min-width: 768px) {
+  .FAQs2Screen > .layoutFlow > .elButton {
+    line-height: 35px;
+    position: relative;
+    margin-top: 27px;
+    width: 144px;
+    margin-left: 3.4%;
+  }
+  .FAQs2Screen > .layoutFlow > .elButton > * { 
+  width: 144px;
+  height: 35px;
+  }
+  
+}
+@media (min-width: 1024px) {
+  .FAQs2Screen > .layoutFlow > .elButton {
+    line-height: 35px;
+    position: relative;
+    margin-top: 25px;
+    width: 144px;
+    margin-left: 3.4%;
+  }
+  .FAQs2Screen > .layoutFlow > .elButton > * { 
+  width: 144px;
+  height: 35px;
+  }
+  
+}
+
+/* This component has a fixed-size layout */
+  .Comp2 {
+    min-width: 250px; /* This component has a fixed size */
+  }
+
+.Comp2 .elList > div {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  row-gap: 5px;
+  grid-row-gap: 5px;  /* old name still required by some browsers */
+  column-gap: 5px;
+  grid-column-gap: 5px;  /* old name still required by some browsers */
+}
+
+.Comp2 .elList > div > * {
+  display: inline-block;
+  position: relative;
+  min-width: 400px;
+}
+
+  @media (min-width: 1024px) {
+    .Comp2 .elList > div {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      row-gap: 5px;
+      grid-row-gap: 5px;  /* old name still required by some browsers */
+      column-gap: 5px;
+      grid-column-gap: 5px;  /* old name still required by some browsers */
+    }
+  
+  }
+  
+  @media (min-width: 768px) and (max-width: 1023px) {
+    .Comp2 .elList > div {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      row-gap: 5px;
+      grid-row-gap: 5px;  /* old name still required by some browsers */
+      column-gap: 5px;
+      grid-column-gap: 5px;  /* old name still required by some browsers */
+    }
+  
+  }
+  
+  @media (min-width: 568px) and (max-width: 767px) {
+    .Comp2 .elList > div {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      row-gap: 5px;
+      grid-row-gap: 5px;  /* old name still required by some browsers */
+      column-gap: 5px;
+      grid-column-gap: 5px;  /* old name still required by some browsers */
+    }
+  
+  }
+  
+
+
+  .Comp2 > .layoutFlow > .elList {
+    position: relative;
+    margin-top: 0px;
+    width: 250px;
+    margin-left: 0px;
+  }
+  .Comp2 > .layoutFlow > .elList > * { 
+  width: 250px;
+  }
+  
+

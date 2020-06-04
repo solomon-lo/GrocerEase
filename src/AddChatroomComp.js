@@ -1,12 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
-import Map2 from './map_for_post';
+
 // UI framework component imports
 import Button from 'muicss/lib/react/button';
-
-import mapboxgl from 'mapbox-gl';
-mapboxgl.accessToken = 'pk.eyJ1IjoiZ3JvY2VyZWFzZSIsImEiOiJja2FrZTl4YWgwbzhjMnlwZHh0bG9tb2FxIn0.24dvEshJiFjdusaNZYAP5A';
-var MapboxGeocoder = require('@mapbox/mapbox-gl-geocoder');
 
 export default class AddChatroomComp extends Component {
 
@@ -19,7 +15,7 @@ export default class AddChatroomComp extends Component {
       field_shopper_name: '',
       field_shopper_time: '',
       field_shopper_store: '',
-      field_shopper_city: {},
+      field_shopper_city: '',
     };
   }
 
@@ -58,8 +54,8 @@ export default class AddChatroomComp extends Component {
     this.setState({field_shopper_store: event.target.value});
   }
   
-  textInputChanged_field_shopper_city = (value) => {
-    this.setState({field_shopper_city: value});
+  textInputChanged_field_shopper_city = (event) => {
+    this.setState({field_shopper_city: event.target.value});
   }
   
   sendData_button_to_shoppers = () => {
@@ -120,7 +116,6 @@ export default class AddChatroomComp extends Component {
       pointerEvents: 'auto',
      };
     
-     
     const style_elField_shopper_time = {
       display: 'block',
       backgroundColor: 'white',
@@ -137,33 +132,19 @@ export default class AddChatroomComp extends Component {
       pointerEvents: 'auto',
      };
     
-    /*
     const style_elField_shopper_city = {
       display: 'block',
       backgroundColor: 'white',
       paddingLeft: '1rem',
       boxSizing: 'border-box', // ensures padding won't expand element's outer size
       pointerEvents: 'auto',
-     }; */
-
-     const style_elField_shopper_city = {
-       top: '20px',
-       width: '100%',
-       zIndex: '100',
      };
-
-     const mapstyle = {
-       position: 'absolute',
-       width: '15%',
-       height: '10%',
-       top: '500px',
-     }
     
     return (
       <div className="AddChatroomComp appBg">
         <div className="layoutFlow">
           <div className="elIntro">
-            <div className="baseFont" style={style_elIntro}>
+            <div className="headlineFont" style={style_elIntro}>
               <div>{this.props.locStrings.addchatroomcomp_text_1046369}</div>
             </div>
           </div>
@@ -186,13 +167,12 @@ export default class AddChatroomComp extends Component {
             <input className="baseFont" style={style_elField_shopper_store} type="text" placeholder={this.props.locStrings.shopper_store_field} onChange={this.textInputChanged_field_shopper_store} value={this.state.field_shopper_store}  />
           </div>
           
-          <div className="mapstyle">
-            <Map2 setLocation = {this.textInputChanged_field_shopper_city}> </Map2>
-            {/*<input className="baseFont" style={style_elField_shopper_city} type="text" placeholder={this.props.locStrings.shopper_city_field} onChange={this.textInputChanged_field_shopper_city} value={this.state.field_shopper_city}  />*/}
+          <div className="elField_shopper_city">
+            <input className="baseFont" style={style_elField_shopper_city} type="text" placeholder={this.props.locStrings.shopper_city_field} onChange={this.textInputChanged_field_shopper_city} value={this.state.field_shopper_city}  />
           </div>
         </div>
         
-      </div> 
+      </div>
     )
   }
   

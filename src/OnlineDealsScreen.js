@@ -82,7 +82,7 @@ export default class OnlineDealsScreen extends Component {
               {items_list.map((row, index) => {
                 let itemComp = (row._componentId)
                     ? listComps_list[row._componentId]
-                    : <DealItem appActions={this.props.appActions} deviceInfo={this.props.deviceInfo} locStrings={this.props.locStrings} dataSheetId={'deals'} dataSheetRow={row} {...{ 'DescriptionOfDeal': row['DescriptionOfDeal'], 'URL': row['URL'], }} />;
+                    : <DealItem appActions={this.props.appActions} deviceInfo={this.props.deviceInfo} locStrings={this.props.locStrings} dataSheetId={'deals'} dataSheetRow={row} {...{ 'DescriptionOfDeal': row['DescriptionOfDeal'], 'Name': row['Name'], 'URL': row['URL'], }} />;
                 return (<li key={row.key}>
                     {itemComp}
                   </li>);
