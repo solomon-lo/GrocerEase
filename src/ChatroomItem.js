@@ -37,8 +37,9 @@ export default class ChatroomItem extends Component {
   
   
   onClick_elChatstore = (ev) => {
-    // Go back in screen navigation history
-    this.props.appActions.goBack();
+    let newVal = this.props.document_key;
+    this.props.appActions.updateDataSlot('ds_SlotSelectedChatroomKey', newVal);
+    this.props.appActions.goToScreen('messages', { transitionId: 'fadeIn' });
   
   }
   
@@ -118,9 +119,8 @@ export default class ChatroomItem extends Component {
       background: 'rgba(0, 0, 0, 0.475)',
       opacity: '0.6',
     }
-    console.log(this.props.document_key)
-    if (value_chatstore.toLowerCase().includes(this.props.filter.toLowerCase()) ||
-          value_chatname.toLowerCase().includes(this.props.filter.toLowerCase())) {
+    if (value_chatstore.replace(/[^A-Za-z0-9]/g,'').toLowerCase().includes(this.props.filter.replace(/[^A-Za-z0-9]/g,'').toLowerCase()) ||
+          value_chatname.replace(/[^A-Za-z0-9]/g,'').toLowerCase().includes(this.props.filter.replace(/[^A-Za-z0-9]/g,'').toLowerCase())) {
     return (
       <div className="ChatroomItem appBg">
         <div className="layoutFlow">

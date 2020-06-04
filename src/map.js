@@ -7,7 +7,6 @@ import mapboxgl from 'mapbox-gl';
 import './map.css';
 import fetchData from "./fetchData.js"
 import icon from './images/apple.png'
-import icon2 from './images/apple2.png'
 
 
 mapboxgl.accessToken = 'pk.eyJ1IjoiZ3JvY2VyZWFzZSIsImEiOiJja2FrZTl4YWgwbzhjMnlwZHh0bG9tb2FxIn0.24dvEshJiFjdusaNZYAP5A';
@@ -23,14 +22,14 @@ export default class Map extends React.Component {
             location: '',
             data: {},
             first_renders: 0,
+            mounted: false,
         };
-        this.mounted = false;
     }
 
     
     componentDidMount() {
         console.log(this.props)
-        this.mounted = true;
+        this.setState({mounted: true});
         var map = new mapboxgl.Map({
             container: this.mapContainer,
             style: 'mapbox://styles/mapbox/streets-v11',
@@ -53,13 +52,7 @@ export default class Map extends React.Component {
         
 
 
-        map.on('move', () => {
-            this.setState({
-                lng: map.getCenter().lng.toFixed(4),
-                lat: map.getCenter().lat.toFixed(4),
-                zoom: map.getZoom().toFixed(2)
-            });
-        });
+
 
         map.on("load", () => {
             map.loadImage(icon,
@@ -92,44 +85,15 @@ export default class Map extends React.Component {
             
 
         });
-
-        map.on('render', () => {
-            //const places1 = await fetchData({longitude: this.state.lng, latitude: this.state.lat}); //?
-            if (this.state.first_renders <= 0) {
-                this.setState({first_renders: this.state.first_renders +=1});
-                var feats = [];
-                var existing = [];
-                var places = {type: 'FeatureCollection', features: feats}
-                var i;
-                var j = 0;
-                for (i = 0; i < this.props.items.length; i++) {
-                    var temp = this.props.items[i].store_address.center;
-                    var ind = existing.indexOf(String(temp));
-                    console.log(i)
-                    if (ind == -1) {
-                        existing.push(String(temp));
-                        feats.push(this.props.items[i].store_address);
-                        feats[j].properties.title = this.props.items[i].store_address.text;
-                        feats[j].properties.shoppers = []
-                        feats[j].properties.shoppers.push(this.props.items[i].chatroom_name);
-                        feats[j].properties.metadata = []
-                        feats[j].properties.metadata.push(this.props.items[i].document_key);
-                        j++;
-                    }
-                    else {
-                        feats[ind].properties.shoppers.push(this.props.items[i].chatroom_name);
-                        feats[ind].properties.metadata.push(this.props.items[i].document_key);
-                        console.log("hello")
-                    }
-                }
-                
-                var temp = map.getSource("points");
-                if (temp) {
-                    map.getSource("points").setData(places);
-                }
-            }
+        if (this.state.mounted) {
+        map.on('move', () => {
+            this.setState({
+                lng: map.getCenter().lng.toFixed(4),
+                lat: map.getCenter().lat.toFixed(4),
+                zoom: map.getZoom().toFixed(2)
+            });
         });
-
+        };
 
         map.on('moveend', () => {
                 //const places1 = await fetchData({longitude: this.state.lng, latitude: this.state.lat}); //?
@@ -179,17 +143,16 @@ export default class Map extends React.Component {
         map.on("click", "pointsLayer", val => {
             if (val.features.length) {
                 var popUp = document.createElement("div");
-                var doc_keys = val.features[0].properties.metadata;
+                var doc_keys = val.features[0].properties.metadata.substring(2,val.features[0].properties.metadata.length-2).split("\",\"");
                 ReactDOM.render(<Popup feature={val.features[0]} 
                     onClick={() => this.props.popupClick(doc_keys)}/>, popUp);
-
                 var pop = new mapboxgl.Popup({});
-                console.log(typeof(val.features[0].properties.metadata))
                 pop.setLngLat(val.features[0].geometry.coordinates)
                 pop.setDOMContent(popUp)
                 pop.addTo(map); 
             }           
         });
+    
 
     }
 
@@ -198,17 +161,17 @@ export default class Map extends React.Component {
     }
 
     componentWillUnmount() {
-        this.mounted=false;
+        this.setState({mounted:false});
         var map = this.mapContainer;
         map.remove(); 
       }
 
     render() {
-
         return (
             <div>
                 <div className='sidebarStyle'>
-                    <div>Longitude: {this.state.lng} | Latitude: {this.state.lat} | Zoom: {this.state.zoom}</div>
+                    {/*<div>Longitude: {this.state.lng} | Latitude: {this.state.lat} | Zoom: {this.state.zoom}</div>*/}
+                    Enter location or drag map to get started!
                 </div>
                 <div ref={el => this.mapContainer = el} className='mapContainer' />
                 <div ref={el => this.geoContainer = el} className='geoContainer' />
@@ -222,19 +185,24 @@ export default class Map extends React.Component {
 
 const Popup = (props) => {
     //const name = feature.properties.description;
-    var shoppers = [];
-    shoppers = shoppers.concat(props.feature.properties.shoppers);
-    console.log(typeof(shoppers))
+    //shoppers = shoppers.concat(props.feature.properties.shoppers);
+    const shoppers = props.feature.properties.shoppers.substring(2,props.feature.properties.shoppers.length-2).split("\",\"")
     const store = props.feature.properties.title;
-    /*
+    
     const listItems = shoppers.map((shoppers) =>
         <li>{shoppers}</li>
-    );*/
+    );
+
+    const store_style = {
+        fontSize: '13'
+    }
+
     return (
         <div>
-            <p>{store}</p>
-            <ul>{shoppers}</ul>
-            <button onClick={props.onClick}>See Shoppers</button> {/* doesn't do anything yet */}
+            <p><b>{store}</b></p>
+            <ul>Shoppers:</ul>
+            <ul>{listItems}</ul>
+            <button onClick={props.onClick}>See Shoppers</button> 
         </div>
     )
 }
