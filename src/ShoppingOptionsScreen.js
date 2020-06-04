@@ -133,7 +133,7 @@ export default class ShoppingOptionsScreen extends Component {
     if (this.state.field !== "") {
       for (var i=0; i < items_list.length; i++) {
         if (!items_list[i].chatroom_name.replace(/[^A-Za-z0-9]/g,'').toLowerCase().includes(this.state.field.replace(/[^A-Za-z0-9]/g,'').toLowerCase()) &&
-            !items_list[i].store_address.text.replace(/[^A-Za-z0-9]/g,'').toLowerCase().includes(this.state.field.replace(/[^A-Za-z0-9]/g,'').toLowerCase())) {
+            !items_list[i].store_address.place_name.replace(/[^A-Za-z0-9]/g,'').toLowerCase().includes(this.state.field.replace(/[^A-Za-z0-9]/g,'').toLowerCase())) {
           items_list.splice(i,1);
           i--;
         }

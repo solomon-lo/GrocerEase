@@ -215,7 +215,7 @@ export default class MapResultsScreen extends Component {
                 let itemComp = (row._componentId)
                     ? listComps_list[row._componentId]
                     : <ChatroomItem filter={this.state.field}appActions={this.props.appActions} deviceInfo={this.props.deviceInfo} locStrings={this.props.locStrings} 
-                              dataSheetId={'chatroom'} dataSheetRow={row} {...{ 'document_key': row['document_key'], 'store_name': row['store_name'],'chatroom_name': row['chatroom_name'], 'chatroom_time': row['chatroom_time'], }} />;
+                              dataSheetId={'chatroom'} dataSheetRow={row} {...{ 'document_key': row['document_key'], 'store_name': row['store_name'],'chatroom_name': row['chatroom_name'], 'location': row['store_address'], 'chatroom_time': row['chatroom_time'], }} />;
                 return (<li key={row.key}>
                     {itemComp}
                   </li>);
