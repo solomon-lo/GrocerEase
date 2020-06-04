@@ -132,6 +132,7 @@ export default class MapResultsScreen extends Component {
     let items_list = [];
     let listComps_list = {};
     items_list = items_list.concat(this.props.appActions.getDataSheet('chatroom').items);
+    if (this.props.mapfilter != undefined) {
     var mapfilter = this.props.mapfilter;
     console.log(mapfilter);
     for (var i=0; i < items_list.length; i++) {
@@ -140,6 +141,7 @@ export default class MapResultsScreen extends Component {
             i--;
         }
     }
+    };
 
     const style_elList = {
       height: 'auto',  // This element is in scroll flow
