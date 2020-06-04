@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import './App.css';
-import btn_icon_894338 from './images/btn_icon_894338.png';
 
 export default class ChatItem extends Component {
 
@@ -26,13 +25,6 @@ export default class ChatItem extends Component {
   componentWillReceiveProps(nextProps) {
   }
 
-  onClick_elIconButton = (ev) => {
-    // Remove row from connected sheet
-    this.props.appActions.removeFromDataSheet(this.props.dataSheetId, this.props.dataSheetRow);
-  
-  }
-  
-  
   render() {
     const value_text = this.props.sender_username;
     
@@ -46,20 +38,6 @@ export default class ChatItem extends Component {
     const style_elTextCopy = {
       color: 'rgba(0, 0, 0, 0.8500)',
       textAlign: 'left',
-     };
-    
-    const style_elIconButton = {
-      display: 'block',
-      textTransform: 'uppercase',
-      backgroundImage: 'url('+btn_icon_894338+')',
-      backgroundRepeat: 'no-repeat',
-      backgroundSize: '82.200%',
-      backgroundPosition: '50% 0%',
-      color: '(null)',
-      textAlign: 'left',
-      backgroundColor: 'transparent',
-      cursor: 'pointer',
-      pointerEvents: 'auto',
      };
     let transformPropValue_textCopy2 = (input) => {
       // This function modifies the value for property 'text'.
@@ -103,10 +81,6 @@ export default class ChatItem extends Component {
             <div className="baseFont" style={style_elTextCopy}>
               <div>{value_textCopy !== undefined ? value_textCopy : (<span className="propValueMissing">{this.props.locStrings.chatitem_textcopy_801576}</span>)}</div>
             </div>
-          </div>
-          
-          <div className="elIconButton">
-            <button className="actionFont" style={style_elIconButton} onClick={this.onClick_elIconButton}  />
           </div>
           
           <div className="elTextCopy2">
