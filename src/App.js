@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import LocalizedStrings from 'react-localization';
 import './App.css';
+import MapResultsScreen from './MapResults.js';
 import MessagesScreen from './MessagesScreen.js';
 import ThankYouScreen from './ThankYouScreen.js';
 import ThanksScreen from './ThanksScreen.js';
@@ -18,6 +19,7 @@ import DataSheet_chatmessages from './DataSheet_chatmessages.js';
 import DataSheet_shoppers from './DataSheet_shoppers.js';
 import DataSheet_localizationSheet from './DataSheet_localizationSheet.js';
 import DataSheet_deals from './DataSheet_deals.js';
+import DataSheet_faqDataSheet from './DataSheet_faqDataSheet.js';
 import firebase from 'firebase';
 import firestore from 'firebase/firestore';
 
@@ -32,6 +34,7 @@ export default class App extends Component {
     this.dataSheets['shoppers'] = new DataSheet_shoppers('shoppers', this.dataSheetDidUpdate);
     this.dataSheets['localizationSheet'] = new DataSheet_localizationSheet('localizationSheet', this.dataSheetDidUpdate);
     this.dataSheets['deals'] = new DataSheet_deals('deals', this.dataSheetDidUpdate);
+    this.dataSheets['faqDataSheet'] = new DataSheet_faqDataSheet('faqDataSheet', this.dataSheetDidUpdate);
     this.dataSheetLoaded = {};
 
     this.dataSlots = {};
@@ -91,6 +94,13 @@ export default class App extends Component {
     this.dataSheets['deals'].appActions = this;
     this.dataSheets['deals'].firebase = firebase;
     
+    this.serviceOptions_faqDataSheet = {
+      dataSlots: this.dataSlots,
+      servicePath: "faqUserDatabase",
+      query: "",
+    };
+    this.dataSheets['faqDataSheet'].appActions = this;
+    this.dataSheets['faqDataSheet'].firebase = firebase;
 
     this.state = {
       currentScreen: 'start',
@@ -276,6 +286,15 @@ export default class App extends Component {
         this.loadData_firebaseConnection(this.dataSheets['deals'], this.serviceOptions_deals, true);
       }
     }
+    {
+      let usedSlots = [];
+      let servicePath = this.dataSheets['faqDataSheet'].expandSlotTemplateString("faqUserDatabase", this.dataSlots, usedSlots);
+      if (usedSlots.includes(slotId)) {
+        // if data sheet's content depends on this slot, reload it now
+        this.serviceOptions_faqDataSheet.servicePath = servicePath;
+        this.loadData_firebaseConnection(this.dataSheets['faqDataSheet'], this.serviceOptions_faqDataSheet, true);
+      }
+    }
     this.setState({});
   }
 
@@ -315,7 +334,19 @@ export default class App extends Component {
     
     const db = firebase.firestore();
     let isCollectionGroup = options.servicePath.startsWith("group:");
-    const collection = (isCollectionGroup) ? db.collectionGroup(options.servicePath.substring(6)) : db.collection(options.servicePath);
+    let collection;
+    if (isCollectionGroup) {
+      collection = db.collectionGroup(options.servicePath.substring(6));
+    } else {
+      let path = options.servicePath.trim();
+      if (path.startsWith("/")) path = path.substring(1);
+      if (path.endsWith("/")) path = path.substring(0, path.length-1);
+      if ((path.split("/").length-1)%2==0) {
+        collection = db.collection(path);
+      } else {
+        collection = db.doc(path);
+      }
+    }
     const query = dataSheet.expandSlotTemplateString(options.query, this.dataSlots);
     let queryObj;
     
@@ -337,12 +368,12 @@ export default class App extends Component {
         
         if (querySnapshot.docs) {
           querySnapshot.forEach((doc) => {
-            const data = { ...doc.data(), document_key: doc.id, document_ref: doc.ref };
+            const data = { ...doc.data(), document_key: doc.id, document_path: doc.ref.path };
             jsonArr.push(data);
           });
         } else if (querySnapshot.data) {
           const doc = querySnapshot;
-          const data = { ...doc.data(), document_key: doc.id, document_ref: doc.ref };
+          const data = { ...doc.data(), document_key: doc.id, document_path: doc.ref.path };
           jsonArr.push(data);
         }    
             
@@ -421,6 +452,8 @@ export default class App extends Component {
           return (<ReviewsScreen {...screenProps} />)
         case 'faqs2':
           return (<FAQs2Screen {...screenProps} />)
+        case 'mapresults':
+          return (<MapResultsScreen {...screenProps} />)
       }
     }
 

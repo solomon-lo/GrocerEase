@@ -4,7 +4,7 @@ import './App.css';
 export default class DealItem extends Component {
 
   // Properties used by this component:
-  // descriptionOfDeal, name, URL
+  // descriptionOfDeal, URL
 
   constructor(props) {
     super(props);
@@ -25,6 +25,12 @@ export default class DealItem extends Component {
   componentWillReceiveProps(nextProps) {
   }
 
+  onClick_elDeal_link = (ev) => {
+    window.open(this.props.URL, '_blank');
+  
+  }
+  
+  
   render() {
     const style_elBackground = {
       width: '100%',
@@ -42,29 +48,17 @@ export default class DealItem extends Component {
       color: 'rgba(0, 0, 0, 0.8500)',
       textAlign: 'left',
      };
-    
-    const value_poster_name = this.props.Name;
-    
-    const style_elPoster_name = {
-      color: 'rgba(0, 0, 0, 0.8500)',
-      textAlign: 'left',
-     };
-    const style_elText2 = {
-      color: 'rgba(0, 0, 0, 0.8500)',
-      textAlign: 'left',
-     };
     const style_elText = {
       fontSize: 15.2,
       color: 'rgba(0, 0, 0, 0.8500)',
       textAlign: 'left',
      };
-    
-    const value_deal_link = this.props.URL;
-    
     const style_elDeal_link = {
       fontSize: 15.2,
       color: 'rgba(0, 0, 0, 0.8500)',
       textAlign: 'left',
+      cursor: 'pointer',
+      pointerEvents: 'auto',
      };
     
     return (
@@ -82,18 +76,6 @@ export default class DealItem extends Component {
             </div>
           </div>
           
-          <div className="elPoster_name">
-            <div className="baseFont" style={style_elPoster_name}>
-              <div>{value_poster_name !== undefined ? value_poster_name : (<span className="propValueMissing">{this.props.locStrings.dealitem_text2_163221}</span>)}</div>
-            </div>
-          </div>
-          
-          <div className="elText2">
-            <div className="baseFont" style={style_elText2}>
-              <div>{this.props.locStrings.dealitem_text2_347944}</div>
-            </div>
-          </div>
-          
           <div className="elText">
             <div className="systemFontItalic" style={style_elText}>
               <div>{this.props.locStrings.dealitem_text_537553}</div>
@@ -101,8 +83,8 @@ export default class DealItem extends Component {
           </div>
           
           <div className="elDeal_link">
-            <div className="systemFontBold" style={style_elDeal_link}>
-              <div>{value_deal_link !== undefined ? value_deal_link : (<span className="propValueMissing">{this.props.locStrings.dealitem_text_1035144}</span>)}</div>
+            <div className="systemFontBold" style={style_elDeal_link} onClick={this.onClick_elDeal_link} >
+              <div>{this.props.locStrings.dealitem_text_1035144}</div>
             </div>
           </div>
         </div>

@@ -5,6 +5,7 @@ import btn_icon_back_scratchaddapost from './images/btn_icon_back_scratchaddapos
 // UI framework component imports
 import Button from 'muicss/lib/react/button';
 import Appbar from 'muicss/lib/react/appbar';
+import Map2 from './map_for_post.js';
 
 export default class ScratchAddAPostScreen extends Component {
 
@@ -18,6 +19,8 @@ export default class ScratchAddAPostScreen extends Component {
       input_name_post_screen: '',
       input_store_post_screen: '',
       input_time_post_screen: '',
+      input_address_post_screen: {},
+
     };
   }
 
@@ -54,6 +57,10 @@ export default class ScratchAddAPostScreen extends Component {
     this.setState({input_time_post_screen: event.target.value});
   }
   
+  textInputChanged_field_shopper_city = (value) => {
+    this.setState({input_address_post_screen: value});
+  }
+
   onClick_elSubmit_post_button = (ev) => {
     this.sendData_submit_post_button_to_chatroom();
   
@@ -69,9 +76,10 @@ export default class ScratchAddAPostScreen extends Component {
     let row = this.props.dataSheetRow || {
     };
     row = { ...row, 
-      document_key: this.state.input_store_post_screen,
-      chatroom_name: this.state.input_name_post_screen,
+      store_name: this.state.input_store_post_screen,
       chatroom_time: this.state.input_time_post_screen,
+      chatroom_name: this.state.input_name_post_screen,
+      store_address: this.state.input_address_post_screen,
     };
     this.props.appActions.addToDataSheet('chatroom', row);
   }
@@ -151,6 +159,10 @@ export default class ScratchAddAPostScreen extends Component {
           
           <div className="elInput_time_post_screen">
             <input className="baseFont" style={style_elInput_time_post_screen} type="text" placeholder={this.props.locStrings.scratchaddapost_field_871151} onChange={this.textInputChanged_input_time_post_screen} value={this.state.input_time_post_screen}  />
+          </div>
+
+          <div className="mapstyle">
+            <Map2 setLocation = {this.textInputChanged_field_shopper_city}> </Map2>
           </div>
           
           <div className="elSubmit_post_button">

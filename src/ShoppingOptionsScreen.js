@@ -208,7 +208,8 @@ export default class ShoppingOptionsScreen extends Component {
               {items_list.map((row, index) => {
                 let itemComp = (row._componentId)
                     ? listComps_list[row._componentId]
-                    : <ChatroomItem appActions={this.props.appActions} deviceInfo={this.props.deviceInfo} locStrings={this.props.locStrings} dataSheetId={'chatroom'} dataSheetRow={row} {...{ 'document_key': row['document_key'], 'chatroom_name': row['chatroom_name'], 'chatroom_time': row['chatroom_time'], }} />;
+                    : <ChatroomItem filter={this.state.field}appActions={this.props.appActions} deviceInfo={this.props.deviceInfo} locStrings={this.props.locStrings} 
+                              dataSheetId={'chatroom'} dataSheetRow={row} {...{ 'document_key': row['document_key'], 'store_name': row['store_name'],'chatroom_name': row['chatroom_name'], 'chatroom_time': row['chatroom_time'], }} />;
                 return (<li key={row.key}>
                     {itemComp}
                   </li>);
