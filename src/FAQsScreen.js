@@ -71,7 +71,6 @@ export default class FAQsScreen extends Component {
       email: this.state.field_faq_email,
       name: this.state.field_faq_name,
       question: this.state.field_faq_question,
-      quesiton: this.state.field_faq_question,
     };
     this.props.appActions.addToDataSheet('faqDataSheet', row);
   }
