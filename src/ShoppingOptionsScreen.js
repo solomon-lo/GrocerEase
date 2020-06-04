@@ -247,6 +247,9 @@ export default class ShoppingOptionsScreen extends Component {
         
         <div className="screenFgContainer">
           <div className="foreground">
+            <div className="elRectangle" style={style_elRectangle} />
+            <button className="actionFont elIconButton3" style={style_elIconButton3} onClick={this.onClick_elIconButton3}  />
+            <button className="actionFont elIconButton2" style={style_elIconButton2} onClick={this.onClick_elIconButton2}  />
             <button className="actionFont elIconButton" style={style_elIconButton} onClick={this.onClick_elIconButton}  />
           </div>
         </div>
