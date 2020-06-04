@@ -28,7 +28,6 @@ export default class AddAChatroomScreen extends Component {
         this.props.appActions.dataSheetLoaded['chatroom'] = true;
       }
     }
-    /*
     {
       let dataSheet = this.props.appActions.dataSheets['shoppers'];
       let serviceOptions = this.props.appActions.serviceOptions_shoppers;
@@ -37,7 +36,7 @@ export default class AddAChatroomScreen extends Component {
         this.props.appActions.loadData_firebaseConnection(dataSheet, serviceOptions, true);
         this.props.appActions.dataSheetLoaded['shoppers'] = true;
       }
-    }*/
+    }
   }
 
   componentWillUnmount() {

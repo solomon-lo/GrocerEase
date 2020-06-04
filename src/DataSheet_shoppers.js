@@ -135,11 +135,11 @@ export default class DataSheet_shoppers extends DataSheetBase {
     
     item = {};
     this.items.push(item);
-    item['comments'] = "unknown_comments";
+    item['rating'] = "-1";
     item['area'] = "unknown_area";
     item['time'] = "unknown_time";
     item['pricing'] = "unknown_pricing";
-    item['rating'] = "-1";
+    item['comments'] = "unknown_comments";
     item['document_key'] = "default_template";
     item['name'] = "unknown_name";
     item['store'] = "unknown_store";
@@ -183,7 +183,7 @@ export default class DataSheet_shoppers extends DataSheetBase {
           console.log("Firebase document added with id: ", docRef.id);
           addedKey=docRef.id;
           item.document_key = docRef.id;
-          item.document_ref = docRef;
+          item.document_path = docRef.path;
         } else {
           console.log("Firebase document added with id: ", item.document_key);
           addedKey=item.document_key;
@@ -206,11 +206,11 @@ export default class DataSheet_shoppers extends DataSheetBase {
     
     console.log("delete from firebase: ", item);
   
-    //const db = this.firebase.firestore();
+    const db = this.firebase.firestore();
     //const collection = db.collection(options.servicePath);
     //const docRef = collection.doc(item.document_key);
-    const docRef = item.document_ref;
-    
+    const docRef = db.doc(item.document_path);
+  
     docRef.delete()
       .then(() => {
         this._fetchComplete(null, options);
@@ -226,11 +226,11 @@ export default class DataSheet_shoppers extends DataSheetBase {
     
     console.log("update in firebase: ", item);
   
-    //const db = this.firebase.firestore();
+    const db = this.firebase.firestore();
     //const collection = db.collection(options.servicePath);
     //const docRef = collection.doc(item.document_key);
-    const docRef = item.document_ref;
-    
+    const docRef = db.doc(item.document_path);
+      
     docRef.update((({ key, document_ref, document_key, ...item }) => (item))( item ))
       .then(() => {
         this._fetchComplete(null, options);

@@ -1,6 +1,6 @@
 import DataSheetBase from './DataSheetBase.js';
 
-export default class DataSheet_chatroom extends DataSheetBase {
+export default class DataSheet_faqDataSheet extends DataSheetBase {
 
   constructor(id, updateCb) {
     super(id, updateCb);
@@ -17,35 +17,10 @@ export default class DataSheet_chatroom extends DataSheetBase {
     
     item = {};
     this.items.push(item);
-    item['document_key'] = "target";
-    item['chatroom_name'] = "Bob 10";
-    item.key = key++;
-    
-    item = {};
-    this.items.push(item);
-    item['document_key'] = "Sam's Club";
-    item['chatroom_time'] = "12:00am Sunday";
-    item['chatroom_name'] = "Charlie";
-    item.key = key++;
-    
-    item = {};
-    this.items.push(item);
-    item['document_key'] = "Costco";
-    item['chatroom_time'] = "5:00 Wednesday";
-    item['chatroom_name'] = "Jimmy";
-    item.key = key++;
-    
-    item = {};
-    this.items.push(item);
-    item['document_key'] = "Walmart";
-    item['chatroom_time'] = "4:44 PM";
-    item['chatroom_name'] = "Mmmm";
-    item.key = key++;
-    
-    item = {};
-    this.items.push(item);
-    item['document_key'] = "Walgreens";
-    item['chatroom_name'] = "Shopper John";
+    item['email'] = "";
+    item['document_key'] = "yP7Lj3EyeiaeUuHBZtsP";
+    item['question'] = "";
+    item['name'] = "";
     item.key = key++;
   }
 

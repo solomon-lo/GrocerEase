@@ -1,6 +1,6 @@
 {
-  "name": "grocerease",
-  "version": "0.1.3",
+  "name": "faq_submission_added",
+  "version": "0.1.1",
   "private": true,
   "dependencies": {
     "react": "^16.8.6",
@@ -10,10 +10,7 @@
     "muicss": "^0.9.41",
     "react-firebaseui": "^4.0.0",
     "react-rating": "^1.1.0",
-    "firebase": "~7.5.0",
-    "mapbox-gl": "^1.10.1",
-    "-": "0.0.1",
-    "@mapbox/mapbox-gl-geocoder": "^4.5.1"
+    "firebase": "~7.5.0"
   },
   "scripts": {
     "start": "PORT=3000 react-scripts start",
@@ -27,10 +24,5 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ],
-  "devDependencies": {
-    "json-loader": "^0.5.7",
-    "transform-loader": "^0.2.4",
-    "webworkify-webpack": "^1.0.6"
-  }
+  ]
 }
