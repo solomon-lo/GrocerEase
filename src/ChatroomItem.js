@@ -47,11 +47,11 @@ export default class ChatroomItem extends Component {
   }
   
   
-  onClick_elIconButton = (ev) => {
-    // Remove row from connected sheet
-    this.props.appActions.removeFromDataSheet(this.props.dataSheetId, this.props.dataSheetRow);
+  // onClick_elIconButton = (ev) => {
+  //   // Remove row from connected sheet
+  //   this.props.appActions.removeFromDataSheet(this.props.dataSheetId, this.props.dataSheetRow);
   
-  }
+  // }
   
   
   render() {
@@ -136,9 +136,6 @@ export default class ChatroomItem extends Component {
             </div>
           </div>
           
-          <div className="elIconButton">
-            <button className="actionFont" style={style_elIconButton} onClick={this.onClick_elIconButton}  />
-          </div>
           
           <div className="elText3">
             <div className="baseFont" style={style_elText3}>
@@ -153,6 +150,41 @@ export default class ChatroomItem extends Component {
         
       </div>
     )
+<<<<<<< HEAD
+=======
+    }
+    else {
+      return (
+        <div className="ChatroomItem appBg">
+          <div className="layoutFlow">
+            <div className="elChatname">
+              <div className="headlineFont" style={style_elChatname_filterOn} onClick={this.onClick_elChatname} >
+                <div>{value_chatname !== undefined ? value_chatname : (<span className="propValueMissing">{this.props.locStrings.chatroomitem_text_699949}</span>)}</div>
+              </div>
+            </div>
+            
+            <div className="elChatstore">
+              <div className="baseFont" style={style_elChatstore_filterOn} onClick={this.onClick_elChatstore} >
+                <div>{value_chatstore !== undefined ? value_chatstore : (<span className="propValueMissing">{this.props.locStrings.chatroomitem_text2_809202}</span>)}</div>
+              </div>
+            </div>
+            
+            <div className="elText3">
+              <div className="baseFont" style={style_elText3_filterOn}>
+                <div>{value_text3 !== undefined ? value_text3 : (<span className="propValueMissing">{this.props.locStrings.chatroomitem_text3_643611}</span>)}</div>
+              </div>
+            </div>
+            
+            <div className="elRectangle">
+              <div style={style_elRectangle_filterOn} />
+            </div>
+          </div>
+          
+        </div>
+      )
+
+    }
+>>>>>>> 61cff808451f55e21e01e81e45d14d7e95b311b2
   }
   
 }

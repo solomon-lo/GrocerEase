@@ -26,11 +26,11 @@ export default class ChatItem extends Component {
   componentWillReceiveProps(nextProps) {
   }
 
-  onClick_elIconButton = (ev) => {
-    // Remove row from connected sheet
-    this.props.appActions.removeFromDataSheet(this.props.dataSheetId, this.props.dataSheetRow);
+  // onClick_elIconButton = (ev) => {
+  //   // Remove row from connected sheet
+  //   this.props.appActions.removeFromDataSheet(this.props.dataSheetId, this.props.dataSheetRow);
   
-  }
+  // }
   
   
   render() {
@@ -105,9 +105,6 @@ export default class ChatItem extends Component {
             </div>
           </div>
           
-          <div className="elIconButton">
-            <button className="actionFont" style={style_elIconButton} onClick={this.onClick_elIconButton}  />
-          </div>
           
           <div className="elTextCopy2">
             <div className="baseFont" style={style_elTextCopy2}>
