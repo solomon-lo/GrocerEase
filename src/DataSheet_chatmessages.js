@@ -16,7 +16,6 @@ export default class DataSheet_chatmessages extends DataSheetBase {
     // The contents of this data sheet will be loaded by plugin 'Firebase (Cloud Firestore)'.
     
     item = {};
-
   }
 
   

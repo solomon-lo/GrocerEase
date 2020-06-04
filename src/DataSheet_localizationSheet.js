@@ -436,7 +436,17 @@ export default class DataSheet_localizationSheet extends DataSheetBase {
     item = {};
     this.items.push(item);
     item['key'] = "dealitem_text_537553";
-    item['en'] = "Click the link below for more information.";
+    item['en'] = "Open the link below for more information.";
+    
+    item = {};
+    this.items.push(item);
+    item['key'] = "dealitem_text2_163221";
+    item['en'] = "Name";
+    
+    item = {};
+    this.items.push(item);
+    item['key'] = "dealitem_text2_347944";
+    item['en'] = "Posted by:";
   }
 
   getStringsByLanguage = () => {

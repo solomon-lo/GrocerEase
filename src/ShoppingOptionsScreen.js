@@ -136,6 +136,10 @@ export default class ShoppingOptionsScreen extends Component {
       height: 'auto',  // This element is in scroll flow
      };
     
+    const style_elRectangle = {
+      background: 'rgba(246, 247, 246, 1.000)',
+     };
+    
     const style_elIconButton3 = {
       display: 'block',
       textTransform: 'uppercase',
@@ -232,6 +236,9 @@ export default class ShoppingOptionsScreen extends Component {
         
         <div className="screenFgContainer">
           <div className="foreground">
+            <div className="elRectangle" style={style_elRectangle} />
+            <button className="actionFont elIconButton3" style={style_elIconButton3} onClick={this.onClick_elIconButton3}  />
+            <button className="actionFont elIconButton2" style={style_elIconButton2} onClick={this.onClick_elIconButton2}  />
             <button className="actionFont elIconButton" style={style_elIconButton} onClick={this.onClick_elIconButton}  />
           </div>
         </div>
