@@ -47,11 +47,11 @@ export default class ChatroomItem extends Component {
   }
   
   
-  onClick_elIconButton = (ev) => {
-    // Remove row from connected sheet
-    this.props.appActions.removeFromDataSheet(this.props.dataSheetId, this.props.dataSheetRow);
+  // onClick_elIconButton = (ev) => {
+  //   // Remove row from connected sheet
+  //   this.props.appActions.removeFromDataSheet(this.props.dataSheetId, this.props.dataSheetRow);
   
-  }
+  // }
   
   
   render() {
@@ -139,9 +139,6 @@ export default class ChatroomItem extends Component {
             </div>
           </div>
           
-          <div className="elIconButton">
-            <button className="actionFont" style={style_elIconButton} onClick={this.onClick_elIconButton}  />
-          </div>
           
           <div className="elText3">
             <div className="baseFont" style={style_elText3}>
@@ -171,10 +168,6 @@ export default class ChatroomItem extends Component {
               <div className="baseFont" style={style_elChatstore_filterOn} onClick={this.onClick_elChatstore} >
                 <div>{value_chatstore !== undefined ? value_chatstore : (<span className="propValueMissing">{this.props.locStrings.chatroomitem_text2_809202}</span>)}</div>
               </div>
-            </div>
-            
-            <div className="elIconButton">
-              <button className="actionFont" style={style_elIconButton} onClick={this.onClick_elIconButton}  />
             </div>
             
             <div className="elText3">
