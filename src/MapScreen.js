@@ -45,7 +45,7 @@ export default class MapScreen extends Component {
   mapPopupClick(val) {
     var filter = val;
     console.log(val)
-    this.props.appActions.goToScreen('mapresults', { transitionId: 'fadeIn', mapfilter: val});
+    this.props.appActions.goToScreen('shoppingoptions', { transitionId: 'fadeIn' });
   }
 
   render() {

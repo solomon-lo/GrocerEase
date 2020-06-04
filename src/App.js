@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import LocalizedStrings from 'react-localization';
 import './App.css';
-import MapResultsScreen from './MapResults.js';
 import MessagesScreen from './MessagesScreen.js';
 import ThankYouScreen from './ThankYouScreen.js';
 import ThanksScreen from './ThanksScreen.js';
@@ -422,8 +421,6 @@ export default class App extends Component {
           return (<ReviewsScreen {...screenProps} />)
         case 'faqs2':
           return (<FAQs2Screen {...screenProps} />)
-        case 'mapresults':
-          return (<MapResultsScreen {...screenProps} />)
       }
     }
 

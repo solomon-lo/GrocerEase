@@ -1,22 +1,21 @@
 .sidebarStyle {
 
     position: relative;
-    top: 60%;
+    top: 50%;
     left: 60%;
     margin: 12px;
     background-color: #404040;
     color: #ffffff;
+    z-index: 1 !important;
     padding: 6px;
     font-weight: bold;
-    font-size: 12px;
-    width: 33%
     }
      
     .mapContainer {
     padding-top: 40px;
     left: 25%;
     position: relative;
-    height: 450px;
+    height: 500px;
     width: 50%;
     z-index: 0;
     }
