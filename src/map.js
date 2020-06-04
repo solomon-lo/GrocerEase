@@ -7,7 +7,6 @@ import mapboxgl from 'mapbox-gl';
 import './map.css';
 import fetchData from "./fetchData.js"
 import icon from './images/apple.png'
-import icon2 from './images/apple2.png'
 
 
 mapboxgl.accessToken = 'pk.eyJ1IjoiZ3JvY2VyZWFzZSIsImEiOiJja2FrZTl4YWgwbzhjMnlwZHh0bG9tb2FxIn0.24dvEshJiFjdusaNZYAP5A';
