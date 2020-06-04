@@ -52,6 +52,7 @@ export default class ChatroomItem extends Component {
   
   render() {
     const value_chatname = this.props.chatroom_name;
+    const value_storename = this.props.store_name;
     
     const style_elChatname = {
       color: 'rgba(0, 0, 0, 0.8500)',
@@ -59,15 +60,29 @@ export default class ChatroomItem extends Component {
       cursor: 'pointer',
       pointerEvents: 'auto',
      };
+
+     const style_elChatname_filterOn = {
+      color: 'rgba(0, 0, 0, 0.5)',
+      textAlign: 'left',
+      cursor: 'pointer',
+      pointerEvents: 'auto',
+      opacity: '0.5'
+     }
     
-    const value_chatstore = this.props.document_key;
-    
+    const value_chatstore = this.props.store_name;
     const style_elChatstore = {
       color: 'rgba(0, 0, 0, 0.8500)',
       textAlign: 'left',
       cursor: 'pointer',
       pointerEvents: 'auto',
      };
+
+    const style_elChatstore_filterOn = {
+      color: 'rgba(0, 0, 0, 0.5)',
+      textAlign: 'left',
+      cursor: 'pointer',
+      pointerEvents: 'auto',
+    };
     
     const style_elIconButton = {
       display: 'block',
@@ -90,10 +105,22 @@ export default class ChatroomItem extends Component {
       textAlign: 'left',
      };
     
-    const style_elRectangle = {
-      background: 'rgba(0, 0, 0, 0.475)',
+     const style_elText3_filterOn = {
+      color: 'rgba(0, 0, 0, 0.500)',
+      textAlign: 'left',
      };
     
+    const style_elRectangle = {
+      background: 'rgba(0, 0, 0, 0.475)',
+    };
+
+    const style_elRectangle_filterOn = {
+      background: 'rgba(0, 0, 0, 0.475)',
+      opacity: '0.6',
+    }
+    console.log(this.props.document_key)
+    if (value_chatstore.toLowerCase().includes(this.props.filter.toLowerCase()) ||
+          value_chatname.toLowerCase().includes(this.props.filter.toLowerCase())) {
     return (
       <div className="ChatroomItem appBg">
         <div className="layoutFlow">
@@ -126,6 +153,42 @@ export default class ChatroomItem extends Component {
         
       </div>
     )
+    }
+    else {
+      return (
+        <div className="ChatroomItem appBg">
+          <div className="layoutFlow">
+            <div className="elChatname">
+              <div className="headlineFont" style={style_elChatname_filterOn} onClick={this.onClick_elChatname} >
+                <div>{value_chatname !== undefined ? value_chatname : (<span className="propValueMissing">{this.props.locStrings.chatroomitem_text_699949}</span>)}</div>
+              </div>
+            </div>
+            
+            <div className="elChatstore">
+              <div className="baseFont" style={style_elChatstore_filterOn} onClick={this.onClick_elChatstore} >
+                <div>{value_chatstore !== undefined ? value_chatstore : (<span className="propValueMissing">{this.props.locStrings.chatroomitem_text2_809202}</span>)}</div>
+              </div>
+            </div>
+            
+            <div className="elIconButton">
+              <button className="actionFont" style={style_elIconButton} onClick={this.onClick_elIconButton}  />
+            </div>
+            
+            <div className="elText3">
+              <div className="baseFont" style={style_elText3_filterOn}>
+                <div>{value_text3 !== undefined ? value_text3 : (<span className="propValueMissing">{this.props.locStrings.chatroomitem_text3_643611}</span>)}</div>
+              </div>
+            </div>
+            
+            <div className="elRectangle">
+              <div style={style_elRectangle_filterOn} />
+            </div>
+          </div>
+          
+        </div>
+      )
+
+    }
   }
   
 }

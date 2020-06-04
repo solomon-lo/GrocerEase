@@ -15,11 +15,11 @@ export default class MapScreen extends Component {
     super(props);
     
     this.state = {
-      data: '',
+      filterData: '',
       loaded: false,
     };
 
-
+    this.mapPopupClick = this.mapPopupClick.bind(this);
   }
 
   componentDidMount() {
@@ -40,6 +40,12 @@ export default class MapScreen extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
+  }
+
+  mapPopupClick(val) {
+    var filter = val;
+    console.log(val)
+    this.props.appActions.goToScreen('shoppingoptions', { transitionId: 'fadeIn' });
   }
 
   render() {
@@ -74,7 +80,7 @@ export default class MapScreen extends Component {
         <Appbar className="navBar">
           <div className="title">Map</div>  <div className="backBtn" onClick={ (ev)=>{ this.props.appActions.goBack() } }><img src={btn_icon_back_map} alt="" style={{width: '50%'}} /></div>
         </Appbar>
-        <Map items = {items_list}></Map>
+        <Map items = {items_list} popupClick={this.mapPopupClick}></Map>
         
       </div>
     )

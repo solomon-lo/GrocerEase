@@ -22,6 +22,7 @@ export default class Map extends React.Component {
             zoom: 8,
             location: '',
             data: {},
+            first_renders: 0,
         };
         this.mounted = false;
     }
@@ -50,33 +51,7 @@ export default class Map extends React.Component {
 
         map.addControl(geocoder);
         
-        map.loadImage(icon,
-            function(error, image) {
-                if (error) throw error;
-                map.addImage('pt', image);
 
-                map.addSource("points", {
-                    type: "geojson",
-                    data: {
-                        type:"FeatureCollection",
-                        features: []
-                    },
-                    //cluster: true,
-                });
-
-                map.addLayer({
-                    type: "symbol",
-                    id: "pointsLayer",
-                    source: "points",
-                    layout: {
-                        "icon-allow-overlap": true,
-                        "icon-image": 'pt',
-                        "icon-size": 0.2,
-                    }
-                })
-            
-            }
-        );
 
         map.on('move', () => {
             this.setState({
@@ -87,55 +62,110 @@ export default class Map extends React.Component {
         });
 
         map.on("load", () => {
-            var feats = [];
-            var existing = [];
-            var places = {type: 'FeatureCollection', features: feats}
-            var i;
-            var j = 0;
-            for (i = 0; i < this.props.items.length; i++) {
-                var temp = this.props.items[i].store_address.center;
-                var ind = existing.indexOf(String(temp));
-                console.log(i)
-                if (ind == -1) {
-                    existing.push(String(temp));
-                    feats.push(this.props.items[i].store_address);
-                    feats[j].properties.title = this.props.items[i].store_address.text;
-                    feats[j].properties.shoppers = []
-                    feats[j].properties.shoppers.push(this.props.items[i].chatroom_name);
-                    feats[j].properties.metadata = []
-                    feats[j].properties.metadata.push(this.props.items[i].document_key);
-                    j++;
+            map.loadImage(icon,
+                function(error, image) {
+                    if (error) throw error;
+                    map.addImage('pt', image);
+    
+                    map.addSource("points", {
+                        type: "geojson",
+                        data: {
+                            type:"FeatureCollection",
+                            features: []
+                        },
+                        //cluster: true,
+                    });
+    
+                    map.addLayer({
+                        type: "symbol",
+                        id: "pointsLayer",
+                        source: "points",
+                        layout: {
+                            "icon-allow-overlap": true,
+                            "icon-image": 'pt',
+                            "icon-size": 0.2,
+                        }
+                    })                
                 }
-                else {
-                    feats[ind].properties.shoppers.push(this.props.items[i].chatroom_name);
-                    feats[ind].properties.metadata.push(this.props.items[i].document_key);
-                    console.log("hello")
-                }
-            }
+            );
+
             
-            var temp = map.getSource("points");
-            if (temp) {
-                map.getSource("points").setData(places);
-            }
-            console.log(typeof(feats[0].properties.shoppers));
-
-
 
         });
 
-        map.on('render', async() => {
+        map.on('render', () => {
             //const places1 = await fetchData({longitude: this.state.lng, latitude: this.state.lat}); //?
-
+            if (this.state.first_renders <= 0) {
+                this.setState({first_renders: this.state.first_renders +=1});
+                var feats = [];
+                var existing = [];
+                var places = {type: 'FeatureCollection', features: feats}
+                var i;
+                var j = 0;
+                for (i = 0; i < this.props.items.length; i++) {
+                    var temp = this.props.items[i].store_address.center;
+                    var ind = existing.indexOf(String(temp));
+                    console.log(i)
+                    if (ind == -1) {
+                        existing.push(String(temp));
+                        feats.push(this.props.items[i].store_address);
+                        feats[j].properties.title = this.props.items[i].store_address.text;
+                        feats[j].properties.shoppers = []
+                        feats[j].properties.shoppers.push(this.props.items[i].chatroom_name);
+                        feats[j].properties.metadata = []
+                        feats[j].properties.metadata.push(this.props.items[i].document_key);
+                        j++;
+                    }
+                    else {
+                        feats[ind].properties.shoppers.push(this.props.items[i].chatroom_name);
+                        feats[ind].properties.metadata.push(this.props.items[i].document_key);
+                        console.log("hello")
+                    }
+                }
+                
+                var temp = map.getSource("points");
+                if (temp) {
+                    map.getSource("points").setData(places);
+                }
+            }
         });
 
-/*
-        if (this.mounted) {
-            map.on('moveend', async() => {
-                //const places1 = await fetchData({longitude: this.state.lng, latitude: this.state.lat}); //?
 
-            });
-        };
-*/
+        map.on('moveend', () => {
+                //const places1 = await fetchData({longitude: this.state.lng, latitude: this.state.lat}); //?
+                var feats = [];
+                var existing = [];
+                var places = {type: 'FeatureCollection', features: feats}
+                var i;
+                var j = 0;
+                for (i = 0; i < this.props.items.length; i++) {
+                    var temp = this.props.items[i].store_address.center;
+                    var ind = existing.indexOf(String(temp));
+                    console.log(i)
+                    if (ind == -1) {
+                        existing.push(String(temp));
+                        feats.push(this.props.items[i].store_address);
+                        feats[j].properties.title = this.props.items[i].store_address.text;
+                        feats[j].properties.shoppers = []
+                        feats[j].properties.shoppers.push(this.props.items[i].chatroom_name);
+                        feats[j].properties.metadata = []
+                        feats[j].properties.metadata.push(this.props.items[i].document_key);
+                        j++;
+                    }
+                    else {
+                        feats[ind].properties.shoppers.push(this.props.items[i].chatroom_name);
+                        feats[ind].properties.metadata.push(this.props.items[i].document_key);
+                        console.log("hello")
+                    }
+                }
+                
+                var temp = map.getSource("points");
+                if (temp) {
+                    map.getSource("points").setData(places);
+                }
+        });
+        
+
         map.on("mouseenter", "pointsLayer", () => {
 
             map.getCanvas().style.cursor = "crosshair";  
@@ -149,14 +179,21 @@ export default class Map extends React.Component {
         map.on("click", "pointsLayer", val => {
             if (val.features.length) {
                 var popUp = document.createElement("div");
-                ReactDOM.render(<Popup feature={val.features[0]} />, popUp);
+                var doc_keys = val.features[0].properties.metadata;
+                ReactDOM.render(<Popup feature={val.features[0]} 
+                    onClick={() => this.props.popupClick(doc_keys)}/>, popUp);
 
                 var pop = new mapboxgl.Popup({});
+                console.log(typeof(val.features[0].properties.metadata))
                 pop.setLngLat(val.features[0].geometry.coordinates)
                 pop.setDOMContent(popUp)
                 pop.addTo(map); 
             }           
         });
+
+    }
+
+    componentDidUpdate() {
 
     }
 
@@ -167,6 +204,7 @@ export default class Map extends React.Component {
       }
 
     render() {
+
         return (
             <div>
                 <div className='sidebarStyle'>
@@ -177,15 +215,17 @@ export default class Map extends React.Component {
             </div>
         )
     }
+
+    
 }
 
 
-const Popup = ({feature}) => {
+const Popup = (props) => {
     //const name = feature.properties.description;
     var shoppers = [];
-    shoppers = shoppers.concat(feature.properties.shoppers);
+    shoppers = shoppers.concat(props.feature.properties.shoppers);
     console.log(typeof(shoppers))
-    const store = feature.properties.title;
+    const store = props.feature.properties.title;
     /*
     const listItems = shoppers.map((shoppers) =>
         <li>{shoppers}</li>
@@ -194,7 +234,7 @@ const Popup = ({feature}) => {
         <div>
             <p>{store}</p>
             <ul>{shoppers}</ul>
-            <button>See Shoppers</button> {/* doesn't do anything yet */}
+            <button onClick={props.onClick}>See Shoppers</button> {/* doesn't do anything yet */}
         </div>
     )
 }
