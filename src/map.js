@@ -117,7 +117,6 @@ export default class Map extends React.Component {
                     else {
                         feats[ind].properties.shoppers.push(this.props.items[i].chatroom_name);
                         feats[ind].properties.metadata.push(this.props.items[i].document_key);
-                        console.log("hello")
                     }
                 }
                 

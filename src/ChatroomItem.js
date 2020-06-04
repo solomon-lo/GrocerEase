@@ -56,7 +56,6 @@ export default class ChatroomItem extends Component {
   
   render() {
     const value_chatname = this.props.chatroom_name;
-    const value_storename = this.props.store_name;
     
     const style_elChatname = {
       color: 'rgba(0, 0, 0, 0.8500)',
@@ -73,7 +72,7 @@ export default class ChatroomItem extends Component {
       opacity: '0.5'
      }
     
-    const value_chatstore = this.props.store_name;
+    const value_chatstore = this.props.location.place_name;
     const style_elChatstore = {
       color: 'rgba(0, 0, 0, 0.8500)',
       textAlign: 'left',
@@ -122,8 +121,6 @@ export default class ChatroomItem extends Component {
       background: 'rgba(0, 0, 0, 0.475)',
       opacity: '0.6',
     }
-    if (value_chatstore.replace(/[^A-Za-z0-9]/g,'').toLowerCase().includes(this.props.filter.replace(/[^A-Za-z0-9]/g,'').toLowerCase()) ||
-          value_chatname.replace(/[^A-Za-z0-9]/g,'').toLowerCase().includes(this.props.filter.replace(/[^A-Za-z0-9]/g,'').toLowerCase())) {
       return (
       <div className="ChatroomItem appBg">
         <div className="layoutFlow">
@@ -156,42 +153,6 @@ export default class ChatroomItem extends Component {
         
       </div>
     )
-    }
-    else {
-      return (
-        <div className="ChatroomItem appBg">
-          <div className="layoutFlow">
-            <div className="elChatname">
-              <div className="headlineFont" style={style_elChatname_filterOn} onClick={this.onClick_elChatname} >
-                <div>{value_chatname !== undefined ? value_chatname : (<span className="propValueMissing">{this.props.locStrings.chatroomitem_text_699949}</span>)}</div>
-              </div>
-            </div>
-            
-            <div className="elChatstore">
-              <div className="baseFont" style={style_elChatstore_filterOn} onClick={this.onClick_elChatstore} >
-                <div>{value_chatstore !== undefined ? value_chatstore : (<span className="propValueMissing">{this.props.locStrings.chatroomitem_text2_809202}</span>)}</div>
-              </div>
-            </div>
-            
-            <div className="elIconButton">
-              <button className="actionFont" style={style_elIconButton} onClick={this.onClick_elIconButton}  />
-            </div>
-            
-            <div className="elText3">
-              <div className="baseFont" style={style_elText3_filterOn}>
-                <div>{value_text3 !== undefined ? value_text3 : (<span className="propValueMissing">{this.props.locStrings.chatroomitem_text3_643611}</span>)}</div>
-              </div>
-            </div>
-            
-            <div className="elRectangle">
-              <div style={style_elRectangle_filterOn} />
-            </div>
-          </div>
-          
-        </div>
-      )
-
-    }
   }
   
 }

@@ -41,8 +41,6 @@ export default class ShoppingOptionsScreen extends Component {
   componentDidUpdate() {
   }
 
-  componentWillReceiveProps(nextProps) {
-  }
 
   onClick_elButton = (ev) => {
     // Go to screen 'SweepStakes_Entry'
@@ -131,7 +129,19 @@ export default class ShoppingOptionsScreen extends Component {
     let items_list = [];
     let listComps_list = {};
     items_list = items_list.concat(this.props.appActions.getDataSheet('chatroom').items);
-    
+    console.log(items_list)
+    if (this.state.field !== "") {
+      for (var i=0; i < items_list.length; i++) {
+        if (!items_list[i].chatroom_name.replace(/[^A-Za-z0-9]/g,'').toLowerCase().includes(this.state.field.replace(/[^A-Za-z0-9]/g,'').toLowerCase()) &&
+            !items_list[i].store_address.text.replace(/[^A-Za-z0-9]/g,'').toLowerCase().includes(this.state.field.replace(/[^A-Za-z0-9]/g,'').toLowerCase())) {
+          items_list.splice(i,1);
+          i--;
+        }
+      }
+    };
+
+
+
     const style_elList = {
       height: 'auto',  // This element is in scroll flow
      };
@@ -212,8 +222,9 @@ export default class ShoppingOptionsScreen extends Component {
               {items_list.map((row, index) => {
                 let itemComp = (row._componentId)
                     ? listComps_list[row._componentId]
-                    : <ChatroomItem filter={this.state.field}appActions={this.props.appActions} deviceInfo={this.props.deviceInfo} locStrings={this.props.locStrings} 
-                              dataSheetId={'chatroom'} dataSheetRow={row} {...{ 'document_key': row['document_key'], 'store_name': row['store_name'],'chatroom_name': row['chatroom_name'], 'chatroom_time': row['chatroom_time'], }} />;
+                    : <ChatroomItem filter={this.state.field} appActions={this.props.appActions} deviceInfo={this.props.deviceInfo} locStrings={this.props.locStrings} 
+                              dataSheetId={'chatroom'} dataSheetRow={row} 
+                              {...{ 'document_key': row['document_key'], 'store_name': row['store_name'],'chatroom_name': row['chatroom_name'], 'chatroom_time': row['chatroom_time'], 'filteredAway': row['filteredAway'],location: row['store_address']}} />;
                 return (<li key={row.key}>
                     {itemComp}
                   </li>);
