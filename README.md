@@ -4,7 +4,7 @@ GrocerEase is an innovative, new application that connects you to everyday peopl
 
 ## Installation
 
-The GrocerEase application was bootstrapped with [Create React App](https://github.com/facebook/create-react-app). This apps runs by using Node.js and node package manager. 
+The GrocerEase application was bootstrapped with [Create React App](https://github.com/facebook/create-react-app). This app runs by using Node.js and node package manager. 
 
 ### Install Node.js
 
