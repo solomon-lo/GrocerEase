@@ -144,11 +144,11 @@ export default class MapResultsScreen extends Component {
     };
 
     if (this.state.field !== "") {
-      for (var i=0; i < items_list.length; i++) {
-        if (!items_list[i].chatroom_name.replace(/[^A-Za-z0-9]/g,'').toLowerCase().includes(this.state.field.replace(/[^A-Za-z0-9]/g,'').toLowerCase()) &&
-            !items_list[i].store_address.place_name.replace(/[^A-Za-z0-9]/g,'').toLowerCase().includes(this.state.field.replace(/[^A-Za-z0-9]/g,'').toLowerCase())) {
-          items_list.splice(i,1);
-          i--;
+      for (var k=0; k < items_list.length; k++) {
+        if (!items_list[k].chatroom_name.replace(/[^A-Za-z0-9]/g,'').toLowerCase().includes(this.state.field.replace(/[^A-Za-z0-9]/g,'').toLowerCase()) &&
+            !items_list[k].store_address.place_name.replace(/[^A-Za-z0-9]/g,'').toLowerCase().includes(this.state.field.replace(/[^A-Za-z0-9]/g,'').toLowerCase())) {
+          items_list.splice(k,1);
+          k--;
         }
       }
     };
