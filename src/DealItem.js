@@ -10,10 +10,18 @@ export default class DealItem extends Component {
     super(props);
     
     this.state = {
+      full_link: ''
     };
+
+
   }
 
   componentDidMount() {
+    var link = this.props.URL;
+    if (!link.startsWith("https://") && !link.startsWith(" http://")) {
+      link = "http://" + link;
+    }
+    this.setState({full_link: link})
   }
 
   componentWillUnmount() {
@@ -26,11 +34,20 @@ export default class DealItem extends Component {
   }
 
   onClick_elDeal_link = (ev) => {
-    window.open("http://www." + this.props.URL, '_blank');
+
+    window.open(this.state.full_link, '_blank');
+  }
+
+  dealHover = (ev) => {
 
   }
 
   render() {
+
+    const shortlink = this.state.full_link.split("/")[2];
+    console.log(this.props.URL)
+    console.log(this.state.full_link)
+    console.log(shortlink);
 
     const style_elBackground = {
       width: '100%',
@@ -65,8 +82,7 @@ export default class DealItem extends Component {
       textAlign: 'left',
      };
     
-    const value_deal_link = "http://" + this.props.URL;
-    console.log(value_deal_link)
+    const value_deal_link = this.props.URL;
     
     const style_elDeal_link = {
       fontSize: 15.2,
@@ -110,8 +126,8 @@ export default class DealItem extends Component {
           </div>
           
           <div className="elDeal_link">
-            <div className="systemFontBold" style={style_elDeal_link}  onClick={this.onClick_elDeal_link} >
-              <div>{value_deal_link !== undefined ? value_deal_link : (<span className="propValueMissing">{this.props.locStrings.dealitem_text_1035144}</span>)}</div>
+            <div className="systemFontBold" style={style_elDeal_link}  onHover={this.dealHover} onClick={this.onClick_elDeal_link} >
+              <label title={this.state.full_link}>{shortlink !== undefined ? shortlink : (<span className="propValueMissing">{this.props.locStrings.dealitem_text_1035144}</span>)}</label>
             </div>
           </div>
         </div>

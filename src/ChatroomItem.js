@@ -71,8 +71,8 @@ export default class ChatroomItem extends Component {
       pointerEvents: 'auto',
       opacity: '0.5'
      }
-    
-    const value_chatstore = this.props.location.place_name;
+    console.log(this.props)
+    const value_chatstore = this.props.dataSheetRow.store_address.place_name;
     const style_elChatstore = {
       color: 'rgba(0, 0, 0, 0.8500)',
       textAlign: 'left',

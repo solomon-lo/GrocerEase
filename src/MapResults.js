@@ -143,6 +143,16 @@ export default class MapResultsScreen extends Component {
     }
     };
 
+    if (this.state.field !== "") {
+      for (var k=0; k < items_list.length; k++) {
+        if (!items_list[k].chatroom_name.replace(/[^A-Za-z0-9]/g,'').toLowerCase().includes(this.state.field.replace(/[^A-Za-z0-9]/g,'').toLowerCase()) &&
+            !items_list[k].store_address.place_name.replace(/[^A-Za-z0-9]/g,'').toLowerCase().includes(this.state.field.replace(/[^A-Za-z0-9]/g,'').toLowerCase())) {
+          items_list.splice(k,1);
+          k--;
+        }
+      }
+    };
+
     const style_elList = {
       height: 'auto',  // This element is in scroll flow
      };
@@ -215,7 +225,7 @@ export default class MapResultsScreen extends Component {
                 let itemComp = (row._componentId)
                     ? listComps_list[row._componentId]
                     : <ChatroomItem filter={this.state.field}appActions={this.props.appActions} deviceInfo={this.props.deviceInfo} locStrings={this.props.locStrings} 
-                              dataSheetId={'chatroom'} dataSheetRow={row} {...{ 'document_key': row['document_key'], 'store_name': row['store_name'],'chatroom_name': row['chatroom_name'], 'chatroom_time': row['chatroom_time'], }} />;
+                              dataSheetId={'chatroom'} dataSheetRow={row} {...{ 'document_key': row['document_key'], 'store_name': row['store_name'],'chatroom_name': row['chatroom_name'], 'location': row['store_address'], 'chatroom_time': row['chatroom_time'], }} />;
                 return (<li key={row.key}>
                     {itemComp}
                   </li>);
