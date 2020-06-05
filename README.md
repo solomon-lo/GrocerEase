@@ -63,5 +63,5 @@ To run the GrocerEase app, simply use the command:
 npm start
 ```
 
-The application will then open in your browser. If you are not currently signed in to a Google account, you will need to do so in order to use the GrocerEase application.
+The application will then open in your browser. If you are not currently signed in to a Google account, you will need to do so in order to use the GrocerEase application. If you aren’t signed in, you can do so on the starting page by clicking on the Google sign-in widget.
 
