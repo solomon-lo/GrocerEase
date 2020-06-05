@@ -1,68 +1,67 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# GrocerEase
 
-## Available Scripts
+GrocerEase is an innovative, new application that connects you to everyday people shopping for groceries in order to help you obtain your groceries in a safe and easy way.
 
-In the project directory, you can run:
+## Installation
 
-### `npm start`
+The GrocerEase application was bootstrapped with [Create React App](https://github.com/facebook/create-react-app). This apps runs by using Node.js and node package manager. 
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### Install Node.js
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+For macOS, we recommend using Homebrew:
 
-### `npm test`
+```bash
+brew install node
+```
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+For Windows, we recommend using the [Windows Installer](https://nodejs.org/en/download/). 
 
-### `npm run build`
+To verify that you've downloaded and installed it properly, open a new shell instance and run the commands:
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```bash
+node -v
+npm -v
+```
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+They should print out the versions of node and npm that you installed.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Clone from GitHub
 
-### `npm run eject`
+To use GrocerEase, clone the git repository into a new directory. You can use the following command:
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+```bash
+git clone https://github.com/solomon-lo/GrocerEase.git
+```
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+To prepare to run the GrocerEase app, run:
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+```bash
+npm install
+```
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+### Install Firebase and Mapbox
 
-## Learn More
+The GrocerEase application utilizes Firebase and Mapbox. To install, run:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```bash
+npm install firebase
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+for Firebase and 
 
-### Code Splitting
+```bash
+npm install mapbox-gl-geocoder
+```
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+for Mapbox. 
 
-### Analyzing the Bundle Size
+## Run the application
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+To run the GrocerEase app, simply use the command:
 
-### Making a Progressive Web App
+```bash
+npm start
+```
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+The application will then open in your browser. If you are not currently signed in to a Google account, you will need to do so in order to use the GrocerEase application.
 
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
