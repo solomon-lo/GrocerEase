@@ -224,7 +224,7 @@ export default class ShoppingOptionsScreen extends Component {
                     ? listComps_list[row._componentId]
                     : <ChatroomItem filter={this.state.field} appActions={this.props.appActions} deviceInfo={this.props.deviceInfo} locStrings={this.props.locStrings} 
                               dataSheetId={'chatroom'} dataSheetRow={row} 
-                              {...{ 'document_key': row['document_key'], 'store_name': row['store_name'],'chatroom_name': row['chatroom_name'], 'chatroom_time': row['chatroom_time'], 'filteredAway': row['filteredAway'],location: row['store_address']}} />;
+                              {...{ 'document_key': row['document_key'], 'store_name': row['store_name'],'chatroom_name': row['chatroom_name'], 'chatroom_time': row['chatroom_time'], 'shop_date': row['chatroom_date'],'filteredAway': row['filteredAway'],location: row['store_address']}} />;
                 return (<li key={row.key}>
                     {itemComp}
                   </li>);
