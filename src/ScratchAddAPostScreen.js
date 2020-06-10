@@ -72,12 +72,13 @@ export default class ScratchAddAPostScreen extends Component {
   
   sendData_submit_post_button_to_chatroom = () => {
     const dataSheet = this.props.appActions.getDataSheet('chatroom');
-  
+    let timestring = this.state.input_time_post_screen.split('T');
     let row = this.props.dataSheetRow || {
     };
     row = { ...row, 
       store_name: this.state.input_store_post_screen,
-      chatroom_time: this.state.input_time_post_screen,
+      chatroom_time: timestring[1],
+      chatroom_date: timestring[0],
       chatroom_name: this.state.input_name_post_screen,
       store_address: this.state.input_address_post_screen,
     };
@@ -158,7 +159,10 @@ export default class ScratchAddAPostScreen extends Component {
           </div>
           
           <div className="elInput_time_post_screen">
+            {/*}
             <input className="baseFont" style={style_elInput_time_post_screen} type="text" placeholder={this.props.locStrings.scratchaddapost_field_871151} onChange={this.textInputChanged_input_time_post_screen} value={this.state.input_time_post_screen}  />
+    */}     <input type="datetime-local" className="baseFont" style={style_elInput_time_post_screen} onChange={this.textInputChanged_input_time_post_screen} value={this.state.input_time_post_screen}>
+            </input>
           </div>
 
           <div className="mapstyle">

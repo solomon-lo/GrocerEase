@@ -65,7 +65,7 @@ export default class App extends Component {
     this.serviceOptions_chatroom = {
       dataSlots: this.dataSlots,
       servicePath: "messaging",
-      query: "orderBy(\"chatroom_name\",\"asc\")",
+      query: "orderBy(\"chatroom_date\",\"asc\")",
     };
     this.dataSheets['chatroom'].appActions = this;
     this.dataSheets['chatroom'].firebase = firebase;

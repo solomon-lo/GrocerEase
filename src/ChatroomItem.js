@@ -56,7 +56,7 @@ export default class ChatroomItem extends Component {
   
   render() {
     const value_chatname = this.props.chatroom_name;
-    
+    const shop_date = this.props.shop_date ? this.props.shop_date : "";
     const style_elChatname = {
       color: 'rgba(0, 0, 0, 0.8500)',
       textAlign: 'left',
@@ -101,7 +101,7 @@ export default class ChatroomItem extends Component {
       pointerEvents: 'auto',
      };
     
-    const value_text3 = this.props.chatroom_time;
+    const shop_time = this.props.chatroom_time;
     
     const style_elText3 = {
       color: 'rgba(0, 0, 0, 0.8500)',
@@ -139,7 +139,7 @@ export default class ChatroomItem extends Component {
           
           <div className="elText3">
             <div className="baseFont" style={style_elText3}>
-              <div>{value_text3 !== undefined ? value_text3 : (<span className="propValueMissing">{this.props.locStrings.chatroomitem_text3_643611}</span>)}</div>
+              <div>{shop_time !== undefined ? "Shopping on: " + shop_date + " "+ shop_time : (<span className="propValueMissing">{this.props.locStrings.chatroomitem_text3_643611}</span>)}</div>
             </div>
           </div>
           
