@@ -3,6 +3,7 @@ import './App.css';
 import btn_icon_back_faqs from './images/btn_icon_back_faqs.png';
 
 // UI framework component imports
+import Button from 'muicss/lib/react/button';
 import Appbar from 'muicss/lib/react/appbar';
 
 export default class FAQsScreen extends Component {
@@ -21,6 +22,15 @@ export default class FAQsScreen extends Component {
   }
 
   componentDidMount() {
+    {
+      let dataSheet = this.props.appActions.dataSheets['faqDataSheet'];
+      let serviceOptions = this.props.appActions.serviceOptions_faqDataSheet;
+      if ( !this.props.appActions.dataSheetLoaded['faqDataSheet']) {
+        serviceOptions.servicePath = dataSheet.expandSlotTemplateString("faqUserDatabase", this.props.appActions.dataSlots);
+        this.props.appActions.loadData_firebaseConnection(dataSheet, serviceOptions, true);
+        this.props.appActions.dataSheetLoaded['faqDataSheet'] = true;
+      }
+    }
   }
 
   componentWillUnmount() {
@@ -44,6 +54,29 @@ export default class FAQsScreen extends Component {
     this.setState({field_question_element_faq: event.target.value});
   }
   
+  onClick_elButton = (ev) => {
+    this.sendData_button_to_faqDataSheet();
+  
+    // Go to screen 'Thanks!'
+    this.props.appActions.goToScreen('thanks', { transitionId: 'fadeIn' });
+  
+  }
+  
+  
+  sendData_button_to_faqDataSheet = () => {
+    const dataSheet = this.props.appActions.getDataSheet('faqDataSheet');
+  
+    let row = this.props.dataSheetRow || {
+    };
+    row = { ...row, 
+      email: this.state.field_email_element_faq,
+      question: this.state.field_question_element_faq,
+      name: this.state.field_name_element_faq,
+    };
+    this.props.appActions.addToDataSheet('faqDataSheet', row);
+  }
+  
+  
   render() {
     let layoutFlowStyle = {};
     let baseStyle = {};
@@ -65,31 +98,31 @@ export default class FAQsScreen extends Component {
     const style_elText = {
       fontSize: 20.0,
       color: 'rgba(0, 0, 0, 0.8500)',
-      textAlign: 'left',
+      textAlign: 'center',
      };
     const style_elText2 = {
       color: 'rgba(0, 0, 0, 0.8500)',
-      textAlign: 'left',
+      textAlign: 'center',
      };
     const style_elText3 = {
       color: 'rgba(0, 0, 0, 0.8500)',
-      textAlign: 'left',
+      textAlign: 'center',
      };
     const style_elText4 = {
       color: 'rgba(0, 0, 0, 0.8500)',
-      textAlign: 'left',
+      textAlign: 'center',
      };
     const style_elText5 = {
       color: 'rgba(0, 0, 0, 0.8500)',
-      textAlign: 'left',
+      textAlign: 'center',
      };
     const style_elText6 = {
       color: 'rgba(0, 0, 0, 0.8500)',
-      textAlign: 'left',
+      textAlign: 'center',
      };
     const style_elText7 = {
       color: 'rgba(0, 0, 0, 0.8500)',
-      textAlign: 'left',
+      textAlign: 'center',
      };
     
     const style_elField_name_element_faq = {
@@ -116,6 +149,14 @@ export default class FAQsScreen extends Component {
       borderColor: 'lightGray',
       paddingLeft: '1rem',
       boxSizing: 'border-box', // ensures padding won't expand element's outer size
+      pointerEvents: 'auto',
+     };
+    
+    const style_elButton = {
+      display: 'block',
+      color: 'white',
+      textAlign: 'center',
+      cursor: 'pointer',
       pointerEvents: 'auto',
      };
     
@@ -180,6 +221,12 @@ export default class FAQsScreen extends Component {
           
           <div className="elField_question_element_faq">
             <textarea className="baseFont" style={style_elField_question_element_faq}  placeholder={this.props.locStrings.faqs_textarea_142756} onChange={this.textAreaChanged_field_question_element_faq} value={this.state.field_question_element_faq}  />
+          </div>
+          
+          <div className="elButton">
+            <Button className="actionFont" style={style_elButton}  color="accent" onClick={this.onClick_elButton} >
+              {this.props.locStrings.faqs_button_941431}
+            </Button>
           </div>
         </div>
         <Appbar className="navBar">
