@@ -101,7 +101,10 @@ export default class Map extends React.Component {
                 var i;
                 var j = 0;
                 for (i = 0; i < this.props.items.length; i++) {
-                    var temp = this.props.items[i].store_address.center;
+                    var temp = this.props.items[i].store_address.center ? this.props.items[i].store_address.center : "";
+                    if (temp === "") {
+                        continue;
+                    }
                     var ind = existing.indexOf(String(temp));
                     console.log(i)
                     if (ind == -1) {

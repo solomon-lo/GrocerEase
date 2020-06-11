@@ -48,7 +48,7 @@ export default class FirebaseLogin extends Component {
     ((v) => { this.props.appActions.updateDataSlot("ds_SlotUsername", v) })(userName);
     ((v) => { this.props.appActions.updateDataSlot("ds_userEmailAddress", v) })(email || '');
     ((v) => { this.props.appActions.updateDataSlot("ds_GmailUserPhoto", v) })(userPhotoUrl);
-    ((v) => { this.props.appActions.updateDataSlot("ds_UniqueUserID", v) })(userId);
+    ((v) => { this.props.appActions.updateDataSlot("ds_UniqueUserID", v) })(userId)
   }
 
   loginSuccess() {
@@ -63,7 +63,19 @@ export default class FirebaseLogin extends Component {
   
   componentDidMount() {
     this.unregisterAuthObserver = firebase.auth().onAuthStateChanged(
-        (user) => this.setState({isSignedIn: !!user})
+        (user) => {
+          this.setState({isSignedIn: !!user});
+          if (user) {
+            this.props.appActions.updateDataSlot("ds_UniqueUserID", user.uid)
+            this.props.appActions.updateDataSlot("ds_userEmailAddress", user.email)
+          }
+          /*
+          if (user) {
+            var u = firebase.auth().currentUser;
+            ((v) => { this.props.appActions.updateDataSlot("ds_UniqueUserID", v) })(u.id)
+            ((v) => { this.props.appActions.updateDataSlot("ds_userEmailAddress", v) })(u.email);
+          }*/
+          }
     );
   }
 
@@ -72,6 +84,7 @@ export default class FirebaseLogin extends Component {
   }
 
   render() {
+
     if ( !this.state.isSignedIn) {
       return (
         <StyledFirebaseAuth uiCallback={ui => {if (!this.autosignInEnabled) ui.disableAutoSignIn();}} uiConfig={this.firebaseUIConfig} firebaseAuth={firebase.auth()}/>

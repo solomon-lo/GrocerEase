@@ -81,6 +81,7 @@ export default class ScratchAddAPostScreen extends Component {
       chatroom_date: timestring[0],
       chatroom_name: this.state.input_name_post_screen,
       store_address: this.state.input_address_post_screen,
+      uid: this.props.appActions.dataSlots ? this.props.appActions.dataSlots['ds_UniqueUserID'] : '',
     };
     this.props.appActions.addToDataSheet('chatroom', row);
   }
