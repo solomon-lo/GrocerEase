@@ -15,10 +15,9 @@ export default class FAQsScreen extends Component {
     super(props);
     
     this.state = {
-      field_faq_name: '',
-      field_faq_email: '',
-      field_faq_question: '',
-
+      field_name_element_faq: '',
+      field_email_element_faq: '',
+      field_question_element_faq: '',
     };
   }
 
@@ -43,37 +42,40 @@ export default class FAQsScreen extends Component {
   componentWillReceiveProps(nextProps) {
   }
 
-  textInputChanged_field_faq_name = (event) => {
-    this.setState({field_faq_name: event.target.value});
+  textAreaChanged_field_name_element_faq = (event) => {
+    this.setState({field_name_element_faq: event.target.value});
   }
   
-  textInputChanged_field_faq_email = (event) => {
-    this.setState({field_faq_email: event.target.value});
+  textAreaChanged_field_email_element_faq = (event) => {
+    this.setState({field_email_element_faq: event.target.value});
   }
   
-  textAreaChanged_field_faq_question = (event) => {
-    this.setState({field_faq_question: event.target.value});
+  textAreaChanged_field_question_element_faq = (event) => {
+    this.setState({field_question_element_faq: event.target.value});
   }
   
   onClick_elButton = (ev) => {
     this.sendData_button_to_faqDataSheet();
+  
     // Go to screen 'Thanks!'
     this.props.appActions.goToScreen('thanks', { transitionId: 'fadeIn' });
   
   }
   
+  
   sendData_button_to_faqDataSheet = () => {
     const dataSheet = this.props.appActions.getDataSheet('faqDataSheet');
-
+  
     let row = this.props.dataSheetRow || {
     };
     row = { ...row, 
-      email: this.state.field_faq_email,
-      name: this.state.field_faq_name,
-      question: this.state.field_faq_question,
+      email: this.state.field_email_element_faq,
+      question: this.state.field_question_element_faq,
+      name: this.state.field_name_element_faq,
     };
     this.props.appActions.addToDataSheet('faqDataSheet', row);
   }
+  
   
   render() {
     let layoutFlowStyle = {};
@@ -96,56 +98,52 @@ export default class FAQsScreen extends Component {
     const style_elText = {
       fontSize: 20.0,
       color: 'rgba(0, 0, 0, 0.8500)',
-      textAlign: 'left',
+      textAlign: 'center',
      };
     const style_elText2 = {
-      fontSize: 20.0,
       color: 'rgba(0, 0, 0, 0.8500)',
-      textAlign: 'left',
-     };
-    const style_elTextCopy = {
-      fontSize: 20.0,
-      color: 'rgba(0, 0, 0, 0.8500)',
-      textAlign: 'left',
+      textAlign: 'center',
      };
     const style_elText3 = {
-      fontSize: 20.0,
       color: 'rgba(0, 0, 0, 0.8500)',
-      textAlign: 'left',
+      textAlign: 'center',
      };
-    const style_elTextCopy2 = {
-      fontSize: 20.0,
+    const style_elText4 = {
       color: 'rgba(0, 0, 0, 0.8500)',
-      textAlign: 'left',
+      textAlign: 'center',
      };
-    const style_elTextCopy3 = {
-      fontSize: 20.0,
+    const style_elText5 = {
       color: 'rgba(0, 0, 0, 0.8500)',
-      textAlign: 'left',
+      textAlign: 'center',
      };
-    const style_elTextCopy4 = {
-      fontSize: 20.0,
+    const style_elText6 = {
       color: 'rgba(0, 0, 0, 0.8500)',
-      textAlign: 'left',
+      textAlign: 'center',
+     };
+    const style_elText7 = {
+      color: 'rgba(0, 0, 0, 0.8500)',
+      textAlign: 'center',
      };
     
-     const style_elField_faq_name = {
+    const style_elField_name_element_faq = {
       display: 'block',
       backgroundColor: 'white',
+      borderColor: 'lightGray',
       paddingLeft: '1rem',
       boxSizing: 'border-box', // ensures padding won't expand element's outer size
       pointerEvents: 'auto',
      };
     
-     const style_elField_faq_email = {
+    const style_elField_email_element_faq = {
       display: 'block',
       backgroundColor: 'white',
+      borderColor: 'lightGray',
       paddingLeft: '1rem',
       boxSizing: 'border-box', // ensures padding won't expand element's outer size
       pointerEvents: 'auto',
      };
     
-     const style_elField_faq_question = {
+    const style_elField_question_element_faq = {
       display: 'block',
       backgroundColor: 'white',
       borderColor: 'lightGray',
@@ -178,56 +176,56 @@ export default class FAQsScreen extends Component {
           </div>
           
           <div className="elText2">
-            <div className="systemFontRegular" style={style_elText2}>
-              <div>{this.props.locStrings.faqs2_text2_505139}</div>
-            </div>
-          </div>
-          
-          <div className="elTextCopy">
-            <div className="systemFontBold" style={style_elTextCopy}>
-              <div>{this.props.locStrings.faqs2_textcopy_271142}</div>
+            <div className="baseFont" style={style_elText2}>
+              <div>{this.props.locStrings.faqs_text2_456705}</div>
             </div>
           </div>
           
           <div className="elText3">
-            <div className="systemFontRegular" style={style_elText3}>
-              <div>{this.props.locStrings.faqs2_text3_482212}</div>
+            <div className="headlineFont" style={style_elText3}>
+              <div>{this.props.locStrings.faqs_text3_873299}</div>
             </div>
           </div>
           
-          <div className="elTextCopy2">
-            <div className="systemFontBold" style={style_elTextCopy2}>
-              <div>{this.props.locStrings.faqs2_textcopy2_771705}</div>
+          <div className="elText4">
+            <div className="baseFont" style={style_elText4}>
+              <div>{this.props.locStrings.faqs_text4_210132}</div>
             </div>
           </div>
           
-          <div className="elTextCopy3">
-            <div className="systemFontRegular" style={style_elTextCopy3}>
-              <div>{this.props.locStrings.faqs2_textcopy3_632013}</div>
+          <div className="elText5">
+            <div className="headlineFont" style={style_elText5}>
+              <div>{this.props.locStrings.faqs_text5_593140}</div>
             </div>
           </div>
           
-          <div className="elTextCopy4">
-            <div className="systemFontBold" style={style_elTextCopy4}>
-              <div>{this.props.locStrings.faqs2_textcopy4_238296}</div>
+          <div className="elText6">
+            <div className="baseFont" style={style_elText6}>
+              <div>{this.props.locStrings.faqs_text6_621354}</div>
             </div>
           </div>
           
-          <div className="elField_faq_name">
-            <input className="baseFont" style={style_elField_faq_name} type="text" placeholder={this.props.locStrings.faqs2_field_839389} onChange={this.textInputChanged_field_faq_name} value={this.state.field_faq_name}  />
+          <div className="elText7">
+            <div className="headlineFont" style={style_elText7}>
+              <div>{this.props.locStrings.faqs_text7_630743}</div>
+            </div>
           </div>
           
-          <div className="elField_faq_email">
-            <input className="baseFont" style={style_elField_faq_email} type="text" placeholder={this.props.locStrings.faqs2_fieldcopy_996336} onChange={this.textInputChanged_field_faq_email} value={this.state.field_faq_email}  />
+          <div className="elField_name_element_faq">
+            <textarea className="baseFont" style={style_elField_name_element_faq}  placeholder={this.props.locStrings.faqs_textarea_524702} onChange={this.textAreaChanged_field_name_element_faq} value={this.state.field_name_element_faq}  />
           </div>
           
-          <div className="elField_faq_question">
-            <textarea className="baseFont" style={style_elField_faq_question}  placeholder={this.props.locStrings.faqs2_textarea_47076} onChange={this.textAreaChanged_field_faq_question} value={this.state.field_faq_question}  />
+          <div className="elField_email_element_faq">
+            <textarea className="baseFont" style={style_elField_email_element_faq}  placeholder={this.props.locStrings.faqs_textarea_768349} onChange={this.textAreaChanged_field_email_element_faq} value={this.state.field_email_element_faq}  />
+          </div>
+          
+          <div className="elField_question_element_faq">
+            <textarea className="baseFont" style={style_elField_question_element_faq}  placeholder={this.props.locStrings.faqs_textarea_142756} onChange={this.textAreaChanged_field_question_element_faq} value={this.state.field_question_element_faq}  />
           </div>
           
           <div className="elButton">
             <Button className="actionFont" style={style_elButton}  color="accent" onClick={this.onClick_elButton} >
-              {this.props.locStrings.faqs2_button_644240}
+              {this.props.locStrings.faqs_button_941431}
             </Button>
           </div>
         </div>
