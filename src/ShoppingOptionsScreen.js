@@ -129,7 +129,6 @@ export default class ShoppingOptionsScreen extends Component {
     let items_list = [];
     let listComps_list = {};
     items_list = items_list.concat(this.props.appActions.getDataSheet('chatroom').items);
-    console.log(items_list)
     if (this.state.field !== "") {
       for (var i=0; i < items_list.length; i++) {
         if (!items_list[i].chatroom_name.replace(/[^A-Za-z0-9]/g,'').toLowerCase().includes(this.state.field.replace(/[^A-Za-z0-9]/g,'').toLowerCase()) &&

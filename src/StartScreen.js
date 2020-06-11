@@ -133,7 +133,7 @@ export default class StartScreen extends Component {
             </div>
             
             <div className="elFieldUsername">
-              <input className="baseFont" style={style_elFieldUsername} type="text" placeholder={this.props.locStrings.start_field_378871} onChange={this.textInputChanged_fieldUsername} value={value_fieldUsername !== undefined ? value_fieldUsername : ''}  />
+              <input className="baseFont" style={style_elFieldUsername} type="text" placeholder={"Enter " + this.props.locStrings.start_field_378871} onChange={this.textInputChanged_fieldUsername} value={value_fieldUsername !== undefined ? value_fieldUsername : ''}  />
             </div>
             
             <div className="elText">
@@ -171,6 +171,10 @@ export default class StartScreen extends Component {
               <FirebaseLogin ref={(el)=> this._elFirebaseLogin = el} appActions={this.props.appActions} deviceInfo={this.props.deviceInfo} locStrings={this.props.locStrings} />
             </div>
           </div>
+
+          <div className="elFieldUsername">
+              <input className="baseFont" style={style_elFieldUsername} type="text" placeholder={"Enter " + this.props.locStrings.start_field_378871} onChange={this.textInputChanged_fieldUsername} value={value_fieldUsername !== undefined ? value_fieldUsername : ''}  />
+            </div>
 
           <div className="elText" style={style_elText}>
           <p> Currently Logged in as: {this.props.appActions.dataSlots['ds_userEmailAddress']}</p>
