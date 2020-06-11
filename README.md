@@ -67,13 +67,15 @@ The application will then open in your browser. If you are not currently signed 
 
 For reference, here are some links to documentations and presentations that we've made:
 
-Documentation:
+__Documentation:__
 
 Proposal: https://docs.google.com/document/d/15_3ZOzOva9qAoBE0WrqwDZ-6K0J8iiYioDSXvPK69F4/edit?usp=sharing
+
 Initial schedule and Project Plan: https://docs.google.com/document/d/1oSkN_dX4Qe5vVN9rtdsqkqigTzlyAJilQ4QJlYr6_ew/edit?usp=sharing
 
-Presentations:
+__Presentations:__
 
 Week 8 Presentation: https://drive.google.com/file/d/1wrm8B_v_npZbvxiPtUohwBphkvSwkx7U/view?usp=sharing
+
 Final presentation: https://drive.google.com/file/d/1QK7uY2KKzKKglsNAhB0VEM3bGdKR3QUa/view?usp=sharing
 
